@@ -112,17 +112,78 @@ const About = () => {
         <div className="container mx-auto space-y-16">
           {/* Introduction Section */}
           <section className="text-center">
-            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-4xl mx-auto">
-              <div className="mb-6">
-                <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
-                  Syed Syab Ahmad
-                </h1>
-                <h2 className="text-2xl text-emerald-400 font-semibold mb-6">
-                  AI Engineer & Full-Stack Developer
-                </h2>
+            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-5xl mx-auto">
+              
+              {/* Header with Image and Name */}
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-8">
+                {/* Profile Image */}
+                <div className="relative flex-shrink-0">
+                  <div className="w-40 h-40 lg:w-48 lg:h-48 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20 relative">
+                    <img 
+                      src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ"
+                      alt="Syed Syab Ahmad"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.classList.remove('hidden');
+                      }}
+                    />
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center text-4xl font-bold text-white hidden absolute top-0 left-0"
+                    >
+                      SSA
+                    </div>
+                  </div>
+                  {/* Animated ring around image */}
+                  <div className="absolute inset-0 w-40 h-40 lg:w-48 lg:h-48 mx-auto rounded-full border-2 border-cyan-400/30 animate-ping"></div>
+                  {/* Status indicator */}
+                  <div className="absolute bottom-2 right-2 lg:bottom-4 lg:right-4 w-6 h-6 bg-green-400 rounded-full border-2 border-gray-800 shadow-lg">
+                    <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+
+                {/* Name and Title */}
+                <div className="flex-1 text-center lg:text-left">
+                  <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                    Syed Syab Ahmad
+                  </h1>
+                  <h2 className="text-xl lg:text-2xl text-emerald-400 font-semibold mb-4">
+                    AI Engineer & Full-Stack Developer
+                  </h2>
+                  
+                  {/* Location and University */}
+                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4 text-gray-400 mb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                      <span className="text-sm">Pakistan</span>
+                    </div>
+                    <div className="hidden lg:block w-1 h-1 bg-gray-600 rounded-full"></div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                      <span className="text-sm">University of Swat</span>
+                    </div>
+                  </div>
+
+                  {/* Quick Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a
+                      href="/contact"
+                      className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-purple-400 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105"
+                    >
+                      Get In Touch
+                    </a>
+                    <a
+                      href="/projects"
+                      className="px-6 py-2.5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300"
+                    >
+                      View Projects
+                    </a>
+                  </div>
+                </div>
               </div>
               
-              <div className="text-gray-300 text-lg leading-relaxed mb-8 space-y-4">
+              {/* Description */}
+              <div className="text-gray-300 text-lg leading-relaxed mb-8 space-y-4 max-w-4xl mx-auto">
                 <p>
                   Welcome to my digital portfolio! I'm a passionate AI Engineer and Full-Stack Developer with expertise in 
                   Machine Learning, Deep Learning, and modern web technologies. Currently pursuing my studies at the 
