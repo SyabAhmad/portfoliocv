@@ -61,11 +61,6 @@ const HomePage = () => {
         "https://www.linkedin.com/in/syedsyab/",
         "https://github.com/syabahmad"
       ]
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://syab.link/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
     }
   };
 
