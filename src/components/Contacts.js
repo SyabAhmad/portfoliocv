@@ -21,8 +21,7 @@ const Contact = () => {
     "mainEntity": {
       "@type": "Person",
       "name": "Syed Syab Ahmad",
-      "email": "syabblogger@gmail.com",
-      "telephone": "+923460561173",
+      "email": "syedsyabahmadshah@gmail.com",
       "url": "https://syab.link"
     }
   };
@@ -105,12 +104,7 @@ const Contact = () => {
               >
                 syedsyabahmadshah@gmail.com
               </a>
-              <a 
-                href="https://wa.me/923460561173" 
-                className="text-green-400 hover:text-green-300 transition-colors duration-300"
-              >
-                +92 346 0561173
-              </a>
+
             </div>
 
             {/* Social Media Links */}
@@ -137,21 +131,13 @@ const Contact = () => {
                 <FaGithub />
               </a>
               <a
-                href="mailto:syabblogger@gmail.com"
+                href="mailto:syedsyabahmadshah@gmail.com"
                 className="text-cyan-400 text-2xl hover:text-cyan-300 transition-colors duration-300 p-2 bg-gray-800/50 rounded-lg border border-gray-700/30 hover:border-cyan-400/50"
                 aria-label="Email"
               >
                 <FaEnvelope />
               </a>
-              <a
-                href="https://wa.me/923460561173"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-400 text-2xl hover:text-green-300 transition-colors duration-300 p-2 bg-gray-800/50 rounded-lg border border-gray-700/30 hover:border-green-400/50"
-                aria-label="WhatsApp"
-              >
-                <FaWhatsapp />
-              </a>
+
               <a
                 href="https://t.me/syedsyab"
                 target="_blank"

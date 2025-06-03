@@ -9,12 +9,12 @@ const Skills = () => {
     "Programming Languages": [
       { name: "Python", level: 95, color: "from-blue-400 to-yellow-400" },
       { name: "JavaScript", level: 90, color: "from-yellow-400 to-yellow-600" },
-      { name: "TypeScript", level: 85, color: "from-blue-500 to-blue-700" },
-      { name: "Java", level: 80, color: "from-red-500 to-orange-500" },
-      { name: "C++", level: 75, color: "from-blue-600 to-purple-600" },
+      { name: "TypeScript", level: 70, color: "from-blue-500 to-blue-700" }, // Reduced from 85
+      { name: "Java", level: 55, color: "from-red-500 to-orange-500" }, // Reduced from 80
+      { name: "C++", level: 50, color: "from-blue-600 to-purple-600" }, // Reduced from 75
       { name: "SQL", level: 85, color: "from-gray-400 to-gray-600" },
-      { name: "R", level: 70, color: "from-blue-400 to-blue-600" },
-      { name: "PHP", level: 75, color: "from-purple-500 to-indigo-500" }
+      { name: "R", level: 50, color: "from-blue-400 to-blue-600" },
+      { name: "PHP", level: 55, color: "from-purple-500 to-indigo-500" } // Reduced from 75
     ],
     "Machine Learning & AI": [
       { name: "TensorFlow", level: 90, color: "from-orange-400 to-orange-600" },
@@ -33,34 +33,29 @@ const Skills = () => {
     "Web Development": [
       { name: "React", level: 90, color: "from-cyan-400 to-blue-500" },
       { name: "Node.js", level: 85, color: "from-green-500 to-green-700" },
-      { name: "Express.js", level: 80, color: "from-gray-600 to-gray-800" },
-      { name: "Next.js", level: 82, color: "from-gray-800 to-black" },
+          { name: "Next.js", level: 82, color: "from-gray-800 to-black" },
       { name: "HTML5", level: 95, color: "from-orange-500 to-red-500" },
       { name: "CSS3", level: 90, color: "from-blue-500 to-purple-500" },
       { name: "Tailwind CSS", level: 92, color: "from-cyan-400 to-teal-500" },
-      { name: "Bootstrap", level: 85, color: "from-purple-500 to-indigo-600" },
-      { name: "Vue.js", level: 75, color: "from-green-400 to-green-600" },
-      { name: "Angular", level: 70, color: "from-red-600 to-pink-600" }
+      { name: "Bootstrap", level: 85, color: "from-purple-500 to-indigo-600" }
+      // Removed Vue.js and Angular
     ],
     "Databases & Cloud": [
-      { name: "MongoDB", level: 85, color: "from-green-500 to-green-700" },
       { name: "MySQL", level: 88, color: "from-blue-600 to-blue-800" },
       { name: "PostgreSQL", level: 80, color: "from-blue-700 to-indigo-700" },
       { name: "Firebase", level: 82, color: "from-yellow-500 to-orange-500" },
-      { name: "AWS", level: 75, color: "from-orange-400 to-yellow-500" },
-      { name: "Google Cloud", level: 70, color: "from-blue-500 to-green-500" },
-      { name: "Docker", level: 78, color: "from-blue-400 to-cyan-500" },
-      { name: "Redis", level: 72, color: "from-red-500 to-red-700" }
+      { name: "Docker", level: 78, color: "from-blue-400 to-cyan-500" }
+      // Removed MongoDB, AWS, Google Cloud, Redis
     ],
     "Tools & Technologies": [
       { name: "Git", level: 90, color: "from-orange-500 to-red-500" },
       { name: "Linux", level: 85, color: "from-yellow-400 to-orange-400" },
       { name: "Jupyter", level: 92, color: "from-orange-500 to-red-500" },
       { name: "VS Code", level: 95, color: "from-blue-500 to-cyan-500" },
-      { name: "Postman", level: 85, color: "from-orange-400 to-red-400" },
       { name: "Figma", level: 75, color: "from-purple-400 to-pink-400" },
       { name: "Photoshop", level: 80, color: "from-blue-600 to-purple-600" },
       { name: "Tableau", level: 70, color: "from-blue-500 to-teal-500" }
+      // Removed Postman
     ]
   };
 

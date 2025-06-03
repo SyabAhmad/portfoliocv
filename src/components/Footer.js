@@ -80,18 +80,10 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
             <div className="space-y-2">
               <a 
-                href="mailto:syabblogger@gmail.com"
+                href="mailto:syedsyabahmadshah@gmail.com"
                 className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-sm block"
               >
-                📧 syabblogger@gmail.com
-              </a>
-              <a 
-                href="https://wa.me/923460561173"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm block"
-              >
-                📱 +92 346 0561173
+                📧 syedsyabahmadshah@gmail.com
               </a>
               <a 
                 href="https://syab.link/"
