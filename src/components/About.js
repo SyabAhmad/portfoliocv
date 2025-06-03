@@ -1,0 +1,224 @@
+import React from 'react';
+import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaTiktok, FaDiscord, FaWhatsapp, FaTelegram, FaSnapchat, FaMedium, FaDribbble, FaBehance, FaStackOverflow, FaKaggle, FaResearchgate, FaLink, FaUser, FaCode, FaBriefcase } from 'react-icons/fa';
+import { SiLeetcode, SiHackerrank, SiCodechef, SiCodeforces, SiGeeksforgeeks, SiHuggingface, SiOrcid, SiFiverr, SiCodepen, SiAboutdotme, SiArchlinux, SiCodewars } from 'react-icons/si';
+import certifications from '../data/certificationsData';
+import recommendations from '../data/recommendationsData';
+
+const volunteering = [
+  {
+    title: "Volunteering",
+    organization: "Punjab Information Technology Board (PITB)",
+    role: "Marketing Team",
+    duration: "May 2024 · 1 mo",
+    category: "Education"
+  }
+];
+
+const About = () => {
+  const socialLinks = [
+    { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/syedsyab/', color: 'hover:text-blue-400' },
+    { name: 'GitHub', icon: FaGithub, url: 'https://github.com/syabahmad', color: 'hover:text-gray-300' },
+    { name: 'Twitter', icon: FaTwitter, url: 'https://twitter.com/SyabSays', color: 'hover:text-blue-400' },
+    { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com/syedsyab', color: 'hover:text-pink-400' },
+    { name: 'Facebook', icon: FaFacebook, url: 'https://facebook.com/syed.syab', color: 'hover:text-blue-600' },
+    { name: 'Discord', icon: FaDiscord, url: 'https://discordapp.com/users/syabahmad', color: 'hover:text-indigo-400' },
+    { name: 'WhatsApp', icon: FaWhatsapp, url: 'https://wa.me/923460561173', color: 'hover:text-green-400' },
+    { name: 'Telegram', icon: FaTelegram, url: 'https://t.me/syedsyab', color: 'hover:text-blue-500' },
+    { name: 'Snapchat', icon: FaSnapchat, url: 'https://www.snapchat.com/add/syed.syab', color: 'hover:text-yellow-400' },
+    { name: 'Medium', icon: FaMedium, url: 'https://medium.com/@syedsyab', color: 'hover:text-green-400' },
+    { name: 'Dribbble', icon: FaDribbble, url: 'https://dribbble.com/Syab_Ahmad', color: 'hover:text-pink-400' },
+    { name: 'Behance', icon: FaBehance, url: 'https://www.behance.net/syabahmad', color: 'hover:text-blue-500' },
+    { name: 'Stack Overflow', icon: FaStackOverflow, url: 'https://stackoverflow.com/users/20266067/syed-syab-ahmad-shah', color: 'hover:text-orange-500' },
+    { name: 'LeetCode', icon: SiLeetcode, url: 'https://leetcode.com/u/syab_ahmad/', color: 'hover:text-yellow-500' },
+    { name: 'HackerRank', icon: SiHackerrank, url: 'https://www.hackerrank.com/profile/syabblogger', color: 'hover:text-green-400' },
+    { name: 'CodeChef', icon: SiCodechef, url: 'https://www.codechef.com/users/syedsyabb', color: 'hover:text-orange-600' },
+    { name: 'Kaggle', icon: FaKaggle, url: 'https://www.kaggle.com/syabahmad', color: 'hover:text-cyan-400' },
+    { name: 'ResearchGate', icon: FaResearchgate, url: 'https://www.researchgate.net/profile/Syed-Syab-Ahmad', color: 'hover:text-teal-400' },
+    
+    // Professional & Career Platforms
+    { name: 'Personal Link', icon: FaLink, url: 'https://syab.link/', color: 'hover:text-blue-300' },
+    { name: 'Read.cv', icon: FaUser, url: 'https://read.cv/syedsyab', color: 'hover:text-purple-400' },
+    { name: 'GulfTalent', icon: FaBriefcase, url: 'https://www.gulftalent.com/people/syed-syab-ahmad-shah-11988245', color: 'hover:text-blue-500' },
+    
+    // Technical Platforms
+    { name: 'Hugging Face', icon: SiHuggingface, url: 'https://huggingface.co/SyedSyab', color: 'hover:text-yellow-600' },
+    { name: 'ORCID', icon: SiOrcid, url: 'https://orcid.org/0009-0003-9183-582X', color: 'hover:text-green-500' },
+    { name: 'Fiverr', icon: SiFiverr, url: 'https://www.fiverr.com/syabahmad?msockid=14c21eb90f7369dc2b930b850e766880', color: 'hover:text-green-600' },
+    { name: 'CodePen', icon: SiCodepen, url: 'https://codepen.io/SyabAhmad', color: 'hover:text-white' },
+    { name: 'About.me', icon: FaUser, url: 'https://about.me/syedsyab', color: 'hover:text-blue-400' },
+    { name: 'Archinect', icon: FaCode, url: 'https://archinect.com/syab', color: 'hover:text-red-400' },
+    { name: 'CodeWars', icon: SiCodewars, url: 'https://www.codewars.com/users/SyabAhmad', color: 'hover:text-red-500' },
+  ];
+
+  return (
+    <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="container mx-auto space-y-16">
+        {/* Introduction Section */}
+        <section className="text-center">
+          <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-4xl mx-auto">
+            <div className="mb-6">
+              <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                Syed Syab Ahmad
+              </h1>
+              <h2 className="text-2xl text-emerald-400 font-semibold mb-6">
+                AI Engineer & Full-Stack Developer
+              </h2>
+            </div>
+            
+            <div className="text-gray-300 text-lg leading-relaxed mb-8 space-y-4">
+              <p>
+                Welcome to my digital portfolio! I'm a passionate AI Engineer and Full-Stack Developer with expertise in 
+                Machine Learning, Deep Learning, and modern web technologies. Currently pursuing my studies at the 
+                University of Swat, I'm dedicated to building innovative solutions that bridge the gap between 
+                artificial intelligence and real-world applications.
+              </p>
+              <p>
+                My journey spans from developing healthcare AI systems for disease prediction to creating 
+                sophisticated RAG systems and generative AI applications. I thrive on solving complex problems 
+                and am constantly exploring the frontiers of technology to make a meaningful impact.
+              </p>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Connect with me across platforms
+              </h3>
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-9 gap-3">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-gray-400 ${social.color} transition-all duration-300 transform hover:scale-110 p-3 bg-gray-800/50 rounded-lg border border-gray-700/30 hover:border-gray-600/50 flex items-center justify-center group relative`}
+                      title={social.name}
+                    >
+                      <IconComponent className="text-xl" />
+                      {/* Tooltip */}
+                      <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                        {social.name}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">50+</div>
+                <div className="text-gray-300 text-sm">Certifications</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-400 mb-2">20+</div>
+                <div className="text-gray-300 text-sm">Research Ideas</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">10+</div>
+                <div className="text-gray-300 text-sm">Projects Completed</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section>
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-12">
+            Certifications
+          </h2>
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="break-inside-avoid mb-6 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-500/50"
+              >
+                <h3 className="text-xl font-semibold text-white border-b border-gray-600 pb-2 mb-4">
+                  {cert.title}
+                </h3>
+                <div className="text-gray-300 text-sm space-y-2">
+                  <p><span className="text-cyan-400 font-medium">Issuer:</span> {cert.issuer}</p>
+                  <p><span className="text-cyan-400 font-medium">Issued:</span> {cert.issuedDate}</p>
+                  {cert.credentialId && (
+                    <p><span className="text-cyan-400 font-medium">Credential ID:</span> {cert.credentialId}</p>
+                  )}
+                  {cert.skills && (
+                    <p><span className="text-cyan-400 font-medium">Skills:</span> {cert.skills}</p>
+                  )}
+                </div>
+                {cert.credentialUrl && (
+                  <a
+                    href={cert.credentialUrl}
+                    className="inline-block mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg text-sm font-medium hover:from-cyan-400 hover:to-purple-400 transition-all duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Show credential
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Recommendations Section */}
+        <section>
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-12">
+            Recommendations
+          </h2>
+          <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
+            {recommendations.map((rec, index) => (
+              <div
+                key={index}
+                className="break-inside-avoid mb-6 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50"
+              >
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-white">
+                    {rec.recommender}
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    {rec.designation} • {rec.connection}
+                  </p>
+                  <p className="text-xs text-emerald-400 mt-1">{rec.date}</p>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed">{rec.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Volunteering Section */}
+        <section>
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-12">
+            Volunteering
+          </h2>
+          <div className="columns-1 sm:columns-2 gap-6">
+            {volunteering.map((vol, index) => (
+              <div
+                key={index}
+                className="break-inside-avoid mb-6 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-purple-500/20 hover:border-purple-500/50"
+              >
+                <h3 className="text-xl font-semibold text-white border-b border-gray-600 pb-2 mb-4">
+                  {vol.title}
+                </h3>
+                <div className="text-gray-300 text-sm space-y-2">
+                  <p><span className="text-purple-400 font-medium">Organization:</span> {vol.organization}</p>
+                  <p><span className="text-purple-400 font-medium">Role:</span> {vol.role}</p>
+                  <p><span className="text-purple-400 font-medium">Duration:</span> {vol.duration}</p>
+                  {vol.category && (
+                    <p><span className="text-purple-400 font-medium">Category:</span> {vol.category}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default About;
