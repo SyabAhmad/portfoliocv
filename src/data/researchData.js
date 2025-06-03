@@ -1,83 +1,108 @@
 const researchIdeas = [
   {
-    title: "Heart Disease Prediction using Machine Learning",
-    description: "Exploring ML models to predict the likelihood of heart disease using medical datasets, enabling early diagnosis and intervention."
+    title: "AI-Powered Malaria Detection System",
+    description: "Developing a deep learning model using CNN and transfer learning to detect malaria parasites in blood smear images with high accuracy for early diagnosis.",
+    domain: "Healthcare AI",
+    techniques: ["CNN", "Transfer Learning", "Image Processing", "TensorFlow"],
+    expectedImpact: "Early detection of malaria in resource-limited areas"
   },
   {
-    title: "Lung Disease Classification using CNN+LSTM Architectures",
-    description: "Developing hybrid deep learning models (CNN+LSTM) for accurate classification of lung diseases from imaging data."
+    title: "Heart Disease Prediction Using Machine Learning",
+    description: "Creating an ensemble model that combines multiple algorithms to predict heart disease risk factors with improved accuracy over traditional methods.",
+    domain: "Healthcare AI",
+    techniques: ["Random Forest", "SVM", "Ensemble Methods", "Feature Engineering"],
+    expectedImpact: "Preventive healthcare and early intervention"
   },
   {
-    title: "Malaria Detection and Classification using Medical Images",
-    description: "Using image processing and deep learning to classify malaria-infected blood samples, supporting quick and reliable diagnosis."
+    title: "Lung Cancer Detection in CT Scans",
+    description: "Implementing advanced computer vision techniques to automatically detect and classify lung nodules in CT scan images for early cancer diagnosis.",
+    domain: "Medical Imaging",
+    techniques: ["Deep Learning", "3D CNN", "Image Segmentation", "YOLO"],
+    expectedImpact: "Early lung cancer detection and improved survival rates"
   },
   {
-    title: "Retrieval-Augmented Generation (RAG) for Improved Question Answering",
-    description: "Combining retrieval and generative models to enhance QA systems, providing more relevant and context-aware answers."
+    title: "AI-Powered Document Summarization",
+    description: "Developing an intelligent system that can automatically summarize long documents while preserving key information and context using NLP techniques.",
+    domain: "Natural Language Processing",
+    techniques: ["BERT", "Transformer", "Extractive Summarization", "Attention Mechanism"],
+    expectedImpact: "Efficient information processing and knowledge management"
   },
   {
-    title: "Generative AI for Interactive Document Summarization",
-    description: "Using generative AI to create concise summaries of lengthy documents, improving accessibility and comprehension."
+    title: "Automated Data Cleaning and Preprocessing Pipeline",
+    description: "Building an intelligent system that automatically detects and corrects data quality issues, missing values, and inconsistencies in large datasets.",
+    domain: "Data Science",
+    techniques: ["Anomaly Detection", "Missing Value Imputation", "Feature Engineering", "AutoML"],
+    expectedImpact: "Improved data quality and reduced preprocessing time"
   },
   {
-    title: "Advanced Feature Engineering for Medical Datasets",
-    description: "Investigating techniques to extract, transform, and select features that improve model performance on medical data."
+    title: "Smart Traffic Management System",
+    description: "Developing an AI-based traffic optimization system that uses real-time data to manage traffic flow and reduce congestion in urban areas.",
+    domain: "Smart Cities",
+    techniques: ["Computer Vision", "IoT", "Reinforcement Learning", "Real-time Analytics"],
+    expectedImpact: "Reduced traffic congestion and improved urban mobility"
   },
   {
-    title: "Data Cleaning Techniques and Their Impact on Model Performance",
-    description: "Analyzing various data cleaning methods and their effects on ML model accuracy, especially in medical domains."
+    title: "Emotion Recognition in Social Media",
+    description: "Creating a multi-modal system that analyzes text, images, and user behavior to detect emotional states and mental health indicators on social platforms.",
+    domain: "Social Computing",
+    techniques: ["Sentiment Analysis", "Multi-modal Learning", "LSTM", "Social Network Analysis"],
+    expectedImpact: "Mental health awareness and early intervention"
   },
   {
-    title: "Automated Research Paper Generation using Multi-Agent Systems",
-    description: "Designing AI agents to automate research paper generation, including literature review, writing, and evaluation."
+    title: "Blockchain-Based Secure Healthcare Records",
+    description: "Designing a decentralized system for secure storage and sharing of medical records using blockchain technology with privacy preservation.",
+    domain: "Blockchain & Security",
+    techniques: ["Blockchain", "Smart Contracts", "Cryptography", "Distributed Systems"],
+    expectedImpact: "Secure and interoperable healthcare data management"
   },
   {
-    title: "Big Data Analysis in Healthcare",
-    description: "Leveraging big data technologies to analyze large-scale medical datasets, revealing trends and patterns for decision-making."
+    title: "AI Tutor for Personalized Learning",
+    description: "Building an intelligent tutoring system that adapts to individual learning styles and provides personalized educational content and feedback.",
+    domain: "Educational Technology",
+    techniques: ["Recommendation Systems", "Learning Analytics", "Adaptive Algorithms", "Knowledge Graphs"],
+    expectedImpact: "Personalized education and improved learning outcomes"
   },
   {
-    title: "Multimodal Machine Learning for Document and Video Understanding",
-    description: "Developing AI systems that combine text, image, and audio data for richer document and video comprehension."
+    title: "Sustainable Energy Consumption Prediction",
+    description: "Developing predictive models to forecast energy consumption patterns and optimize renewable energy distribution in smart grids.",
+    domain: "Green Technology",
+    techniques: ["Time Series Analysis", "LSTM", "Prophet", "Feature Engineering"],
+    expectedImpact: "Optimized energy usage and reduced carbon footprint"
   },
   {
-    title: "AI Techniques for Medical Image Processing",
-    description: "Exploring state-of-the-art computer vision models for analyzing and interpreting medical images."
+    title: "AI-Powered Agricultural Monitoring",
+    description: "Creating a comprehensive system using satellite imagery and IoT sensors to monitor crop health, predict yields, and optimize farming practices.",
+    domain: "AgriTech",
+    techniques: ["Satellite Image Analysis", "IoT", "Predictive Modeling", "Remote Sensing"],
+    expectedImpact: "Increased crop yields and sustainable farming practices"
   },
   {
-    title: "Explainable AI in Healthcare",
-    description: "Focusing on interpretability and transparency of AI models to ensure trust and regulatory compliance in healthcare."
+    title: "Cybersecurity Threat Detection System",
+    description: "Implementing an AI-based intrusion detection system that can identify and respond to novel cyber threats in real-time using behavioral analysis.",
+    domain: "Cybersecurity",
+    techniques: ["Anomaly Detection", "Deep Learning", "Network Analysis", "Real-time Processing"],
+    expectedImpact: "Enhanced cybersecurity and threat prevention"
   },
   {
-    title: "Model Compression and Optimization for Deployment",
-    description: "Studying techniques to reduce model size and improve efficiency for real-world deployment in resource-constrained environments."
+    title: "Voice-Controlled Smart Home Assistant",
+    description: "Developing an advanced voice assistant that can understand context, manage smart home devices, and provide personalized recommendations.",
+    domain: "IoT & Smart Homes",
+    techniques: ["Speech Recognition", "NLP", "Context Understanding", "IoT Integration"],
+    expectedImpact: "Improved home automation and accessibility"
   },
   {
-    title: "Bias Detection and Mitigation in Medical AI",
-    description: "Identifying and addressing potential biases in AI models to ensure fairness and equity in healthcare applications."
+    title: "Financial Fraud Detection using Graph Neural Networks",
+    description: "Building a sophisticated fraud detection system that analyzes transaction patterns and relationships using graph-based machine learning approaches.",
+    domain: "FinTech",
+    techniques: ["Graph Neural Networks", "Anomaly Detection", "Network Analysis", "Real-time Processing"],
+    expectedImpact: "Reduced financial fraud and improved transaction security"
   },
   {
-    title: "Federated Learning for Collaborative Healthcare AI",
-    description: "Investigating federated learning frameworks to enable secure, decentralized model training across hospitals and clinics."
-  },
-  {
-    title: "Ethical AI in Medical Applications",
-    description: "Examining ethical considerations of AI in healthcare, including data privacy, bias, and patient consent."
-  },
-  {
-    title: "Transfer Learning for Medical Image Classification",
-    description: "Applying pre-trained models to medical image datasets to improve classification accuracy with limited data."
-  },
-  {
-    title: "Integration of NLP and Computer Vision for Video Summarization",
-    description: "Combining natural language processing and computer vision to generate concise summaries of videos."
-  },
-  {
-    title: "Multilingual AI Systems for Healthcare Accessibility",
-    description: "Developing AI systems that support multiple languages, increasing accessibility to healthcare information."
-  },
-  {
-    title: "Hybrid Deep Learning Architectures (CNN+LSTM, Transformers) for Time Series Data",
-    description: "Exploring hybrid deep learning architectures for time series analysis in healthcare, such as ECG and EEG data."
+    title: "Climate Change Impact Prediction",
+    description: "Creating predictive models to assess climate change effects on different regions using satellite data and environmental sensors.",
+    domain: "Climate Science",
+    techniques: ["Climate Modeling", "Satellite Data Analysis", "Time Series Forecasting", "GIS"],
+    expectedImpact: "Better climate change preparation and mitigation strategies"
   }
 ];
 

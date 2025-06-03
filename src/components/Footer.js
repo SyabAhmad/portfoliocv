@@ -116,7 +116,7 @@ const Footer = () => {
             <div className="text-gray-400 text-sm flex items-center space-x-2">
               <span>Built with</span>
               <FaHeart className="text-red-400 animate-pulse" />
-              <span>using React & Tailwind CSS</span>
+              <span>by Syed Syab aka MenteE's Leader 🥀</span>
             </div>
             
             {/* Quick Actions */}
