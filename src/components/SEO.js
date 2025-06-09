@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
   title = "Syed Syab Ahmad - AI Engineer & Full-Stack Developer",
@@ -22,6 +21,32 @@ const SEO = ({
     setTimeout(() => {
       document.title = fullTitle;
     }, 0);
+
+    // Initialize Google Analytics
+    const initGoogleAnalytics = () => {
+      // Check if gtag is already loaded
+      if (window.gtag) return;
+
+      // Create and append the gtag script
+      const script1 = document.createElement('script');
+      script1.async = true;
+      script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-3P5B85CEWY';
+      document.head.appendChild(script1);
+
+      // Wait for the script to load, then configure
+      script1.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-3P5B85CEWY', {
+          page_title: fullTitle,
+          page_location: url
+        });
+      };
+    };
+
+    initGoogleAnalytics();
 
     // Set favicon to your LinkedIn profile image
     const setFavicon = () => {
@@ -160,6 +185,14 @@ const SEO = ({
       script.setAttribute('data-react-seo', 'true');
       script.textContent = JSON.stringify(defaultStructuredData);
       document.head.appendChild(script);
+    }
+
+    // Track page view for Google Analytics
+    if (window.gtag) {
+      window.gtag('config', 'G-3P5B85CEWY', {
+        page_title: fullTitle,
+        page_location: url
+      });
     }
 
     // Cleanup function
