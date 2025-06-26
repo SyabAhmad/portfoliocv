@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-300 transition-all duration-300">
-            Syab Syab Ahmad
+            Syed Syab Ahmad
           </Link>
 
           {/* Desktop Navigation */}

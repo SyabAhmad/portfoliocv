@@ -120,7 +120,8 @@ const About = () => {
                 <div className="relative flex-shrink-0">
                   <div className="w-40 h-40 lg:w-48 lg:h-48 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20 relative">
                     <img 
-                      src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ"
+                      src="dp.jpeg"
+                      // src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ"
                       alt="Syed Syab Ahmad"
                       className="w-full h-full object-cover"
                       onError={(e) => {

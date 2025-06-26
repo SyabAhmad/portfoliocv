@@ -87,7 +87,8 @@ const HomePage = () => {
             <div className="mb-8 relative">
               <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ" // Replace with your actual image path
+                  // src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ" // Replace with your actual image path
+                  src="dp.jpeg" // Replace with your actual image path
                   alt="Syed Syab Ahmad"
                   className="w-full h-full object-cover"
                   onError={(e) => {

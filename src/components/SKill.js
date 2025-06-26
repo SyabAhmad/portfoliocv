@@ -22,6 +22,7 @@ const Skills = () => {
       { name: "Scikit-learn", level: 95, color: "from-orange-400 to-red-400" },
       { name: "Keras", level: 88, color: "from-red-400 to-red-600" },
       { name: "OpenCV", level: 80, color: "from-green-400 to-blue-400" },
+      { name: "LlaMa", level: 60, color: "from-green-100 to-blue-400" },
       { name: "Pandas", level: 95, color: "from-blue-400 to-purple-400" },
       { name: "NumPy", level: 92, color: "from-blue-500 to-cyan-500" },
       { name: "Matplotlib", level: 85, color: "from-green-400 to-teal-400" },
