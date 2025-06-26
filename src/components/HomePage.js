@@ -8,6 +8,12 @@ const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  
+  // Cat states - Initialize with visible position
+  const [catPosition, setCatPosition] = useState({ x: 10, y: 10 });
+  const [catDirection, setCatDirection] = useState('right');
+  const [showCatMessage, setShowCatMessage] = useState(true); // Start with message visible
+  const [catMessage, setCatMessage] = useState('Hi! I\'m here! 👋');
 
   const techSayings = useMemo(() => [
     "Code is poetry written in logic",
@@ -22,6 +28,52 @@ const HomePage = () => {
     "Where creativity meets technology"
   ], []);
 
+  const catMessages = useMemo(() => [
+    "Hi! 👋",
+    "Meow! 🐱",
+    "Welcome! ✨",
+    "Keep coding! 💻",
+    "Miau! 🐾",
+    "It's MenteE 😻",
+    "MenteE believes you 😼",
+    "Meow! 🐾",
+  ], []);
+
+  // Set custom cursor on component mount
+  useEffect(() => {
+    // Create cat paw cursor SVG data URL
+    const catPawCursor = `data:image/svg+xml;base64,${btoa(`
+      <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main Paw Pad -->
+        <ellipse cx="16" cy="20" rx="8" ry="6" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
+        
+        <!-- Toe Pads -->
+        <circle cx="12" cy="12" r="3" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
+        <circle cx="20" cy="12" r="3" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
+        <circle cx="8" cy="16" r="2.5" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
+        <circle cx="24" cy="16" r="2.5" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
+        
+        <!-- Claws -->
+        <path d="M12 9 L11 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M20 9 L21 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 14 L3 12" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M26 14 L29 12" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+        
+        <!-- Shadow -->
+        <ellipse cx="16" cy="26" rx="6" ry="2" fill="#000" opacity="0.2"/>
+      </svg>
+    `)}`;
+
+    // Apply cursor to body
+    document.body.style.cursor = `url("${catPawCursor}") 16 16, auto`;
+    
+    // Cleanup function
+    return () => {
+      document.body.style.cursor = 'auto';
+    };
+  }, []);
+
+  // Typing effect
   useEffect(() => {
     const handleTyping = () => {
       const current = techSayings[currentIndex];
@@ -45,6 +97,56 @@ const HomePage = () => {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentIndex, typingSpeed, techSayings]);
+
+  // Cat movement and messages
+  useEffect(() => {
+    // Initial message
+    setTimeout(() => setShowCatMessage(false), 3000);
+
+    const moveCat = () => {
+      setCatPosition(prev => {
+        const newX = Math.max(5, Math.min(85, prev.x + (Math.random() - 0.5) * 20));
+        const newY = Math.max(5, Math.min(85, prev.y + (Math.random() - 0.5) * 20));
+        
+        // Determine direction based on movement
+        if (newX > prev.x) {
+          setCatDirection('right');
+        } else if (newX < prev.x) {
+          setCatDirection('left');
+        }
+        
+        return { x: newX, y: newY };
+      });
+
+      // Randomly show message
+      if (Math.random() < 0.4) {
+        const randomMessage = catMessages[Math.floor(Math.random() * catMessages.length)];
+        setCatMessage(randomMessage);
+        setShowCatMessage(true);
+        setTimeout(() => setShowCatMessage(false), 2500);
+      }
+    };
+
+    const catInterval = setInterval(moveCat, 4000 + Math.random() * 3000);
+    return () => clearInterval(catInterval);
+  }, [catMessages]);
+
+  // Handle cat click
+  const handleCatClick = () => {
+    const randomMessage = catMessages[Math.floor(Math.random() * catMessages.length)];
+    setCatMessage(randomMessage);
+    setShowCatMessage(true);
+    setTimeout(() => setShowCatMessage(false), 2500);
+    
+    // Add a little bounce effect
+    const catElement = document.getElementById('walking-cat');
+    if (catElement) {
+      catElement.style.transform += ' scale(1.2)';
+      setTimeout(() => {
+        catElement.style.transform = catElement.style.transform.replace(' scale(1.2)', '');
+      }, 200);
+    }
+  };
 
   const homePageStructuredData = {
     "@context": "https://schema.org",
@@ -74,11 +176,63 @@ const HomePage = () => {
         structuredData={homePageStructuredData}
       />
       
+      {/* Custom Cat Paw Cursors CSS */}
+      <style jsx global>{`
+        * {
+          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iI0ZGN0Y1MCIgc3Ryb2tlPSIjRkY2MzQ3IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjRkY3RjUwIiBzdHJva2U9IiNGRjYzNDciIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, auto !important;
+        }
+        
+        /* Different cursor for clickable elements */
+        a, button, [role="button"], .cursor-pointer {
+          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iIzAwRkZGRiIgc3Ryb2tlPSIjMDBDQ0NDIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjMDBGRkZGIiBzdHJva2U9IiMwMENDQ0MiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, pointer !important;
+        }
+        
+        /* Text cursor for inputs */
+        input, textarea, [contenteditable] {
+          cursor: text !important;
+        }
+      `}</style>
+      
       <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3" />
         <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-emerald-500/10 rounded-full opacity-50 filter blur-2xl" />
+
+        {/* Interactive Cat - Fixed positioning for better visibility */}
+        <div 
+          id="walking-cat"
+          className="fixed z-[9999] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125 select-none"
+          style={{ 
+            left: `${catPosition.x}%`, 
+            top: `${catPosition.y}%`,
+            transform: `${catDirection === 'left' ? 'scaleX(-1)' : 'scaleX(1)'}`
+          }}
+          onClick={handleCatClick}
+        >
+          {/* Cat - Using a more visible design */}
+          <div className="relative">
+            <div className="text-6xl drop-shadow-lg filter hover:drop-shadow-xl transition-all duration-300">
+              😻
+            </div>
+            
+            {/* Glow effect around cat */}
+            <div className="absolute inset-0 text-6xl opacity-50 animate-pulse">
+              😻
+            </div>
+          </div>
+          
+          {/* Cat Message Bubble - Improved visibility */}
+          {showCatMessage && (
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 z-[10000]">
+              <div className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-2 rounded-full shadow-2xl text-sm font-bold whitespace-nowrap animate-bounce border-2 border-white">
+                {catMessage}
+                {/* Speech bubble tail */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-cyan-400"></div>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Hero Section */}
         <header className="relative flex flex-col items-center justify-center h-screen text-center px-4">
@@ -87,12 +241,10 @@ const HomePage = () => {
             <div className="mb-8 relative">
               <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20">
                 <img 
-                  // src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ" // Replace with your actual image path
-                  src="dp.jpeg" // Replace with your actual image path
+                  src="dp.jpeg"
                   alt="Syed Syab Ahmad"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    // Fallback to a gradient background with initials if image fails to load
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
