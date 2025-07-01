@@ -8,12 +8,6 @@ const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  
-  // Cat states - Initialize with visible position
-  const [catPosition, setCatPosition] = useState({ x: 10, y: 10 });
-  const [catDirection, setCatDirection] = useState('right');
-  const [showCatMessage, setShowCatMessage] = useState(true); // Start with message visible
-  const [catMessage, setCatMessage] = useState('Hi! I\'m here! 👋');
 
   const techSayings = useMemo(() => [
     "Code is poetry written in logic",
@@ -26,17 +20,6 @@ const HomePage = () => {
     "Data is the oil of the 21st century",
     "Building tomorrow's solutions today",
     "Where creativity meets technology"
-  ], []);
-
-  const catMessages = useMemo(() => [
-    "Hi! 👋",
-    "Meow! 🐱",
-    "Welcome! ✨",
-    "Keep coding! 💻",
-    "Miau! 🐾",
-    "It's MenteE 😻",
-    "MenteE believes you 😼",
-    "Meow! 🐾",
   ], []);
 
   // Set custom cursor on component mount
@@ -98,56 +81,6 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentIndex, typingSpeed, techSayings]);
 
-  // Cat movement and messages
-  useEffect(() => {
-    // Initial message
-    setTimeout(() => setShowCatMessage(false), 3000);
-
-    const moveCat = () => {
-      setCatPosition(prev => {
-        const newX = Math.max(5, Math.min(85, prev.x + (Math.random() - 0.5) * 20));
-        const newY = Math.max(5, Math.min(85, prev.y + (Math.random() - 0.5) * 20));
-        
-        // Determine direction based on movement
-        if (newX > prev.x) {
-          setCatDirection('right');
-        } else if (newX < prev.x) {
-          setCatDirection('left');
-        }
-        
-        return { x: newX, y: newY };
-      });
-
-      // Randomly show message
-      if (Math.random() < 0.4) {
-        const randomMessage = catMessages[Math.floor(Math.random() * catMessages.length)];
-        setCatMessage(randomMessage);
-        setShowCatMessage(true);
-        setTimeout(() => setShowCatMessage(false), 2500);
-      }
-    };
-
-    const catInterval = setInterval(moveCat, 4000 + Math.random() * 3000);
-    return () => clearInterval(catInterval);
-  }, [catMessages]);
-
-  // Handle cat click
-  const handleCatClick = () => {
-    const randomMessage = catMessages[Math.floor(Math.random() * catMessages.length)];
-    setCatMessage(randomMessage);
-    setShowCatMessage(true);
-    setTimeout(() => setShowCatMessage(false), 2500);
-    
-    // Add a little bounce effect
-    const catElement = document.getElementById('walking-cat');
-    if (catElement) {
-      catElement.style.transform += ' scale(1.2)';
-      setTimeout(() => {
-        catElement.style.transform = catElement.style.transform.replace(' scale(1.2)', '');
-      }, 200);
-    }
-  };
-
   const homePageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -167,24 +100,22 @@ const HomePage = () => {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden relative">
       <SEO 
         title="Syed Syab Ahmad - AI Engineer & Full-Stack Developer"
-        description="AI Engineer and Full-Stack Developer specializing in Machine Learning, Deep Learning, and modern web technologies. Building intelligent solutions that transform ideas into reality."
-        keywords="AI Engineer, Machine Learning Engineer, Full Stack Developer, React Developer, Python Developer, Deep Learning, TensorFlow, PyTorch, Web Development, Software Engineer, Pakistan, University of Swat"
-        url="https://syab.link"
-        structuredData={homePageStructuredData}
+        description="Passionate AI Engineer specializing in Machine Learning and Full-Stack Development. Explore my projects, skills, and experience in artificial intelligence and web development."
+        keywords="AI Engineer, Machine Learning, Full-Stack Developer, Python, JavaScript, TensorFlow, React"
       />
       
       {/* Custom Cat Paw Cursors CSS */}
       <style jsx global>{`
         * {
-          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iI0ZGN0Y1MCIgc3Ryb2tlPSIjRkY2MzQ3IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjRkY3RjUwIiBzdHJva2U9IiNGRjYzNDciIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, auto !important;
+          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iI0ZGN0Y1MCIgc3Ryb2tlPSIjRkY2MzQ3IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjR0Y3RjUwIiBzdHJva2U9IiNGRjYzNDciIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, auto !important;
         }
         
         /* Different cursor for clickable elements */
         a, button, [role="button"], .cursor-pointer {
-          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iIzAwRkZGRiIgc3Ryb2tlPSIjMDBDQ0NDIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjMDBGRkZGIiBzdHJva2U9IiMwMENDQ0MiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, pointer !important;
+          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iIzAwRkZGRiIgc3Ryb2tlPSIjMDBDQ0NDIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjMDBGRkZGIiBzdHJva2U9IiMwMENDQ0MiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi/+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, pointer !important;
         }
         
         /* Text cursor for inputs */
@@ -198,41 +129,6 @@ const HomePage = () => {
         <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3" />
         <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-emerald-500/10 rounded-full opacity-50 filter blur-2xl" />
-
-        {/* Interactive Cat - Fixed positioning for better visibility */}
-        <div 
-          id="walking-cat"
-          className="fixed z-[9999] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125 select-none"
-          style={{ 
-            left: `${catPosition.x}%`, 
-            top: `${catPosition.y}%`,
-            transform: `${catDirection === 'left' ? 'scaleX(-1)' : 'scaleX(1)'}`
-          }}
-          onClick={handleCatClick}
-        >
-          {/* Cat - Using a more visible design */}
-          <div className="relative">
-            <div className="text-6xl drop-shadow-lg filter hover:drop-shadow-xl transition-all duration-300">
-              😻
-            </div>
-            
-            {/* Glow effect around cat */}
-            <div className="absolute inset-0 text-6xl opacity-50 animate-pulse">
-              😻
-            </div>
-          </div>
-          
-          {/* Cat Message Bubble - Improved visibility */}
-          {showCatMessage && (
-            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 z-[10000]">
-              <div className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-2 rounded-full shadow-2xl text-sm font-bold whitespace-nowrap animate-bounce border-2 border-white">
-                {catMessage}
-                {/* Speech bubble tail */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-cyan-400"></div>
-              </div>
-            </div>
-          )}
-        </div>
 
         {/* Hero Section */}
         <header className="relative flex flex-col items-center justify-center h-screen text-center px-4">
@@ -292,7 +188,7 @@ const HomePage = () => {
           </div>
         </header>
 
-        {/* Rest of the component remains the same */}
+        {/* Main Content */}
         <main className="relative">
           {/* Tech Sayings Section */}
           <section className="py-16 px-4">
@@ -345,7 +241,7 @@ const HomePage = () => {
           </section>
         </main>
       </div>
-    </>
+    </div>
   );
 };
 

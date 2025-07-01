@@ -1,0 +1,82 @@
+{
+  "personal": {
+    "name": "Syed Syab Ahmad",
+    "title": "AI Engineer & Full-Stack Developer",
+    "location": "University of Swat, Pakistan",
+    "email": "syedsyabahmadshah@gmail.com",
+    "website": "https://syab.link",
+    "linkedin": "https://www.linkedin.com/in/syedsyab/",
+    "bio": "Passionate AI Engineer specializing in Machine Learning and Full-Stack Development, building intelligent solutions that transform ideas into reality"
+  },
+  "skills": {
+    "main": ["Python", "JavaScript", "TensorFlow", "React", "Node.js", "PyTorch"],
+    "categories": {
+      "programming": ["Python", "JavaScript", "Java", "C++"],
+      "ai_ml": ["TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "NLP"],
+      "web": ["React", "Node.js", "Django", "FastAPI", "MongoDB"],
+      "tools": ["Git", "Docker", "AWS", "Linux"]
+    },
+    "total_count": 25
+  },
+  "projects": {
+    "featured": [
+      {
+        "name": "CamWatch",
+        "type": "Computer Vision Security System",
+        "tech": "YOLOv8, Python, OpenCV",
+        "description": "AI-powered surveillance system with real-time object detection"
+      },
+      {
+        "name": "CVChat", 
+        "type": "AI Resume Analyzer",
+        "tech": "Django, NLP, Machine Learning",
+        "description": "Intelligent resume analysis and career guidance platform"
+      },
+      {
+        "name": "PodcastMaker",
+        "type": "Generative AI Tool", 
+        "tech": "OpenAI API, Python, Text-to-Speech",
+        "description": "Automated podcast generation from text content"
+      }
+    ],
+    "total_count": 10
+  },
+  "experience": {
+    "current": "Student Ambassador at BLACKBOX.AI",
+    "recent": [
+      "Python Developer at Suvastu Tech", 
+      "Machine Learning Intern at SkillBuild",
+      "Research Assistant in AI/ML"
+    ],
+    "total_roles": 4,
+    "highlights": [
+      "Led development of computer vision applications",
+      "Built full-stack web applications with AI integration", 
+      "Conducted research in machine learning algorithms"
+    ]
+  },
+  "achievements": {
+    "certifications": 50,
+    "research_ideas": 20,
+    "recommendations": 15,
+    "notable": [
+      "Published research on AI applications",
+      "Winner of multiple hackathons",
+      "Active in AI/ML community"
+    ]
+  },
+  "interests": [
+    "Artificial Intelligence",
+    "Machine Learning Research", 
+    "Full-Stack Development",
+    "Computer Vision",
+    "Natural Language Processing"
+  ],
+  "redirect_links": {
+    "projects": "/projects",
+    "certifications": "/certifications", 
+    "recommendations": "/recommendations",
+    "contact": "/contact",
+    "skills": "/skills"
+  }
+}
