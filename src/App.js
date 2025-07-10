@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import GoogleAnalytics from './components/GoogleAnalytics'; // Add this import
 import Layout from './components/Layout';
@@ -14,11 +14,12 @@ import Contact from './components/Contacts';
 import Skills from './components/SKill';
 import SimpleChatbot from './components/SimpleChatbot';
 import './App.css';
+import './styles/global.css'; // Import the global CSS with cursor styles
 
 function App() {
   return (
     <HelmetProvider>
-      <Router>
+      <BrowserRouter>
         <GoogleAnalytics /> {/* Add this component */}
         <div className="App min-h-screen flex flex-col bg-slate-900">
           <Layout>
@@ -39,7 +40,7 @@ function App() {
         </div>
         {/* Global Chatbot - Available on all pages */}
         <SimpleChatbot />
-      </Router>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }

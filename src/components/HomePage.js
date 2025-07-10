@@ -22,39 +22,6 @@ const HomePage = () => {
     "Where creativity meets technology"
   ], []);
 
-  // Set custom cursor on component mount
-  useEffect(() => {
-    // Create cat paw cursor SVG data URL
-    const catPawCursor = `data:image/svg+xml;base64,${btoa(`
-      <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-        <!-- Main Paw Pad -->
-        <ellipse cx="16" cy="20" rx="8" ry="6" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
-        
-        <!-- Toe Pads -->
-        <circle cx="12" cy="12" r="3" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
-        <circle cx="20" cy="12" r="3" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
-        <circle cx="8" cy="16" r="2.5" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
-        <circle cx="24" cy="16" r="2.5" fill="#FF7F50" stroke="#FF6347" stroke-width="1"/>
-        
-        <!-- Claws -->
-        <path d="M12 9 L11 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M20 9 L21 6" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M6 14 L3 12" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M26 14 L29 12" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
-        
-        <!-- Shadow -->
-        <ellipse cx="16" cy="26" rx="6" ry="2" fill="#000" opacity="0.2"/>
-      </svg>
-    `)}`;
-
-    // Apply cursor to body
-    document.body.style.cursor = `url("${catPawCursor}") 16 16, auto`;
-    
-    // Cleanup function
-    return () => {
-      document.body.style.cursor = 'auto';
-    };
-  }, []);
 
   // Typing effect
   useEffect(() => {
@@ -107,23 +74,7 @@ const HomePage = () => {
         keywords="AI Engineer, Machine Learning, Full-Stack Developer, Python, JavaScript, TensorFlow, React"
       />
       
-      {/* Custom Cat Paw Cursors CSS */}
-      <style jsx global>{`
-        * {
-          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iI0ZGN0Y1MCIgc3Ryb2tlPSIjRkY2MzQ3IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjR0Y3RjUwIiBzdHJva2U9IiNGRjYzNDciIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiNGRjdGNTAiIHN0cm9rZT0iI0ZGNjM0NyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, auto !important;
-        }
-        
-        /* Different cursor for clickable elements */
-        a, button, [role="button"], .cursor-pointer {
-          cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDwhLS0gTWFpbiBQYXcgUGFkIC0tPgogICAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjAiIHJ4PSI4IiByeT0iNiIgZmlsbD0iIzAwRkZGRiIgc3Ryb2tlPSIjMDBDQ0NDIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIAogICAgPCEtLSBUb2UgUGFkcyAtLT4KICAgIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIzIiBmaWxsPSIjMDBGRkZGIiBzdHJva2U9IiMwMENDQ0MiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iOCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE2IiByPSIyLjUiIGZpbGw9IiMwMEZGRkYiIHN0cm9rZT0iIzAwQ0NDQyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAKICAgIDwhLS0gQ2xhd3MgLS0+CiAgICA8cGF0aCBkPSJNMTIgOSBMMTEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjAgOSBMMjEgNiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi/+CiAgICA8cGF0aCBkPSJNNiAxNCBMMyAxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMjYgMTQgTDI5IDEyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIAogICAgPCEtLSBTaGFkb3cgLS0+CiAgICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIyNiIgcng9IjYiIHJ5PSIyIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjIiLz4KICA8L3N2Zz4=") 16 16, pointer !important;
-        }
-        
-        /* Text cursor for inputs */
-        input, textarea, [contenteditable] {
-          cursor: text !important;
-        }
-      `}</style>
-      
+
       <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2" />

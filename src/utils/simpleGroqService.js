@@ -33,6 +33,7 @@ IMPORTANT:
 - Give short, focused answers
 - If you don't have specific info, say so briefly
 - Use "he", "his", "Syab" when referring to him
+- do not always greet, unless told for hi, hello, salam, hola, etc.
 - Be professional but friendly`;
 
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
