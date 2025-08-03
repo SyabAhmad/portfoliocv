@@ -1,5 +1,15 @@
 const projects = [
   {
+  title: "Viddeo Enhancing Project",
+  duration: "Jun 2025 to Present",
+  description:
+    "Developing an API for video enhancement system using REALESRGAN a Deep Learning Model. The API will allow users to upload videos, which will then be processed to enhance their quality using advanced AI techniques. The project aims to provide a seamless experience for users looking to improve the visual quality of their video content.",
+  keyFeatures: "Video Upload · AI-Powered Enhancement · High-Quality Output · User-Friendly Interface",
+  techStack: "Python, REALESRGAN, FASTAPI, VidAIo Subnit",
+  skills: "Deep Learning, Video Processing, API Development, Python, FastAPI",
+  githubUrl: "https://github.com/SyabAhmad/video-enhancing-project",
+  },
+  {
   title: "PodcastMaker",
   duration: "March 2025",
   description:
