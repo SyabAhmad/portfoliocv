@@ -10,6 +10,24 @@ const projects = [
   githubUrl: "https://github.com/SyabAhmad/video-enhancing-project",
   },
   {
+    title: "Global Craft Hub",
+    duration: "August 2025",
+    description: "Creating a global e-commerce platform for artisans to showcase and sell handmade crafts. The platform will feature user profiles, product listings, and secure payment processing.",
+    keyFeatures: "User Profiles · Product Listings · Secure Payments · Artisan Community",
+    techStack: "React.js, Node.js, Express.js, MongoDB, Stripe",
+    skills: "Full Stack Development, E-commerce, React.js, Python, PostgreSQL, ",
+    githubUrl: "https://github.com/SyabAhmad/global_craft_hub"
+  },
+  {
+    title: "University Chatbot AI",
+    duration: "August 2025",
+    description: "Developing an AI-powered chatbot for university students to assist with course selection, campus information, and academic resources.",
+    keyFeatures: "Course Selection · Campus Information · Academic Resources · 24/7 Support",
+    techStack: "Python, Groq API, Flask, PostgreSQL",
+    skills: "Natural Language Processing, Chatbot Development, Python, Flask, PostgreSQL",
+    githubUrl: "https://github.com/SyabAhmad/swat-assist-bot"
+  },
+  {
   title: "PodcastMaker",
   duration: "March 2025",
   description:
