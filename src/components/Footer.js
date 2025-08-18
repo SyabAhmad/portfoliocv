@@ -4,6 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 const Footer = () => {
   const quickLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Company', href: 'https://www.linkedin.com/company/mentee1' },
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'Research', href: '/research' },

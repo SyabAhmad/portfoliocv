@@ -35,6 +35,22 @@
     ],
     "highlights": ["Graduated with honors", "Research focus in AI/ML applications"]
   },
+"company": {
+  "companies": [
+    {
+      "name": "MenteE",
+      "role": "Founder",
+      "founded": "2024",
+      "products": ["RecruAI"],
+      "website": "https://mentee.ai",
+      "linkedin":"https://www.linkedin.com/company/mentee1"
+    }
+  ],
+  "highlights": [
+    "Founder at MenteE — building AI recruitment tools",
+    "Product: RecruAI — AI-assisted candidate screening"
+  ]
+},
   "skills": {
     "main": ["Python", "JavaScript", "TensorFlow", "React", "Node.js", "PyTorch"],
     "categories": {

@@ -45,6 +45,21 @@ const Header = () => {
             >
               Experience
             </Link>
+            <span className="relative inline-block">
+  <a
+    href="https://www.linkedin.com/company/mentee1"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 via-green-400 to-blue-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 text-lg drop-shadow-lg"
+    style={{ WebkitTextStroke: '0.5px #fff' }}
+  >
+    Company
+  </a>
+
+  {/* moving sparkle star */}
+  <span className="spark-star" aria-hidden>✦</span>
+</span>
+
           </div>
 
           {/* CTA Button */}

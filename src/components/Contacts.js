@@ -1,8 +1,15 @@
-import React from 'react';
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import React, { useRef, useState } from 'react';
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaTelegram } from 'react-icons/fa';
 import SEO from './SEO';
+import emailjs from '@emailjs/browser';
+
+// initialize EmailJS client (public key) — optional if you pass key to send/sendForm
+emailjs.init('Bwe4JKCqvjzm4RNGz');
 
 const Contact = () => {
+  const formRef = useRef(null);
+  const [isSending, setIsSending] = useState(false);
+
   // Replace this URL with your actual Google Drive CV file URL
   // Make sure to use the direct download link format: 
   // https://drive.google.com/uc?export=download&id=YOUR_FILE_ID
@@ -10,6 +17,40 @@ const Contact = () => {
   
   const handleCVDownload = () => {
     window.open(cvDownloadUrl, '_blank');
+  };
+
+  // EmailJS setup:
+  // - Service ID: service_rlac4th
+  // - Template ID: template_contact (create this in EmailJS dashboard or change to your template id)
+  // - Public (user) key: Bwe4JKCqvjzm4RNGz
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    setIsSending(true);
+
+    // collect fields from the form (must match template variables in EmailJS)
+    const f = formRef.current;
+    const params = {
+      from_name: f.from_name?.value || '',
+      reply_to: f.reply_to?.value || '',
+      message: f.message?.value || ''
+    };
+
+    try {
+      // DEBUG: use emailjs.send (easier to debug). Replace 'template_wczi6ir' with exact template id from dashboard.
+      const res = await emailjs.send('service_rlac4th', 'template_wczi6ir', params);
+      console.log('EmailJS success:', res);
+      alert('Message sent — thank you!');
+      f.reset();
+    } catch (err) {
+      // show full error for debugging
+      console.error('EmailJS error:', err);
+      const status = err?.status ?? (err?.response?.status) ?? 'unknown';
+      const text = err?.text ?? err?.message ?? JSON.stringify(err);
+      alert(`Failed to send message: ${status} ${text}`);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const contactStructuredData = {
@@ -43,17 +84,18 @@ const Contact = () => {
         <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-3xl shadow-2xl w-full max-w-4xl p-10 flex flex-col md:flex-row gap-8">
           {/* Contact Form */}
           <div className="flex-1">
-            <form className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-white mb-1">
                   Full Name
                 </label>
                 <input
                   type="text"
-                  name="name"
+                  name="from_name"
                   id="name"
                   className="w-full px-4 py-3 bg-gray-700/50 text-white placeholder-gray-400 border border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:outline-none shadow-sm"
                   placeholder="Your Name"
+                  required
                 />
               </div>
               <div>
@@ -62,10 +104,11 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
-                  name="email"
+                  name="reply_to"
                   id="email"
                   className="w-full px-4 py-3 bg-gray-700/50 text-white placeholder-gray-400 border border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:outline-none shadow-sm"
                   placeholder="you@example.com"
+                  required
                 />
               </div>
               <div>
@@ -78,13 +121,15 @@ const Contact = () => {
                   rows="4"
                   className="w-full px-4 py-3 bg-gray-700/50 text-white placeholder-gray-400 border border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:outline-none shadow-sm"
                   placeholder="Your message..."
+                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
+                disabled={isSending}
                 className="w-full flex justify-center py-3 px-4 rounded-xl text-lg font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
               >
-                Send Message
+                {isSending ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
