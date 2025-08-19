@@ -121,7 +121,7 @@ const Footer = () => {
                 Hire Me
               </a>
               <a 
-                href="https://drive.google.com/uc?export=download&id=YOUR_CV_FILE_ID"
+                href="https://raw.githubusercontent.com/SyabAhmad/portfoliocv/master/public/Syed%20Syab%20Ahmad.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 border border-cyan-400 text-cyan-400 text-sm font-medium rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300"

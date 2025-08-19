@@ -52,6 +52,10 @@ class SimpleRAGService {
       context += this._getInterestingStuff();
     }
 
+    if (q.includes('cv') || q.includes('resume') || q.includes('download') || q.includes('download CV') || q.includes('CV link'))  {
+      context += this._getCVLink();
+    }
+
     return context;
   }
   
@@ -146,6 +150,10 @@ EDUCATIONAL HIGHLIGHTS:
     });
     
     return projectsContext;
+  }
+
+  _getCVLink(){
+    return this.context.personal["cv link"];
   }
 
   getStats() {

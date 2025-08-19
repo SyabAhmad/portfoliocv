@@ -10,10 +10,8 @@ const Contact = () => {
   const formRef = useRef(null);
   const [isSending, setIsSending] = useState(false);
 
-  // Replace this URL with your actual Google Drive CV file URL
-  // Make sure to use the direct download link format: 
-  // https://drive.google.com/uc?export=download&id=YOUR_FILE_ID
-  const cvDownloadUrl = "https://drive.google.com/file/d/1JEjbCIO3NslLMesgOmy6MEa_NoF_nqjY/view?usp=sharing";
+  // CV is served from the repo public folder: update the file in the repo and push to refresh the download
+  const cvDownloadUrl = "https://raw.githubusercontent.com/SyabAhmad/portfoliocv/master/public/Syed%20Syab%20Ahmad.pdf";
   
   const handleCVDownload = () => {
     window.open(cvDownloadUrl, '_blank');

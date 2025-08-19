@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenteEOpen, setIsMenteEOpen] = useState(false);
+  // close modal on Escape key for better UX
+  useEffect(() => {
+    if (!isMenteEOpen) return;
+    const onKey = (e) => { if (e.key === 'Escape') setIsMenteEOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isMenteEOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/95 to-purple-900/95 backdrop-blur-sm border-b border-gray-700/50 shadow-2xl">
@@ -45,22 +53,80 @@ const Header = () => {
             >
               Experience
             </Link>
-            <span className="relative inline-block">
-  <a
-    href="https://www.linkedin.com/company/mentee1"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 via-green-400 to-blue-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 text-lg drop-shadow-lg"
-    style={{ WebkitTextStroke: '0.5px #fff' }}
-  >
-    Company
-  </a>
 
-  {/* moving sparkle star */}
-  <span className="spark-star" aria-hidden>✦</span>
-</span>
-
+            <button
+              type="button"
+              onClick={() => setIsMenteEOpen(true)}
+              aria-haspopup="dialog"
+              aria-expanded={isMenteEOpen}
+              className="relative inline-flex items-center text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 via-green-400 to-blue-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 drop-shadow-lg focus:outline-none"
+              title="About MenteE"
+            >
+              MenteE™
+              <span className="ml-2 animate-pulse" aria-hidden>✦</span>
+            </button>
           </div>
+
+          {/* MenteE Modal (centered, animated like promotional popup) */}
+          {isMenteEOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="mentee-title"
+              onClick={() => setIsMenteEOpen(false)}
+            >
+              <div
+                className="max-w-lg w-full mx-4"
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  transform: 'translateY(0)',
+                  transition: 'transform 180ms ease-out, opacity 180ms ease-out',
+                }}
+              >
+                <div
+                  className="w-full bg-gradient-to-br from-gray-900 to-slate-800 rounded-2xl border border-gray-700 p-6 text-white shadow-2xl transform scale-100"
+                  style={{ animation: 'popIn 180ms ease-out' }}
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 id="mentee-title" className="text-2xl font-bold">MenteE — Startup (In Progress)</h3>
+                    <button
+                      onClick={() => setIsMenteEOpen(false)}
+                      aria-label="Close"
+                      className="text-gray-300 hover:text-white rounded-full p-1"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  <p className="text-gray-200 mb-4 leading-relaxed">
+                    This is our startup and it's currently in progress. We're building an AI hiring product (RecruAI) — working to launch soon.
+                  </p>
+
+                  <p className="text-gray-200 mb-6">
+                    For updates and company info, visit our LinkedIn. The website will be available soon.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="https://www.linkedin.com/company/mentee1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full sm:w-auto text-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-black hover:opacity-95"
+                    >
+                      Visit LinkedIn
+                    </a>
+                    <button
+                      onClick={() => setIsMenteEOpen(false)}
+                      className="inline-block w-full sm:w-auto px-4 py-2 border border-gray-600 rounded-lg text-gray-200 hover:text-white"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* CTA Button */}
           <div className="hidden md:block">
