@@ -4,7 +4,7 @@ import { SiLeetcode, SiHackerrank, SiCodechef, SiHuggingface, SiOrcid, SiFiverr,
 import certifications from '../data/certificationsData';
 import recommendations from '../data/recommendationsData';
 import SEO from './SEO';
-
+  
 const volunteering = [
   {
     title: "Volunteering",
@@ -156,12 +156,12 @@ const About = () => {
                   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4 text-gray-400 mb-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                      <span className="text-sm">Pakistan</span>
+                      <span className="text-sm">Islamabad, Pakistan</span>
                     </div>
                     <div className="hidden lg:block w-1 h-1 bg-gray-600 rounded-full"></div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                      <span className="text-sm">University of Swat</span>
+                      <span className="text-sm">Feelancer/Open to Work</span>
                     </div>
                   </div>
 

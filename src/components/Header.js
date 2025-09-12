@@ -70,7 +70,7 @@ const Header = () => {
           {/* MenteE Modal (centered, animated like promotional popup) */}
           {isMenteEOpen && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm mt-60"
               role="dialog"
               aria-modal="true"
               aria-labelledby="mentee-title"
@@ -100,7 +100,7 @@ const Header = () => {
                   </div>
 
                   <p className="text-gray-200 mb-4 leading-relaxed">
-                    This is our startup and it's currently in progress. We're building an AI hiring product (RecruAI) — working to launch soon.
+                    This is our startup and it's currently in progress. We're building an AI products — working to launch soon.
                   </p>
 
                   <p className="text-gray-200 mb-6">
