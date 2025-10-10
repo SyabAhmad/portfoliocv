@@ -1,4 +1,5 @@
 import basicContext from '../data/basicContext.json';
+import { designProjects, designSkills } from '../data/designData';
 
 class SimpleRAGService {
   constructor() {
@@ -47,12 +48,36 @@ class SimpleRAGService {
     if (q.includes('project') || q.includes('portfolio') || q.includes('work')) {
       context += this._getProjectsContext();
     }
+    if (
+      q.includes('design') ||
+      q.includes('architecture') ||
+      q.includes('revit') ||
+      q.includes('autocad') ||
+      q.includes('sketchup') ||
+      q.includes('archicad') ||
+      q.includes('rhino') ||
+      q.includes('3ds max') ||
+      q.includes('bim') ||
+      q.includes('interior design') ||
+      q.includes('landscape architecture') ||
+      q.includes('urban design') ||
+      q.includes('floor plan') ||
+      q.includes('rendering') ||
+      q.includes('cad') ||
+      q.includes('blueprint') ||
+      q.includes('architect') ||
+      q.includes('drafting') ||
+      q.includes('construction drawing') ||
+      q.includes('3d modeling')
+    ) {
+      context += this._getDesignProjectsContext();
+    }
 
     if (q.includes('interesting') || q.includes('fun') || q.includes('unique') || q.includes('cool') || q.includes('fact')) {
       context += this._getInterestingStuff();
     }
 
-    if (q.includes('cv') || q.includes('resume') || q.includes('download') || q.includes('download CV') || q.includes('CV link'))  {
+    if (q.includes('cv') || q.includes('resume') || q.includes('download') || q.includes('download cv') || q.includes('cv link'))  {
       context += this._getCVLink();
     }
 
@@ -150,6 +175,24 @@ EDUCATIONAL HIGHLIGHTS:
     });
     
     return projectsContext;
+  }
+  
+  _getDesignProjectsContext() {
+    const designSummary = Object.values(designSkills)
+      .map(
+        (skill) =>
+          `${skill.name} (${skill.category}, ${skill.level}): ${skill.description}. Key capabilities: ${skill.features.join(', ')}`
+      )
+      .join('\n- ');
+  
+    const highlightProjects = designProjects
+      .map(
+        (project) =>
+          `${project.title} [${project.software.join(', ')}] — ${project.description} (Tags: ${project.tags.join(', ')})`
+      )
+      .join('\n- ');
+  
+    return `\n\nDESIGN & ARCHITECTURE EXPERTISE:\n- ${designSummary}\n\nSIGNATURE DESIGN PROJECTS:\n- ${highlightProjects}`;
   }
 
   _getCVLink(){

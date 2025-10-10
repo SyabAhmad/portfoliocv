@@ -112,7 +112,7 @@ const HomePage = () => {
               </div>
 
               <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                AI Engineer & Innovator
+                Full Stack Web Developer & AI Engineer
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-gray-300 font-light">
                 Building intelligent solutions that transform ideas into reality

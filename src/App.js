@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import Layout from './components/Layout';
 import Header from './components/Header';
@@ -13,6 +12,12 @@ import Experience from './components/Experience';
 import Contact from './components/Contacts';
 import Skills from './components/SKill';
 import SimpleChatbot from './components/SimpleChatbot';
+import DesignPortfolio from './components/DesignPortfolio';
+import RevitPortfolio from './components/RevitPortfolio';
+import AutoCADPortfolio from './components/AutoCADPortfolio';
+import SketchUpPortfolio from './components/SketchUpPortfolio';
+import AllDesignProjects from './components/AllDesignProjects';
+import DesignProjectDetail from './components/DesignProjectDetail';
 import './App.css';
 import './styles/global.css';
 
@@ -33,38 +38,50 @@ function App() {
     Contact,
     Skills,
     SimpleChatbot,
+    DesignPortfolio,
+    RevitPortfolio,
+    AutoCADPortfolio,
+    SketchUpPortfolio,
+    AllDesignProjects,
+    DesignProjectDetail,
   });
 
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <GoogleAnalytics />
-        <div className="App min-h-screen bg-slate-900"> {/* moved background here */}
+    <Router>
+      <GoogleAnalytics />
+      <div className="App min-h-screen bg-slate-900"> {/* moved background here */}
 
-          {/* keep the visible app content above the doodles */}
-          <div className="min-h-screen flex flex-col relative z-10"> {/* removed bg-slate-900 from here */}
-            <Layout>
-              <Header />
-              <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/research" element={<Research />} />
-                  <Route path="/experience" element={<Experience />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/skills" element={<Skills />} />
-                </Routes>
-              </main>
-              <Footer />
-            </Layout>
-          </div>
+        {/* keep the visible app content above the doodles */}
+        <div className="min-h-screen flex flex-col relative z-10"> {/* removed bg-slate-900 from here */}
+          <Layout>
+            <Header />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/research" element={<Research />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/skills" element={<Skills />} />
 
-          {/* Global Chatbot - Available on all pages */}
-          <SimpleChatbot />
+                {/* Design & Architecture Routes */}
+                <Route path="/design" element={<DesignPortfolio />} />
+                <Route path="/design/revit" element={<RevitPortfolio />} />
+                <Route path="/design/autocad" element={<AutoCADPortfolio />} />
+                <Route path="/design/sketchup" element={<SketchUpPortfolio />} />
+                <Route path="/design/projects" element={<AllDesignProjects />} />
+                <Route path="/design/project/:projectId" element={<DesignProjectDetail />} />
+              </Routes>
+            </main>
+            <Footer />
+          </Layout>
         </div>
-      </BrowserRouter>
-    </HelmetProvider>
+
+        {/* Global Chatbot - Available on all pages */}
+        <SimpleChatbot />
+      </div>
+    </Router>
   );
 }
 

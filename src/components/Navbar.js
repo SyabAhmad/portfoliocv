@@ -1,44 +1,196 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [designDropdown, setDesignDropdown] = useState(false);
 
-    const navItems = [
-        { path: '/', label: 'Home' },
-        { path: '/about', label: 'About' },
-        { path: '/projects', label: 'Projects' },
-        { path: '/experience', label: 'Experience' },
-    ];
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/experience', label: 'Experience' },
+    { path: '/research', label: 'Research' },
+    { path: '/contact', label: 'Contact' },
+  ];
 
-    return (
-        <nav className="bg-white shadow fixed w-full z-50">
-            <div className="container mx-auto flex items-center justify-between p-4">
-                <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600">
-                    MyPortfolio
-                </Link>
-                <button 
-                    className="sm:hidden text-gray-800 focus:outline-none" 
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-                <div className={`sm:flex space-x-6 items-center ${isOpen ? 'block' : 'hidden'}`}>
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.path}
-                            to={item.path}
-                            className="block mt-2 sm:mt-0 text-gray-800 hover:text-blue-500 transition-colors"
-                        >
-                            {item.label}
-                        </Link>
-                    ))}
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-gray-800">
+      <div className="container mx-auto px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo/Brand */}
+          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            Syed Syab Ahmad
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`px-4 py-2 rounded-lg transition-all ${
+                  location.pathname === item.path
+                    ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* Design & Architecture Dropdown */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setDesignDropdown(true)}
+              onMouseLeave={() => setDesignDropdown(false)}
+            >
+              <button
+                className={`px-4 py-2 rounded-lg transition-all flex items-center gap-1 ${
+                  location.pathname.startsWith('/design')
+                    ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                }`}
+              >
+                Design & Architecture
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {designDropdown && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-lg border border-gray-700 rounded-lg shadow-xl py-2 z-50">
+                  <Link
+                    to="/design"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors"
+                    onClick={() => setDesignDropdown(false)}
+                  >
+                    Overview
+                  </Link>
+                  <div className="h-px bg-gray-800 my-1"></div>
+                  <Link
+                    to="/design/revit"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors"
+                    onClick={() => setDesignDropdown(false)}
+                  >
+                    Architectural Modeling (Revit)
+                  </Link>
+                  <Link
+                    to="/design/autocad"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors"
+                    onClick={() => setDesignDropdown(false)}
+                  >
+                    2D Drafting (AutoCAD)
+                  </Link>
+                  <Link
+                    to="/design/sketchup"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors"
+                    onClick={() => setDesignDropdown(false)}
+                  >
+                    3D Visualization (SketchUp)
+                  </Link>
+                  <div className="h-px bg-gray-800 my-1"></div>
+                  <Link
+                    to="/design/projects"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors"
+                    onClick={() => setDesignDropdown(false)}
+                  >
+                    Sample Projects
+                  </Link>
                 </div>
+              )}
             </div>
-        </nav>
-    );
+
+            {/* Let's Connect Button */}
+            <Link
+              to="/contact"
+              className="ml-4 px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all"
+            >
+              Let's Connect
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-300 hover:text-white"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4 border-t border-gray-800">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`block px-4 py-2 rounded-lg transition-all ${
+                  location.pathname === item.path
+                    ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            {/* Mobile Design Section */}
+            <div className="mt-2">
+              <Link
+                to="/design"
+                className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors font-semibold"
+                onClick={() => setIsOpen(false)}
+              >
+                Design & Architecture
+              </Link>
+              <div className="ml-4 mt-1 space-y-1">
+                <Link
+                  to="/design/revit"
+                  className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Revit
+                </Link>
+                <Link
+                  to="/design/autocad"
+                  className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  AutoCAD
+                </Link>
+                <Link
+                  to="/design/sketchup"
+                  className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  SketchUp
+                </Link>
+                <Link
+                  to="/design/projects"
+                  className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  All Projects
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
