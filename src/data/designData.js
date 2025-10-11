@@ -107,6 +107,40 @@ export const designProjects = [
     tags: ["Façade", "Parametric", "Fabrication"]
   },
   {
+  "id": "revit-desk-drawers",
+  "title": "Modular Office Desk with Drawers",
+  "category": "revit",
+  "software": ["Revit"],
+  "description": "Parametric desk family with configurable drawers and lockable storage compartments for office environments.",
+  "image": "/revit/desk_with_drawers.png",
+  "thumbnail": "/revit/desk_with_drawers.png",
+  "date": "2025-03",
+  "details": {
+    "material": "Laminate Wood Composite",
+    "dimensions": "1.6m W x 0.8m D x 0.75m H",
+    "deliverables": ["Family File", "Detail Sheet", "Material Schedule"]
+  },
+  "images": ["/revit/desk_with_drawers.png", "/revit/desk_with_drawers_2.png", "/revit/desk_with_drawers_3.png"],
+  "tags": ["Furniture", "Parametric", "Office Design"]
+},
+{
+  "id": "revit-dumbbell",
+  "title": "Adjustable Weight Dumbbell Family",
+  "category": "revit",
+  "software": ["Revit"],
+  "description": "Configurable dumbbell family with parametric weight plates for gym equipment modeling and fitness space planning.",
+  "image": "/revit/dumbbell.png",
+  "thumbnail": "/revit/dumbbell.png",
+  "date": "2025-03",
+  "details": {
+    "material": "Cast Iron / Steel",
+    "weightRange": "5kg to 50kg (adjustable)",
+    "deliverables": ["Family File", "Load Schedule", "Installation Guide"]
+  },
+  "images": ["/revit/dumbbell.png"],
+  "tags": ["Fitness", "Gym Equipment", "Parametric"]
+},
+  {
     id: "autocad-1300",
     title: "1300 sq.ft Residence Drafting",
     category: "autocad",
