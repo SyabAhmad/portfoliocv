@@ -107,6 +107,13 @@ const Header = () => {
                   >
                     Sample Projects
                   </Link>
+                  <Link
+                    to="/design#certifications"
+                    onClick={() => setIsDesignDropdownOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-800/70 transition text-left"
+                  >
+                    Certifications
+                  </Link>
                 </div>
               )}
             </div>
@@ -289,6 +296,16 @@ const Header = () => {
                       }}
                     >
                       Sample Projects
+                    </Link>
+                    <Link
+                      to="/design#certifications"
+                      className="block px-6 py-2 text-sm text-gray-400 hover:text-white hover:bg-slate-800/70 transition"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsMobileDesignOpen(false);
+                      }}
+                    >
+                      Certifications
                     </Link>
                   </div>
                 )}

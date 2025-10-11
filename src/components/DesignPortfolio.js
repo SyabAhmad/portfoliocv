@@ -1,9 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { designSkills, designProjects } from '../data/designData';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { designProjects, designSkills, designCertifications } from '../data/designData';
 
 const DesignPortfolio = () => {
   const recentProjects = designProjects.slice(0, 3);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const target = document.querySelector(location.hash);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
@@ -111,6 +119,53 @@ const DesignPortfolio = () => {
             >
               View All Projects
             </Link>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section
+          id="certifications"
+          className="mb-14 max-w-5xl mx-auto bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-lg border border-gray-700/60 rounded-2xl p-8"
+        >
+          <h2 className="text-3xl font-bold text-white mb-3 text-center">Certifications</h2>
+          <p className="text-gray-300 text-center mb-8">
+            Formal credentials backing my architectural modeling and visualization expertise.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {designCertifications.map((cert) => (
+              <div
+                key={cert.credentialId}
+                className="rounded-xl border border-gray-700/60 bg-gray-900/60 p-5 text-left hover:border-cyan-500/50 transition-colors flex items-start gap-4"
+              >
+                {cert.image && (
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="w-18 h-18 rounded-lg object-cover border border-gray-700/70"
+                    loading="lazy"
+                  />
+                )}
+                <div className="flex-1">
+                  <div className="flex items-baseline justify-between mb-2">
+                    <h3 className="text-lg font-semibold text-white">{cert.name}</h3>
+                    <span className="text-xs text-gray-400 uppercase tracking-wide">{cert.date}</span>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">{cert.issuer}</p>
+                  <p className="text-sm text-gray-300 mb-4">{cert.focus}</p>
+                  <div className="flex items-center justify-between text-xs text-gray-400">
+                    <span>ID: {cert.credentialId}</span>
+                    <a
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:text-cyan-300 font-semibold"
+                    >
+                      View Credential →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
