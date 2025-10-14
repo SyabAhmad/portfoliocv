@@ -10,6 +10,10 @@ class VoiceService {
     this.isListening = false;
     this.currentUtterance = null;
     this.voices = [];
+    this.currentAudio = null;
+    this.googleTtsKey = process.env.REACT_APP_GOOGLE_TTS_API_KEY || null;
+    this.googleVoiceName = process.env.REACT_APP_GOOGLE_TTS_VOICE || 'en-US-Neural2-F';
+    this.googleTtsEnabled = Boolean(this.googleTtsKey);
     
     this.initRecognition();
     this.loadVoices();
@@ -82,7 +86,7 @@ class VoiceService {
    */
   startListening(onResult, onError) {
     if (!this.recognition) {
-      onError?.(new Error('Speech recognition not supported'));
+      onError?.('not-supported');
       return;
     }
 
@@ -92,13 +96,14 @@ class VoiceService {
 
     this.recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
+      this.isListening = false;
       onResult?.(transcript);
     };
 
     this.recognition.onerror = (event) => {
       console.error('Speech recognition error:', event.error);
-      onError?.(event.error);
       this.isListening = false;
+      onError?.(event.error);
     };
 
     this.recognition.onend = () => {
@@ -108,9 +113,11 @@ class VoiceService {
     try {
       this.recognition.start();
       this.isListening = true;
+      console.log('✅ Speech recognition started successfully');
     } catch (error) {
       console.error('Error starting recognition:', error);
-      onError?.(error);
+      this.isListening = false;
+      onError?.('audio-capture');
     }
   }
 
@@ -119,7 +126,12 @@ class VoiceService {
    */
   stopListening() {
     if (this.recognition && this.isListening) {
-      this.recognition.stop();
+      try {
+        this.recognition.stop();
+        console.log('🛑 Speech recognition stopped');
+      } catch (error) {
+        console.error('Error stopping recognition:', error);
+      }
       this.isListening = false;
     }
   }
@@ -131,51 +143,134 @@ class VoiceService {
    * @param {Function} onEnd - Callback when speech ends
    * @param {Object} options - Speech options (rate, pitch, volume)
    */
-  speak(text, onStart, onEnd, options = {}) {
+  async speak(text, onStart, onEnd, options = {}) {
     // Stop any ongoing speech
-    this.stopSpeaking();
+    await this.stopSpeaking();
 
-    const utterance = new SpeechSynthesisUtterance(text);
-    
-    // Set voice
-    const voice = this.getBestVoice();
-    if (voice) {
-      utterance.voice = voice;
+    if (this.googleTtsEnabled) {
+      try {
+        await this.speakWithGoogle(text, onStart, onEnd, options);
+      } catch (error) {
+        console.error('Google TTS error, falling back to Web Speech:', error);
+        return this.speakWithWebSpeech(text, onStart, onEnd, options);
+      }
+      return;
     }
 
-    // Set options
-    utterance.rate = options.rate || 1.0;
-    utterance.pitch = options.pitch || 1.0;
-    utterance.volume = options.volume || 1.0;
-    utterance.lang = options.lang || 'en-US';
+    return this.speakWithWebSpeech(text, onStart, onEnd, options);
+  }
 
-    // Set callbacks
-    utterance.onstart = () => {
-      onStart?.();
+  speakWithWebSpeech(text, onStart, onEnd, options) {
+    return new Promise((resolve) => {
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Set voice
+      const voice = this.getBestVoice();
+      if (voice) {
+        utterance.voice = voice;
+      }
+
+      // Set options
+      utterance.rate = options.rate || 1.0;
+      utterance.pitch = options.pitch || 1.0;
+      utterance.volume = options.volume || 1.0;
+      utterance.lang = options.lang || 'en-US';
+
+      utterance.onstart = () => {
+        onStart?.();
+      };
+
+      utterance.onend = () => {
+        this.currentUtterance = null;
+        onEnd?.();
+        resolve();
+      };
+
+      utterance.onerror = (event) => {
+        console.error('Speech synthesis error:', event);
+        this.currentUtterance = null;
+        onEnd?.();
+        resolve();
+      };
+
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    });
+  }
+
+  async speakWithGoogle(text, onStart, onEnd, options) {
+    if (!this.googleTtsKey) {
+      throw new Error('Missing Google TTS API key');
+    }
+
+    const voiceName = options.voiceName || this.googleVoiceName;
+    const languageCode = options.lang || 'en-US';
+    const speakingRate = options.rate || 1.0;
+    const pitch = options.pitch || 0.0;
+    const volumeGainDb = (options.volume ?? 1) * 10 - 10; // map 0-1 to -10..0 dB
+
+    onStart?.();
+
+    const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${this.googleTtsKey}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        input: { text },
+        voice: {
+          languageCode,
+          name: voiceName,
+        },
+        audioConfig: {
+          audioEncoding: 'MP3',
+          speakingRate,
+          pitch,
+          volumeGainDb,
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Google TTS API error ${response.status}: ${errorBody}`);
+    }
+
+    const data = await response.json();
+    if (!data.audioContent) {
+      throw new Error('Google TTS response missing audioContent');
+    }
+
+    const audio = new Audio(`data:audio/mp3;base64,${data.audioContent}`);
+    audio.volume = options.volume ?? 1;
+    audio.onended = () => {
+      this.currentAudio = null;
+      onEnd?.();
     };
-
-    utterance.onend = () => {
-      this.currentUtterance = null;
+    audio.onerror = (event) => {
+      console.error('Google TTS playback error:', event);
+      this.currentAudio = null;
       onEnd?.();
     };
 
-    utterance.onerror = (event) => {
-      console.error('Speech synthesis error:', event);
-      this.currentUtterance = null;
-      onEnd?.();
-    };
-
-    this.currentUtterance = utterance;
-    this.synthesis.speak(utterance);
+    this.currentAudio = audio;
+    await audio.play();
   }
 
   /**
    * Stop speaking
    */
   stopSpeaking() {
-    if (this.synthesis.speaking) {
+    if (this.googleTtsEnabled && this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;
+      this.currentAudio = null;
+    }
+
+    if (!this.googleTtsEnabled && this.synthesis.speaking) {
       this.synthesis.cancel();
     }
+
     this.currentUtterance = null;
   }
 
@@ -183,6 +278,10 @@ class VoiceService {
    * Check if currently speaking
    */
   isSpeaking() {
+    if (this.googleTtsEnabled) {
+      return Boolean(this.currentAudio);
+    }
+
     return this.synthesis.speaking;
   }
 
@@ -194,10 +293,24 @@ class VoiceService {
   }
 
   /**
+   * Check microphone permission status
+   */
+  async checkMicrophonePermission() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      stream.getTracks().forEach(track => track.stop());
+      return { granted: true };
+    } catch (error) {
+      console.error('Microphone permission error:', error);
+      return { granted: false, error: error.name };
+    }
+  }
+
+  /**
    * Check if text-to-speech is supported
    */
   isSynthesisSupported() {
-    return !!this.synthesis;
+    return this.googleTtsEnabled || !!this.synthesis;
   }
 
   /**
@@ -211,6 +324,11 @@ class VoiceService {
    * Pause speech
    */
   pauseSpeech() {
+    if (this.googleTtsEnabled && this.currentAudio && !this.currentAudio.paused) {
+      this.currentAudio.pause();
+      return;
+    }
+
     if (this.synthesis.speaking && !this.synthesis.paused) {
       this.synthesis.pause();
     }
@@ -220,6 +338,11 @@ class VoiceService {
    * Resume speech
    */
   resumeSpeech() {
+    if (this.googleTtsEnabled && this.currentAudio && this.currentAudio.paused) {
+      this.currentAudio.play();
+      return;
+    }
+
     if (this.synthesis.paused) {
       this.synthesis.resume();
     }
