@@ -144,19 +144,18 @@ class VoiceService {
    * @param {Object} options - Speech options (rate, pitch, volume)
    */
   async speak(text, onStart, onEnd, options = {}) {
-    // Stop any ongoing speech
-    await this.stopSpeaking();
-
-    if (this.googleTtsEnabled) {
+    // Try Google TTS first if API key is available
+    if (this.googleTtsKey) {
       try {
         await this.speakWithGoogle(text, onStart, onEnd, options);
+        return;
       } catch (error) {
-        console.error('Google TTS error, falling back to Web Speech:', error);
-        return this.speakWithWebSpeech(text, onStart, onEnd, options);
+        console.warn('Google TTS failed, falling back to Web Speech API:', error);
+        // Fall back to Web Speech API
       }
-      return;
     }
 
+    // Use Web Speech API as fallback
     return this.speakWithWebSpeech(text, onStart, onEnd, options);
   }
 
@@ -200,61 +199,99 @@ class VoiceService {
 
   async speakWithGoogle(text, onStart, onEnd, options) {
     if (!this.googleTtsKey) {
-      throw new Error('Missing Google TTS API key');
+      throw new Error('Google TTS API key not configured');
     }
 
     const voiceName = options.voiceName || this.googleVoiceName;
     const languageCode = options.lang || 'en-US';
-    const speakingRate = options.rate || 1.0;
-    const pitch = options.pitch || 0.0;
-    const volumeGainDb = (options.volume ?? 1) * 10 - 10; // map 0-1 to -10..0 dB
 
-    onStart?.();
+    try {
+      // Call Google Cloud Text-to-Speech API
+      const response = await fetch(
+        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${this.googleTtsKey}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            input: { text },
+            voice: {
+              languageCode,
+              name: voiceName,
+            },
+            audioConfig: {
+              audioEncoding: 'MP3',
+              speakingRate: options.rate || 1.0,
+              pitch: options.pitch || 1.0,
+              volumeGainDb: this.volumeToDb(options.volume || 1.0),
+            },
+          }),
+        }
+      );
 
-    const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${this.googleTtsKey}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        input: { text },
-        voice: {
-          languageCode,
-          name: voiceName,
-        },
-        audioConfig: {
-          audioEncoding: 'MP3',
-          speakingRate,
-          pitch,
-          volumeGainDb,
-        },
-      }),
-    });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(`Google TTS API error: ${errorData.error?.message || response.statusText}`);
+      }
 
-    if (!response.ok) {
-      const errorBody = await response.text();
-      throw new Error(`Google TTS API error ${response.status}: ${errorBody}`);
+      const data = await response.json();
+      
+      if (!data.audioContent) {
+        throw new Error('No audio content in response');
+      }
+
+      // Convert base64 to audio blob
+      const audioBlob = this.base64ToBlob(data.audioContent, 'audio/mp3');
+      const audioUrl = URL.createObjectURL(audioBlob);
+
+      // Play audio
+      const audio = new Audio(audioUrl);
+      
+      audio.onplay = () => {
+        onStart?.();
+      };
+
+      audio.onended = () => {
+        URL.revokeObjectURL(audioUrl);
+        this.currentUtterance = null;
+        onEnd?.();
+      };
+
+      audio.onerror = (error) => {
+        console.error('Audio playback error:', error);
+        URL.revokeObjectURL(audioUrl);
+        this.currentUtterance = null;
+        onEnd?.();
+      };
+
+      this.currentUtterance = audio;
+      await audio.play();
+
+    } catch (error) {
+      console.error('Google TTS error:', error);
+      throw error;
     }
+  }
 
-    const data = await response.json();
-    if (!data.audioContent) {
-      throw new Error('Google TTS response missing audioContent');
+  // Helper: Convert volume (0-1) to dB (-96 to +16)
+  volumeToDb(volume) {
+    if (volume <= 0) return -96;
+    if (volume >= 1) return 0;
+    return 20 * Math.log10(volume);
+  }
+
+  // Helper: Convert base64 to Blob
+  base64ToBlob(base64, mimeType) {
+    const byteCharacters = atob(base64);
+    const byteNumbers = new Array(byteCharacters.length);
+    
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
     }
-
-    const audio = new Audio(`data:audio/mp3;base64,${data.audioContent}`);
-    audio.volume = options.volume ?? 1;
-    audio.onended = () => {
-      this.currentAudio = null;
-      onEnd?.();
-    };
-    audio.onerror = (event) => {
-      console.error('Google TTS playback error:', event);
-      this.currentAudio = null;
-      onEnd?.();
-    };
-
-    this.currentAudio = audio;
-    await audio.play();
+    
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob([byteArray], { type: mimeType });
   }
 
   /**
