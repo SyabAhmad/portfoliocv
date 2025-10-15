@@ -132,7 +132,7 @@ const SimpleChatbot = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-800 flex items-center gap-1 text-sm sm:text-base">
-                    MenteE's AI 🥀 (Voice Mode Coming Soon)
+                    MenteE's AI 🥀 (Voice Mode is in Beta, always confirm informations)
                     <Sparkles size={12} className="sm:hidden text-purple-500" />
                     <Sparkles size={14} className="hidden sm:block text-purple-500" />
                   </h3>

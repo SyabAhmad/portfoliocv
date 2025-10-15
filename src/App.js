@@ -12,6 +12,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contacts';
 import Skills from './components/SKill';
 import SimpleChatbot from './components/SimpleChatbot';
+import VoiceAssistant from './components/VoiceAssistant';
 import DesignPortfolio from './components/DesignPortfolio';
 import RevitPortfolio from './components/RevitPortfolio';
 import AutoCADPortfolio from './components/AutoCADPortfolio';
@@ -38,6 +39,7 @@ function App() {
     Contact,
     Skills,
     SimpleChatbot,
+    VoiceAssistant,
     DesignPortfolio,
     RevitPortfolio,
     AutoCADPortfolio,
@@ -80,6 +82,9 @@ function App() {
 
         {/* Global Chatbot - Available on all pages */}
         <SimpleChatbot />
+        
+        {/* Voice AI Assistant - Available on all pages */}
+        <VoiceAssistant />
       </div>
     </Router>
   );
