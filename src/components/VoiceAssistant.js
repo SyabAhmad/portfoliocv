@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Phone, PhoneOff, Mic, MicOff, Volume2, VolumeX, 
-  X, Settings, Minimize2, Maximize2, Sparkles, Trash2, AlertTriangle 
+  X, Minimize2, Maximize2, Sparkles
 } from 'lucide-react';
 import Avatar3DTailwind from './Avatar3DTailwind';
 import voiceService from '../utils/voiceService';
@@ -20,16 +20,7 @@ const VoiceAssistant = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [currentMessage, setCurrentMessage] = useState('');
   const [conversationHistory, setConversationHistory] = useState([]);
-  const [showSettings, setShowSettings] = useState(false);
   const [error, setError] = useState(null);
-  
-  // Settings
-  const [settings, setSettings] = useState({
-    autoListen: true,
-    speechRate: 1.0,
-    speechPitch: 1.0,
-    speechVolume: 1.0,
-  });
 
   const messageEndRef = useRef(null);
 
@@ -75,10 +66,11 @@ const VoiceAssistant = () => {
 
   const startListening = () => {
     if (!voiceService.isRecognitionSupported()) {
-      setError('Speech recognition is not supported in your browser. Please use Chrome or Edge.');
+      setError('Speech recognition is not supported. Please use Chrome or Edge.');
       return;
     }
 
+    // Clear any previous errors
     setError(null);
     setIsListening(true);
     setCurrentMessage('Listening...');
@@ -100,21 +92,24 @@ const VoiceAssistant = () => {
       },
       (error) => {
         // Error handling
-        console.error('❌ Speech recognition error:', error);
+        console.log('🔍 Speech recognition error:', error);
         setIsListening(false);
         setCurrentMessage('');
         
-        if (error === 'no-speech') {
-          setError('No speech detected. Please try again.');
-        } else if (error === 'not-allowed' || error === 'not-supported') {
-          setError('Microphone access denied. Please allow microphone access in your browser settings.');
-        } else if (error === 'audio-capture') {
-          setError('Cannot access microphone. Please check your device and browser settings.');
-        } else if (error === 'aborted') {
-          // User stopped listening, don't show error
+        // Silently ignore these errors (normal behavior)
+        if (error === 'no-speech' || error === 'aborted') {
+          console.log('✓ Silent stop (no-speech or aborted)');
           return;
+        }
+        
+        // Only show critical errors
+        if (error === 'not-allowed' || error === 'not-supported') {
+          setError('Microphone access denied. Please allow microphone access.');
+        } else if (error === 'audio-capture') {
+          setError('Cannot access microphone. Please check your settings.');
         } else {
-          setError(`Speech error: ${error}. Please try again.`);
+          console.warn('⚠️ Unexpected error:', error);
+          // Don't show error to user for unexpected errors during auto-listen
         }
       }
     );
@@ -124,10 +119,12 @@ const VoiceAssistant = () => {
     voiceService.stopListening();
     setIsListening(false);
     setCurrentMessage('');
+    setError(null); // Clear errors when stopping
   };
 
   const handleUserMessage = async (message) => {
     try {
+      setError(null); // Clear any previous errors
       setCurrentMessage('Thinking...');
       
       // Get AI response
@@ -140,24 +137,10 @@ const VoiceAssistant = () => {
       if (!isMuted) {
         speakMessage(response);
       }
-      
-      // Auto-listen for next input if enabled
-      if (settings.autoListen && !isMuted) {
-        setTimeout(() => {
-          if (!isSpeaking) {
-            startListening();
-          }
-        }, 1000);
-      }
     } catch (error) {
       console.error('Error getting AI response:', error);
       setCurrentMessage('');
-      const errorMsg = 'Sorry, I had trouble processing that. Could you try again?';
-      addMessage('assistant', errorMsg);
-      
-      if (!isMuted) {
-        speakMessage(errorMsg);
-      }
+      setError('Failed to get response. Please try again.');
     }
   };
 
@@ -179,15 +162,17 @@ const VoiceAssistant = () => {
         // On end
         setIsSpeaking(false);
         
-        // Auto-listen after speaking if enabled
-        if (settings.autoListen && isOpen && !isMinimized) {
-          setTimeout(() => startListening(), 500);
+        // Auto-listen after AI finishes speaking
+        if (isOpen && !isMinimized && !isMuted) {
+          setTimeout(() => {
+            startListening();
+          }, 800);
         }
       },
       {
-        rate: settings.speechRate,
-        pitch: settings.speechPitch,
-        volume: settings.speechVolume,
+        rate: 1.0,
+        pitch: 1.0,
+        volume: 1.0,
       }
     ).catch((error) => {
       console.error('Unable to play speech:', error);
@@ -207,16 +192,6 @@ const VoiceAssistant = () => {
     setIsMuted(!isMuted);
   };
 
-  const clearConversation = () => {
-    setConversationHistory([]);
-    const greeting = "Conversation cleared. How can I help you?";
-    addMessage('assistant', greeting);
-    
-    if (!isMuted) {
-      speakMessage(greeting);
-    }
-  };
-
   const handleClose = () => {
     stopListening();
     stopSpeaking();
@@ -226,14 +201,6 @@ const VoiceAssistant = () => {
   };
 
   const statusBadge = (() => {
-    if (error) {
-      return {
-        label: 'Action needed',
-        icon: AlertTriangle,
-        classes: 'bg-red-500/15 border border-red-400/30 text-red-200 shadow-[0_0_20px_rgba(239,68,68,0.15)]'
-      };
-    }
-
     if (isListening) {
       return {
         label: 'Listening',
@@ -244,14 +211,14 @@ const VoiceAssistant = () => {
 
     if (isSpeaking) {
       return {
-        label: 'Responding',
+        label: 'Speaking',
         icon: Volume2,
         classes: 'bg-purple-500/15 border border-purple-400/40 text-purple-100 shadow-[0_0_20px_rgba(168,85,247,0.18)]'
       };
     }
 
     return {
-      label: 'Ready to chat',
+      label: 'Ready',
       icon: Sparkles,
       classes: 'bg-emerald-500/10 border border-emerald-400/30 text-emerald-100 shadow-[0_0_20px_rgba(52,211,153,0.15)]'
     };
@@ -301,153 +268,31 @@ const VoiceAssistant = () => {
             transition={{ type: 'spring', damping: 25 }}
           >
             {/* Floating Controls */}
-            <div className="relative flex justify-end items-center gap-2 pb-3 pr-3">
-              <div className={`inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full backdrop-blur bg-slate-900/70 border border-white/10 ${statusBadge.classes}`}>
-                <StatusIcon size={14} />
+            <div className="relative flex justify-between items-center gap-3 pb-3 px-3">
+              <div className={`inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-full backdrop-blur bg-slate-900/70 border ${statusBadge.classes}`}>
+                <StatusIcon size={16} />
                 <span>{statusBadge.label}</span>
               </div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setIsMinimized(!isMinimized)}
-                  className="group relative overflow-hidden rounded-xl bg-slate-900/70 px-3 py-2 text-slate-200 border border-slate-700/60 transition-all duration-200"
-                  title={isMinimized ? 'Maximize' : 'Minimize'}
+                  className="group relative overflow-hidden rounded-xl bg-slate-900/70 p-2 text-slate-200 border border-slate-700/60 transition-all duration-200 hover:bg-slate-800/70"
+                  title={isMinimized ? 'Expand' : 'Compact'}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative flex items-center gap-2 text-sm font-medium">
-                    {isMinimized ? <Maximize2 size={16} /> : <Minimize2 size={16} />}
-                    <span>{isMinimized ? 'Expand' : 'Compact'}</span>
-                  </div>
-                </button>
-                <button
-                  onClick={() => setShowSettings(!showSettings)}
-                  className="group relative overflow-hidden rounded-xl bg-slate-900/70 px-3 py-2 text-slate-200 border border-slate-700/60 transition-all duration-200"
-                  title="Settings"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative flex items-center gap-2 text-sm font-medium">
-                    <Settings size={16} />
-                    <span>Settings</span>
-                  </div>
+                  {isMinimized ? <Maximize2 size={18} /> : <Minimize2 size={18} />}
                 </button>
                 <button
                   onClick={handleClose}
-                  className="group relative overflow-hidden rounded-xl bg-red-500/20 px-3 py-2 text-red-100 border border-red-500/30 transition-all duration-200"
-                  title="Close"
+                  className="group relative overflow-hidden rounded-xl bg-red-500/20 p-2 text-red-100 border border-red-500/30 transition-all duration-200 hover:bg-red-500/30"
+                  title="End Call"
                 >
-                  <div className="absolute inset-0 bg-red-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative flex items-center gap-2 text-sm font-medium">
-                    <X size={16} />
-                    <span>End</span>
-                  </div>
+                  <X size={18} />
                 </button>
               </div>
             </div>
 
             {!isMinimized && (
               <>
-                {/* Settings Panel */}
-                <AnimatePresence>
-                  {showSettings && (
-                    <motion.div
-                      className="relative bg-slate-950/60 px-6 py-5 border border-slate-800/60 rounded-[24px] mb-4 backdrop-blur"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-slate-900/30 to-purple-500/10 opacity-60" />
-                      <div className="relative">
-                        <h4 className="text-white text-sm font-semibold mb-4 tracking-wide">Voice Settings</h4>
-                        
-                        <label className="flex items-center gap-2 text-slate-300 text-sm mb-3 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.autoListen}
-                          onChange={(e) => setSettings({...settings, autoListen: e.target.checked})}
-                          className="accent-indigo-500 h-4 w-4"
-                        />
-                          Auto-listen after response
-                        </label>
-
-                        <div className="grid grid-cols-1 gap-4">
-                          <label className="block text-slate-300 text-sm">
-                            <div className="flex justify-between mb-1">
-                              <span>Speech Rate</span>
-                              <span className="text-indigo-300 font-medium">{settings.speechRate.toFixed(1)}x</span>
-                            </div>
-                            <div className="relative h-2 rounded-full bg-slate-800">
-                              <div
-                                className="absolute top-1/2 -translate-y-1/2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
-                                style={{ width: `${((settings.speechRate - 0.5) / 1.5) * 100}%` }}
-                              />
-                              <input
-                                type="range"
-                                min="0.5"
-                                max="2"
-                                step="0.1"
-                                value={settings.speechRate}
-                                onChange={(e) => setSettings({...settings, speechRate: parseFloat(e.target.value)})}
-                                className="w-full accent-indigo-500 absolute inset-0 opacity-0 cursor-pointer"
-                              />
-                            </div>
-                          </label>
-
-                          <label className="block text-slate-300 text-sm">
-                            <div className="flex justify-between mb-1">
-                              <span>Speech Pitch</span>
-                              <span className="text-indigo-300 font-medium">{settings.speechPitch.toFixed(1)}x</span>
-                            </div>
-                            <div className="relative h-2 rounded-full bg-slate-800">
-                              <div
-                                className="absolute top-1/2 -translate-y-1/2 h-2 rounded-full bg-gradient-to-r from-indigo-500 to-blue-400"
-                                style={{ width: `${((settings.speechPitch - 0.5) / 1.5) * 100}%` }}
-                              />
-                              <input
-                                type="range"
-                                min="0.5"
-                                max="2"
-                                step="0.1"
-                                value={settings.speechPitch}
-                                onChange={(e) => setSettings({...settings, speechPitch: parseFloat(e.target.value)})}
-                                className="w-full accent-indigo-500 absolute inset-0 opacity-0 cursor-pointer"
-                              />
-                            </div>
-                          </label>
-
-                          <label className="block text-slate-300 text-sm">
-                            <div className="flex justify-between mb-1">
-                              <span>Volume</span>
-                              <span className="text-indigo-300 font-medium">{(settings.speechVolume * 100).toFixed(0)}%</span>
-                            </div>
-                            <div className="relative h-2 rounded-full bg-slate-800">
-                              <div
-                                className="absolute top-1/2 -translate-y-1/2 h-2 rounded-full bg-gradient-to-r from-purple-500 via-blue-500 to-sky-400"
-                                style={{ width: `${settings.speechVolume * 100}%` }}
-                              />
-                              <input
-                                type="range"
-                                min="0"
-                                max="1"
-                                step="0.1"
-                                value={settings.speechVolume}
-                                onChange={(e) => setSettings({...settings, speechVolume: parseFloat(e.target.value)})}
-                                className="w-full accent-indigo-500 absolute inset-0 opacity-0 cursor-pointer"
-                              />
-                            </div>
-                          </label>
-                        </div>
-
-                        <button 
-                          onClick={clearConversation} 
-                          className="mt-5 w-full px-4 py-2.5 bg-red-500/10 border border-red-500/30 text-red-200 rounded-xl hover:bg-red-500/20 transition-all duration-200 flex items-center justify-center gap-2"
-                        >
-                          <Trash2 size={16} />
-                          Clear Conversation
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
                 {/* Avatar */}
                 <div className="relative flex justify-center items-center py-6">
                   <div className="absolute inset-0 px-10">
@@ -469,27 +314,29 @@ const VoiceAssistant = () => {
                 </div>
 
                 {/* Current Status */}
-                <div className="px-6 py-3 min-h-[40px] text-center">
-                  {currentMessage && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="inline-flex items-center gap-2 text-slate-200 text-sm font-medium bg-slate-800/70 border border-slate-700/60 px-4 py-2 rounded-full"
-                    >
-                      <div className="h-2 w-2 rounded-full bg-blue-400 animate-ping" />
-                      {currentMessage}
-                    </motion.p>
-                  )}
-                  {error && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-red-400 text-sm font-medium"
-                    >
-                      ⚠️ {error}
-                    </motion.p>
-                  )}
-                </div>
+                {(currentMessage || error) && (
+                  <div className="px-6 py-3 text-center">
+                    {currentMessage && !error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center gap-2 text-slate-200 text-sm font-medium bg-slate-800/70 border border-slate-700/60 px-4 py-2 rounded-full"
+                      >
+                        <div className="h-2 w-2 rounded-full bg-blue-400 animate-ping" />
+                        <span>{currentMessage}</span>
+                      </motion.div>
+                    )}
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-2 text-red-300 text-sm font-medium bg-red-500/10 border border-red-500/30 px-4 py-2 rounded-full"
+                      >
+                        <span>⚠️ {error}</span>
+                      </motion.div>
+                    )}
+                  </div>
+                )}
 
                 {/* Conversation History */}
                 <div className="flex-1 overflow-y-auto px-4 sm:px-8 py-6 flex flex-col gap-6 max-h-[320px] scrollbar-thin scrollbar-thumb-blue-500/40 scrollbar-track-transparent">

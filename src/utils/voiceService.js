@@ -11,9 +11,9 @@ class VoiceService {
     this.currentUtterance = null;
     this.voices = [];
     this.currentAudio = null;
-    this.googleTtsKey = process.env.REACT_APP_GOOGLE_TTS_API_KEY || null;
-    this.googleVoiceName = process.env.REACT_APP_GOOGLE_TTS_VOICE || 'en-US-Neural2-F';
-    this.googleTtsEnabled = Boolean(this.googleTtsKey);
+    this.groqApiKey = process.env.REACT_APP_GROQ_API_KEY || null;
+    this.groqVoiceName = process.env.REACT_APP_GROQ_TTS_VOICE || 'Aaliyah-PlayAI';
+    this.groqTtsEnabled = Boolean(this.groqApiKey);
     
     this.initRecognition();
     this.loadVoices();
@@ -144,14 +144,14 @@ class VoiceService {
    * @param {Object} options - Speech options (rate, pitch, volume)
    */
   async speak(text, onStart, onEnd, options = {}) {
-    // Try Google TTS first if API key is available
-    if (this.googleTtsKey) {
+    // Try Groq TTS if API key is available
+    if (this.groqTtsEnabled) {
       try {
-        await this.speakWithGoogle(text, onStart, onEnd, options);
+        await this.speakWithGroq(text, onStart, onEnd, options);
         return;
       } catch (error) {
-        console.warn('Google TTS failed, falling back to Web Speech API:', error);
-        // Fall back to Web Speech API
+        console.warn('⚠️ Groq TTS failed, falling back to Web Speech API:', error);
+        // Fall through to Web Speech API
       }
     }
 
@@ -197,63 +197,53 @@ class VoiceService {
     });
   }
 
-  async speakWithGoogle(text, onStart, onEnd, options) {
-    if (!this.googleTtsKey) {
-      throw new Error('Google TTS API key not configured');
+  async speakWithGroq(text, onStart, onEnd, options) {
+    if (!this.groqApiKey) {
+      throw new Error('Groq API key not configured');
     }
 
-    const voiceName = options.voiceName || this.googleVoiceName;
-    const languageCode = options.lang || 'en-US';
+    const voiceName = options.voiceName || this.groqVoiceName;
+    console.log('🎤 Groq TTS: Speaking with voice:', voiceName);
 
     try {
-      // Call Google Cloud Text-to-Speech API
-      const response = await fetch(
-        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${this.googleTtsKey}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            input: { text },
-            voice: {
-              languageCode,
-              name: voiceName,
-            },
-            audioConfig: {
-              audioEncoding: 'MP3',
-              speakingRate: options.rate || 1.0,
-              pitch: options.pitch || 1.0,
-              volumeGainDb: this.volumeToDb(options.volume || 1.0),
-            },
-          }),
-        }
-      );
+      // Call Groq TTS API
+      const response = await fetch('https://api.groq.com/openai/v1/audio/speech', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.groqApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'playai-tts',
+          voice: voiceName,
+          input: text,
+          response_format: 'mp3',
+          speed: options.rate || 1.0,
+        }),
+      });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(`Google TTS API error: ${errorData.error?.message || response.statusText}`);
+        const errorText = await response.text();
+        console.error('❌ Groq TTS API error:', response.status, errorText);
+        throw new Error(`Groq TTS API error: ${response.status} ${response.statusText}`);
       }
 
-      const data = await response.json();
-      
-      if (!data.audioContent) {
-        throw new Error('No audio content in response');
-      }
-
-      // Convert base64 to audio blob
-      const audioBlob = this.base64ToBlob(data.audioContent, 'audio/mp3');
+      // Get audio blob directly
+      const audioBlob = await response.blob();
+      console.log('✅ Groq TTS audio received, size:', audioBlob.size);
       const audioUrl = URL.createObjectURL(audioBlob);
 
       // Play audio
       const audio = new Audio(audioUrl);
       
       audio.onplay = () => {
+        this.currentAudio = audio;
         onStart?.();
       };
 
       audio.onended = () => {
         URL.revokeObjectURL(audioUrl);
+        this.currentAudio = null;
         this.currentUtterance = null;
         onEnd?.();
       };
@@ -261,15 +251,17 @@ class VoiceService {
       audio.onerror = (error) => {
         console.error('Audio playback error:', error);
         URL.revokeObjectURL(audioUrl);
+        this.currentAudio = null;
         this.currentUtterance = null;
         onEnd?.();
       };
 
       this.currentUtterance = audio;
+      this.currentAudio = audio;
       await audio.play();
 
     } catch (error) {
-      console.error('Google TTS error:', error);
+      console.error('Groq TTS error:', error);
       throw error;
     }
   }
@@ -298,13 +290,13 @@ class VoiceService {
    * Stop speaking
    */
   stopSpeaking() {
-    if (this.googleTtsEnabled && this.currentAudio) {
+    if (this.groqTtsEnabled && this.currentAudio) {
       this.currentAudio.pause();
       this.currentAudio.currentTime = 0;
       this.currentAudio = null;
     }
 
-    if (!this.googleTtsEnabled && this.synthesis.speaking) {
+    if (!this.groqTtsEnabled && this.synthesis.speaking) {
       this.synthesis.cancel();
     }
 
@@ -347,7 +339,7 @@ class VoiceService {
    * Check if text-to-speech is supported
    */
   isSynthesisSupported() {
-    return this.googleTtsEnabled || !!this.synthesis;
+    return this.groqTtsEnabled || !!this.synthesis;
   }
 
   /**
@@ -361,7 +353,7 @@ class VoiceService {
    * Pause speech
    */
   pauseSpeech() {
-    if (this.googleTtsEnabled && this.currentAudio && !this.currentAudio.paused) {
+    if (this.groqTtsEnabled && this.currentAudio && !this.currentAudio.paused) {
       this.currentAudio.pause();
       return;
     }
@@ -375,7 +367,7 @@ class VoiceService {
    * Resume speech
    */
   resumeSpeech() {
-    if (this.googleTtsEnabled && this.currentAudio && this.currentAudio.paused) {
+    if (this.groqTtsEnabled && this.currentAudio && this.currentAudio.paused) {
       this.currentAudio.play();
       return;
     }
