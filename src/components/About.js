@@ -5,6 +5,7 @@ import certifications from '../data/certificationsData';
 import recommendations from '../data/recommendationsData';
 import CertificationBadges from './CertificationBadges';
 import Recommendations from './Recommendations';
+import AiFacts from './AiFacts';
 import SEO from './SEO';
   
 const volunteering = [
@@ -264,6 +265,9 @@ const About = () => {
               </div>
             </div>
           </section>
+
+          {/* AI Facts Section */}
+          <AiFacts />
 
           {/* Certificate Badges Section */}
           <section>
