@@ -87,11 +87,11 @@ const HomePage = () => {
           <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-emerald-500/10 rounded-full opacity-50 filter blur-2xl" />
 
           {/* Hero Section */}
-          <header className="relative flex flex-col items-center justify-center h-screen text-center px-4">
-            <div className="max-w-4xl mx-auto">
+          <header className="relative flex flex-col items-center justify-center min-h-screen py-20 px-4">
+            <div className="max-w-4xl mx-auto mt-16">
               {/* Profile Image */}
-              <div className="mb-8 relative">
-                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20">
+              <div className="mb-6 relative">
+                <div className="w-28 h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20">
                   <img 
                     src="dp.jpeg"
                     alt="Syed Syab Ahmad"
@@ -108,28 +108,28 @@ const HomePage = () => {
                   </div>
                 </div>
                 {/* Animated ring around profile */}
-                <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full border-2 border-cyan-400/30 animate-ping"></div>
+                <div className="absolute inset-0 w-28 h-28 md:w-32 md:h-32 mx-auto rounded-full border-2 border-cyan-400/30 animate-ping"></div>
               </div>
 
-              <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent leading-tight">
                 Full Stack Web Developer & AI Engineer
               </h1>
-              <p className="text-xl md:text-2xl mb-4 text-gray-300 font-light">
+              <p className="text-lg sm:text-xl md:text-2xl mb-3 md:mb-4 text-gray-300 font-light">
                 Building intelligent solutions that transform ideas into reality
               </p>
-              <p className="text-lg mb-8 text-gray-400 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg mb-6 md:mb-8 text-gray-400 max-w-2xl mx-auto">
                 Specializing in Machine Learning, Full-Stack Development, and cutting-edge AI technologies
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
                 <a
                   href="/projects"
-                  className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-purple-400 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105"
+                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-purple-400 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-center"
                 >
                   View My Work
                 </a>
                 <a
                   href="/contact"
-                  className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300"
+                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 w-full sm:w-auto text-center"
                 >
                   Let's Connect
                 </a>
@@ -137,7 +137,7 @@ const HomePage = () => {
             </div>
             
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
               <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
                 <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
               </div>

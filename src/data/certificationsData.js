@@ -5,7 +5,9 @@ const certifications = [
     issuedDate: "May 2025",
     credentialId: "lwwzeuxury",
     skills: "Construction Safety, Fire Safety, Health Hazard, Occupational Health, Health & Safety",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Health & Safety"
   },
   {
     title: "The COSHH Manager Certification™",
@@ -13,7 +15,9 @@ const certifications = [
     issuedDate: "May 2025",
     credentialId: "mnntzxbpzr",
     skills: "Construction Safety, Health Hazard",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Health & Safety"
   },
   {
     title: "Health and Safety Induction",
@@ -21,20 +25,34 @@ const certifications = [
     issuedDate: "Apr 2025",
     credentialId: "ogpdtdok1v",
     skills: "Food Safety, Fire Safety, Construction Safety",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Health & Safety"
   },
   {
     title: "Completion Certificate for Health and Safety Induction",
     issuer: "The Knights of Safety™️",
     issuedDate: "Apr 2025",
     credentialId: "olad152196",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Health & Safety"
   },
   {
     title: "EF SET English Certificate 68/100 (C1 Advanced)",
     issuer: "EF SET",
     issuedDate: "Mar 2025",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Language"
+  },
+  {
+    title: "Mental Health First Aid",
+    issuer: "National Council for Mental Wellbeing",
+    issuedDate: "2024",
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Mental Health First Aid by National Council for Mental Wellbeing/certificate.png",
+    category: "Health & Safety"
   },
   {
     title: "AutoCAD Essentials",
@@ -42,7 +60,9 @@ const certifications = [
     issuedDate: "Feb 2025",
     credentialId: "4DB6-7163-9D88-6770",
     skills: "AutoCAD Architecture",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Design Tools"
   },
   {
     title: "Data Science & Analytics",
@@ -89,7 +109,9 @@ const certifications = [
     issuedDate: "Jul 2024",
     credentialId: "UC-1ffc75e7-d803-425a-bbca-33db40f071c3",
     skills: "Python (Programming Language)",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/The Python Developer Essentials Immersive Bootcamp.png",
+    category: "Programming"
   },
   {
     title: "Data Visualization with PowerBI",
@@ -97,33 +119,43 @@ const certifications = [
     issuedDate: "Jun 2024",
     credentialId: "UC-a35a55cc-d7bd-4469-a508-67302406f39b",
     skills: "Microsoft Power BI",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/Data Visualization with Power BI Simplified.png",
+    category: "Data Science"
   },
   {
     title: "Prompt Engineering for ChatGPT",
     issuer: "Great Learning",
     issuedDate: "Jun 2024",
     skills: "Prompt Engineering",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Great Learning/Prompt Engineering for chatGPT/Prompt Engineering for ChatGPT.png",
+    category: "AI/ML"
   },
   {
     title: "The Impact of Climate Change and Heat Stress on Occupational Health and Safety",
     issuer: "NEBOSH",
     issuedDate: "Apr 2024",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Health & Safety"
   },
   {
     title: "B.E.S.T Build Entrepreneurship Skills Training",
     issuer: "R.E.D International",
     issuedDate: "Mar 2024",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Entrepreneurship"
   },
   {
     title: "Basics of Generative AI: Build your own ChatGPT model",
     issuer: "Open Weaver",
     issuedDate: "Nov 2023",
     credentialId: "51664741431608",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Open Weaver/Badge/16313856412009.png",
+    category: "AI/ML"
   },
   {
     title: "Learn to Code in Python 3: Programming beginner to advanced",
@@ -131,7 +163,9 @@ const certifications = [
     issuedDate: "Oct 2023",
     credentialId: "UC-270b8f3b-0f3b-4166-b4a6-53461f8334e2",
     skills: "Machine Learning, Python (Programming Language)",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/Learn to Code in Python 3, Programming beginner to advanced.png",
+    category: "Programming"
   },
   {
     title: "NumPy for Data Science",
@@ -139,7 +173,9 @@ const certifications = [
     issuedDate: "Oct 2023",
     credentialId: "PNY-135166-1006",
     skills: "NumPy",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/DataFlair/NumPy/NumPy-Certification-Course conv 1.png",
+    category: "Data Science"
   },
   {
     title: "Pandas for Data Analysis",
@@ -147,14 +183,28 @@ const certifications = [
     issuedDate: "Oct 2023",
     credentialId: "PPS-135166-1005",
     skills: "Pandas, Python (Programming Language)",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/DataFlair/Pandas/Pandas Certification Course conv 1.png",
+    category: "Data Science"
   },
   {
     title: "WorkShop on CyberSecurity",
     issuer: "pantech solutions",
     issuedDate: "Sep 2023",
     credentialId: "PS-CYB-SEP-0108",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Webinars/Pantech Solutions/2 Days WorkShop on CyberSecurity/2 days Workshop on Cyber Security.jpg",
+    category: "Cybersecurity"
+  },
+  {
+    title: "Data Science & AI Bootcamp",
+    issuer: "Data Mites",
+    issuedDate: "Jun 2023",
+    credentialId: "dm-dsai-bootcamp-20230610-18259",
+    skills: "Data Science, Artificial Intelligence, Machine Learning",
+    credentialUrl: "#",
+    badge: "/certificates/Webinars/Data Mites/dm-dsai-bootcamp-20230610-18259 conv 1.png",
+    category: "Data Science"
   },
   {
     title: "Data Manipulation in Python: Master Python, Numpy and Pandas",
@@ -162,7 +212,9 @@ const certifications = [
     issuedDate: "Aug 2023",
     credentialId: "UC-7ada9da9-f46f-4305-8bca-373f3bef71af",
     skills: "Pandas, NumPy, python, Matplotlib",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/Data Manipulation in Python, Master Python. Numpy & Pandas.png",
+    category: "Programming"
   },
   {
     title: "JavaScript Crash Course",
@@ -170,14 +222,28 @@ const certifications = [
     issuedDate: "Aug 2023",
     credentialId: "UC-e63baa55-30f8-4fb4-8cd8-5629e6f3130e",
     skills: "JavaScript",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/JavaScript Crash Course/JavaScript Crash Course conv 1.png",
+    category: "Programming"
+  },
+  {
+    title: "JavaScript Practical Course",
+    issuer: "Udemy",
+    issuedDate: "Aug 2023",
+    credentialId: "UC-javascript-practical",
+    skills: "JavaScript, Web Development",
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/JavaScript Practical Course.png",
+    category: "Programming"
   },
   {
     title: "JavaScript Essentials 1",
     issuer: "Cisco",
     issuedDate: "Aug 2023",
     skills: "JavaScript",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/SkillsForAll (cisco)/Badge/javascript-essentials-1.png",
+    category: "Programming"
   },
   {
     title: "Public Speaking",
@@ -185,7 +251,9 @@ const certifications = [
     issuedDate: "Aug 2023",
     credentialId: "UC-7e3cadf1-ff1b-46fe-84e0-456b62ebab4e",
     skills: "Presentation Skills",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Udemy/Public Speaking/Public Speaking conv 1.png",
+    category: "Skills"
   },
   {
     title: "Basics Of HTML and CSS for beginners",
@@ -193,7 +261,9 @@ const certifications = [
     issuedDate: "Jul 2023",
     credentialId: "14265300083192",
     skills: "Cascading Style Sheets (CSS), HTML5",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Open Weaver/Basics of HTML & CSS/14265300083192 conv 1.png",
+    category: "Programming"
   },
   {
     title: "Basics of JavaScript programming",
@@ -201,7 +271,9 @@ const certifications = [
     issuedDate: "Jul 2023",
     credentialId: "05348450909809",
     skills: "Cascading Style Sheets (CSS), HTML5, JavaScript, Front-End Development",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Open Weaver/Basics of JavaScript Programming/05348450909809 conv 1.png",
+    category: "Programming"
   },
   {
     title: "AWS Mobile App Development",
@@ -209,7 +281,9 @@ const certifications = [
     issuedDate: "Jun 2023",
     credentialId: "BLZZYJKR",
     skills: "Mobile Application Development",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: null,
+    category: "Cloud"
   },
   {
     title: "Android Application Development",
@@ -217,7 +291,9 @@ const certifications = [
     issuedDate: "Jun 2023",
     credentialId: "21871",
     skills: "XML, Java, Mobile Application Development, Android Development, Android",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Great Learning/Android Development/Android Development.jpg",
+    category: "Mobile"
   },
   {
     title: "Data Science and Business Analytics",
@@ -225,7 +301,9 @@ const certifications = [
     issuedDate: "Jun 2023",
     credentialId: "RQH53GAZQY",
     skills: "Machine Learning, Supervised Learning, Pandas, Unsupervised Learning, Linear Regression, python",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Internships/The Spark Foundation/Completion Certificat/Certificate of Completion.png",
+    category: "Data Science"
   },
   {
     title: "Design App",
@@ -233,15 +311,59 @@ const certifications = [
     issuedDate: "Jun 2023",
     credentialId: "ZGPKLMWU",
     skills: "Android Design, Web Design",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Great Learning/App Desiging/Design APP.jpg",
+    category: "Design"
+  },
+  {
+    title: "Machine Learning with AI",
+    issuer: "Pantech Solutions",
+    issuedDate: "Dec 2022",
+    credentialId: "PS-AI-DEC2022-1151",
+    skills: "Machine Learning, Artificial Intelligence",
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Pantech Solution/PS-AI-DEC2022-1151.jpg",
+    category: "AI/ML"
+  },
+  {
+    title: "JavaScript Essentials 1",
+    issuer: "Cisco - Skills For All",
+    issuedDate: "Aug 2023",
+    credentialId: "JSE-1-Certificate",
+    skills: "JavaScript",
+    credentialUrl: "#",
+    badge: "/certificates/Courses/SkillsForAll (cisco)/JSE 1/certificate.png",
+    category: "Programming"
+  },
+  {
+    title: "CodSoft Web Development Internship",
+    issuer: "CodSoft",
+    issuedDate: "2023",
+    credentialId: "CODSOFT-WEBDEV",
+    skills: "Web Development, HTML, CSS, JavaScript",
+    credentialUrl: "#",
+    badge: "/certificates/Internships/CodSoft/Completion Certificate/Certificate.png",
+    category: "Internship"
+  },
+  {
+    title: "CodeAlpha Web Development Internship",
+    issuer: "CodeAlpha",
+    issuedDate: "2023",
+    credentialId: "CODEALPHA-OFFER",
+    skills: "Web Development",
+    credentialUrl: "#",
+    badge: "/certificates/Internships/CodeAlpha/Offer Letter/offer letter code alpha.jpg",
+    category: "Internship"
   },
   {
     title: "Machine Learning Algorithms",
     issuer: "Great Learning",
     issuedDate: "May 2023",
-    credentialId: "https://olympus.mygr eatlearning.com/courses/57914/certificate",
+    credentialId: "https://olympus.mygreatlearning.com/courses/57914/certificate",
     skills: "python",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    badge: "/certificates/Courses/Great Learning/Machine Learning Algorithms/Machine Learning Algorithm.jpg",
+    category: "AI/ML"
   }
 ];
 

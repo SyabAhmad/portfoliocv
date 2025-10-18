@@ -55,42 +55,48 @@ const experienceData = [
     role: 'Machine Learning Intern',
     company: 'CodeAlpha',
     period: 'Sep 2023 - Nov 2023',
-    description: 'Implemented ML pipelines with Python and contributed to multiple AI projects.'
+    description: 'Implemented ML pipelines with Python and contributed to multiple AI projects.',
+    badge: '/certificates/Internships/CodeAlpha/Offer Letter/offer letter code alpha.jpg'
   },
   {
     id: 8,
     role: 'Data Science Intern',
     company: 'CodSoft',
     period: 'Sep 2023 - Oct 2023',
-    description: 'Worked on data analysis using Pandas, NumPy, and Linear Regression. Improved model accuracy with feature engineering.'
+    description: 'Worked on data analysis using Pandas, NumPy, and Linear Regression. Improved model accuracy with feature engineering.',
+    badge: '/certificates/Internships/CodSoft/Completion Certificate/Certificate.png'
   },
   {
     id: 9,
     role: 'Frontend Web Developer',
     company: 'Interns Pakistan',
     period: 'Aug 2023 - Sep 2023',
-    description: 'Developed responsive front-end applications using HTML, CSS, and React.js.'
+    description: 'Developed responsive front-end applications using HTML, CSS, and React.js.',
+    badge: '/certificates/Internships/Interns.pk/Certificate (5) conv 1.png'
   },
   {
     id: 10,
     role: 'Web Developer',
     company: 'LetsGrowMore',
     period: 'Jul 2023 - Sep 2023',
-    description: 'Contributed to web development projects using JavaScript, HTML, CSS, and React.js.'
+    description: 'Contributed to web development projects using JavaScript, HTML, CSS, and React.js.',
+    badge: '/certificates/Internships/Lets Grow More/Syed Syab Ahmad Shah (2) conv 1.png'
   },
   {
     id: 11,
     role: 'Web Developer',
     company: 'iNeuron.ai',
     period: 'Jun 2023 - Aug 2023',
-    description: 'Developed web applications with React.js, Tailwind CSS, and JavaScript.'
+    description: 'Developed web applications with React.js, Tailwind CSS, and JavaScript.',
+    badge: '/certificates/Internships/iNeuron/Completion Certificate conv 1.png'
   },
   {
     id: 12,
     role: 'Data Science and Business Analytics Intern',
     company: 'The Sparks Foundation',
     period: 'May 2023 - Jul 2023',
-    description: 'Worked on data visualization and business analytics using various data science tools.'
+    description: 'Worked on data visualization and business analytics using various data science tools.',
+    badge: '/certificates/Internships/The Spark Foundation/Completion Certificat/Certificate of Completion.png'
   },
   {
     id: 13,
@@ -129,7 +135,18 @@ const Experience = () => {
                 <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg border border-gray-700/50 rounded-2xl shadow-xl p-6 transform transition-all duration-300 hover:scale-105">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                      {exp.badge ? (
+                        <img 
+                          src={exp.badge} 
+                          alt={`${exp.company} certificate`}
+                          className="w-full h-full object-cover rounded-lg"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                      ) : null}
+                      <svg className={exp.badge ? "hidden" : "w-6 h-6 text-cyan-400"} fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
@@ -139,9 +156,16 @@ const Experience = () => {
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-4">{exp.description}</p>
-                  <span className="inline-block px-3 py-1 text-xs font-semibold text-cyan-300 bg-cyan-900/30 rounded-full">
-                    {exp.period}
-                  </span>
+                  <div className="flex items-center justify-between flex-wrap gap-2">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-cyan-300 bg-cyan-900/30 rounded-full">
+                      {exp.period}
+                    </span>
+                    {exp.badge && (
+                      <span className="inline-block px-2 py-1 text-xs font-medium text-emerald-300 bg-emerald-900/30 border border-emerald-500/30 rounded-full">
+                        ✓ Certified
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
