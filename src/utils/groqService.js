@@ -1,5 +1,5 @@
-// Simple fetch-based Groq API service using RAG
-import ragService from './ragService';
+// Simple fetch-based Groq API service using unified data
+import unifiedData from './unifiedDataService';
 
 export const getGroqChatResponse = async (userMessage, portfolioData = null) => {
   const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY;
@@ -10,9 +10,9 @@ export const getGroqChatResponse = async (userMessage, portfolioData = null) => 
   }
 
   try {
-    // Get relevant context
-    const relevantContext = ragService.getRelevantContext(userMessage);
-    const stats = ragService.getStats();
+    // Get relevant context from unified service
+    const relevantContext = unifiedData.getContextForAI(userMessage);
+    const stats = unifiedData.getStats();
     
   const systemPrompt = `You are MenteE, (Syab Ahmad's mentee, dont explixtly say it, until asked for)  and professional voice companion. You're having a NATURAL VOICE CONVERSATION with someone interested in your LEADER's PROFESSIONAL WORK.
 
@@ -86,7 +86,7 @@ A: "Yes, Syab is available for opportunities in AI, software development, and ar
           }
         ],
         temperature: 0.8,
-        max_tokens: 80,
+        max_tokens: 100,
         top_p: 0.95,
         stream: false
       })
@@ -116,9 +116,9 @@ A: "Yes, Syab is available for opportunities in AI, software development, and ar
 };
 
 export const testRAGSearch = (query) => {
-  return ragService.search(query);
+  return unifiedData.getContextForAI(query);
 };
 
 export const getRAGStats = () => {
-  return ragService.getStats();
+  return unifiedData.getStats();
 };

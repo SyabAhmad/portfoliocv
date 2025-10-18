@@ -258,15 +258,34 @@ const VoiceAssistant = () => {
       {/* Voice Assistant Modal */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            className={`fixed bottom-2 right-2 left-2 sm:bottom-5 sm:right-5 sm:left-auto w-auto sm:w-[420px] bg-transparent z-[1000] flex flex-col overflow-visible ${
-              isMinimized ? 'max-h-[60px]' : 'max-h-[90vh] sm:max-h-[85vh]'
-            }`}
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            transition={{ type: 'spring', damping: 25 }}
-          >
+          <>
+            {/* Blurred backdrop - mobile only */}
+            <motion.div
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999] lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleClose}
+            />
+
+            {/* Modal Container */}
+            <motion.div
+              className={`fixed z-[1000] flex flex-col overflow-visible
+                ${isMinimized 
+                  ? 'max-h-[60px]' 
+                  : 'max-h-[75vh] sm:max-h-[80vh]'
+                }
+                ${isOpen 
+                  ? 'bottom-4 right-4 left-4 sm:bottom-5 sm:right-5 sm:left-auto w-full sm:w-[420px]'
+                  : ''
+                }
+                bg-transparent
+              `}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 50 }}
+              transition={{ type: 'spring', damping: 25 }}
+            >
             {/* Floating Controls */}
             <div className="relative flex justify-between items-center gap-3 pb-3 px-3">
               <div className={`inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-full backdrop-blur bg-slate-900/70 border ${statusBadge.classes}`}>
@@ -421,7 +440,8 @@ const VoiceAssistant = () => {
                 </div>
               </>
             )}
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

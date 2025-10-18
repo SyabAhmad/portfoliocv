@@ -1,16 +1,16 @@
-import simpleRag from './simpleRagService';
+import unifiedData from './unifiedDataService';
 
 export const getSimpleResponse = async (userMessage) => {
   const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY;
   
   // Check for specific quick answers first
-  const quickCheck = simpleRag.getQuickAnswer(userMessage);
+  const quickCheck = unifiedData.getQuickAnswer(userMessage);
   if (quickCheck.hasAnswer) {
     return quickCheck.answer;
   }
 
   // Get full context for AI
-  const context = simpleRag.getContextForAI(userMessage);
+  const context = unifiedData.getContextForAI(userMessage);
 
   // Try AI response first
   if (GROQ_API_KEY) {
@@ -49,7 +49,7 @@ IMPORTANT:
             { role: 'user', content: userMessage }
           ],
           temperature: 0.5,
-          max_tokens: 100,
+          max_tokens: 200,
           top_p: 0.9
         })
       });
@@ -98,5 +98,5 @@ IMPORTANT:
 };
 
 export const getBasicStats = () => {
-  return simpleRag.getStats();
+  return unifiedData.getStats();
 };

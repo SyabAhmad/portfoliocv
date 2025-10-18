@@ -3,6 +3,8 @@ import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaFacebook, FaDiscord, Fa
 import { SiLeetcode, SiHackerrank, SiCodechef, SiHuggingface, SiOrcid, SiFiverr, SiCodepen, SiCodewars } from 'react-icons/si';
 import certifications from '../data/certificationsData';
 import recommendations from '../data/recommendationsData';
+import CertificationBadges from './CertificationBadges';
+import Recommendations from './Recommendations';
 import SEO from './SEO';
   
 const volunteering = [
@@ -17,7 +19,6 @@ const volunteering = [
 
 const About = () => {
   const [showAllCertifications, setShowAllCertifications] = useState(false);
-  const [showAllRecommendations, setShowAllRecommendations] = useState(false);
   const [showAllSocialLinks, setShowAllSocialLinks] = useState(false);
 
   const socialLinks = [
@@ -54,7 +55,6 @@ const About = () => {
   // Limit items shown initially
   const socialLinksToShow = showAllSocialLinks ? socialLinks : socialLinks.slice(0, 12);
   const certificationsToShow = showAllCertifications ? certifications : certifications.slice(0, 8);
-  const recommendationsToShow = showAllRecommendations ? recommendations : recommendations.slice(0, 6);
 
   const aboutStructuredData = {
     "@context": "https://schema.org",
@@ -187,9 +187,12 @@ const About = () => {
               <div className="text-gray-300 text-lg leading-relaxed mb-8 space-y-4 max-w-4xl mx-auto">
                 <p>
                   Welcome to my digital portfolio! I'm a passionate AI Engineer and Full-Stack Developer with expertise in 
-                  Machine Learning, Deep Learning, and modern web technologies. Currently pursuing my studies at the 
-                  University of Swat, I'm dedicated to building innovative solutions that bridge the gap between 
+                  Machine Learning, Deep Learning, and modern web technologies. I'm dedicated to building innovative solutions that bridge the gap between 
                   artificial intelligence and real-world applications.
+                </p>
+                <p>
+                  I’m currently freelancing, exploring new domains — from AI and Web to even modeling and creative stuff 😎📸  
+                  Basically, if it’s cool, I’m probably building it or breaking it (for science, of course 😅).
                 </p>
                 <p>
                   My journey spans from developing healthcare AI systems for disease prediction to creating 
@@ -262,6 +265,34 @@ const About = () => {
             </div>
           </section>
 
+          {/* Certificate Badges Section */}
+          <section>
+            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto">
+              <div className="text-center mb-6">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-3">
+                  Certificate Badges
+                </h2>
+                <p className="text-gray-400 text-sm mb-4">
+                  Featured certification badges - Click on any badge to view details
+                </p>
+                <a
+                  href="/gallery"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  View Full Gallery ({certifications.filter(cert => cert.badge).length} Certificates)
+                </a>
+              </div>
+              <CertificationBadges 
+                certifications={certifications}
+                maxItems={6}
+                showCategory={true}
+              />
+            </div>
+          </section>
+
           {/* Certifications Section */}
           <section>
             <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-12">
@@ -324,49 +355,20 @@ const About = () => {
 
           {/* Recommendations Section */}
           <section>
-            <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-12">
-              Recommendations
-            </h2>
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
-              {recommendationsToShow.map((rec, index) => (
-                <div
-                  key={index}
-                  className="break-inside-avoid mb-6 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50"
-                >
-                  <div className="mb-4">
-                    <h3 className="text-lg font-semibold text-white">
-                      {rec.recommender}
-                    </h3>
-                    <p className="text-sm text-gray-400">
-                      {rec.designation} • {rec.connection}
-                    </p>
-                    <p className="text-xs text-emerald-400 mt-1">{rec.date}</p>
-                  </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{rec.text}</p>
-                </div>
-              ))}
-            </div>
-            
-            {recommendations.length > 6 && (
-              <div className="text-center mt-8">
-                <button
-                  onClick={() => setShowAllRecommendations(!showAllRecommendations)}
-                  className="flex items-center justify-center mx-auto px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-emerald-400 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105"
-                >
-                  {showAllRecommendations ? (
-                    <>
-                      <FaChevronUp className="mr-2" />
-                      Show Less
-                    </>
-                  ) : (
-                    <>
-                      <FaChevronDown className="mr-2" />
-                      View All Recommendations ({recommendations.length - 6} more)
-                    </>
-                  )}
-                </button>
+            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-3">
+                  Recommendations
+                </h2>
+                <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+                  What colleagues and mentors say about working with me
+                </p>
               </div>
-            )}
+              <Recommendations 
+                recommendations={recommendations}
+                maxItems={6}
+              />
+            </div>
           </section>
 
           {/* Volunteering Section */}

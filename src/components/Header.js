@@ -14,6 +14,7 @@ const Header = () => {
     { path: '/projects', label: 'Projects' },
     { path: '/research', label: 'Research' },
     { path: '/experience', label: 'Experience' },
+    { path: '/gallery', label: 'Gallery' },
   ];
   // close modal on Escape key for better UX
   useEffect(() => {
@@ -36,15 +37,15 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/95 to-purple-900/95 backdrop-blur-sm border-b border-gray-700/50 shadow-2xl">
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-300 transition-all duration-300">
+          <Link to="/" className="text-lg md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-300 transition-all duration-300 truncate max-w-[180px] md:max-w-none">
             Syed Syab Ahmad
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden lg:flex xl:space-x-8 lg:space-x-4 items-center text-sm xl:text-base">
             {primaryLinks.map((item) => (
               <Link
                 key={item.path}
@@ -123,11 +124,11 @@ const Header = () => {
               onClick={() => setIsMenteEOpen(true)}
               aria-haspopup="dialog"
               aria-expanded={isMenteEOpen}
-              className="relative inline-flex items-center text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 via-green-400 to-blue-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 drop-shadow-lg focus:outline-none"
+              className="relative inline-flex items-center text-base lg:text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 via-green-400 to-blue-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 drop-shadow-lg focus:outline-none whitespace-nowrap"
               title="About MenteE"
             >
               MenteE™
-              <span className="ml-2 animate-pulse" aria-hidden>✦</span>
+              <span className="ml-1 lg:ml-2 animate-pulse" aria-hidden>✦</span>
             </button>
           </div>
 
@@ -193,10 +194,10 @@ const Header = () => {
           )}
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-purple-400 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105"
+              className="px-4 py-2 lg:px-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-purple-400 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 whitespace-nowrap text-sm lg:text-base"
             >
               Let's Connect
             </Link>
@@ -204,8 +205,9 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+            className="lg:hidden text-gray-300 hover:text-cyan-400 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -215,7 +217,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-gray-700/50">
+          <div className="lg:hidden mt-4 pt-4 border-t border-gray-700/50">
             <div className="flex flex-col space-y-3">
               {primaryLinks.map((item) => (
                 <Link

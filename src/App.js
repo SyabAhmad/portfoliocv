@@ -19,6 +19,7 @@ import AutoCADPortfolio from './components/AutoCADPortfolio';
 import SketchUpPortfolio from './components/SketchUpPortfolio';
 import AllDesignProjects from './components/AllDesignProjects';
 import DesignProjectDetail from './components/DesignProjectDetail';
+import Gallery from './components/Gallery';
 import './App.css';
 import './styles/global.css';
 
@@ -46,6 +47,7 @@ function App() {
     SketchUpPortfolio,
     AllDesignProjects,
     DesignProjectDetail,
+    Gallery,
   });
 
   return (
@@ -66,6 +68,7 @@ function App() {
                 <Route path="/experience" element={<Experience />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/skills" element={<Skills />} />
+                <Route path="/gallery" element={<Gallery />} />
 
                 {/* Design & Architecture Routes */}
                 <Route path="/design" element={<DesignPortfolio />} />
