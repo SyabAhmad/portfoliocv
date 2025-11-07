@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
@@ -7,12 +7,13 @@ const Navbar = () => {
   const [designDropdown, setDesignDropdown] = useState(false);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/research', label: 'Research' },
-    { path: '/contact', label: 'Contact' },
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/projects", label: "Projects" },
+    { path: "/experience", label: "Experience" },
+    { path: "/research", label: "Research" },
+    { path: "/mentee", label: "MenteE" }, // Now just a normal link
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
@@ -20,7 +21,10 @@ const Navbar = () => {
       <div className="container mx-auto px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Brand */}
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <Link
+            to="/"
+            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
+          >
             Syed Syab Ahmad
           </Link>
 
@@ -32,8 +36,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`px-4 py-2 rounded-lg transition-all ${
                   location.pathname === item.path
-                    ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                    ? "bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400"
+                    : "text-gray-300 hover:text-white hover:bg-gray-800/50"
                 }`}
               >
                 {item.label}
@@ -41,21 +45,31 @@ const Navbar = () => {
             ))}
 
             {/* Design & Architecture Dropdown */}
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => setDesignDropdown(true)}
               onMouseLeave={() => setDesignDropdown(false)}
             >
               <button
                 className={`px-4 py-2 rounded-lg transition-all flex items-center gap-1 ${
-                  location.pathname.startsWith('/design')
-                    ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                  location.pathname.startsWith("/design")
+                    ? "bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400"
+                    : "text-gray-300 hover:text-white hover:bg-gray-800/50"
                 }`}
               >
                 Design & Architecture
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
 
@@ -118,11 +132,26 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -137,15 +166,15 @@ const Navbar = () => {
                 to={item.path}
                 className={`block px-4 py-2 rounded-lg transition-all ${
                   location.pathname === item.path
-                    ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                    ? "bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400"
+                    : "text-gray-300 hover:text-white hover:bg-gray-800/50"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            
+
             {/* Mobile Design Section */}
             <div className="mt-2">
               <Link

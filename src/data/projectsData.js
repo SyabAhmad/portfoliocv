@@ -1,5 +1,17 @@
 const projects = [
   {
+    title: "DocxBox",
+    duration: "2025",
+    description:
+      "A privacy-first Android document manager that implements enterprise-grade security without compromising user experience. DocxBox encrypts every file end-to-end before storage, enables passwordless authentication via Google, and automatically backs up encrypted documents to Google Drive — all while working seamlessly offline. Built as a systems-level demonstration that strong security and intuitive UX can coexist.",
+    keyFeatures:
+      "End-to-End Encryption · Passwordless OAuth 2.0 Auth · Encrypted Cloud Backup · Offline-First Sync · Secure File Sharing · OWASP-Compliant Design",
+    techStack:
+      "Kotlin, Jetpack Compose, Firebase Authentication, Room Database (Encrypted Blobs), Google Drive API, Android Security Library",
+    skills:
+      "Mobile Security, Cryptography (AES-256, SHA-256), OAuth 2.0 & Identity Management, Offline-First Architecture, Cloud Sync & Conflict Resolution, Defensive Android Development",
+  },
+  {
     title: "Colors",
     duration: "2024",
     description:

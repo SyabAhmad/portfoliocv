@@ -1,38 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMenteEOpen, setIsMenteEOpen] = useState(false);
   const [isDesignDropdownOpen, setIsDesignDropdownOpen] = useState(false);
   const [isMobileDesignOpen, setIsMobileDesignOpen] = useState(false);
   const designDropdownRef = useRef(null);
 
   const primaryLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/research', label: 'Research' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/gallery', label: 'Gallery' },
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/projects", label: "Projects" },
+    { path: "/research", label: "Research" },
+    { path: "/experience", label: "Experience" },
+    { path: "/gallery", label: "Gallery" },
   ];
-  // close modal on Escape key for better UX
-  useEffect(() => {
-    if (!isMenteEOpen) return;
-    const onKey = (e) => { if (e.key === 'Escape') setIsMenteEOpen(false); };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [isMenteEOpen]);
 
   useEffect(() => {
     if (!isDesignDropdownOpen) return;
     const handleClickOutside = (event) => {
-      if (designDropdownRef.current && !designDropdownRef.current.contains(event.target)) {
+      if (
+        designDropdownRef.current &&
+        !designDropdownRef.current.contains(event.target)
+      ) {
         setIsDesignDropdownOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isDesignDropdownOpen]);
 
   return (
@@ -40,7 +35,10 @@ const Header = () => {
       <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-lg md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-300 transition-all duration-300 truncate max-w-[180px] md:max-w-none">
+          <Link
+            to="/"
+            className="text-lg md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-300 transition-all duration-300 truncate max-w-[180px] md:max-w-none"
+          >
             Syed Syab Ahmad
           </Link>
 
@@ -65,8 +63,20 @@ const Header = () => {
                 onClick={() => setIsDesignDropdownOpen((prev) => !prev)}
               >
                 Design & Architecture
-                <svg className={`w-4 h-4 transition-transform ${isDesignDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <svg
+                  className={`w-4 h-4 transition-transform ${
+                    isDesignDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
               {isDesignDropdownOpen && (
@@ -119,79 +129,17 @@ const Header = () => {
               )}
             </div>
 
-            <button
-              type="button"
-              onClick={() => setIsMenteEOpen(true)}
-              aria-haspopup="dialog"
-              aria-expanded={isMenteEOpen}
-              className="relative inline-flex items-center text-base lg:text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 via-green-400 to-blue-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 drop-shadow-lg focus:outline-none whitespace-nowrap"
+            <Link
+              to="/mentee"
+              className="relative inline-flex items-center text-base lg:text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 drop-shadow-lg focus:outline-none whitespace-nowrap"
               title="About MenteE"
             >
               MenteE™
-              <span className="ml-1 lg:ml-2 animate-pulse" aria-hidden>✦</span>
-            </button>
+              <span className="ml-1 lg:ml-2 animate-pulse" aria-hidden>
+                ✦
+              </span>
+            </Link>
           </div>
-
-          {/* MenteE Modal (centered, animated like promotional popup) */}
-          {isMenteEOpen && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm mt-60"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="mentee-title"
-              onClick={() => setIsMenteEOpen(false)}
-            >
-              <div
-                className="max-w-lg w-full mx-4"
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                  transform: 'translateY(0)',
-                  transition: 'transform 180ms ease-out, opacity 180ms ease-out',
-                }}
-              >
-                <div
-                  className="w-full bg-gradient-to-br from-gray-900 to-slate-800 rounded-2xl border border-gray-700 p-6 text-white shadow-2xl transform scale-100"
-                  style={{ animation: 'popIn 180ms ease-out' }}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 id="mentee-title" className="text-2xl font-bold">MenteE — Startup (In Progress)</h3>
-                    <button
-                      onClick={() => setIsMenteEOpen(false)}
-                      aria-label="Close"
-                      className="text-gray-300 hover:text-white rounded-full p-1"
-                    >
-                      ✕
-                    </button>
-                  </div>
-
-                  <p className="text-gray-200 mb-4 leading-relaxed">
-                    This is our startup and it's currently in progress. We're building an AI products — working to launch soon.
-                  </p>
-
-                  <p className="text-gray-200 mb-6">
-                    For updates and company info, visit our LinkedIn. The website will be available soon.
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href="https://www.linkedin.com/company/mentee1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block w-full sm:w-auto text-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-black hover:opacity-95"
-                    >
-                      Visit LinkedIn
-                    </a>
-                    <button
-                      onClick={() => setIsMenteEOpen(false)}
-                      className="inline-block w-full sm:w-auto px-4 py-2 border border-gray-600 rounded-lg text-gray-200 hover:text-white"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* CTA Button */}
           <div className="hidden lg:block">
@@ -209,8 +157,18 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
@@ -230,6 +188,14 @@ const Header = () => {
                 </Link>
               ))}
 
+              <Link
+                to="/mentee"
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                MenteE™
+              </Link>
+
               <div className="border border-slate-700/70 rounded-lg overflow-hidden">
                 <button
                   type="button"
@@ -239,12 +205,19 @@ const Header = () => {
                 >
                   <span className="font-medium">Design & Architecture</span>
                   <svg
-                    className={`w-4 h-4 transition-transform ${isMobileDesignOpen ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 transition-transform ${
+                      isMobileDesignOpen ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
                 {isMobileDesignOpen && (
