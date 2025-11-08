@@ -8,8 +8,8 @@ const projects = [
       "End-to-End Encryption · Passwordless OAuth 2.0 Auth · Encrypted Cloud Backup · Offline-First Sync · Secure File Sharing · OWASP-Compliant Design",
     techStack:
       "Kotlin, Jetpack Compose, Firebase Authentication, Room Database (Encrypted Blobs), Google Drive API, Android Security Library",
-    skills:
-      "Mobile Security, Cryptography (AES-256, SHA-256), OAuth 2.0 & Identity Management, Offline-First Architecture, Cloud Sync & Conflict Resolution, Defensive Android Development",
+    skills: "Mobile Development, Security, Android",
+    category: "Mobile App Development",
   },
   {
     title: "Colors",
@@ -20,8 +20,8 @@ const projects = [
       "Palette Generation · CSS Variables Export · MCP Integration · Accessibility Metadata · AI Tool Support",
     techStack:
       "TypeScript, VS Code Extension API, MCP (Model Context Protocol), JSON-RPC",
-    skills:
-      "TypeScript, Extension Development, Color Theory, AI Integration, MCP Protocol",
+    skills: "TypeScript, Extension Development, AI Integration",
+    category: "Developer Tools",
     githubUrl: "https://github.com/SyabAhmad/colors",
   },
   {
@@ -32,8 +32,8 @@ const projects = [
     keyFeatures:
       "Patient Management · Employee Management · Lab Test Configuration · Billing & Payments · Inventory Tracking · HL7 Integration · Patient Portal",
     techStack: "Laravel 8, MySQL, Bootstrap, PHP, DataTables, mPDF, Twilio",
-    skills:
-      "PHP, Laravel, MySQL, Web Development, API Integration, Report Generation",
+    skills: "PHP, Laravel, MySQL, Web Development",
+    category: "Web Development",
     githubUrl: "https://github.com/SyabAhmad/Laboratory-Management-System",
   },
   {
@@ -44,7 +44,8 @@ const projects = [
     keyFeatures:
       "Video Upload · AI-Powered Enhancement · High-Quality Output · User-Friendly Interface",
     techStack: "Python, REALESRGAN, FASTAPI, VidAIo Subnit",
-    skills: "Deep Learning, Video Processing, API Development, Python, FastAPI",
+    skills: "Deep Learning, Video Processing, API Development",
+    category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/video-enhancing-project",
   },
   {
@@ -55,8 +56,8 @@ const projects = [
     keyFeatures:
       "User Profiles · Product Listings · Secure Payments · Artisan Community",
     techStack: "React.js, Node.js, Express.js, MongoDB, Stripe",
-    skills:
-      "Full Stack Development, E-commerce, React.js, Python, PostgreSQL, ",
+    skills: "Full Stack Development, E-commerce, React.js",
+    category: "Web Development",
     githubUrl: "https://github.com/SyabAhmad/global_craft_hub",
   },
   {
@@ -67,8 +68,8 @@ const projects = [
     keyFeatures:
       "Course Selection · Campus Information · Academic Resources · 24/7 Support",
     techStack: "Python, Groq API, Flask, PostgreSQL",
-    skills:
-      "Natural Language Processing, Chatbot Development, Python, Flask, PostgreSQL",
+    skills: "Natural Language Processing, Chatbot Development",
+    category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/swat-assist-bot",
   },
   {
@@ -79,8 +80,8 @@ const projects = [
     keyFeatures:
       "Scenario Input · Script Generation · AI Voice Synthesis · Podcast Output",
     techStack: "Python, OpenAI API, gTTS/TTS, Streamlit, LLMs",
-    skills:
-      "Generative AI, Natural Language Processing, Text-to-Speech, Prompt Engineering, Python",
+    skills: "Generative AI, Text-to-Speech, Prompt Engineering",
+    category: "AI & Machine Learning",
   },
   {
     title: "CakeBacker",
@@ -90,8 +91,8 @@ const projects = [
     keyFeatures:
       "Product Listing · Cart System · Order Management · Admin Dashboard",
     techStack: "Flask, PostgreSQL, Python, HTML, CSS, JavaScript",
-    skills:
-      "Backend Development, REST APIs, Database Design, Flask, Team Collaboration",
+    skills: "Backend Development, REST APIs, Database Design",
+    category: "Web Development",
   },
   {
     title: "CamWatch",
@@ -101,8 +102,8 @@ const projects = [
     keyFeatures:
       "Weapon Detection · Real-Time Alerts · Image Captioning · Vision-Language Integration",
     techStack: "YOLOv8, Python, OpenCV, SmolVLM-500, LLaMA.cpp, Flask, MySQL",
-    skills:
-      "Computer Vision, Object Detection, LLMs, Backend APIs, Surveillance AI",
+    skills: "Computer Vision, Object Detection, LLMs",
+    category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/CamWatch",
   },
   {
@@ -114,7 +115,8 @@ const projects = [
       "CV Parsing · Embedding Generation · Semantic Search · Real-Time Q&A",
     techStack:
       "Django, Python, PostgreSQL, Sentence Transformers, REST API, Railway, Vercel",
-    skills: "Python, Django, React.js, JavaScript, PostgreSQL, Vectors",
+    skills: "Python, Django, React.js, PostgreSQL",
+    category: "Web Development",
     githubUrl: "https://github.com/SyabAhmad/CvChat",
   },
   {
@@ -124,6 +126,7 @@ const projects = [
       "A smart interview practice platform where users answer AI-generated questions, record video responses, and get detailed feedback. Supports speech-to-text and text-to-speech for a realistic experience with JWT authentication.",
     techStack: "React.js, Python, FastAPI, PostgreSQL, Groq API, TTS, STT, JWT",
     skills: "Python, JavaScript, PostgreSQL, React.js",
+    category: "Web Development",
     githubUrl: "https://github.com/SyabAhmad/mocksterai",
   },
   {
@@ -132,7 +135,8 @@ const projects = [
     description:
       "An AI-powered toolkit built with React.js and Supabase to streamline recruitment workflows. Features tools like AI Email Writer, Cover Letter Generator, Optimized Job Ad Creator, and Video-to-Blog Converter.",
     techStack: "React.js, Supabase, TailwindCSS, PostgreSQL, OAuth 2.0",
-    skills: "React.js, Supabase, TailwindCSS, PostgreSQL, JavaScript",
+    skills: "React.js, Supabase, TailwindCSS, PostgreSQL",
+    category: "Web Development",
     githubUrl: "https://github.com/SyabAhmad/quickhire.ai",
   },
   {
@@ -142,6 +146,8 @@ const projects = [
       "A Visual Studio Code extension to boost productivity by providing a comprehensive collection of Python and Machine Learning code snippets for tasks including data manipulation, model building, and visualization.",
     techStack: "Visual Studio Code Extension, Python, ML",
     skills: "Python",
+    category: "AI & Machine Learning",
+    category: "Developer Tools",
     githubUrl: "https://github.com/SyabAhmad/python-quick-snippets",
   },
   {
@@ -151,6 +157,7 @@ const projects = [
       "A Python package to assist in data preprocessing. Currently under development with an advanced level design.",
     techStack: "Python, NumPy, Pandas, Scikit-Learn",
     skills: "Python, NumPy, Pandas, Scikit-Learn",
+    category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/datafit",
   },
   {
@@ -160,6 +167,7 @@ const projects = [
       "A project focused on bioinformatics applications. Provides core functionalities related to data processing and MySQL integration.",
     techStack: "Python, MySQL, OpenCV",
     skills: "Python, MySQL, OpenCV",
+    category: "AI & Machine Learning",
   },
   {
     title: "Vid2Txt",
@@ -169,6 +177,7 @@ const projects = [
     techStack:
       "Python, MoviePy, SpeechRecognition, Google Speech-to-Text, Anthropic API",
     skills: "Python, Generative AI",
+    category: "AI & Machine Learning",
   },
   {
     title: "PDFTalk",
@@ -177,7 +186,8 @@ const projects = [
       "A project associated with AI3 that involves a resume analysis or document interaction platform. Utilizes prompt engineering and machine learning techniques.",
     techStack:
       "Python, Generative AI, Prompt Engineering, Pandas, Scikit-Learn",
-    skills: "Python, Generative AI, Prompt Engineering, Pandas, Scikit-Learn",
+    skills: "Python, Generative AI, Prompt Engineering",
+    category: "AI & Machine Learning",
   },
   {
     title: "Paper AI - Paper Generator App",
@@ -202,7 +212,9 @@ const projects = [
     description:
       "A React.js-based music streaming application featuring a homepage with top trending songs and an integrated music player.",
     techStack: "React.js, JavaScript",
-    skills: "JavaScript, React.js, LLD, Wireframing, HLD",
+    skills: "JavaScript, React.js",
+    category: "Web Development",
+    category: "Web Development",
   },
   {
     title: "Basic Calculator",
@@ -211,6 +223,7 @@ const projects = [
       "A simple web application that performs basic arithmetic operations with an intuitive UI. Built with React.js and featuring state management and event handling.",
     techStack: "React.js, CSS, JavaScript",
     skills: "CSS, JavaScript, React.js",
+    category: "Web Development",
   },
   {
     title: "Getting Data From API",
@@ -227,6 +240,7 @@ const projects = [
       "A simple Todo List application demonstrating fundamental React.js techniques.",
     techStack: "React.js",
     skills: "React.js",
+    category: "Web Development",
   },
   {
     title: "Code Snippets",
@@ -234,7 +248,8 @@ const projects = [
     description:
       "An Android application featuring a consolidated collection of code examples, with filtering options by programming language.",
     techStack: "Java, XML, Android Design",
-    skills: "Java, XML, Android Design",
+    skills: "Java, XML, Android",
+    category: "Mobile App Development",
   },
   {
     title: "GPA Calculator",
@@ -242,7 +257,8 @@ const projects = [
     description:
       "A GPA Calculator web application associated with the University of Swat, demonstrating skills in Android design and Java.",
     techStack: "Java, XML, Android Design",
-    skills: "Java, XML, Android Design",
+    skills: "Java, XML, Android",
+    category: "Mobile App Development",
   },
 ];
 

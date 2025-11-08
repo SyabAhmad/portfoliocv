@@ -1,116 +1,148 @@
-import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp, FaGithub, FaExternalLinkAlt, FaCode, FaCalendarAlt, FaFilter } from 'react-icons/fa';
-import SEO from './SEO';
+import React, { useState } from "react";
+import {
+  FaChevronDown,
+  FaChevronUp,
+  FaGithub,
+  FaExternalLinkAlt,
+  FaCode,
+  FaCalendarAlt,
+  FaFilter,
+} from "react-icons/fa";
+import SEO from "./SEO";
 
 // Import with error handling
 let projects = [];
 try {
-  projects = require('../data/projectsData').default || [];
+  projects = require("../data/projectsData").default || [];
 } catch (error) {
-  console.warn('Projects data not found, using fallback data');
+  console.warn("Projects data not found, using fallback data");
   // Fallback projects data
   projects = [
     {
       title: "AI-Powered Malaria Detection System",
       duration: "3 months",
-      description: "Developed a deep learning model using CNN and transfer learning to detect malaria parasites in blood smear images with 95% accuracy.",
-      keyFeatures: "Real-time detection, Web-based interface, Image preprocessing pipeline, Model deployment",
+      description:
+        "Developed a deep learning model using CNN and transfer learning to detect malaria parasites in blood smear images with 95% accuracy.",
+      keyFeatures:
+        "Real-time detection, Web-based interface, Image preprocessing pipeline, Model deployment",
       techStack: "Python, TensorFlow, OpenCV, Flask, HTML/CSS, JavaScript",
       skills: "Computer Vision, Deep Learning, Web Development",
       category: "Healthcare AI",
       status: "Completed",
       githubUrl: "https://github.com/syabahmad/malaria-detection",
-      liveUrl: "https://malaria-detection-demo.netlify.app"
+      liveUrl: "https://malaria-detection-demo.netlify.app",
     },
     {
       title: "Heart Disease Prediction System",
       duration: "2 months",
-      description: "Created an ensemble machine learning model to predict heart disease risk with improved accuracy over traditional methods.",
-      keyFeatures: "Multiple ML algorithms, Feature engineering, Interactive dashboard, Risk assessment",
+      description:
+        "Created an ensemble machine learning model to predict heart disease risk with improved accuracy over traditional methods.",
+      keyFeatures:
+        "Multiple ML algorithms, Feature engineering, Interactive dashboard, Risk assessment",
       techStack: "Python, Scikit-learn, Pandas, Streamlit, Plotly",
       skills: "Machine Learning, Data Analysis, Web Apps",
       category: "Healthcare AI",
       status: "Completed",
-      githubUrl: "https://github.com/syabahmad/heart-disease-prediction"
+      githubUrl: "https://github.com/syabahmad/heart-disease-prediction",
     },
     {
       title: "Portfolio Website",
       duration: "1 month",
-      description: "Built a responsive portfolio website showcasing projects, skills, and professional experience.",
-      keyFeatures: "Responsive design, SEO optimized, Interactive animations, Dark theme",
+      description:
+        "Built a responsive portfolio website showcasing projects, skills, and professional experience.",
+      keyFeatures:
+        "Responsive design, SEO optimized, Interactive animations, Dark theme",
       techStack: "React, Tailwind CSS, JavaScript, Netlify",
       skills: "Frontend Development, UI/UX Design, SEO",
       category: "Web Development",
       status: "Completed",
-      liveUrl: "https://syab.link"
+      liveUrl: "https://syab.link",
     },
     {
       title: "E-commerce Analytics Dashboard",
       duration: "2 months",
-      description: "Built a comprehensive analytics dashboard for e-commerce businesses to track sales, customer behavior, and inventory management.",
-      keyFeatures: "Real-time analytics, Interactive charts, Sales forecasting, Customer segmentation",
+      description:
+        "Built a comprehensive analytics dashboard for e-commerce businesses to track sales, customer behavior, and inventory management.",
+      keyFeatures:
+        "Real-time analytics, Interactive charts, Sales forecasting, Customer segmentation",
       techStack: "React, Node.js, MongoDB, Chart.js, Express.js",
       skills: "Full Stack Development, Data Visualization, Analytics",
       category: "Web Development",
       status: "Completed",
-      githubUrl: "https://github.com/syabahmad/ecommerce-dashboard"
+      githubUrl: "https://github.com/syabahmad/ecommerce-dashboard",
     },
     {
       title: "Natural Language Processing Chatbot",
       duration: "2.5 months",
-      description: "Developed an intelligent chatbot using NLP techniques and transformer models for customer service automation.",
-      keyFeatures: "Intent recognition, Contextual responses, Multi-language support, Learning capabilities",
+      description:
+        "Developed an intelligent chatbot using NLP techniques and transformer models for customer service automation.",
+      keyFeatures:
+        "Intent recognition, Contextual responses, Multi-language support, Learning capabilities",
       techStack: "Python, Transformers, FastAPI, React, PostgreSQL",
       skills: "Natural Language Processing, Deep Learning, API Development",
       category: "AI & NLP",
       status: "Completed",
-      githubUrl: "https://github.com/syabahmad/nlp-chatbot"
+      githubUrl: "https://github.com/syabahmad/nlp-chatbot",
     },
     {
       title: "Stock Price Prediction Model",
       duration: "1.5 months",
-      description: "Created a machine learning model to predict stock prices using historical data and technical indicators.",
-      keyFeatures: "LSTM neural networks, Technical analysis, Real-time predictions, Risk assessment",
+      description:
+        "Created a machine learning model to predict stock prices using historical data and technical indicators.",
+      keyFeatures:
+        "LSTM neural networks, Technical analysis, Real-time predictions, Risk assessment",
       techStack: "Python, TensorFlow, Pandas, NumPy, Streamlit",
       skills: "Time Series Analysis, Deep Learning, Financial Modeling",
       category: "Finance AI",
       status: "Completed",
-      githubUrl: "https://github.com/syabahmad/stock-prediction"
-    }
+      githubUrl: "https://github.com/syabahmad/stock-prediction",
+    },
   ];
 }
 
 const Projects = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedSkill, setSelectedSkill] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedSkill, setSelectedSkill] = useState("All");
   const [expandedProjects, setExpandedProjects] = useState(new Set());
 
   // Ensure projects is an array
   const validProjects = Array.isArray(projects) ? projects : [];
 
   // Get unique categories and skills
-  const categories = ['All', ...new Set(validProjects.map(project => project.category).filter(Boolean))];
-  
+  const categories = [
+    "All",
+    ...new Set(
+      validProjects.map((project) => project.category).filter(Boolean)
+    ),
+  ];
+
   // Extract all skills from projects
   const allSkills = validProjects.reduce((acc, project) => {
     if (project.skills) {
-      const projectSkills = project.skills.split(', ').map(skill => skill.trim());
+      const projectSkills = project.skills
+        .split(", ")
+        .map((skill) => skill.trim());
       return [...acc, ...projectSkills];
     }
     return acc;
   }, []);
-  const uniqueSkills = ['All', ...new Set(allSkills)];
+  const uniqueSkills = ["All", ...new Set(allSkills)];
 
   // Filter projects by category and skill
-  const filteredProjects = validProjects.filter(project => {
-    const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
-    const skillMatch = selectedSkill === 'All' || (project.skills && project.skills.includes(selectedSkill));
+  const filteredProjects = validProjects.filter((project) => {
+    const categoryMatch =
+      selectedCategory === "All" || project.category === selectedCategory;
+    const skillMatch =
+      selectedSkill === "All" ||
+      (project.skills && project.skills.includes(selectedSkill));
     return categoryMatch && skillMatch;
   });
 
   // Limit projects shown initially
-  const projectsToShow = showAllProjects ? filteredProjects : filteredProjects.slice(0, 6);
+  const projectsToShow = showAllProjects
+    ? filteredProjects
+    : filteredProjects.slice(0, 6);
 
   const toggleProjectExpansion = (index) => {
     const newExpanded = new Set(expandedProjects);
@@ -123,39 +155,40 @@ const Projects = () => {
   };
 
   const resetFilters = () => {
-    setSelectedCategory('All');
-    setSelectedSkill('All');
+    setSelectedCategory("All");
+    setSelectedSkill("All");
     setShowAllProjects(false);
   };
 
   const projectsStructuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Projects - Syed Syab Ahmad",
-    "description": "Portfolio of AI, machine learning, and web development projects by Syed Syab Ahmad.",
-    "url": "https://syab.link/projects",
-    "author": {
+    name: "Projects - Syed Syab Ahmad",
+    description:
+      "Portfolio of AI, machine learning, and web development projects by Syed Syab Ahmad.",
+    url: "https://syab.link/projects",
+    author: {
       "@type": "Person",
-      "name": "Syed Syab Ahmad"
+      name: "Syed Syab Ahmad",
     },
-    "hasPart": validProjects.map(project => ({
+    hasPart: validProjects.map((project) => ({
       "@type": "SoftwareApplication",
-      "name": project.title,
-      "description": project.description,
-      "applicationCategory": project.category,
-      "operatingSystem": "Web",
-      "author": {
+      name: project.title,
+      description: project.description,
+      applicationCategory: project.category,
+      operatingSystem: "Web",
+      author: {
         "@type": "Person",
-        "name": "Syed Syab Ahmad"
-      }
-    }))
+        name: "Syed Syab Ahmad",
+      },
+    })),
   };
 
   // If no projects data, show loading message
   if (validProjects.length === 0) {
     return (
       <>
-        <SEO 
+        <SEO
           title="Projects - Syed Syab Ahmad"
           description="Explore AI, machine learning, and web development projects by Syed Syab Ahmad including healthcare AI systems, prediction models, and innovative solutions."
           keywords="AI projects, machine learning projects, web development portfolio, healthcare AI, Python projects, React projects"
@@ -168,7 +201,9 @@ const Projects = () => {
               Projects
             </h2>
             <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
-              <p className="text-gray-300 text-lg">Projects are being loaded...</p>
+              <p className="text-gray-300 text-lg">
+                Projects are being loaded...
+              </p>
             </div>
           </div>
         </div>
@@ -178,14 +213,14 @@ const Projects = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Projects - Syed Syab Ahmad"
         description="Explore AI, machine learning, and web development projects by Syed Syab Ahmad including healthcare AI systems, malaria detection, heart disease prediction, and innovative web solutions."
         keywords="AI projects, machine learning projects, web development portfolio, healthcare AI, malaria detection, heart disease prediction, Python projects, React projects, TensorFlow projects"
         url="https://syab.link/projects"
         structuredData={projectsStructuredData}
       />
-      
+
       <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-12">
@@ -196,12 +231,16 @@ const Projects = () => {
           <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 mb-8">
             <div className="flex items-center gap-2 mb-4">
               <FaFilter className="text-cyan-400" />
-              <h3 className="text-lg font-semibold text-white">Filter Projects</h3>
+              <h3 className="text-lg font-semibold text-white">
+                Filter Projects
+              </h3>
             </div>
-            
+
             {/* Category Filter */}
             <div className="mb-4">
-              <label className="text-gray-300 text-sm font-medium mb-2 block">Category:</label>
+              <label className="text-gray-300 text-sm font-medium mb-2 block">
+                Category:
+              </label>
               <div className="flex flex-wrap gap-2">
                 {categories.map((category) => (
                   <button
@@ -212,8 +251,8 @@ const Projects = () => {
                     }}
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category
-                        ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
-                        : 'bg-gray-700/50 text-gray-300 border border-gray-600/50 hover:border-cyan-500/50 hover:text-cyan-400'
+                        ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg"
+                        : "bg-gray-700/50 text-gray-300 border border-gray-600/50 hover:border-cyan-500/50 hover:text-cyan-400"
                     }`}
                   >
                     {category}
@@ -224,7 +263,9 @@ const Projects = () => {
 
             {/* Skills Filter */}
             <div className="mb-4">
-              <label className="text-gray-300 text-sm font-medium mb-2 block">Skills:</label>
+              <label className="text-gray-300 text-sm font-medium mb-2 block">
+                Skills:
+              </label>
               <div className="flex flex-wrap gap-2">
                 {uniqueSkills.map((skill) => (
                   <button
@@ -235,8 +276,8 @@ const Projects = () => {
                     }}
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                       selectedSkill === skill
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                        : 'bg-gray-700/50 text-gray-300 border border-gray-600/50 hover:border-purple-500/50 hover:text-purple-400'
+                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
+                        : "bg-gray-700/50 text-gray-300 border border-gray-600/50 hover:border-purple-500/50 hover:text-purple-400"
                     }`}
                   >
                     {skill}
@@ -254,7 +295,8 @@ const Projects = () => {
                 Reset Filters
               </button>
               <div className="text-gray-400 text-sm">
-                Showing {filteredProjects.length} of {validProjects.length} projects
+                Showing {filteredProjects.length} of {validProjects.length}{" "}
+                projects
               </div>
             </div>
           </div>
@@ -263,7 +305,9 @@ const Projects = () => {
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
               <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
-                <p className="text-gray-300 text-lg mb-4">No projects found with the selected filters.</p>
+                <p className="text-gray-300 text-lg mb-4">
+                  No projects found with the selected filters.
+                </p>
                 <button
                   onClick={resetFilters}
                   className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-purple-400 transition-all duration-300"
@@ -273,15 +317,15 @@ const Projects = () => {
               </div>
             </div>
           ) : (
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projectsToShow.map((project, index) => {
                 const isExpanded = expandedProjects.has(index);
                 const shouldTruncate = project.description.length > 150;
-                
+
                 return (
-                  <div 
-                    key={index} 
-                    className="break-inside-avoid mb-6 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-500/50"
+                  <div
+                    key={index}
+                    className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-500/50 h-fit"
                   >
                     {/* Project Header */}
                     <div className="flex justify-between items-start mb-4">
@@ -289,13 +333,15 @@ const Projects = () => {
                         {project.title}
                       </h3>
                       {project.status && (
-                        <span className={`ml-3 px-2 py-1 text-xs font-medium rounded-full ${
-                          project.status === 'Completed' 
-                            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                            : project.status === 'In Progress'
-                            ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
-                            : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                        }`}>
+                        <span
+                          className={`ml-3 px-2 py-1 text-xs font-medium rounded-full ${
+                            project.status === "Completed"
+                              ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                              : project.status === "In Progress"
+                              ? "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                              : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                          }`}
+                        >
                           {project.status}
                         </span>
                       )}
@@ -306,7 +352,9 @@ const Projects = () => {
                       {/* Duration */}
                       <div className="flex items-center text-gray-400">
                         <FaCalendarAlt className="mr-2 text-cyan-400" />
-                        <span className="text-cyan-400 font-medium">Duration:</span>
+                        <span className="text-cyan-400 font-medium">
+                          Duration:
+                        </span>
                         <span className="ml-2">{project.duration}</span>
                       </div>
 
@@ -317,30 +365,25 @@ const Projects = () => {
                             {project.category}
                           </span>
                         )}
-                        {project.skills && project.skills.split(', ').slice(0, 2).map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="inline-block px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30"
-                          >
-                            {skill.trim()}
-                          </span>
-                        ))}
-                        {project.skills && project.skills.split(', ').length > 2 && (
-                          <span className="inline-block px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded-full border border-gray-500/30">
-                            +{project.skills.split(', ').length - 2} more
-                          </span>
-                        )}
+                        {project.skills &&
+                          project.skills.split(", ").map((skill, idx) => (
+                            <span
+                              key={idx}
+                              className="inline-block px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30"
+                            >
+                              {skill.trim()}
+                            </span>
+                          ))}
                       </div>
 
                       {/* Description */}
                       <div>
                         <p className="leading-relaxed">
-                          {shouldTruncate && !isExpanded 
+                          {shouldTruncate && !isExpanded
                             ? `${project.description.substring(0, 150)}...`
-                            : project.description
-                          }
+                            : project.description}
                         </p>
-                        
+
                         {shouldTruncate && (
                           <button
                             onClick={() => toggleProjectExpansion(index)}
@@ -366,39 +409,29 @@ const Projects = () => {
                         <div className="space-y-3 mt-4 pt-4 border-t border-gray-700/50">
                           {project.keyFeatures && (
                             <div>
-                              <span className="text-cyan-400 font-medium">Key Features:</span>
+                              <span className="text-cyan-400 font-medium">
+                                Key Features:
+                              </span>
                               <p className="mt-1">{project.keyFeatures}</p>
                             </div>
                           )}
-                          
+
                           {project.techStack && (
                             <div>
-                              <span className="text-cyan-400 font-medium">Tech Stack:</span>
+                              <span className="text-cyan-400 font-medium">
+                                Tech Stack:
+                              </span>
                               <div className="flex flex-wrap gap-1 mt-1">
-                                {project.techStack.split(', ').map((tech, idx) => (
-                                  <span
-                                    key={idx}
-                                    className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded border border-gray-600/30"
-                                  >
-                                    {tech.trim()}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                          
-                          {project.skills && (
-                            <div>
-                              <span className="text-cyan-400 font-medium">All Skills:</span>
-                              <div className="flex flex-wrap gap-1 mt-1">
-                                {project.skills.split(', ').map((skill, idx) => (
-                                  <span
-                                    key={idx}
-                                    className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded border border-cyan-500/30"
-                                  >
-                                    {skill.trim()}
-                                  </span>
-                                ))}
+                                {project.techStack
+                                  .split(", ")
+                                  .map((tech, idx) => (
+                                    <span
+                                      key={idx}
+                                      className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded border border-gray-600/30"
+                                    >
+                                      {tech.trim()}
+                                    </span>
+                                  ))}
                               </div>
                             </div>
                           )}
@@ -418,7 +451,7 @@ const Projects = () => {
                             Code
                           </a>
                         )}
-                        
+
                         {project.liveUrl && (
                           <a
                             href={project.liveUrl}
@@ -430,7 +463,7 @@ const Projects = () => {
                             Live Demo
                           </a>
                         )}
-                        
+
                         {!project.githubUrl && !project.liveUrl && (
                           <div className="flex items-center px-3 py-2 bg-gray-700/30 text-gray-500 text-xs rounded-lg">
                             <FaCode className="mr-2" />
@@ -469,21 +502,28 @@ const Projects = () => {
 
           {/* Projects Stats */}
           <div className="mt-16 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">Projects Overview</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+              Projects Overview
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">{validProjects.length}</div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2">
+                  {validProjects.length}
+                </div>
                 <div className="text-gray-300 text-sm">Total Projects</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-2">
-                  {validProjects.filter(p => p.status === 'Completed').length}
+                  {validProjects.filter((p) => p.status === "Completed").length}
                 </div>
                 <div className="text-gray-300 text-sm">Completed</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400 mb-2">
-                  {validProjects.filter(p => p.status === 'In Progress').length}
+                  {
+                    validProjects.filter((p) => p.status === "In Progress")
+                      .length
+                  }
                 </div>
                 <div className="text-gray-300 text-sm">In Progress</div>
               </div>
