@@ -1,5 +1,55 @@
 const projects = [
   {
+    title: "Collaborative Editing System",
+    duration: "Nov 2025",
+    description:
+      "A full-fledged web application that mimics Google Docs functionality, enabling multiple users to edit documents collaboratively in real-time. Built using a microservices architecture to ensure scalability, maintainability, and modularity. The system handles user authentication, document creation and editing, change tracking, and version control.",
+    keyFeatures:
+      "Real-Time Collaboration · User Authentication · Document Editing · Change Tracking · Version Control · Microservices Architecture",
+    techStack:
+      "Spring Boot 3.5.7, PostgreSQL, Spring Cloud Gateway, JWT, React, Maven",
+    skills:
+      "Backend Development, API Design, Distributed Systems, Microservices",
+    category: "Web Development",
+  },
+  {
+    title:
+      "CSE 530 Assignment 3 - Classification and Regression Implementation",
+    duration: "Nov 2025",
+    description:
+      "A comprehensive machine learning project implementing algorithms from scratch and comparing them with scikit-learn implementations. The project focused on classification using sklearn estimators and building linear regression entirely from scratch using gradient descent, demonstrating understanding of core ML concepts, cross-validation techniques, and practical implementation skills.",
+    keyFeatures:
+      "From-Scratch Implementation · Gradient Descent · Cross-Validation · Classification Models · Regression Analysis · Feature Scaling",
+    techStack:
+      "Python 3.8+, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, Jupyter",
+    skills: "Machine Learning, Python, Data Analysis, Algorithm Implementation",
+    category: "AI & Machine Learning",
+  },
+  {
+    title: "ML Algorithms Lab - From Scratch Implementation",
+    duration: "Nov 2025",
+    description:
+      "A comprehensive machine learning project implementing core algorithms from scratch and benchmarking them against industry-standard libraries. This project features both classification models and a custom-built linear regression using gradient descent, demonstrating deep understanding of ML fundamentals, cross-validation techniques, and practical implementation skills.",
+    keyFeatures:
+      "Classification with sklearn · Linear Regression from Scratch · Gradient Descent Implementation · Cross-Validation · Model Evaluation",
+    techStack:
+      "Python 3.8+, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, Jupyter",
+    skills: "Machine Learning, Python, Data Science, Algorithm Implementation",
+    category: "AI & Machine Learning",
+  },
+  {
+    title: "CountLives - Android Fitness Tracking App",
+    duration: "Nov 2025",
+    description:
+      "An Android fitness application that helps users track their daily physical activities, combining real-time step counting with manual logging of workouts or exercises. The app serves as a personal fitness companion, motivating users through motivational images, progress tracking, and a simple history of recent activities.",
+    keyFeatures:
+      "Step Counter · Activity Logging · Progress Tracking · Motivational Content · Offline-First Design · Local Storage",
+    techStack:
+      "Java, Android SDK, AndroidX Libraries, ViewPager2, RecyclerView, SharedPreferences, Glide, SensorManager",
+    skills: "Android Development, Java, Mobile App Development, UI/UX Design",
+    category: "Mobile App Development",
+  },
+  {
     title: "DocxBox",
     duration: "2025",
     description:
