@@ -57,52 +57,42 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <GoogleAnalytics />
-        <div className="App min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
-          {" "}
-          {/* moved background here */}
-          {/* keep the visible app content above the doodles */}
-          <div className="min-h-screen flex flex-col relative z-10">
-            {" "}
-            {/* removed bg-slate-900 from here */}
-            <Layout>
-              <Navbar />
-              <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/research" element={<Research />} />
-                  <Route path="/experience" element={<Experience />} />
-                  <Route path="/mentee" element={<MenteE />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/skills" element={<Skills />} />
-                  <Route path="/gallery" element={<Gallery />} />
-
-                  {/* Design & Architecture Routes */}
-                  <Route path="/design" element={<DesignPortfolio />} />
-                  <Route path="/design/revit" element={<RevitPortfolio />} />
-                  <Route
-                    path="/design/autocad"
-                    element={<AutoCADPortfolio />}
-                  />
-                  <Route
-                    path="/design/sketchup"
-                    element={<SketchUpPortfolio />}
-                  />
-                  <Route
-                    path="/design/projects"
-                    element={<AllDesignProjects />}
-                  />
-                  <Route
-                    path="/design/project/:projectId"
-                    element={<DesignProjectDetail />}
-                  />
-                </Routes>
-              </main>
-              <Footer />
-            </Layout>
-          </div>
+        {/* Main app content above background */}
+        <div className="App min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
+          <GoogleAnalytics />
+          <Layout>
+            <Navbar />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/research" element={<Research />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/mentee" element={<MenteE />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/skills" element={<Skills />} />
+                <Route path="/gallery" element={<Gallery />} />
+                {/* Design & Architecture Routes */}
+                <Route path="/design" element={<DesignPortfolio />} />
+                <Route path="/design/revit" element={<RevitPortfolio />} />
+                <Route path="/design/autocad" element={<AutoCADPortfolio />} />
+                <Route
+                  path="/design/sketchup"
+                  element={<SketchUpPortfolio />}
+                />
+                <Route
+                  path="/design/projects"
+                  element={<AllDesignProjects />}
+                />
+                <Route
+                  path="/design/project/:projectId"
+                  element={<DesignProjectDetail />}
+                />
+              </Routes>
+            </main>
+            <Footer />
+          </Layout>
           <AnimatedPatterns />
           {/* Global Chatbot - Available on all pages */}
           <SimpleChatbot />

@@ -105,79 +105,263 @@ const HomePage = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
         <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
-          {/* Decorative Background Elements */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3" />
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-emerald-500/10 rounded-full opacity-50 filter blur-2xl" />
+          {/* Animated Decorative Background Elements */}
+          <motion.div
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-0 left-0 w-96 h-96 bg-cyan-400/30 rounded-full filter blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"
+          />
+          <motion.div
+            animate={{
+              y: [0, 30, 0],
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+            className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/30 rounded-full filter blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"
+          />
+          <motion.div
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.5, 0.9, 0.5],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+            className="absolute top-1/3 left-1/3 w-80 h-80 bg-emerald-400/25 rounded-full filter blur-3xl pointer-events-none"
+          />
+          {/* Additional floating elements */}
+          <motion.div
+            animate={{
+              y: [0, -25, 0],
+              x: [0, 15, 0],
+              opacity: [0.5, 0.8, 0.5],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-1/4 right-1/4 w-72 h-72 bg-pink-400/25 rounded-full filter blur-3xl pointer-events-none"
+          />
+          {/* Corner accents */}
+          <motion.div
+            animate={{
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              linear: true,
+            }}
+            className="absolute -bottom-40 -right-40 w-80 h-80 border border-cyan-400/20 rounded-full pointer-events-none"
+          />
+          <motion.div
+            animate={{
+              rotate: [360, 0],
+            }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              linear: true,
+            }}
+            className="absolute lg:-top-40 lg:-left-40 top-0 left-0 w-80 h-80 border border-purple-400/20 rounded-full pointer-events-none"
+          />
 
-          {/* Hero Section */}
-          <header className="relative flex flex-col items-center justify-center min-h-screen py-20 px-4">
-            <div className="max-w-4xl mx-auto mt-16">
-              {/* Profile Image */}
-              <div
-                className="mb-6 relative flex justify-center items-center"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+          {/* Hero Section - Split Layout */}
+          <header className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen pt-20 py-16 lg:py-20 px-4 lg:px-8 gap-8 lg:gap-12">
+            {/* Left Side - Text Content */}
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex-1 lg:flex-[2] max-w-3xl lg:pr-16 mb-12 lg:mb-0 text-center lg:text-left order-2 lg:order-1 mt-10"
+            >
+              {/* Decorative elements */}
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 20, repeat: Infinity, linear: true }}
+                className="absolute top-20 left-10 w-16 h-16 border-2 border-cyan-400/30 rounded-full hidden lg:block"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute top-40 left-20 w-8 h-8 bg-purple-400/20 rounded-full hidden lg:block"
+              />
+
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <motion.div
-                  style={{ x: springX, y: springY }}
-                  className="relative"
-                >
-                  <div className="w-28 h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-purple-400 shadow-2xl shadow-cyan-500/20 relative z-10">
-                    <img
-                      src="dp.jpeg"
-                      alt="Syed Syab Ahmad"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                        e.target.nextSibling.style.display = "flex";
-                      }}
-                    />
-                    <div className="w-full h-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center text-3xl font-bold hidden">
-                      SSA
-                    </div>
-                  </div>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight drop-shadow-lg">
+                  Full Stack Web Developer & AI Engineer
+                </h1>
+              </motion.div>
 
-                  {/* Graduation Cap */}
-                  <div className="absolute -top-8 -right-4 text-5xl filter drop-shadow-lg transform rotate-12 z-20 pointer-events-none">
-                    🎓
-                  </div>
-
-                  {/* Open to Work Badge */}
-                  <div className="absolute -bottom-2 -right-8 bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-full border-2 border-white dark:border-slate-900 z-20 flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none animate-pulse">
-                    <span>🚀</span> Open to Work
-                  </div>
-
-                  {/* Animated ring around profile */}
-                  <div className="absolute inset-0 w-28 h-28 md:w-32 md:h-32 mx-auto rounded-full border-2 border-cyan-400/30 animate-ping -z-10"></div>
-                </motion.div>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight">
-                Full Stack Web Developer & AI Engineer
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl mb-3 md:mb-4 text-gray-600 dark:text-gray-300 font-light">
+              <motion.p
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-lg sm:text-xl md:text-2xl mb-4 md:mb-6 text-gray-600 dark:text-gray-300 font-light"
+              >
                 Building intelligent solutions that transform ideas into reality
-              </p>
-              <p className="text-base md:text-lg mb-6 md:mb-8 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+              </motion.p>
+
+              <motion.p
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-base md:text-lg mb-8 md:mb-10 text-gray-500 dark:text-gray-400 max-w-2xl"
+              >
                 Specializing in Machine Learning, Full-Stack Development, and
                 cutting-edge AI technologies
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-                <a
+              </motion.p>
+
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start items-center lg:items-start"
+              >
+                <motion.a
                   href="/projects"
-                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-purple-400 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-center"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.4)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   View My Work
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="/contact"
-                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-cyan-600 text-cyan-600 dark:border-cyan-400 dark:text-cyan-400 font-semibold rounded-full hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 w-full sm:w-auto text-center"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(34, 211, 238, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-cyan-600 text-cyan-600 dark:border-cyan-400 dark:text-cyan-400 font-semibold rounded-full hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   Let's Connect
-                </a>
-              </div>
-            </div>
+                </motion.a>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Side - Profile Cards */}
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="flex-1 lg:flex-[1] max-w-sm lg:max-w-md relative flex justify-center lg:justify-end order-1 lg:order-2"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              {/* Background decorative elements */}
+              <motion.div
+                animate={{ rotate: [0, 180, 360] }}
+                transition={{ duration: 25, repeat: Infinity, linear: true }}
+                className="absolute lg:-top-10 lg:-right-10 top-0 right-0 w-32 h-32 border-2 border-cyan-400/20 rounded-full"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -bottom-10 -left-10 w-24 h-24 bg-purple-400/10 rounded-full"
+              />
+
+              <motion.div
+                style={{ x: springX, y: springY }}
+                className="relative flex items-center justify-center"
+              >
+                {/* Soft glow behind */}
+                <motion.div
+                  animate={{ opacity: [0.6, 0.9, 0.6] }}
+                  transition={{ duration: 5, repeat: Infinity }}
+                  className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-pink-100/50 blur-3xl -z-10"
+                />
+
+                {/* Back decorative card */}
+                <motion.div
+                  animate={{ rotate: [-3, -6, -3] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -right-6 top-8 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-pink-50/60 dark:bg-pink-900/20 border-2 border-pink-300/60 shadow-lg z-0 transform -rotate-3"
+                />
+
+                {/* Main (top) card with profile image */}
+                <motion.div
+                  initial={{ rotate: 1 }}
+                  whileHover={{ rotate: 2, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="relative z-20 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-2xl shadow-cyan-500/20 border border-cyan-400/30 overflow-hidden transform rotate-1 mt-14"
+                >
+                  <img
+                    src="dp.jpeg"
+                    alt="Syed Syab Ahmad"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                  />
+                  <div className="absolute inset-0 text-2xl font-bold text-white bg-gradient-to-br from-cyan-600/20 to-purple-600/10 hidden">
+                    SSA
+                  </div>
+
+                  {/* Top-right badge (palette) */}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="absolute top-4 right-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30"
+                  >
+                    🎨
+                  </motion.div>
+
+                  {/* Bottom-left badge (sparkle) */}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="absolute bottom-4 left-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30"
+                  >
+                    ✨
+                  </motion.div>
+                </motion.div>
+
+                {/* Graduation Cap with enhanced animation */}
+                <motion.div
+                  animate={{ y: [-5, 5, -5], rotate: [12, 20, 12] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute lg:-top-8 lg:right-4 top-20 right-4 text-6xl filter drop-shadow-lg z-20 pointer-events-none"
+                >
+                  🎓
+                </motion.div>
+
+                {/* Open to Work Badge with enhanced animation */}
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute -bottom-2 -right-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full border-2 border-white dark:border-slate-900 z-20 flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none backdrop-blur-sm"
+                >
+                  <span className="animate-spin">🚀</span> Open to Work
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
