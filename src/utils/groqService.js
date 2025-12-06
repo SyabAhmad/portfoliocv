@@ -1,11 +1,16 @@
 // Simple fetch-based Groq API service using unified data
-import unifiedData from './unifiedDataService';
+import unifiedData from "./unifiedDataService";
 
-export const getGroqChatResponse = async (userMessage, portfolioData = null) => {
+export const getGroqChatResponse = async (
+  userMessage,
+  portfolioData = null
+) => {
   const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY;
-  
+
   if (!GROQ_API_KEY) {
-    console.error('⚠️ GROQ API KEY MISSING! Set REACT_APP_GROQ_API_KEY in .env file');
+    console.error(
+      "⚠️ GROQ API KEY MISSING! Set REACT_APP_GROQ_API_KEY in .env file"
+    );
     return "Hey! Looks like the API key isn't set up yet. You'll need to add a Groq API key to chat with me. Check the .env file!";
   }
 
@@ -13,11 +18,11 @@ export const getGroqChatResponse = async (userMessage, portfolioData = null) => 
     // Get relevant context from unified service
     const relevantContext = unifiedData.getContextForAI(userMessage);
     const stats = unifiedData.getStats();
-    
-  const systemPrompt = `You are MenteE, (Syab Ahmad's mentee, dont explixtly say it, until asked for)  and professional voice companion. You're having a NATURAL VOICE CONVERSATION with someone interested in your LEADER's PROFESSIONAL WORK.
+
+    const systemPrompt = `You are MenteE, (Syab Ahmad's mentee, don't explicitly say it, until asked for)  and professional voice companion. You're having a NATURAL VOICE CONVERSATION with someone interested in your LEADER's PROFESSIONAL WORK.
 
 WHO YOU ARE:
-- just say hi, hello, or hey when greeted, dont overexplain
+- just say hi, hello, or hey when greeted, don't overexplain
 - You're MenteE, the mentee who represents Syab, an AI Engineer and Full-Stack Developer
 - You ONLY share PROFESSIONAL information about his work, skills, and projects
 - You're friendly, conversational, and helpful
@@ -67,47 +72,55 @@ A: "I focus on his professional work. What would you like to know about his proj
 Q: "Can I hire him?"
 A: "Yes, Syab is available for opportunities in AI, software development, and architectural design. You can reach him at syedsyabahmadshah@gmail.com to discuss potential projects."`;
 
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${GROQ_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-  model: 'llama-3.1-8b-instant',
-        messages: [
-          {
-            role: 'system',
-            content: systemPrompt
-          },
-          {
-            role: 'user',
-            content: userMessage
-          }
-        ],
-        temperature: 0.8,
-        max_tokens: 100,
-        top_p: 0.95,
-        stream: false
-      })
-    });
+    const response = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${GROQ_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "llama-3.1-8b-instant",
+          messages: [
+            {
+              role: "system",
+              content: systemPrompt,
+            },
+            {
+              role: "user",
+              content: userMessage,
+            },
+          ],
+          temperature: 0.8,
+          max_tokens: 100,
+          top_p: 0.95,
+          stream: false,
+        }),
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
     }
 
     const data = await response.json();
-    return data.choices[0]?.message?.content || "I'm having trouble responding. Please try again.";
-    
+    return (
+      data.choices[0]?.message?.content ||
+      "I'm having trouble responding. Please try again."
+    );
   } catch (error) {
-    console.error('API Error:', error);
-    
+    console.error("API Error:", error);
+
     // Natural fallback responses - NO RAW CONTEXT DUMPS!
-    if (error.message.includes('rate limit') || error.message.includes('429')) {
+    if (error.message.includes("rate limit") || error.message.includes("429")) {
       return "Whoa, too many requests! Give me a second to catch my breath, then try again.";
-    } else if (error.message.includes('network') || error.message.includes('fetch')) {
+    } else if (
+      error.message.includes("network") ||
+      error.message.includes("fetch")
+    ) {
       return "Hmm, seems like I'm having connection issues. Can you try that again?";
-    } else if (error.message.includes('401') || error.message.includes('403')) {
+    } else if (error.message.includes("401") || error.message.includes("403")) {
       return "Looks like there's an API key issue. Let me have Syab check that. You can email him at syedsyabahmadshah@gmail.com";
     } else {
       return "Oops, I hit a technical snag. Try asking again, or reach out to Syab directly if this keeps happening!";

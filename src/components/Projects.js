@@ -195,13 +195,13 @@ const Projects = () => {
           url="https://syab.link/projects"
           structuredData={projectsStructuredData}
         />
-        <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
           <div className="container mx-auto text-center">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-12">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent mb-12">
               Projects
             </h2>
-            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
-              <p className="text-gray-300 text-lg">
+            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
+              <p className="text-gray-600 dark:text-gray-300 text-lg">
                 Projects are being loaded...
               </p>
             </div>
@@ -221,24 +221,24 @@ const Projects = () => {
         structuredData={projectsStructuredData}
       />
 
-      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-12">
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent mb-12">
             Projects
           </h2>
 
           {/* Filter Section */}
-          <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 mb-8">
+          <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-6 mb-8 transition-colors duration-300">
             <div className="flex items-center gap-2 mb-4">
-              <FaFilter className="text-cyan-400" />
-              <h3 className="text-lg font-semibold text-white">
+              <FaFilter className="text-cyan-600 dark:text-cyan-400" />
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Filter Projects
               </h3>
             </div>
 
             {/* Category Filter */}
             <div className="mb-4">
-              <label className="text-gray-300 text-sm font-medium mb-2 block">
+              <label className="text-gray-600 dark:text-gray-300 text-sm font-medium mb-2 block">
                 Category:
               </label>
               <div className="flex flex-wrap gap-2">
@@ -252,7 +252,7 @@ const Projects = () => {
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category
                         ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg"
-                        : "bg-gray-700/50 text-gray-300 border border-gray-600/50 hover:border-cyan-500/50 hover:text-cyan-400"
+                        : "bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 border border-gray-300/50 dark:border-gray-600/50 hover:border-cyan-600/50 dark:hover:border-cyan-500/50 hover:text-cyan-600 dark:hover:text-cyan-400"
                     }`}
                   >
                     {category}
@@ -263,7 +263,7 @@ const Projects = () => {
 
             {/* Skills Filter */}
             <div className="mb-4">
-              <label className="text-gray-300 text-sm font-medium mb-2 block">
+              <label className="text-gray-600 dark:text-gray-300 text-sm font-medium mb-2 block">
                 Skills:
               </label>
               <div className="flex flex-wrap gap-2">
@@ -277,7 +277,7 @@ const Projects = () => {
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                       selectedSkill === skill
                         ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
-                        : "bg-gray-700/50 text-gray-300 border border-gray-600/50 hover:border-purple-500/50 hover:text-purple-400"
+                        : "bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 border border-gray-300/50 dark:border-gray-600/50 hover:border-purple-600/50 dark:hover:border-purple-500/50 hover:text-purple-600 dark:hover:text-purple-400"
                     }`}
                   >
                     {skill}
@@ -290,11 +290,11 @@ const Projects = () => {
             <div className="flex justify-between items-center">
               <button
                 onClick={resetFilters}
-                className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-300"
+                className="text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors duration-300"
               >
                 Reset Filters
               </button>
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-500 dark:text-gray-400 text-sm">
                 Showing {filteredProjects.length} of {validProjects.length}{" "}
                 projects
               </div>
@@ -304,8 +304,8 @@ const Projects = () => {
           {/* Projects Grid */}
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
-              <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
-                <p className="text-gray-300 text-lg mb-4">
+              <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
+                <p className="text-gray-600 dark:text-gray-300 text-lg mb-4">
                   No projects found with the selected filters.
                 </p>
                 <button
@@ -325,7 +325,7 @@ const Projects = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-500/50 h-fit"
+                    className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-600/50 dark:hover:border-cyan-500/50 h-fit"
                   >
                     {/* Project Image */}
                     {project.image && (
@@ -333,24 +333,24 @@ const Projects = () => {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-48 object-cover rounded-lg border border-gray-600/50"
+                          className="w-full h-48 object-cover rounded-lg border border-gray-300/50 dark:border-gray-600/50"
                         />
                       </div>
                     )}
 
                     {/* Project Header */}
                     <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-semibold text-white border-b border-gray-600 pb-2 flex-1">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 flex-1">
                         {project.title}
                       </h3>
                       {project.status && (
                         <span
                           className={`ml-3 px-2 py-1 text-xs font-medium rounded-full ${
                             project.status === "Completed"
-                              ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                              ? "bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-500/30"
                               : project.status === "In Progress"
-                              ? "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                              : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                              ? "bg-yellow-100 dark:bg-yellow-500/20 text-yellow-700 dark:text-yellow-400 border border-yellow-300 dark:border-yellow-500/30"
+                              : "bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-400 border border-blue-300 dark:border-blue-500/30"
                           }`}
                         >
                           {project.status}
@@ -359,11 +359,11 @@ const Projects = () => {
                     </div>
 
                     {/* Project Details */}
-                    <div className="text-gray-300 text-sm space-y-3">
+                    <div className="text-gray-600 dark:text-gray-300 text-sm space-y-3">
                       {/* Duration */}
-                      <div className="flex items-center text-gray-400">
-                        <FaCalendarAlt className="mr-2 text-cyan-400" />
-                        <span className="text-cyan-400 font-medium">
+                      <div className="flex items-center text-gray-500 dark:text-gray-400">
+                        <FaCalendarAlt className="mr-2 text-cyan-600 dark:text-cyan-400" />
+                        <span className="text-cyan-600 dark:text-cyan-400 font-medium">
                           Duration:
                         </span>
                         <span className="ml-2">{project.duration}</span>
@@ -372,7 +372,7 @@ const Projects = () => {
                       {/* Category & Skills */}
                       <div className="flex flex-wrap gap-2 mb-3">
                         {project.category && (
-                          <span className="inline-block px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">
+                          <span className="inline-block px-2 py-1 bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 text-xs rounded-full border border-purple-300 dark:border-purple-500/30">
                             {project.category}
                           </span>
                         )}
@@ -380,7 +380,7 @@ const Projects = () => {
                           project.skills.split(", ").map((skill, idx) => (
                             <span
                               key={idx}
-                              className="inline-block px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30"
+                              className="inline-block px-2 py-1 bg-cyan-100 dark:bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 text-xs rounded-full border border-cyan-300 dark:border-cyan-500/30"
                             >
                               {skill.trim()}
                             </span>
@@ -398,7 +398,7 @@ const Projects = () => {
                         {shouldTruncate && (
                           <button
                             onClick={() => toggleProjectExpansion(index)}
-                            className="mt-2 text-cyan-400 hover:text-cyan-300 text-xs flex items-center transition-colors duration-300"
+                            className="mt-2 text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 text-xs flex items-center transition-colors duration-300"
                           >
                             {isExpanded ? (
                               <>
@@ -417,10 +417,10 @@ const Projects = () => {
 
                       {/* Expanded Content */}
                       {isExpanded && (
-                        <div className="space-y-3 mt-4 pt-4 border-t border-gray-700/50">
+                        <div className="space-y-3 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
                           {project.keyFeatures && (
                             <div>
-                              <span className="text-cyan-400 font-medium">
+                              <span className="text-cyan-600 dark:text-cyan-400 font-medium">
                                 Key Features:
                               </span>
                               <p className="mt-1">{project.keyFeatures}</p>
@@ -429,7 +429,7 @@ const Projects = () => {
 
                           {project.techStack && (
                             <div>
-                              <span className="text-cyan-400 font-medium">
+                              <span className="text-cyan-600 dark:text-cyan-400 font-medium">
                                 Tech Stack:
                               </span>
                               <div className="flex flex-wrap gap-1 mt-1">
@@ -438,7 +438,7 @@ const Projects = () => {
                                   .map((tech, idx) => (
                                     <span
                                       key={idx}
-                                      className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded border border-gray-600/30"
+                                      className="px-2 py-1 bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 text-xs rounded border border-gray-300/30 dark:border-gray-600/30"
                                     >
                                       {tech.trim()}
                                     </span>
@@ -450,13 +450,13 @@ const Projects = () => {
                       )}
 
                       {/* Project Links */}
-                      <div className="flex space-x-3 mt-4 pt-4 border-t border-gray-700/50">
+                      <div className="flex space-x-3 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
                         {project.githubUrl && (
                           <a
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center px-3 py-2 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white text-xs rounded-lg transition-all duration-300"
+                            className="flex items-center px-3 py-2 bg-gray-200/50 dark:bg-gray-700/50 hover:bg-gray-300/50 dark:hover:bg-gray-600/50 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xs rounded-lg transition-all duration-300"
                           >
                             <FaGithub className="mr-2" />
                             Code
@@ -468,7 +468,7 @@ const Projects = () => {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center px-3 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 text-cyan-400 hover:text-cyan-300 text-xs rounded-lg border border-cyan-500/30 transition-all duration-300"
+                            className="flex items-center px-3 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 text-xs rounded-lg border border-cyan-600/30 dark:border-cyan-500/30 transition-all duration-300"
                           >
                             <FaExternalLinkAlt className="mr-2" />
                             Live Demo
@@ -476,7 +476,7 @@ const Projects = () => {
                         )}
 
                         {!project.githubUrl && !project.liveUrl && (
-                          <div className="flex items-center px-3 py-2 bg-gray-700/30 text-gray-500 text-xs rounded-lg">
+                          <div className="flex items-center px-3 py-2 bg-gray-200/30 dark:bg-gray-700/30 text-gray-400 dark:text-gray-500 text-xs rounded-lg">
                             <FaCode className="mr-2" />
                             Private Project
                           </div>
@@ -512,37 +512,45 @@ const Projects = () => {
           )}
 
           {/* Projects Stats */}
-          <div className="mt-16 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+          <div className="mt-16 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               Projects Overview
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">
+                <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">
                   {validProjects.length}
                 </div>
-                <div className="text-gray-300 text-sm">Total Projects</div>
+                <div className="text-gray-600 dark:text-gray-300 text-sm">
+                  Total Projects
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-2">
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
                   {validProjects.filter((p) => p.status === "Completed").length}
                 </div>
-                <div className="text-gray-300 text-sm">Completed</div>
+                <div className="text-gray-600 dark:text-gray-300 text-sm">
+                  Completed
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400 mb-2">
+                <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">
                   {
                     validProjects.filter((p) => p.status === "In Progress")
                       .length
                   }
                 </div>
-                <div className="text-gray-300 text-sm">In Progress</div>
+                <div className="text-gray-600 dark:text-gray-300 text-sm">
+                  In Progress
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
                   {categories.length - 1}
                 </div>
-                <div className="text-gray-300 text-sm">Categories</div>
+                <div className="text-gray-600 dark:text-gray-300 text-sm">
+                  Categories
+                </div>
               </div>
             </div>
           </div>

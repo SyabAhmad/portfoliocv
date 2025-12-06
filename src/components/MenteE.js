@@ -153,21 +153,21 @@ const MenteE = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 text-gray-900 dark:text-white transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-200 dark:bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2 transition-colors duration-300" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-200 dark:bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3 transition-colors duration-300" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium mb-6">
+            <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 dark:from-blue-500/20 dark:to-purple-500/20 dark:border-blue-500/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-6 transition-colors duration-300">
               🚀 Privacy-First Innovation
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
               Welcome to MenteE
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               Building secure, privacy-first digital solutions that prioritize
               user control and data protection
             </p>
@@ -182,7 +182,7 @@ const MenteE = () => {
               </a>
               <Link
                 to="/projects"
-                className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-3 border-2 border-cyan-600 text-cyan-600 dark:border-cyan-400 dark:text-cyan-400 font-semibold rounded-full hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 View All Products
               </Link>
@@ -192,17 +192,17 @@ const MenteE = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 px-4 bg-slate-800/50">
+      <section className="py-16 px-4 bg-gray-100 dark:bg-slate-800/50 transition-colors duration-300">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
               <div className="flex items-center gap-3 mb-6">
-                <Target className="w-8 h-8 text-cyan-400" />
-                <h2 className="text-2xl font-bold text-cyan-400">
+                <Target className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />
+                <h2 className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
                   Our Mission
                 </h2>
               </div>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 To democratize privacy and security by creating intuitive,
                 enterprise-grade applications that put users in complete control
                 of their digital assets. We believe that strong security and
@@ -210,14 +210,14 @@ const MenteE = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
               <div className="flex items-center gap-3 mb-6">
-                <Lightbulb className="w-8 h-8 text-purple-400" />
-                <h2 className="text-2xl font-bold text-purple-400">
+                <Lightbulb className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                <h2 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
                   Our Vision
                 </h2>
               </div>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 To become the global standard for privacy-first digital
                 solutions, empowering individuals and organizations to protect
                 their most sensitive information without sacrificing convenience
@@ -232,10 +232,10 @@ const MenteE = () => {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
               Our Products
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Innovative solutions designed with privacy, security, and user
               experience at their core
             </p>
@@ -245,27 +245,27 @@ const MenteE = () => {
             {products.map((product, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border rounded-xl p-6 hover:scale-105 transition-all duration-300 ${
+                className={`bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border rounded-xl p-6 hover:scale-105 transition-all duration-300 ${
                   product.isInProgress
-                    ? "border-orange-500/30 hover:border-orange-500/50"
+                    ? "border-orange-200 dark:border-orange-500/30 hover:border-orange-500/50"
                     : product.isComingSoon
-                    ? "border-yellow-500/30 hover:border-yellow-500/50"
-                    : "border-gray-700/50 hover:border-cyan-500/50"
+                    ? "border-yellow-200 dark:border-yellow-500/30 hover:border-yellow-500/50"
+                    : "border-gray-200 dark:border-gray-700/50 hover:border-cyan-500/50"
                 }`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   {product.icon}
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {product.name}
                     </h3>
                     <p
                       className={`text-sm font-medium ${
                         product.isInProgress
-                          ? "text-orange-400"
+                          ? "text-orange-600 dark:text-orange-400"
                           : product.isComingSoon
-                          ? "text-yellow-400"
-                          : "text-cyan-400"
+                          ? "text-yellow-600 dark:text-yellow-400"
+                          : "text-cyan-600 dark:text-cyan-400"
                       }`}
                     >
                       {product.isHidden ? "---" : product.category}
@@ -274,10 +274,10 @@ const MenteE = () => {
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-medium ${
                       product.isInProgress
-                        ? "bg-orange-500/20 text-orange-400"
+                        ? "bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400"
                         : product.isComingSoon
-                        ? "bg-yellow-500/20 text-yellow-400"
-                        : "bg-green-500/20 text-green-400"
+                        ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400"
+                        : "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400"
                     }`}
                   >
                     {product.status}
@@ -286,23 +286,23 @@ const MenteE = () => {
 
                 {product.isHidden ? (
                   <div className="text-center py-8">
-                    <div className="flex items-center justify-center gap-2 text-gray-500 mb-4">
-                      <div className="w-16 h-1 bg-gray-600 rounded"></div>
+                    <div className="flex items-center justify-center gap-2 text-gray-400 dark:text-gray-500 mb-4">
+                      <div className="w-16 h-1 bg-gray-300 dark:bg-gray-600 rounded"></div>
                       <span className="text-2xl">
                         {product.isInProgress ? "⚡" : "🚧"}
                       </span>
-                      <div className="w-16 h-1 bg-gray-600 rounded"></div>
+                      <div className="w-16 h-1 bg-gray-300 dark:bg-gray-600 rounded"></div>
                     </div>
                     <p
                       className={`font-medium text-sm ${
                         product.isInProgress
-                          ? "text-orange-400"
-                          : "text-yellow-400"
+                          ? "text-orange-600 dark:text-orange-400"
+                          : "text-yellow-600 dark:text-yellow-400"
                       }`}
                     >
                       {product.isInProgress ? "In Progress" : "Coming Soon"}
                     </p>
-                    <p className="text-gray-400 text-xs mt-1">
+                    <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">
                       {product.isInProgress
                         ? "Currently being developed"
                         : "Details will be revealed"}
@@ -310,7 +310,7 @@ const MenteE = () => {
                   </div>
                 ) : (
                   <>
-                    <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm">
                       {product.description}
                     </p>
 
@@ -318,10 +318,10 @@ const MenteE = () => {
                       <h4
                         className={`text-sm font-semibold mb-2 ${
                           product.isInProgress
-                            ? "text-orange-400"
+                            ? "text-orange-600 dark:text-orange-400"
                             : product.isComingSoon
-                            ? "text-yellow-400"
-                            : "text-cyan-400"
+                            ? "text-yellow-600 dark:text-yellow-400"
+                            : "text-cyan-600 dark:text-cyan-400"
                         }`}
                       >
                         Key Features
@@ -330,23 +330,23 @@ const MenteE = () => {
                         {product.features.slice(0, 3).map((feature, idx) => (
                           <li
                             key={idx}
-                            className="flex items-center gap-2 text-gray-300 text-xs"
+                            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-xs"
                           >
                             <Zap
                               size={12}
                               className={`flex-shrink-0 ${
                                 product.isInProgress
-                                  ? "text-orange-400"
+                                  ? "text-orange-600 dark:text-orange-400"
                                   : product.isComingSoon
-                                  ? "text-yellow-400"
-                                  : "text-cyan-400"
+                                  ? "text-yellow-600 dark:text-yellow-400"
+                                  : "text-cyan-600 dark:text-cyan-400"
                               }`}
                             />
                             {feature}
                           </li>
                         ))}
                         {product.features.length > 3 && (
-                          <li className="text-gray-400 text-xs">
+                          <li className="text-gray-500 dark:text-gray-400 text-xs">
                             +{product.features.length - 3} more features
                           </li>
                         )}
@@ -354,23 +354,23 @@ const MenteE = () => {
                     </div>
 
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-purple-400 mb-1">
+                      <h4 className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-1">
                         Technology
                       </h4>
-                      <p className="text-gray-300 text-xs leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 text-xs leading-relaxed">
                         {product.tech}
                       </p>
                     </div>
 
                     {product.isInProgress ? (
-                      <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg p-3 text-center">
-                        <span className="text-orange-400 font-medium text-sm">
+                      <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 dark:from-orange-500/10 dark:to-red-500/10 dark:border-orange-500/20 rounded-lg p-3 text-center">
+                        <span className="text-orange-600 dark:text-orange-400 font-medium text-sm">
                           ⚡ In Development
                         </span>
                       </div>
                     ) : product.isComingSoon ? (
-                      <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-3 text-center">
-                        <span className="text-yellow-400 font-medium text-sm">
+                      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 dark:from-yellow-500/10 dark:to-orange-500/10 dark:border-yellow-500/20 rounded-lg p-3 text-center">
+                        <span className="text-yellow-600 dark:text-yellow-400 font-medium text-sm">
                           🚧 Coming Soon
                         </span>
                       </div>
@@ -393,16 +393,16 @@ const MenteE = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 px-4 bg-slate-800/50">
+      <section className="py-16 px-4 bg-gray-100 dark:bg-slate-800/50 transition-colors duration-300">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Users className="w-8 h-8 text-cyan-400" />
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <Users className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />
+              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
                 Our Team
               </h2>
             </div>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Passionate individuals dedicated to building the future of secure
               digital solutions
             </p>
@@ -412,10 +412,10 @@ const MenteE = () => {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300"
+                className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-16 h-16 flex-shrink-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center text-2xl font-bold">
+                  <div className="w-16 h-16 flex-shrink-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center text-2xl font-bold text-white">
                     {member.icon
                       ? member.icon
                       : member.name
@@ -424,32 +424,32 @@ const MenteE = () => {
                           .join("")}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-1">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-cyan-400 font-medium text-sm mb-1">
+                    <p className="text-cyan-600 dark:text-cyan-400 font-medium text-sm mb-1">
                       {member.role}
                     </p>
-                    <p className="text-purple-400 font-medium text-sm">
+                    <p className="text-purple-600 dark:text-purple-400 font-medium text-sm">
                       {member.expertise}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
                   {member.description}
                 </p>
 
                 {member.skills && (
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-cyan-400 mb-2">
+                    <h4 className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">
                       Skills
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {member.skills.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs"
+                          className="px-2 py-1 bg-gray-200 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded text-xs"
                         >
                           {skill}
                         </span>
@@ -463,23 +463,29 @@ const MenteE = () => {
                     href={member.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
+                    className="p-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 rounded-lg transition-colors"
                   >
-                    <Github size={16} className="text-white" />
+                    <Github
+                      size={16}
+                      className="text-gray-900 dark:text-white"
+                    />
                   </a>
                   <a
                     href={member.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
+                    className="p-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 rounded-lg transition-colors"
                   >
-                    <Linkedin size={16} className="text-white" />
+                    <Linkedin
+                      size={16}
+                      className="text-gray-900 dark:text-white"
+                    />
                   </a>
                   <a
                     href={`mailto:${member.social.email}`}
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
+                    className="p-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 rounded-lg transition-colors"
                   >
-                    <Mail size={16} className="text-white" />
+                    <Mail size={16} className="text-gray-900 dark:text-white" />
                   </a>
                 </div>
               </div>
@@ -492,10 +498,10 @@ const MenteE = () => {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
               Our Journey
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Key milestones in MenteE's mission to revolutionize digital
               privacy and security
             </p>
@@ -518,17 +524,17 @@ const MenteE = () => {
                     {milestone.year}
                   </div>
                 </div>
-                <div className="flex-1 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                <div className="flex-1 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-6 transition-colors duration-300">
                   <h3
                     className={`text-xl font-bold mb-3 ${
                       milestone.year.includes("Feb")
-                        ? "text-yellow-400"
-                        : "text-white"
+                        ? "text-yellow-600 dark:text-yellow-400"
+                        : "text-gray-900 dark:text-white"
                     }`}
                   >
                     {milestone.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     {milestone.description}
                   </p>
                 </div>
@@ -539,12 +545,12 @@ const MenteE = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-cyan-900/50 to-purple-900/50">
+      <section className="py-16 px-4 bg-gradient-to-r from-cyan-100 to-purple-100 dark:from-cyan-900/50 dark:to-purple-900/50 transition-colors duration-300">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
             Interested in our products or want to learn more about privacy-first
             solutions?
           </p>
@@ -559,7 +565,7 @@ const MenteE = () => {
             </a>
             <Link
               to="/contact"
-              className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-8 py-3 border-2 border-cyan-600 text-cyan-600 dark:border-cyan-400 dark:text-cyan-400 font-semibold rounded-full hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Contact Us <Mail size={18} />
             </Link>

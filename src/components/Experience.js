@@ -128,13 +128,13 @@ const experienceData = [
 
 const Experience = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative">
+    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 relative transition-colors duration-300">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-600 via-purple-600 to-emerald-600 dark:from-cyan-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent mb-4">
             Professional Experience
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A journey through my career milestones
           </p>
         </div>
@@ -143,10 +143,10 @@ const Experience = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {experienceData.map((exp, index) => (
             <div key={exp.id} className="group relative">
-              <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-lg border border-gray-700/50 rounded-2xl shadow-xl p-6 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-cyan-500/50">
+              <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-lg border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-xl p-6 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-cyan-500/50">
                 {/* Status Badge */}
                 <div className="absolute -top-3 -right-3">
-                  <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
+                  <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-full border-2 border-white dark:border-slate-900 flex items-center justify-center">
                     <span className="text-xs font-bold text-slate-900">
                       {index + 1}
                     </span>
@@ -155,7 +155,7 @@ const Experience = () => {
 
                 {/* Company Badge/Icon */}
                 <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 flex items-center justify-center mr-4 group-hover:border-cyan-400/50 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-100 to-purple-100 dark:from-cyan-500/20 dark:to-purple-500/20 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-center mr-4 group-hover:border-cyan-400/50 transition-colors">
                     {exp.badge ? (
                       <img
                         src={exp.badge}
@@ -168,7 +168,11 @@ const Experience = () => {
                       />
                     ) : null}
                     <svg
-                      className={exp.badge ? "hidden" : "w-7 h-7 text-cyan-400"}
+                      className={
+                        exp.badge
+                          ? "hidden"
+                          : "w-7 h-7 text-cyan-600 dark:text-cyan-400"
+                      }
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -176,27 +180,27 @@ const Experience = () => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-white mb-1">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                       {exp.role}
                     </h3>
-                    <p className="text-emerald-400 font-semibold text-sm">
+                    <p className="text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
                       {exp.company}
                     </p>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
                   {exp.description}
                 </p>
 
                 {/* Period and Certification */}
                 <div className="flex items-center justify-between flex-wrap gap-2 mt-auto">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold text-cyan-300 bg-cyan-900/30 rounded-full border border-cyan-500/30">
+                  <span className="inline-block px-3 py-1 text-xs font-semibold text-cyan-700 bg-cyan-100 border border-cyan-200 dark:text-cyan-300 dark:bg-cyan-900/30 dark:border-cyan-500/30 rounded-full">
                     {exp.period}
                   </span>
                   {exp.badge && (
-                    <span className="inline-block px-2 py-1 text-xs font-medium text-emerald-300 bg-emerald-900/30 border border-emerald-500/30 rounded-full">
+                    <span className="inline-block px-2 py-1 text-xs font-medium text-emerald-700 bg-emerald-100 border border-emerald-200 dark:text-emerald-300 dark:bg-emerald-900/30 dark:border-emerald-500/30 rounded-full">
                       ✓ Certified
                     </span>
                   )}

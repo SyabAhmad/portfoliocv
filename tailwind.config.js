@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -22,12 +21,11 @@ module.exports = {
         light: "#f9fafb",
       },
       backgroundImage: {
-        'main-gradient': 'linear-gradient(135deg, #6366f1 0%, #a21caf 100%)',
-        'footer-gradient': 'linear-gradient(90deg, #18181b 0%, #6366f1 100%)',
-        'card-gradient': 'linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%)',
+        "main-gradient": "linear-gradient(135deg, #6366f1 0%, #a21caf 100%)",
+        "footer-gradient": "linear-gradient(90deg, #18181b 0%, #6366f1 100%)",
+        "card-gradient": "linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%)",
       },
     },
   },
   plugins: [],
-}
-
+};

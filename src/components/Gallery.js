@@ -266,19 +266,19 @@ const Gallery = () => {
         structuredData={galleryStructuredData}
       />
 
-      <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-8">
           {/* Header */}
           <div className="text-center mb-12">
             <motion.h1
-              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent mb-4"
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-600 via-purple-600 to-emerald-600 dark:from-cyan-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent mb-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               Certificate Gallery
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -287,15 +287,15 @@ const Gallery = () => {
               certifications
             </motion.p>
             <motion.div
-              className="mt-4 inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full"
+              className="mt-4 inline-block px-4 py-2 bg-gradient-to-r from-cyan-100 to-purple-100 border border-cyan-200 dark:from-cyan-500/20 dark:to-purple-500/20 dark:border-cyan-500/30 rounded-full transition-colors duration-300"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="text-cyan-400 font-semibold">
+              <span className="text-cyan-600 dark:text-cyan-400 font-semibold">
                 {filteredImages.length}
               </span>
-              <span className="text-gray-400">
+              <span className="text-gray-500 dark:text-gray-400">
                 {" "}
                 {filteredImages.length === 1 ? "Item" : "Items"}
               </span>
@@ -312,7 +312,7 @@ const Gallery = () => {
                   placeholder="Search certificates by name or issuer..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6 py-3 bg-gray-800/50 border border-gray-700/50 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full px-6 py-3 bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/50 rounded-full text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all"
                 />
                 <svg
                   className="absolute right-6 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -339,7 +339,7 @@ const Gallery = () => {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     filter === category
                       ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg"
-                      : "bg-gray-800/50 text-gray-300 border border-gray-700/50 hover:border-cyan-500/50 hover:text-cyan-400"
+                      : "bg-gray-100 text-gray-600 border border-gray-200 dark:bg-gray-800/50 dark:text-gray-300 dark:border-gray-700/50 hover:border-cyan-500/50 hover:text-cyan-600 dark:hover:text-cyan-400"
                   }`}
                 >
                   {category}
@@ -360,7 +360,7 @@ const Gallery = () => {
                   transition={{ delay: index * 0.05 }}
                   onClick={() => setSelectedImage(cert)}
                 >
-                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/90 to-gray-900/90 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 border border-gray-200 dark:border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
                     {/* Image */}
                     <div className="relative overflow-hidden flex items-center justify-center">
                       <img
@@ -374,8 +374,8 @@ const Gallery = () => {
                         }}
                       />
                       {/* Fallback */}
-                      <div className="hidden w-full aspect-video bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center p-4">
-                        <span className="text-center text-sm font-semibold text-white">
+                      <div className="hidden w-full aspect-video bg-gradient-to-br from-cyan-100 to-purple-100 dark:from-cyan-500/20 dark:to-purple-500/20 flex items-center justify-center p-4">
+                        <span className="text-center text-sm font-semibold text-gray-900 dark:text-white">
                           {cert.issuer}
                         </span>
                       </div>
@@ -392,16 +392,18 @@ const Gallery = () => {
                     </div>
 
                     {/* Info Bar */}
-                    <div className="p-3 bg-gray-800/50 backdrop-blur-sm">
+                    <div className="p-3 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm transition-colors duration-300">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-sm font-semibold text-white line-clamp-1">
+                        <h3 className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-1">
                           {cert.title}
                         </h3>
                       </div>
                       <div className="flex items-center justify-between">
-                        <p className="text-xs text-gray-400">{cert.issuer}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                          {cert.issuer}
+                        </p>
                         {cert.category && (
-                          <span className="px-2 py-0.5 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-xs text-cyan-300">
+                          <span className="px-2 py-0.5 bg-cyan-100 border border-cyan-200 text-cyan-700 dark:bg-cyan-500/20 dark:border-cyan-500/30 rounded-full text-xs dark:text-cyan-300">
                             {cert.category}
                           </span>
                         )}
@@ -413,9 +415,9 @@ const Gallery = () => {
             </div>
           ) : (
             <div className="text-center py-16">
-              <div className="inline-block p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50">
+              <div className="inline-block p-6 bg-gray-100 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700/50 transition-colors duration-300">
                 <svg
-                  className="w-16 h-16 text-gray-600 mx-auto mb-4"
+                  className="w-16 h-16 text-gray-400 dark:text-gray-600 mx-auto mb-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -427,8 +429,10 @@ const Gallery = () => {
                     d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <p className="text-gray-400 text-lg">No certificates found</p>
-                <p className="text-gray-500 text-sm mt-2">
+                <p className="text-gray-500 dark:text-gray-400 text-lg">
+                  No certificates found
+                </p>
+                <p className="text-gray-400 dark:text-gray-500 text-sm mt-2">
                   Try adjusting your search or filter
                 </p>
               </div>
@@ -447,7 +451,7 @@ const Gallery = () => {
               exit={{ opacity: 0 }}
             >
               <motion.div
-                className="relative max-w-6xl w-full max-h-[90vh] overflow-auto bg-slate-900 rounded-2xl border border-slate-700 shadow-2xl"
+                className="relative max-w-6xl w-full max-h-[90vh] overflow-auto bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-2xl transition-colors duration-300"
                 onClick={(e) => e.stopPropagation()}
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -456,7 +460,7 @@ const Gallery = () => {
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-800/90 hover:bg-gray-700 rounded-full flex items-center justify-center text-white transition-colors"
+                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-200 hover:bg-gray-300 dark:bg-gray-800/90 dark:hover:bg-gray-700 rounded-full flex items-center justify-center text-gray-900 dark:text-white transition-colors"
                 >
                   <svg
                     className="w-6 h-6"
@@ -475,7 +479,7 @@ const Gallery = () => {
 
                 <div className="flex flex-col lg:flex-row">
                   {/* Image Side */}
-                  <div className="lg:w-2/3 p-6 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
+                  <div className="lg:w-2/3 p-6 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-800 dark:to-slate-900 transition-colors duration-300">
                     <img
                       src={selectedImage.badge}
                       alt={selectedImage.title}
@@ -484,13 +488,13 @@ const Gallery = () => {
                   </div>
 
                   {/* Details Side */}
-                  <div className="lg:w-1/3 p-6 bg-slate-900/50 backdrop-blur-sm overflow-y-auto">
+                  <div className="lg:w-1/3 p-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm overflow-y-auto transition-colors duration-300">
                     <div className="space-y-4">
                       <div>
-                        <h2 className="text-2xl font-bold text-white mb-2">
+                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                           {selectedImage.title}
                         </h2>
-                        <p className="text-cyan-400 font-semibold text-lg">
+                        <p className="text-cyan-600 dark:text-cyan-400 font-semibold text-lg">
                           {selectedImage.issuer}
                         </p>
                       </div>
@@ -499,7 +503,7 @@ const Gallery = () => {
                         {selectedImage.issuedDate && (
                           <div className="flex items-start">
                             <svg
-                              className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0"
+                              className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 mt-0.5 flex-shrink-0"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -512,10 +516,10 @@ const Gallery = () => {
                               />
                             </svg>
                             <div>
-                              <p className="text-xs text-gray-500 uppercase">
+                              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase">
                                 Issued Date
                               </p>
-                              <p className="text-gray-300">
+                              <p className="text-gray-600 dark:text-gray-300">
                                 {selectedImage.issuedDate}
                               </p>
                             </div>
@@ -525,7 +529,7 @@ const Gallery = () => {
                         {selectedImage.credentialId && (
                           <div className="flex items-start">
                             <svg
-                              className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0"
+                              className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 mt-0.5 flex-shrink-0"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -538,10 +542,10 @@ const Gallery = () => {
                               />
                             </svg>
                             <div>
-                              <p className="text-xs text-gray-500 uppercase">
+                              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase">
                                 Credential ID
                               </p>
-                              <p className="text-gray-300 text-sm font-mono break-all">
+                              <p className="text-gray-600 dark:text-gray-300 text-sm font-mono break-all">
                                 {selectedImage.credentialId}
                               </p>
                             </div>
@@ -551,7 +555,7 @@ const Gallery = () => {
                         {selectedImage.category && (
                           <div className="flex items-start">
                             <svg
-                              className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0"
+                              className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 mt-0.5 flex-shrink-0"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -564,10 +568,10 @@ const Gallery = () => {
                               />
                             </svg>
                             <div>
-                              <p className="text-xs text-gray-500 uppercase">
+                              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase">
                                 Category
                               </p>
-                              <span className="inline-block mt-1 px-3 py-1 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-sm text-cyan-300 font-medium">
+                              <span className="inline-block mt-1 px-3 py-1 bg-cyan-100 border border-cyan-200 text-cyan-700 dark:bg-cyan-500/20 dark:border-cyan-500/40 rounded-full text-sm dark:text-cyan-300 font-medium">
                                 {selectedImage.category}
                               </span>
                             </div>
@@ -577,7 +581,7 @@ const Gallery = () => {
                         {selectedImage.skills && (
                           <div className="flex items-start">
                             <svg
-                              className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0"
+                              className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 mt-0.5 flex-shrink-0"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -590,7 +594,7 @@ const Gallery = () => {
                               />
                             </svg>
                             <div>
-                              <p className="text-xs text-gray-500 uppercase mb-2">
+                              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase mb-2">
                                 Skills Demonstrated
                               </p>
                               <div className="flex flex-wrap gap-2">
@@ -599,7 +603,7 @@ const Gallery = () => {
                                   .map((skill, idx) => (
                                     <span
                                       key={idx}
-                                      className="px-2 py-1 bg-slate-800 border border-slate-600 rounded text-xs text-gray-300"
+                                      className="px-2 py-1 bg-gray-100 border border-gray-200 text-gray-600 dark:bg-slate-800 dark:border-slate-600 rounded text-xs dark:text-gray-300"
                                     >
                                       {skill.trim()}
                                     </span>
