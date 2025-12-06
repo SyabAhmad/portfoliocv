@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.spark-star {
+  position: absolute;
+  top: -0.7rem;           /* sits above the text */
+  left: 0%;
+  font-size: 0.9rem;
+  pointer-events: none;
+  animation:
+    twinkle 1.6s ease-in-out infinite,
+    glide   3.2s linear infinite;
+  filter:
+    drop-shadow(0 0 6px rgba(255,255,255,0.95))
+    drop-shadow(0 0 12px rgba(255,215,0,0.85));
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85) rotate(0deg); }
+  50%      { opacity: 1;    transform: scale(1.25) rotate(20deg); }
+}
+
+@keyframes glide {
+  0%   { left: 0%;   }
+  50%  { left: 50%;  }
+  100% { left: 100%; }
+}

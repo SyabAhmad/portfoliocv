@@ -1,0 +1,656 @@
+{
+  "personal": {
+    "name": "Syed Syab Ahmad",
+    "title": "AI Engineer & Full-Stack Developer",
+    "location": "Khayber Pukhtunkhwa, Swat, Pakistan",
+    "email": "syedsyabahmadshah@gmail.com",
+    "website": "https://syab.tech",
+    "linkedin": "https://www.linkedin.com/in/syedsyab/",
+    "bio": "Passionate AI Engineer specializing in Machine Learning and Full-Stack Development, building intelligent solutions that transform ideas into reality",
+    "interesting things": "Syab owns Google firstindex page, if you seach his name, 'Syed Syab Ahnad' in googl query, you will see his name on first page, all his profiles and everything.",
+    "cv link": "https://raw.githubusercontent.com/SyabAhmad/portfoliocv/master/public/Syed%20Syab%20Ahmad.pdf"
+  },
+  "education": {
+    "degrees": [
+      {
+        "degree": "BS in Software Engineering",
+        "institution": "University of Swat",
+        "location": "Swat, Pakistan",
+        "duration": "2020-2024",
+        "completed": true
+      }
+    ],
+    "ongoing": [
+      {
+        "program": "NEBOSH Certification",
+        "institution": "NEBOSH",
+        "field": "Occupational Health and Safety",
+        "started": "2025"
+      },
+      {
+        "program": "Freelancing",
+        "institution": "Online",
+        "field": "AI, Machine Learning, Deeplearning,",
+        "started": "2024"
+      }
+    ],
+    "highlights": ["Graduated with honors", "Research focus in AI/ML applications"]
+  },
+"company": {
+  "companies": [
+    {
+      "name": "MenteE",
+      "role": "Founder",
+      "founded": "2024",
+      "products": ["RecruAI"],
+      "website": "https://mentee.ai",
+      "linkedin":"https://www.linkedin.com/company/mentee1"
+    }
+  ],
+  "highlights": [
+    "Founder at MenteE — building AI recruitment tools",
+    "Product: RecruAI — AI-assisted candidate screening"
+  ]
+},
+  "skills": {
+    "main": ["Python", "JavaScript", "TensorFlow", "React", "Node.js", "PyTorch"],
+    "categories": {
+      "programming": ["Python", "JavaScript", "Java", "C++"],
+      "ai_ml": ["TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "NLP", "YOLOv8", "Transformers", "Hugging Face", "matplotlib", "NumPy", "Pandas"],
+      "web": ["React", "Node.js", "Django", "FastAPI", "MongoDB"],
+      "tools": ["Git", "Docker", "AWS", "Linux"]
+    },
+    "total_count": 25
+  },
+  "projects": {
+    "featured": [
+      {
+        "name": "CamWatch",
+        "type": "Computer Vision Security System",
+        "tech": "YOLOv8, Python, OpenCV",
+        "description": "AI-powered surveillance system with real-time object detection"
+      },
+      {
+        "name": "CVChat", 
+        "type": "AI Resume Analyzer",
+        "tech": "Django, NLP, Machine Learning",
+        "description": "Intelligent resume analysis and career guidance platform"
+      },
+      {
+        "name": "PodcastMaker",
+        "type": "Generative AI Tool", 
+        "tech": "OpenAI API, Python, Text-to-Speech",
+        "description": "Automated podcast generation from text content"
+      }
+    ],
+    "all": [
+      {
+        "name": "PodcastMaker",
+        "type": "Generative AI Tool",
+        "tech": "Python, OpenAI API, gTTS/TTS, Streamlit, LLMs",
+        "description": "Transforms written scenarios into full podcast scripts and audio with AI voice synthesis"
+      },
+      {
+        "name": "CakeBacker",
+        "type": "E-Commerce Platform",
+        "tech": "Flask, PostgreSQL, Python, HTML, CSS, JavaScript",
+        "description": "E-commerce web platform for bakery business with product customization and order management"
+      },
+      {
+        "name": "CamWatch",
+        "type": "Computer Vision Security System",
+        "tech": "YOLOv8, Python, OpenCV, SmolVLM-500, LLaMA.cpp, Flask, MySQL",
+        "description": "AI-powered school surveillance system with real-time weapon detection and image captioning"
+      },
+      {
+        "name": "CVChat",
+        "type": "AI Resume Analyzer",
+        "tech": "Django, Python, PostgreSQL, Sentence Transformers, REST API",
+        "description": "Intelligent resume analysis platform with NLP and interactive chatbot interface"
+      },
+      {
+        "name": "Mockster.ai",
+        "type": "AI Interview Simulator",
+        "tech": "React.js, Python, FastAPI, PostgreSQL, Groq API, TTS, STT, JWT",
+        "description": "Smart interview practice platform with AI-generated questions and detailed feedback"
+      },
+      {
+        "name": "QuickHire.ai",
+        "type": "AI Recruitment Tool",
+        "tech": "React.js, Supabase, TailwindCSS, PostgreSQL, OAuth 2.0",
+        "description": "AI-powered toolkit to streamline recruitment workflows with various smart tools"
+      },
+      {
+        "name": "PySnipify ML",
+        "type": "VS Code Extension",
+        "tech": "Visual Studio Code Extension, Python, ML",
+        "description": "VS Code extension providing Python and ML code snippets for productivity"
+      },
+      {
+        "name": "DataFit",
+        "type": "Python Package",
+        "tech": "Python, NumPy, Pandas, Scikit-Learn",
+        "description": "Python package for data preprocessing with advanced design"
+      },
+      {
+        "name": "BioPanel",
+        "type": "Bioinformatics Tool",
+        "tech": "Python, MySQL, OpenCV",
+        "description": "Bioinformatics application with data processing and MySQL integration"
+      },
+      {
+        "name": "Vid2Txt",
+        "type": "Media Processing Tool",
+        "tech": "Python, MoviePy, SpeechRecognition, Google Speech-to-Text, Anthropic API",
+        "description": "Extracts audio from videos, transcribes with Google STT, and classifies via Anthropic API"
+      },
+      {
+        "name": "PDFTalk",
+        "type": "Document Analysis Platform",
+        "tech": "Python, Generative AI, Prompt Engineering, Pandas, Scikit-Learn",
+        "description": "Resume analysis platform utilizing prompt engineering and machine learning"
+      },
+      {
+        "name": "Paper AI",
+        "type": "Research Tool",
+        "tech": "Python",
+        "description": "Paper generator app that automates the generation of research papers"
+      },
+      {
+        "name": "autodatap",
+        "type": "Data Processing Tool",
+        "tech": "Python, Pandas",
+        "description": "Simplifies data preprocessing for ML and data analysis projects"
+      },
+      {
+        "name": "Music Streaming App",
+        "type": "Web Application",
+        "tech": "React.js, JavaScript",
+        "description": "Music streaming application featuring trending songs and integrated player"
+      },
+      {
+        "name": "Basic Calculator",
+        "type": "Web Application",
+        "tech": "React.js, CSS, JavaScript",
+        "description": "Simple web application for basic arithmetic operations with intuitive UI"
+      },
+      {
+        "name": "Getting Data From API",
+        "type": "Web Application",
+        "tech": "React.js, JavaScript",
+        "description": "Project to retrieve and display data from an API"
+      },
+      {
+        "name": "Todo List",
+        "type": "Web Application",
+        "tech": "React.js",
+        "description": "Simple Todo List application demonstrating fundamental React.js techniques"
+      },
+      {
+        "name": "Code Snippets",
+        "type": "Mobile Application",
+        "tech": "Java, XML, Android Design",
+        "description": "Android app with collection of code examples and language filtering"
+      },
+      {
+        "name": "GPA Calculator",
+        "type": "Web Application",
+        "tech": "Java, XML, Android Design",
+        "description": "GPA Calculator for University of Swat demonstrating Android design and Java skills"
+      }
+    ],
+    "total_count": 19
+  },
+  "experience": {
+    "current": "Student Ambassador at BLACKBOX.AI",
+    "recent": [
+      "Python Developer at Suvastu Tech", 
+      "Machine Learning Intern at SkillBuild",
+      "Research Assistant in AI/ML"
+    ],
+    "total_roles": 4,
+    "highlights": [
+      "Led development of computer vision applications",
+      "Built full-stack web applications with AI integration", 
+      "Conducted research in machine learning algorithms"
+    ]
+  },
+  "achievements": {
+    "certifications": {
+      "count": 31,
+      "categories": {
+        "ai_ml": [
+          {
+            "title": "Basics of Generative AI: Build your own ChatGPT model",
+            "issuer": "Open Weaver",
+            "date": "Nov 2023"
+          },
+          {
+            "title": "Data Science & Analytics",
+            "issuer": "HP LIFE",
+            "date": "Sep 2024"
+          },
+          {
+            "title": "Data Science and Business Analytics",
+            "issuer": "The Sparks Foundation",
+            "date": "Jun 2023"
+          },
+          {
+            "title": "Machine Learning Algorithms",
+            "issuer": "Great Learning",
+            "date": "May 2023"
+          },
+          {
+            "title": "Prompt Engineering for ChatGPT",
+            "issuer": "Great Learning",
+            "date": "Jun 2024"
+          }
+        ],
+        "programming": [
+          {
+            "title": "The Python Developer Essential Immersive Bootcamp",
+            "issuer": "Udemy",
+            "date": "Jul 2024"
+          },
+          {
+            "title": "Learn to Code in Python 3: Programming beginner to advanced",
+            "issuer": "Udemy",
+            "date": "Oct 2023"
+          },
+          {
+            "title": "JavaScript Crash Course",
+            "issuer": "Udemy",
+            "date": "Aug 2023"
+          },
+          {
+            "title": "JavaScript Essentials 1",
+            "issuer": "Cisco",
+            "date": "Aug 2023"
+          },
+          {
+            "title": "Basics of JavaScript programming",
+            "issuer": "Open Weaver",
+            "date": "Jul 2023"
+          },
+          {
+            "title": "Basics Of HTML and CSS for beginners",
+            "issuer": "Open Weaver",
+            "date": "Jul 2023"
+          }
+        ],
+        "data_tools": [
+          {
+            "title": "NumPy for Data Science",
+            "issuer": "DataFlair",
+            "date": "Oct 2023"
+          },
+          {
+            "title": "Pandas for Data Analysis",
+            "issuer": "DataFlair",
+            "date": "Oct 2023"
+          },
+          {
+            "title": "Data Manipulation in Python: Master Python, Numpy and Pandas",
+            "issuer": "Udemy",
+            "date": "Aug 2023"
+          },
+          {
+            "title": "Data Visualization with PowerBI",
+            "issuer": "Udemy",
+            "date": "Jun 2024"
+          },
+          {
+            "title": "Introduction to SQL",
+            "issuer": "DataFlair",
+            "date": "Jul 2024"
+          },
+          {
+            "title": "SQL Project for Beginners",
+            "issuer": "Great Learning",
+            "date": "Jul 2024"
+          }
+        ],
+        "mobile_dev": [
+          {
+            "title": "AWS Mobile App Development",
+            "issuer": "Great Learning",
+            "date": "Jun 2023"
+          },
+          {
+            "title": "Android Application Development",
+            "issuer": "Great Learning",
+            "date": "Jun 2023"
+          },
+          {
+            "title": "Design App",
+            "issuer": "Great Learning",
+            "date": "Jun 2023"
+          }
+        ],
+        "professional": [
+          {
+            "title": "EF SET English Certificate 68/100 (C1 Advanced)",
+            "issuer": "EF SET",
+            "date": "Mar 2025"
+          },
+          {
+            "title": "Digital Marketing",
+            "issuer": "HubSpot Academy",
+            "date": "Jul 2024"
+          },
+          {
+            "title": "Introduction to Git and GitHub",
+            "issuer": "Gymnasium",
+            "date": "Jul 2024"
+          },
+          {
+            "title": "AutoCAD Essentials",
+            "issuer": "SourceCAD",
+            "date": "Feb 2025"
+          },
+          {
+            "title": "Public Speaking",
+            "issuer": "Udemy",
+            "date": "Aug 2023"
+          },
+          {
+            "title": "B.E.S.T Build Entrepreneurship Skills Training",
+            "issuer": "R.E.D International",
+            "date": "Mar 2024"
+          },
+          {
+            "title": "WorkShop on CyberSecurity",
+            "issuer": "pantech solutions",
+            "date": "Sep 2023"
+          }
+        ],
+        "health_safety": [
+          {
+            "title": "ISO 45001:2018 Occupational Health & Safety Management System Awareness",
+            "issuer": "The Knights of Safety™️",
+            "date": "May 2025"
+          },
+          {
+            "title": "The COSHH Manager Certification™",
+            "issuer": "The Knights of Safety™️",
+            "date": "May 2025"
+          },
+          {
+            "title": "Health and Safety Induction",
+            "issuer": "The Knights of Safety™️",
+            "date": "Apr 2025"
+          },
+          {
+            "title": "The Impact of Climate Change and Heat Stress on Occupational Health and Safety",
+            "issuer": "NEBOSH",
+            "date": "Apr 2024"
+          }
+        ]
+      },
+      "recent": [
+        {
+          "title": "ISO 45001:2018 Occupational Health & Safety Management System",
+          "issuer": "The Knights of Safety™️",
+          "date": "May 2025"
+        },
+        {
+          "title": "The COSHH Manager Certification™",
+          "issuer": "The Knights of Safety™️",
+          "date": "May 2025"
+        },
+        {
+          "title": "Health and Safety Induction",
+          "issuer": "The Knights of Safety™️",
+          "date": "Apr 2025"
+        },
+        {
+          "title": "EF SET English Certificate (C1 Advanced)",
+          "issuer": "EF SET",
+          "date": "Mar 2025"
+        },
+        {
+          "title": "AutoCAD Essentials",
+          "issuer": "SourceCAD",
+          "date": "Feb 2025"
+        }
+      ]
+    },
+    "research_ideas": {
+      "count": 15,
+      "domains": ["Healthcare AI", "Medical Imaging", "NLP", "Data Science", "Smart Cities", 
+                 "Social Computing", "Blockchain", "Educational Technology", "Green Technology", 
+                 "AgriTech", "Cybersecurity", "IoT", "FinTech", "Climate Science"],
+      "featured": [
+        {
+          "title": "AI-Powered Malaria Detection System",
+          "domain": "Healthcare AI",
+          "techniques": ["CNN", "Transfer Learning", "Image Processing"],
+          "impact": "Early detection of malaria in resource-limited areas"
+        },
+        {
+          "title": "Heart Disease Prediction Using Machine Learning",
+          "domain": "Healthcare AI",
+          "techniques": ["Random Forest", "SVM", "Ensemble Methods"],
+          "impact": "Preventive healthcare and early intervention"
+        },
+        {
+          "title": "AI-Powered Document Summarization",
+          "domain": "Natural Language Processing",
+          "techniques": ["BERT", "Transformer", "Extractive Summarization"],
+          "impact": "Efficient information processing and knowledge management"
+        },
+        {
+          "title": "Smart Traffic Management System",
+          "domain": "Smart Cities",
+          "techniques": ["Computer Vision", "IoT", "Reinforcement Learning"],
+          "impact": "Reduced traffic congestion and improved urban mobility"
+        },
+        {
+          "title": "Financial Fraud Detection using Graph Neural Networks",
+          "domain": "FinTech",
+          "techniques": ["Graph Neural Networks", "Anomaly Detection", "Network Analysis"],
+          "impact": "Reduced financial fraud and improved transaction security"
+        }
+      ],
+      "all": [
+        {
+          "title": "AI-Powered Malaria Detection System",
+          "description": "Developing a deep learning model using CNN and transfer learning to detect malaria parasites in blood smear images with high accuracy for early diagnosis.",
+          "domain": "Healthcare AI",
+          "techniques": ["CNN", "Transfer Learning", "Image Processing", "TensorFlow"],
+          "expectedImpact": "Early detection of malaria in resource-limited areas"
+        },
+        {
+          "title": "Heart Disease Prediction Using Machine Learning",
+          "description": "Creating an ensemble model that combines multiple algorithms to predict heart disease risk factors with improved accuracy over traditional methods.",
+          "domain": "Healthcare AI",
+          "techniques": ["Random Forest", "SVM", "Ensemble Methods", "Feature Engineering"],
+          "expectedImpact": "Preventive healthcare and early intervention"
+        },
+        {
+          "title": "Lung Cancer Detection in CT Scans",
+          "description": "Implementing advanced computer vision techniques to automatically detect and classify lung nodules in CT scan images for early cancer diagnosis.",
+          "domain": "Medical Imaging",
+          "techniques": ["Deep Learning", "3D CNN", "Image Segmentation", "YOLO"],
+          "expectedImpact": "Early lung cancer detection and improved survival rates"
+        },
+        {
+          "title": "AI-Powered Document Summarization",
+          "description": "Developing an intelligent system that can automatically summarize long documents while preserving key information and context using NLP techniques.",
+          "domain": "Natural Language Processing",
+          "techniques": ["BERT", "Transformer", "Extractive Summarization", "Attention Mechanism"],
+          "expectedImpact": "Efficient information processing and knowledge management"
+        },
+        {
+          "title": "Automated Data Cleaning and Preprocessing Pipeline",
+          "description": "Building an intelligent system that automatically detects and corrects data quality issues, missing values, and inconsistencies in large datasets.",
+          "domain": "Data Science",
+          "techniques": ["Anomaly Detection", "Missing Value Imputation", "Feature Engineering", "AutoML"],
+          "expectedImpact": "Improved data quality and reduced preprocessing time"
+        },
+        {
+          "title": "Smart Traffic Management System",
+          "description": "Developing an AI-based traffic optimization system that uses real-time data to manage traffic flow and reduce congestion in urban areas.",
+          "domain": "Smart Cities",
+          "techniques": ["Computer Vision", "IoT", "Reinforcement Learning", "Real-time Analytics"],
+          "expectedImpact": "Reduced traffic congestion and improved urban mobility"
+        },
+        {
+          "title": "Emotion Recognition in Social Media",
+          "description": "Creating a multi-modal system that analyzes text, images, and user behavior to detect emotional states and mental health indicators on social platforms.",
+          "domain": "Social Computing",
+          "techniques": ["Sentiment Analysis", "Multi-modal Learning", "LSTM", "Social Network Analysis"],
+          "expectedImpact": "Mental health awareness and early intervention"
+        },
+        {
+          "title": "Blockchain-Based Secure Healthcare Records",
+          "description": "Designing a decentralized system for secure storage and sharing of medical records using blockchain technology with privacy preservation.",
+          "domain": "Blockchain & Security",
+          "techniques": ["Blockchain", "Smart Contracts", "Cryptography", "Distributed Systems"],
+          "expectedImpact": "Secure and interoperable healthcare data management"
+        },
+        {
+          "title": "AI Tutor for Personalized Learning",
+          "description": "Building an intelligent tutoring system that adapts to individual learning styles and provides personalized educational content and feedback.",
+          "domain": "Educational Technology",
+          "techniques": ["Recommendation Systems", "Learning Analytics", "Adaptive Algorithms", "Knowledge Graphs"],
+          "expectedImpact": "Personalized education and improved learning outcomes"
+        },
+        {
+          "title": "Sustainable Energy Consumption Prediction",
+          "description": "Developing predictive models to forecast energy consumption patterns and optimize renewable energy distribution in smart grids.",
+          "domain": "Green Technology",
+          "techniques": ["Time Series Analysis", "LSTM", "Prophet", "Feature Engineering"],
+          "expectedImpact": "Optimized energy usage and reduced carbon footprint"
+        },
+        {
+          "title": "AI-Powered Agricultural Monitoring",
+          "description": "Creating a comprehensive system using satellite imagery and IoT sensors to monitor crop health, predict yields, and optimize farming practices.",
+          "domain": "AgriTech",
+          "techniques": ["Satellite Image Analysis", "IoT", "Predictive Modeling", "Remote Sensing"],
+          "expectedImpact": "Increased crop yields and sustainable farming practices"
+        },
+        {
+          "title": "Cybersecurity Threat Detection System",
+          "description": "Implementing an AI-based intrusion detection system that can identify and respond to novel cyber threats in real-time using behavioral analysis.",
+          "domain": "Cybersecurity",
+          "techniques": ["Anomaly Detection", "Deep Learning", "Network Analysis", "Real-time Processing"],
+          "expectedImpact": "Enhanced cybersecurity and threat prevention"
+        },
+        {
+          "title": "Voice-Controlled Smart Home Assistant",
+          "description": "Developing an advanced voice assistant that can understand context, manage smart home devices, and provide personalized recommendations.",
+          "domain": "IoT & Smart Homes",
+          "techniques": ["Speech Recognition", "NLP", "Context Understanding", "IoT Integration"],
+          "expectedImpact": "Improved home automation and accessibility"
+        },
+        {
+          "title": "Financial Fraud Detection using Graph Neural Networks",
+          "description": "Building a sophisticated fraud detection system that analyzes transaction patterns and relationships using graph-based machine learning approaches.",
+          "domain": "FinTech",
+          "techniques": ["Graph Neural Networks", "Anomaly Detection", "Network Analysis", "Real-time Processing"],
+          "expectedImpact": "Reduced financial fraud and improved transaction security"
+        },
+        {
+          "title": "Climate Change Impact Prediction",
+          "description": "Creating predictive models to assess climate change effects on different regions using satellite data and environmental sensors.",
+          "domain": "Climate Science",
+          "techniques": ["Climate Modeling", "Satellite Data Analysis", "Time Series Forecasting", "GIS"],
+          "expectedImpact": "Better climate change preparation and mitigation strategies"
+        }
+      ]
+    },
+    "recommendations": {
+      "count": 8,
+      "notable": [
+        {
+          "recommender": "Sajad Khan",
+          "designation": "Flutter Developer | Software Engineer",
+          "date": "August 29, 2024",
+          "highlight": "I highly recommend Syed Syab for any role or opportunity in data science and machine learning."
+        },
+        {
+          "recommender": "Muhammad Fayaz",
+          "designation": "Full Stack ASP.NET Developer",
+          "date": "July 4, 2024",
+          "highlight": "I have consistently been impressed by their outstanding technical abilities, strong work ethic, and enthusiasm for learning."
+        },
+        {
+          "recommender": "Muhammad Ismail",
+          "designation": "Sr./Lead Backend Engineer",
+          "date": "July 2, 2024",
+          "highlight": "Syab is a professional with really good work ethics and consistently delivers high-quality work on time."
+        }
+      ],
+      "all": [
+        {
+          "recommender": "Sajad Khan",
+          "designation": "Flutter Developer | Software Engineer",
+          "date": "August 29, 2024",
+          "text": "I highly recommend Syed Syab for any role or opportunity in data science and machine learning. With extensive experience as a machine learning engineer, Syed has demonstrated exceptional skills in Python, SQL, Scikit-Learn, and data visualization tools like Power BI."
+        },
+        {
+          "recommender": "Muhammad Fayaz",
+          "designation": "Full Stack ASP.NET Developer",
+          "date": "July 4, 2024",
+          "text": "I am writing to highly recommend Syed Syab Ahmad for any opportunity in the field of software engineering. I have had the pleasure of teaching Syed in several courses over the past years at University Of Swat, and I have consistently been impressed by their outstanding technical abilities, strong work ethic, and enthusiasm for learning."
+        },
+        {
+          "recommender": "Fida Hussain",
+          "designation": "Assistant Professor at University of Swat",
+          "date": "July 4, 2024",
+          "text": "Syed was among the best students of my class."
+        },
+        {
+          "recommender": "Muhammad Ismail",
+          "designation": "Sr./Lead Backend Engineer",
+          "date": "July 2, 2024",
+          "text": "I had the pleasure of working with Mr. Syed Syab Ahmad, and I am delighted to recommend him. Syab is a professional with really good work ethics and consistently delivers high-quality work on time."
+        },
+        {
+          "recommender": "Abu Bakar",
+          "designation": "Entrepreneur Empowering Touch Tally Startup",
+          "date": "June 30, 2024",
+          "text": "Syed Syab Ahmad is an outstanding Junior Machine Learning Engineer with expertise in generative AI and bioinformatics. His proficiency in Python, Scikit-learn, and TensorFlow is impressive."
+        },
+        {
+          "recommender": "Umar Gul",
+          "designation": "Managing Director at Techsol Labs",
+          "date": "June 28, 2024",
+          "text": "Syab is a good team member who worked for us in different projects. Really appreciated his efforts."
+        },
+        {
+          "recommender": "Mazhar Islam",
+          "designation": "Entrepreneur/Startup Growth Manager/Trainer/Incubator Management",
+          "date": "June 24, 2024",
+          "text": "I have had the pleasure of working with Syab Ahmad in our incubator, and I can confidently say that he is an exceptional resource. Syab consistently demonstrates a high level of dedication, innovation, and professionalism."
+        },
+        {
+          "recommender": "Sami ullah",
+          "designation": "Full Stack Developer",
+          "date": "June 23, 2024",
+          "text": "A passionate and hard-working machine learning expert. I had a great time working with him and will highly recommend him for relevant roles."
+        }
+      ]
+    },
+    "notable": [
+      "Published research on AI applications",
+      "Winner of multiple hackathons",
+      "Active in AI/ML community"
+    ]
+  },
+  "interests": [
+    "Artificial Intelligence",
+    "Machine Learning Research", 
+    "Full-Stack Development",
+    "Computer Vision",
+    "Natural Language Processing"
+  ],
+  "redirect_links": {
+    "projects": "/projects",
+    "certifications": "/certifications", 
+    "recommendations": "/recommendations",
+    "contact": "/contact",
+    "skills": "/skills"
+  }
+}
