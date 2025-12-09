@@ -10,11 +10,9 @@ import {
   Cloud,
   Zap,
   Github,
-  Twitter,
   Linkedin,
   Mail,
 } from "lucide-react";
-
 const MenteE = () => {
   const products = [
     {
@@ -38,7 +36,8 @@ const MenteE = () => {
     {
       name: "cvAI",
       category: "AI-Powered Resume Analysis",
-      description: "---",
+      description:
+        "AI Recruitment Solutions focusing on fair, efficient candidate discovery and screening. RecruAI beta launched in Dec 2025 to onboard early partners and testers.",
       features: ["---", "---", "---"],
       tech: "---",
       status: "In Progress",
@@ -64,13 +63,18 @@ const MenteE = () => {
       name: "RecruAI",
       category: "AI Recruitment Solutions",
       description: "---",
-      features: ["---", "---", "---"],
-      tech: "---",
-      status: "Coming Soon",
-      link: null,
+      features: [
+        "AI-Powered Candidate Screening: Automatically evaluates resumes and ranks candidates based on skills, experience, and role fit.",
+        "Smart Interview Scheduling: Integrates with calendars to schedule interviews efficiently, reducing manual coordination.",
+        "Automated Candidate Insights: Provides detailed summaries, strengths, and potential fit for recruiters to make faster decisions.",
+      ],
+      tech: "Python (Flask), PostgreSQL for data management,  React.js for responsive UI/UX, Natural Language Processing (NLP) models for resume parsing, candidate matching, predictive analytics",
+      status: "Beta Launch",
+      link: "https://recru-ai-lime.vercel.app",
       icon: <Cloud className="w-8 h-8 text-amber-500" />,
-      isComingSoon: true,
-      isHidden: true,
+      isComingSoon: false,
+      isHidden: false,
+      isBeta: true,
     },
   ];
 
@@ -84,7 +88,7 @@ const MenteE = () => {
       social: {
         github: "https://github.com/SyabAhmad",
         linkedin: "https://linkedin.com/in/syedsyab",
-        email: "syedsyab@mentee.com",
+        email: "syedsyabahmadshah@gmail.com",
       },
     },
     {
@@ -95,7 +99,7 @@ const MenteE = () => {
         "Python Developer & Data Scientist • ML & Data Science Expert • Transforming data into meaningful insights • Specialized in scalable backend solutions",
       skills: ["Python", "Data Science", "Backend", "PostgreSQL"],
       social: {
-        github: "https://github.com",
+        github: "https://github.com/sania040",
         linkedin: "https://linkedin.com",
         email: "backend@mentee.com",
       },
@@ -123,8 +127,8 @@ const MenteE = () => {
         "Data Analyst & ML Engineer • Python, Pandas, NumPy, Matplotlib • Data Cleaning, Visualization & Machine Learning • Building intelligent solutions",
       skills: ["Python", "ML", "Data Analysis", "Scikit-Learn"],
       social: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com",
+        github: "https://github.com/hamza-rustam",
+        linkedin: "https://linkedin.com/in/hamza-rustam",
         email: "ml@mentee.com",
       },
       icon: "🤖",
@@ -139,30 +143,46 @@ const MenteE = () => {
         "MenteE was established on February 1, 2023, with a mission to create privacy-first, secure digital solutions for the modern world.",
     },
     {
-      year: "2025",
+      year: "May 2025",
       title: "DocxBox Launch",
       description:
         "Launched our flagship product, DocxBox, establishing MenteE as a leader in secure mobile document management.",
     },
     {
-      year: "2025+",
+      year: "Nov 2025",
       title: "Product Expansion",
       description:
         "Planning to expand our product line with additional privacy-focused applications and services.",
     },
+    {
+      year: "Dec 2025",
+      title: "RecruAI Beta Launch",
+      description:
+        "This month we launched the RecruAI Beta bringing AI-powered recruitment solutions to organizations keen on responsible automation.",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 text-gray-900 dark:text-white transition-colors duration-300 mt-10">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section className="relative py-20 px-4 overflow-hidden mt-13">
         <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-200 dark:bg-cyan-500/20 rounded-full opacity-70 filter blur-3xl -translate-x-1/2 -translate-y-1/2 transition-colors duration-300" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-200 dark:bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3 transition-colors duration-300" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-200 dark:bg-purple-500/20 rounded-full opacity-70 filter blur-3xl translate-x-1/3 translate-y-1/3 transition-colors duration-300 mt-10" />
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 mt-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 dark:from-blue-500/20 dark:to-purple-500/20 dark:border-blue-500/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-6 transition-colors duration-300">
+            <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 dark:from-blue-500/20 dark:to-purple-500/20 dark:border-blue-500/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-6 transition-colors duration-300 ">
               🚀 Privacy-First Innovation
+            </div>
+            {/* RecruAI Beta Tag */}
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-200 to-pink-100 dark:from-yellow-700 dark:to-pink-800 border border-yellow-300 dark:border-yellow-600 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 ml-4 shadow-sm">
+              <span className="text-sm font-semibold">🚀 RecruAI Beta</span>
+              <a
+                href="/projects/recruiai"
+                className="ml-2 px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-bold hover:bg-yellow-600 transition-all"
+              >
+                Join Beta
+              </a>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
               Welcome to MenteE
@@ -277,6 +297,8 @@ const MenteE = () => {
                         ? "bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400"
                         : product.isComingSoon
                         ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400"
+                        : product.isBeta
+                        ? "bg-teal-100 text-teal-700 dark:bg-teal-500/20 dark:text-teal-400"
                         : "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400"
                     }`}
                   >
@@ -373,6 +395,20 @@ const MenteE = () => {
                         <span className="text-yellow-600 dark:text-yellow-400 font-medium text-sm">
                           🚧 Coming Soon
                         </span>
+                      </div>
+                    ) : product.isBeta ? (
+                      <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 dark:from-teal-600/10 dark:to-cyan-600/10 dark:border-teal-500/20 rounded-lg p-3 text-center">
+                        <span className="text-teal-700 dark:text-teal-400 font-medium text-sm">
+                          🚀 Beta Launch
+                        </span>
+                        <div className="mt-2">
+                          <a
+                            href={product.link}
+                            className="inline-flex items-center gap-2 px-3 py-1 bg-teal-500 text-white rounded-full text-xs font-semibold hover:bg-teal-600 transition-all"
+                          >
+                            Join Beta
+                          </a>
+                        </div>
                       </div>
                     ) : (
                       <a

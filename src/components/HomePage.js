@@ -213,6 +213,22 @@ const HomePage = () => {
                 </h1>
               </motion.div>
 
+              {/* Recruiai Beta Launch Banner */}
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-200 to-pink-100 dark:from-yellow-700 dark:to-pink-800 border border-yellow-300 dark:border-yellow-600 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 shadow-sm"
+              >
+                <span className="text-sm font-semibold">🚀 Recruiai Beta</span>
+                <a
+                  href="/mentee"
+                  className="ml-2 px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-bold hover:bg-yellow-600 transition-all"
+                >
+                  Join Beta
+                </a>
+              </motion.div>
+
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -423,13 +439,19 @@ const HomePage = () => {
                       Projects
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">
-                      24/7
+                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-teal-500/20 hover:border-teal-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">
+                      Recruiai
                     </div>
-                    <div className="text-gray-600 dark:text-gray-300 text-sm">
-                      Innovation
+                    <div className="text-gray-600 dark:text-gray-300 text-sm mb-3">
+                      Company Foundation (Est. 2025)
                     </div>
+                    <a
+                      href="/projects/recruiai"
+                      className="inline-block px-3 py-1 text-xs bg-teal-500 text-white rounded-full font-semibold hover:bg-teal-600 transition-all"
+                    >
+                      Join Beta
+                    </a>
                   </div>
                 </div>
               </div>
