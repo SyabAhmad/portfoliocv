@@ -78,14 +78,14 @@ const HomePage = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Syed Syab Ahmad Portfolio",
-    url: "https://syab.link",
+    url: "https://syab.tech",
     description:
       "AI Engineer and Full-Stack Developer portfolio showcasing machine learning projects, web development skills, and research work.",
     author: {
       "@type": "Person",
       name: "Syed Syab Ahmad",
       jobTitle: "AI Engineer & Full-Stack Developer",
-      url: "https://syab.link",
+      url: "https://syab.tech",
       sameAs: [
         "https://www.linkedin.com/in/syedsyab/",
         "https://github.com/syabahmad",
@@ -97,9 +97,10 @@ const HomePage = () => {
     <>
       {/* use structured data in SEO so it's not unused */}
       <SEO
-        title="Home - Syed Syab Ahmad"
-        description="AI Engineer & Innovator — building intelligent solutions"
-        url="https://syab.link/"
+        title="Home - Syed Syab Ahmad - Hire AI Engineer & Full-Stack Developer"
+        description="AI Engineer & Full-Stack Developer building intelligent solutions. Freelance AI expert available for hire. Specializing in Python, Machine Learning, Deep Learning, React, Django, TensorFlow. Remote work worldwide. Saudi Arabia based. Visa sponsorship available."
+        keywords="Hire AI engineer, Full-stack developer for hire, Machine learning specialist, Python developer for hire, Freelance AI developer, Remote AI engineer, Python expert, React developer, Django developer, Flask developer, JavaScript specialist, Web development services, AI project development, Machine learning services, Deep learning services, Job opportunities, Career opportunities, Skilled developer, Worldwide remote, Saudi Arabia, Pakistan, Available worldwide, Visa sponsorship, Work sponsorship"
+        url="https://syab.tech/"
         structuredData={homePageStructuredData}
       />
 

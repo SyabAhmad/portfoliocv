@@ -239,8 +239,8 @@ const About = () => {
     jobTitle: "AI Engineer & Full-Stack Developer",
     description:
       "Passionate AI Engineer and Full-Stack Developer with expertise in Machine Learning, Deep Learning, and modern web technologies. Currently pursuing studies at University of Swat.",
-    url: "https://syab.link/about",
-    image: "https://syab.link/images/profile.jpg",
+    url: "https://syab.tech/about",
+    image: "https://syab.tech/dp.jpeg",
     alumniOf: "University of Swat",
     hasCredential: certifications.map((cert) => ({
       "@type": "EducationalOccupationalCredential",
@@ -279,8 +279,8 @@ const About = () => {
     <>
       <SEO
         title="About - Syed Syab Ahmad"
-        description="Learn about Syed Syab Ahmad, an AI Engineer and Full-Stack Developer with 50+ certifications, expertise in Machine Learning, and passion for building intelligent solutions."
-        keywords="About Syed Syab Ahmad, AI Engineer biography, Machine Learning expert, Full Stack Developer Pakistan, University of Swat, AI certifications, programming skills"
+        description="Meet Syed Syab Ahmad, an AI Engineer and Full-Stack Developer with 50+ certifications. Specializing in Python, Machine Learning, Deep Learning, React, Django, Flask, and Web Development. Available for freelance work and job opportunities. Remote work worldwide. Visa sponsorship available."
+        keywords="About Syed Syab Ahmad, AI Engineer biography, Machine Learning expert, Full Stack Developer Saudi Arabia, Python expert, JavaScript developer, React specialist, Django backend, Flask developer, Data scientist, ML engineer, Hire AI engineer, Freelance developer profile, Tech resume, AI specialist credentials, Machine learning portfolio, Deep learning engineer, Professional skills, Certifications, 50+ certifications, Job seeker, Career profile, Available for hire, Remote work, Worldwide remote, Visa sponsorship, Contract developer, AI consulting, Pakistan background"
         url="https://syab.link/about"
         structuredData={aboutStructuredData}
       />
@@ -330,12 +330,14 @@ const About = () => {
                   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4 text-gray-500 dark:text-gray-400 mb-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-cyan-600 dark:bg-cyan-400 rounded-full"></div>
-                      <span className="text-sm">Islamabad, Pakistan</span>
+                      <span className="text-sm">Makkah, Saudi Arabia</span>
                     </div>
                     <div className="hidden lg:block w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-purple-600 dark:bg-purple-400 rounded-full"></div>
-                      <span className="text-sm">Feelancer/Open to Work</span>
+                      <span className="text-sm">
+                        Freelancer/Open to Relocate
+                      </span>
                     </div>
                   </div>
 

@@ -96,12 +96,12 @@ const Footer = () => {
                 📧 syedsyabahmadshah@gmail.com
               </a>
               <a
-                href="https://syab.link/"
+                href="https://syab.tech/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300 text-sm block"
               >
-                🔗 syab.link
+                🔗 syab.tech
               </a>
             </div>
           </div>

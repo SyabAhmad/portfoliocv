@@ -68,12 +68,12 @@ const Contact = () => {
     name: "Contact Syed Syab Ahmad",
     description:
       "Get in touch with Syed Syab Ahmad for AI and machine learning projects, collaborations, or job opportunities.",
-    url: "https://syab.link/contact",
+    url: "https://syab.tech/contact",
     mainEntity: {
       "@type": "Person",
       name: "Syed Syab Ahmad",
       email: "syedsyabahmadshah@gmail.com",
-      url: "https://syab.link",
+      url: "https://syab.tech",
     },
   };
 
@@ -81,9 +81,9 @@ const Contact = () => {
     <>
       <SEO
         title="Contact - Syed Syab Ahmad"
-        description="Get in touch with Syed Syab Ahmad for AI and machine learning projects, collaborations, freelance work, or job opportunities. Available for hire."
-        keywords="contact Syed Syab Ahmad, hire AI engineer, machine learning consultant, freelance developer, AI project collaboration, Pakistan developer contact"
-        url="https://syab.link/contact"
+        description="Get in touch with Syed Syab Ahmad for AI and machine learning projects, collaborations, freelance work, or job opportunities. Available for hire and remote work worldwide. Saudi Arabia based, open to relocation. Work visa sponsorship available."
+        keywords="contact Syed Syab Ahmad, hire AI engineer, hire freelance developer, machine learning consultant, AI project collaboration, Saudi Arabia developer contact, Freelance contact, Job opportunity contact, Available for hire, Remote job opportunities, Worldwide remote work, Work visa sponsorship, Sponsorship available, Contract work, AI consulting, Technical collaboration, Pakistan developer, International opportunities, Global hiring"
+        url="https://syab.tech/contact"
         structuredData={contactStructuredData}
       />
 

@@ -89,11 +89,11 @@ IMPORTANT:
   }
 
   if (q.includes("about") || q.includes("who")) {
-    return `Syab is an AI Engineer and Full-Stack Developer from Pakistan specializing in ML.`;
+    return `Syab is an AI Engineer and Full-Stack Developer from Saudi Arabia specializing in ML.`;
   }
 
   if (q.includes("contact")) {
-    return `Email: syedsyabahmadshah@gmail.com | Website: syab.link`;
+    return `Email: syedsyabahmadshah@gmail.com | Website: syab.tech`;
   }
 
   // Default short response

@@ -62,7 +62,7 @@ const Research = () => {
     name: "Research & Ideas - Syed Syab Ahmad",
     description:
       "Explore AI and machine learning research projects including healthcare AI, malaria detection, heart disease prediction, and innovative technology solutions.",
-    url: "https://syab.link/research",
+    url: "https://syab.tech/research",
     author: {
       "@type": "Person",
       name: "Syed Syab Ahmad",
@@ -80,9 +80,9 @@ const Research = () => {
     <>
       <SEO
         title="Research & Ideas - Syed Syab Ahmad"
-        description="Explore cutting-edge AI and machine learning research projects including healthcare AI systems, malaria detection, heart disease prediction, and innovative technology solutions by Syed Syab Ahmad."
-        keywords="AI research, machine learning projects, healthcare AI, malaria detection, heart disease prediction, computer vision, NLP, deep learning research, Pakistan AI researcher"
-        url="https://syab.link/research"
+        description="Explore cutting-edge AI and machine learning research projects including healthcare AI systems, malaria detection, heart disease prediction, CNN, LSTM, NLP, computer vision. Hire a research-focused AI engineer. Remote work worldwide."
+        keywords="AI research, machine learning research projects, healthcare AI research, malaria detection AI, heart disease prediction, Computer vision research, NLP research, Deep learning research, CNN research, LSTM networks, Research papers, Academic projects, Innovation, Problem solving, Technical research, AI consulting, Research engineer, Data science research, Predictive modeling, Algorithm research, Intelligent systems research, Open source research"
+        url="https://syab.tech/research"
         structuredData={researchStructuredData}
       />
 

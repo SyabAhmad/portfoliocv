@@ -56,7 +56,7 @@ try {
       skills: "Frontend Development, UI/UX Design, SEO",
       category: "Web Development",
       status: "Completed",
-      liveUrl: "https://syab.link",
+      liveUrl: "https://syab.tech",
     },
     {
       title: "E-commerce Analytics Dashboard",
@@ -166,7 +166,7 @@ const Projects = () => {
     name: "Projects - Syed Syab Ahmad",
     description:
       "Portfolio of AI, machine learning, and web development projects by Syed Syab Ahmad.",
-    url: "https://syab.link/projects",
+    url: "https://syab.tech/projects",
     author: {
       "@type": "Person",
       name: "Syed Syab Ahmad",
@@ -192,7 +192,7 @@ const Projects = () => {
           title="Projects - Syed Syab Ahmad"
           description="Explore AI, machine learning, and web development projects by Syed Syab Ahmad including healthcare AI systems, prediction models, and innovative solutions."
           keywords="AI projects, machine learning projects, web development portfolio, healthcare AI, Python projects, React projects"
-          url="https://syab.link/projects"
+          url="https://syab.tech/projects"
           structuredData={projectsStructuredData}
         />
         <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
@@ -215,9 +215,9 @@ const Projects = () => {
     <>
       <SEO
         title="Projects - Syed Syab Ahmad"
-        description="Explore AI, machine learning, and web development projects by Syed Syab Ahmad including healthcare AI systems, malaria detection, heart disease prediction, and innovative web solutions."
-        keywords="AI projects, machine learning projects, web development portfolio, healthcare AI, malaria detection, heart disease prediction, Python projects, React projects, TensorFlow projects"
-        url="https://syab.link/projects"
+        description="Explore AI, machine learning, and web development projects by Syed Syab Ahmad including healthcare AI systems, malaria detection, heart disease prediction, RAG pipelines, LLM integration, and innovative web solutions. View my portfolio and technical expertise."
+        keywords="AI projects portfolio, machine learning projects, web development portfolio, healthcare AI, malaria detection, heart disease prediction, Python projects, React projects, Django projects, Flask projects, TensorFlow projects, PyTorch projects, LLM integration, RAG pipelines, Streamlit apps, Docker deployment, Cloud projects, Project showcase, Technical portfolio, Software projects, Hire for projects, Freelance portfolio, Software solutions, AI portfolio, Developer portfolio, Full-stack projects, API projects, Real-world applications"
+        url="https://syab.tech/projects"
         structuredData={projectsStructuredData}
       />
 

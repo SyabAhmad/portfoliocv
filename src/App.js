@@ -14,6 +14,8 @@ import Skills from "./components/SKill";
 import SimpleChatbot from "./components/SimpleChatbot";
 import VoiceAssistant from "./components/VoiceAssistant";
 import AnimatedPatterns from "./components/AnimatedPatterns";
+import FloatingCatAnimation from "./components/FloatingCatAnimation";
+import InteractiveCTA from "./components/InteractiveCTA";
 import DesignPortfolio from "./components/DesignPortfolio";
 import RevitPortfolio from "./components/RevitPortfolio";
 import AutoCADPortfolio from "./components/AutoCADPortfolio";
@@ -94,6 +96,10 @@ function App() {
             <Footer />
           </Layout>
           <AnimatedPatterns />
+          {/* Floating Cat Animation - Appears randomly on all pages */}
+          <FloatingCatAnimation />
+          {/* Interactive CTA - Shows contextual call-to-action with gifs */}
+          <InteractiveCTA />
           {/* Global Chatbot - Available on all pages */}
           <SimpleChatbot />
           {/* Voice AI Assistant - Available on all pages */}

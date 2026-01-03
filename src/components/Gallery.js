@@ -249,7 +249,7 @@ const Gallery = () => {
     name: "Certificate Gallery - Syed Syab Ahmad",
     description:
       "Browse through my collection of professional certifications, courses, and achievements in AI, Machine Learning, Web Development, and more.",
-    url: "https://syab.link/gallery",
+    url: "https://syab.tech/gallery",
     author: {
       "@type": "Person",
       name: "Syed Syab Ahmad",
@@ -260,9 +260,9 @@ const Gallery = () => {
     <>
       <SEO
         title="Certificate Gallery - Syed Syab Ahmad"
-        description="Explore my comprehensive collection of professional certifications and achievements in AI, Machine Learning, Full Stack Development, and various technologies."
-        keywords="certificates gallery, professional certifications, AI certificates, web development certifications, machine learning courses, tech achievements"
-        url="https://syab.link/gallery"
+        description="Explore my comprehensive collection of 50+ professional certifications in AI, Machine Learning, Python, React, Django, Docker, Deep Learning, TensorFlow, PyTorch, and various technologies. Verify credentials and qualifications."
+        keywords="certificates gallery, 50+ certifications, professional certifications, AI certificates, Machine learning certifications, Python certifications, React certificates, Django certifications, web development certifications, tech achievements, Verified credentials, Professional qualifications, Online courses, Skill certification, Achievement badges, Training completion, Course completion, Certified AI engineer, Certified Python developer, Certified full-stack developer, Udemy courses, Great Learning, Coursera certificates"
+        url="https://syab.tech/gallery"
         structuredData={galleryStructuredData}
       />
 
