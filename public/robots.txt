@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://syab.link/sitemap.xml
+Sitemap: https://syab.tech/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
