@@ -33,20 +33,20 @@ const MenteE = () => {
       icon: <Shield className="w-8 h-8 text-blue-500" />,
       isComingSoon: false,
     },
-    {
-      name: "cvAI",
-      category: "AI-Powered Resume Analysis",
-      description:
-        "AI Recruitment Solutions focusing on fair, efficient candidate discovery and screening. RecruAI beta launched in Dec 2025 to onboard early partners and testers.",
-      features: ["---", "---", "---"],
-      tech: "---",
-      status: "In Progress",
-      link: null,
-      icon: <Zap className="w-8 h-8 text-orange-500" />,
-      isComingSoon: false,
-      isInProgress: true,
-      isHidden: true,
-    },
+    // {
+    //   name: "cvAI",
+    //   category: "AI-Powered Resume Analysis",
+    //   description:
+    //     "AI Recruitment Solutions focusing on fair, efficient candidate discovery and screening. RecruAI beta launched in Dec 2025 to onboard early partners and testers.",
+    //   features: ["---", "---", "---"],
+    //   tech: "---",
+    //   status: "In Progress",
+    //   link: null,
+    //   icon: <Zap className="w-8 h-8 text-orange-500" />,
+    //   isComingSoon: false,
+    //   isInProgress: true,
+    //   isHidden: true,
+    // },
     {
       name: "vidAI",
       category: "AI Video Enhancement Platform",
@@ -178,7 +178,7 @@ const MenteE = () => {
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-200 to-pink-100 dark:from-yellow-700 dark:to-pink-800 border border-yellow-300 dark:border-yellow-600 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 ml-4 shadow-sm">
               <span className="text-sm font-semibold">🚀 RecruAI Beta</span>
               <a
-                href="/projects/recruiai"
+                href="https://recru-ai-lime.vercel.app/"
                 className="ml-2 px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-bold hover:bg-yellow-600 transition-all"
               >
                 Join Beta
@@ -269,8 +269,8 @@ const MenteE = () => {
                   product.isInProgress
                     ? "border-orange-200 dark:border-orange-500/30 hover:border-orange-500/50"
                     : product.isComingSoon
-                    ? "border-yellow-200 dark:border-yellow-500/30 hover:border-yellow-500/50"
-                    : "border-gray-200 dark:border-gray-700/50 hover:border-cyan-500/50"
+                      ? "border-yellow-200 dark:border-yellow-500/30 hover:border-yellow-500/50"
+                      : "border-gray-200 dark:border-gray-700/50 hover:border-cyan-500/50"
                 }`}
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -284,8 +284,8 @@ const MenteE = () => {
                         product.isInProgress
                           ? "text-orange-600 dark:text-orange-400"
                           : product.isComingSoon
-                          ? "text-yellow-600 dark:text-yellow-400"
-                          : "text-cyan-600 dark:text-cyan-400"
+                            ? "text-yellow-600 dark:text-yellow-400"
+                            : "text-cyan-600 dark:text-cyan-400"
                       }`}
                     >
                       {product.isHidden ? "---" : product.category}
@@ -296,10 +296,10 @@ const MenteE = () => {
                       product.isInProgress
                         ? "bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400"
                         : product.isComingSoon
-                        ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400"
-                        : product.isBeta
-                        ? "bg-teal-100 text-teal-700 dark:bg-teal-500/20 dark:text-teal-400"
-                        : "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400"
+                          ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400"
+                          : product.isBeta
+                            ? "bg-teal-100 text-teal-700 dark:bg-teal-500/20 dark:text-teal-400"
+                            : "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400"
                     }`}
                   >
                     {product.status}
@@ -342,8 +342,8 @@ const MenteE = () => {
                           product.isInProgress
                             ? "text-orange-600 dark:text-orange-400"
                             : product.isComingSoon
-                            ? "text-yellow-600 dark:text-yellow-400"
-                            : "text-cyan-600 dark:text-cyan-400"
+                              ? "text-yellow-600 dark:text-yellow-400"
+                              : "text-cyan-600 dark:text-cyan-400"
                         }`}
                       >
                         Key Features
@@ -360,8 +360,8 @@ const MenteE = () => {
                                 product.isInProgress
                                   ? "text-orange-600 dark:text-orange-400"
                                   : product.isComingSoon
-                                  ? "text-yellow-600 dark:text-yellow-400"
-                                  : "text-cyan-600 dark:text-cyan-400"
+                                    ? "text-yellow-600 dark:text-yellow-400"
+                                    : "text-cyan-600 dark:text-cyan-400"
                               }`}
                             />
                             {feature}
