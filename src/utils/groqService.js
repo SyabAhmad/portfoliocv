@@ -3,13 +3,13 @@ import unifiedData from "./unifiedDataService";
 
 export const getGroqChatResponse = async (
   userMessage,
-  portfolioData = null
+  portfolioData = null,
 ) => {
   const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY;
 
   if (!GROQ_API_KEY) {
     console.error(
-      "⚠️ GROQ API KEY MISSING! Set REACT_APP_GROQ_API_KEY in .env file"
+      "⚠️ GROQ API KEY MISSING! Set REACT_APP_GROQ_API_KEY in .env file",
     );
     return "Hey! Looks like the API key isn't set up yet. You'll need to add a Groq API key to chat with me. Check the .env file!";
   }
@@ -70,7 +70,7 @@ Q: "Is he married?"
 A: "I focus on his professional work. What would you like to know about his projects or skills?"
 
 Q: "Can I hire him?"
-A: "Yes, Syab is available for opportunities in AI, software development, and architectural design. You can reach him at syedsyabahmadshah@gmail.com to discuss potential projects."`;
+A: "Yes, Syab is available for opportunities in AI, software development, and architectural design. You can reach him at syedsyabahmadshah@gmail.com or engr.syab@gmail.com to discuss potential projects."`;
 
     const response = await fetch(
       "https://api.groq.com/openai/v1/chat/completions",
@@ -97,7 +97,7 @@ A: "Yes, Syab is available for opportunities in AI, software development, and ar
           top_p: 0.95,
           stream: false,
         }),
-      }
+      },
     );
 
     if (!response.ok) {
@@ -121,7 +121,7 @@ A: "Yes, Syab is available for opportunities in AI, software development, and ar
     ) {
       return "Hmm, seems like I'm having connection issues. Can you try that again?";
     } else if (error.message.includes("401") || error.message.includes("403")) {
-      return "Looks like there's an API key issue. Let me have Syab check that. You can email him at syedsyabahmadshah@gmail.com";
+      return "Looks like there's an API key issue. Let me have Syab check that. You can email him at syedsyabahmadshah@gmail.com or engr.syab@gmail.com";
     } else {
       return "Oops, I hit a technical snag. Try asking again, or reach out to Syab directly if this keeps happening!";
     }

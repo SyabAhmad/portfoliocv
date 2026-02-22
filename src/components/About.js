@@ -93,7 +93,7 @@ const About = () => {
     {
       name: "WhatsApp",
       icon: FaWhatsapp,
-      url: "https://wa.me/923460561173",
+      url: "https://wa.me/966546211818",
       color: "hover:text-green-400",
     },
     {
@@ -338,6 +338,11 @@ const About = () => {
                       <span className="text-sm">
                         Freelancer/Open to Relocate
                       </span>
+                    </div>
+                    <div className="hidden lg:block w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full"></div>
+                      <span className="text-sm">🇸🇦 546211818</span>
                     </div>
                   </div>
 

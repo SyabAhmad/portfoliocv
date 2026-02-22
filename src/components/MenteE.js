@@ -89,6 +89,7 @@ const MenteE = () => {
         github: "https://github.com/SyabAhmad",
         linkedin: "https://linkedin.com/in/syedsyab",
         email: "syedsyabahmadshah@gmail.com",
+        secondaryEmail: "engr.syab@gmail.com",
       },
     },
     {

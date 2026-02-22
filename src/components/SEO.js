@@ -80,7 +80,7 @@ const SEO = ({
 
     // Remove existing structured data
     const existingStructuredData = document.querySelectorAll(
-      "script[data-react-seo]"
+      "script[data-react-seo]",
     );
     existingStructuredData.forEach((script) => script.remove());
 
@@ -181,8 +181,9 @@ const SEO = ({
           "TensorFlow",
           "PyTorch",
         ],
-        email: "syabblogger@gmail.com",
-        telephone: "+923460561173",
+        email: "syedsyabahmadshah@gmail.com",
+        secondaryEmail: "engr.syab@gmail.com",
+        telephone: "+966546211818",
         address: {
           "@type": "PostalAddress",
           addressCountry: "Saudi Arabia",

@@ -96,6 +96,12 @@ const Footer = () => {
                 📧 syedsyabahmadshah@gmail.com
               </a>
               <a
+                href="mailto:engr.syab@gmail.com"
+                className="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 text-sm block break-all md:break-normal"
+              >
+                📧 engr.syab@gmail.com
+              </a>
+              <a
                 href="https://syab.tech/"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -54,7 +54,7 @@ IMPORTANT:
             max_tokens: 200,
             top_p: 0.9,
           }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -93,7 +93,7 @@ IMPORTANT:
   }
 
   if (q.includes("contact")) {
-    return `Email: syedsyabahmadshah@gmail.com | Website: syab.tech`;
+    return `Email: syedsyabahmadshah@gmail.com | Secondary Email: engr.syab@gmail.com | Website: syab.tech`;
   }
 
   // Default short response

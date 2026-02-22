@@ -46,7 +46,7 @@ const Contact = () => {
       const res = await emailjs.send(
         "service_rlac4th",
         "template_wczi6ir",
-        params
+        params,
       );
       console.log("EmailJS success:", res);
       alert("Message sent — thank you!");
@@ -73,6 +73,8 @@ const Contact = () => {
       "@type": "Person",
       name: "Syed Syab Ahmad",
       email: "syedsyabahmadshah@gmail.com",
+      secondaryEmail: "engr.syab@gmail.com",
+      telephone: "+966546211818",
       url: "https://syab.tech",
     },
   };
@@ -165,11 +167,20 @@ const Contact = () => {
                 Direct Contact:
               </p>
               <a
-                href="mailto:syabblogger@gmail.com"
+                href="mailto:syedsyabahmadshah@gmail.com"
                 className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors duration-300 block mb-1"
               >
                 syedsyabahmadshah@gmail.com
               </a>
+              <a
+                href="mailto:engr.syab@gmail.com"
+                className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors duration-300 block mb-1"
+              >
+                engr.syab@gmail.com
+              </a>
+              <p className="text-gray-600 dark:text-gray-300 font-medium">
+                🇸🇦 546211818
+              </p>
             </div>
 
             {/* Social Media Links */}
