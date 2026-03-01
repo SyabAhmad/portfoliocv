@@ -10,7 +10,7 @@ const Skills = () => {
       { name: "Python", level: 95, color: "from-blue-400 to-yellow-400" },
       { name: "JavaScript", level: 90, color: "from-yellow-400 to-yellow-600" },
       { name: "React", level: 90, color: "from-cyan-400 to-blue-500" },
-      { name: "PostgreSQL", level: 80, color: "from-blue-700 to-indigo-700" },
+      { name: "PostgreSQL", level: 85, color: "from-blue-700 to-indigo-700" },
       { name: "SQL", level: 85, color: "from-gray-400 to-gray-600" },
       { name: "Pandas", level: 95, color: "from-blue-400 to-purple-400" },
       { name: "NumPy", level: 92, color: "from-blue-500 to-cyan-500" },
@@ -18,8 +18,78 @@ const Skills = () => {
       { name: "CSS3", level: 90, color: "from-blue-500 to-purple-500" },
       { name: "Node.js", level: 85, color: "from-green-500 to-green-700" },
       { name: "Tailwind CSS", level: 92, color: "from-cyan-400 to-teal-500" },
-      { name: "Flask", level: 85, color: "from-green-500 to-teal-500" },
-      { name: "FastAPI", level: 80, color: "from-blue-500 to-cyan-500" },
+      { name: "Flask", level: 88, color: "from-green-500 to-teal-500" },
+      { name: "FastAPI", level: 82, color: "from-blue-500 to-cyan-500" },
+    ],
+    "Cloud & Deployment": [
+      { name: "AWS EC2", level: 85, color: "from-orange-400 to-yellow-500" },
+      {
+        name: "AWS Security Groups",
+        level: 80,
+        color: "from-orange-500 to-red-500",
+      },
+      {
+        name: "Flask Server Hosting",
+        level: 85,
+        color: "from-green-400 to-teal-500",
+      },
+      {
+        name: "Port Management",
+        level: 78,
+        color: "from-purple-400 to-indigo-500",
+      },
+      {
+        name: "Vercel Deployment",
+        level: 88,
+        color: "from-gray-600 to-gray-800",
+      },
+      {
+        name: "Frontend-Backend Integration",
+        level: 85,
+        color: "from-cyan-400 to-blue-500",
+      },
+      {
+        name: "Cloud Networking",
+        level: 75,
+        color: "from-blue-500 to-indigo-500",
+      },
+    ],
+    "Backend & DevOps": [
+      {
+        name: "Flask-Migrate / Alembic",
+        level: 82,
+        color: "from-green-500 to-emerald-500",
+      },
+      {
+        name: "CORS Configuration",
+        level: 88,
+        color: "from-teal-400 to-cyan-500",
+      },
+      {
+        name: "Environment Variables",
+        level: 90,
+        color: "from-gray-400 to-gray-600",
+      },
+      {
+        name: "Production API Hosting",
+        level: 85,
+        color: "from-indigo-400 to-purple-500",
+      },
+      {
+        name: "API Testing (curl/Postman)",
+        level: 90,
+        color: "from-orange-400 to-pink-500",
+      },
+      {
+        name: "Virtual Environments (venv)",
+        level: 92,
+        color: "from-purple-400 to-indigo-500",
+      },
+      {
+        name: "Python Package Management",
+        level: 88,
+        color: "from-blue-400 to-cyan-500",
+      },
     ],
     "Secondary Skills": [
       { name: "TypeScript", level: 70, color: "from-blue-500 to-blue-700" },
@@ -44,7 +114,6 @@ const Skills = () => {
       { name: "OpenAI API", level: 88, color: "from-purple-400 to-pink-400" },
       { name: "Next.js", level: 82, color: "from-gray-800 to-black" },
       { name: "Bootstrap", level: 85, color: "from-purple-500 to-indigo-600" },
-      { name: "Bootstrap", level: 85, color: "from-purple-500 to-indigo-600" },
       { name: "MySQL", level: 88, color: "from-blue-600 to-blue-800" },
       { name: "Firebase", level: 82, color: "from-yellow-500 to-orange-500" },
       { name: "Docker", level: 78, color: "from-blue-400 to-cyan-500" },
@@ -66,7 +135,7 @@ const Skills = () => {
         (acc, [category, skills]) => {
           return [...acc, ...skills.map((skill) => ({ ...skill, category }))];
         },
-        []
+        [],
       );
       return showAllSkills ? allSkills : allSkills.slice(0, 12);
     } else {
@@ -80,7 +149,7 @@ const Skills = () => {
     activeCategory === "All"
       ? Object.values(skillsData).reduce(
           (acc, skills) => acc + skills.length,
-          0
+          0,
         )
       : skillsData[activeCategory]?.length || 0;
 
@@ -153,10 +222,10 @@ const Skills = () => {
               {skill.level >= 90
                 ? "Expert"
                 : skill.level >= 80
-                ? "Advanced"
-                : skill.level >= 70
-                ? "Intermediate"
-                : "Beginner"}
+                  ? "Advanced"
+                  : skill.level >= 70
+                    ? "Intermediate"
+                    : "Beginner"}
             </div>
           </div>
         ))}
