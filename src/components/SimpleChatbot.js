@@ -95,7 +95,7 @@ const SimpleChatbot = () => {
 
       {/* Simple Response Panel - Mobile Responsive */}
       {currentResponse && (
-        <div className="fixed top-2 left-2 right-2 sm:top-4 sm:right-4 sm:left-auto z-50 w-auto sm:w-96 max-h-[70vh] sm:max-h-[80vh] animate-in slide-in-from-right duration-300">
+        <div className="fixed top-2 left-2 right-2 sm:top-4 sm:right-4 sm:left-auto z-50 w-auto sm:w-96 h-[70vh] sm:h-[80vh] animate-in slide-in-from-right duration-300">
           <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden h-full flex flex-col">
             {/* Header with close button - Fixed */}
             <div className="bg-gray-50 px-3 py-2 sm:px-4 sm:py-3 border-b border-gray-200 flex justify-between items-center flex-shrink-0">
@@ -115,7 +115,10 @@ const SimpleChatbot = () => {
             </div>
 
             {/* Response Content - Scrollable */}
-            <div className="flex-1 overflow-y-auto">
+            <div
+              className="flex-1 overflow-y-scroll touch-pan-y"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
               <div className="p-3 sm:p-4">
                 <div className="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line">
                   {currentResponse.answer}
