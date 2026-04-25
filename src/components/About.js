@@ -330,13 +330,13 @@ const About = () => {
                   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4 text-gray-500 dark:text-gray-400 mb-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-cyan-600 dark:bg-cyan-400 rounded-full"></div>
-                      <span className="text-sm">Makkah, Saudi Arabia</span>
+                      <span className="text-sm">Riyadh, Saudi Arabia</span>
                     </div>
                     <div className="hidden lg:block w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-purple-600 dark:bg-purple-400 rounded-full"></div>
                       <span className="text-sm">
-                        Freelancer/Open to Relocate
+                        Open to any / Relocate anywhere
                       </span>
                     </div>
                     <div className="hidden lg:block w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"></div>

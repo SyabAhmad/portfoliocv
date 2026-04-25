@@ -89,7 +89,7 @@ IMPORTANT:
   }
 
   if (q.includes("about") || q.includes("who")) {
-    return `Syab is an AI Engineer and Full-Stack Developer from Saudi Arabia specializing in ML.`;
+    return `Syab is an AI Engineer and Full-Stack Developer from Riyadh, Saudi Arabia specializing in ML.`;
   }
 
   if (q.includes("contact")) {

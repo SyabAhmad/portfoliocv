@@ -1,5 +1,20 @@
 const projects = [
   {
+    title: "RunAI (MenteE)",
+    duration: "2025",
+    description:
+      "An interactive, gamified educational platform built to teach hands-on AI/ML engineering and software development skills through mission-based coding challenges. Users progress through curated chapters such as SQL Fundamentals, Command Line Essentials, CI/CD Pipelines, and ML Pipeline Engineering via an embedded code editor, terminal, and pipeline builder. The app is entirely JSON-driven with a sequential mission-unlocking system, XP rewards, localStorage persistence, and regex-based code validation.",
+    keyFeatures:
+      "Gamified Learning · Mission-Based Challenges · XP Progression · Code Editor with Regex Validation · Terminal Simulation · Pipeline Builder · localStorage Persistence · Sequential Mission Unlocking · JSON-Driven Content",
+    techStack:
+      "React 19, Vite, Tailwind CSS v4, React Router DOM v7, Zustand, Babel, React Compiler, ESLint v10",
+    skills:
+      "React, TypeScript, Tailwind CSS, Zustand, JSON Architecture, Gamification, Frontend Engineering",
+    category: "Web Development",
+    image: "/projects/pleaselive.png",
+    liveUrl: "https://pleaselive.vercel.app",
+  },
+  {
     title: "Menteemart",
     duration: "2025",
     description:

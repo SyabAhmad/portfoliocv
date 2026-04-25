@@ -46,7 +46,7 @@ const HomePage = () => {
       "Building tomorrow's solutions today",
       "Where creativity meets technology",
     ],
-    []
+    [],
   );
 
   // Typing effect
@@ -98,7 +98,7 @@ const HomePage = () => {
       {/* use structured data in SEO so it's not unused */}
       <SEO
         title="Home - Syed Syab Ahmad - Hire AI Engineer & Full-Stack Developer"
-        description="AI Engineer & Full-Stack Developer building intelligent solutions. Freelance AI expert available for hire. Specializing in Python, Machine Learning, Deep Learning, React, Django, TensorFlow. Remote work worldwide. Saudi Arabia based. Visa sponsorship available."
+        description="AI Engineer & Full-Stack Developer building intelligent solutions. Available for hire and open to any opportunity worldwide. Specializing in Python, Machine Learning, Deep Learning, React, Django, TensorFlow. Remote work or relocation. Riyadh based. Visa sponsorship available."
         keywords="Hire AI engineer, Full-stack developer for hire, Machine learning specialist, Python developer for hire, Freelance AI developer, Remote AI engineer, Python expert, React developer, Django developer, Flask developer, JavaScript specialist, Web development services, AI project development, Machine learning services, Deep learning services, Job opportunities, Career opportunities, Skilled developer, Worldwide remote, Saudi Arabia, Pakistan, Available worldwide, Visa sponsorship, Work sponsorship"
         url="https://syab.tech/"
         structuredData={homePageStructuredData}
