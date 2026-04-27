@@ -87,14 +87,20 @@ const Contact = () => {
 
     // Collect and sanitize fields from the form
     const f = formRef.current;
+    const senderName = sanitizeInput(f.from_name?.value);
+    const senderEmail = sanitizeInput(f.reply_to?.value);
+    const senderMessage = sanitizeInput(f.message?.value);
+
+    // Must match EmailJS template variables exactly: {{name}}, {{email}}, {{title}}, {{message}}
     const params = {
-      from_name: sanitizeInput(f.from_name?.value),
-      reply_to: sanitizeInput(f.reply_to?.value),
-      message: sanitizeInput(f.message?.value),
+      name: senderName,
+      email: senderEmail,
+      title: "New Contact Form Message",
+      message: senderMessage,
     };
 
     // Basic validation
-    if (!params.from_name || !params.reply_to || !params.message) {
+    if (!params.name || !params.email || !params.message) {
       alert("Please fill in all fields.");
       setIsSending(false);
       return;
@@ -102,7 +108,7 @@ const Contact = () => {
 
     // Email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(params.reply_to)) {
+    if (!emailRegex.test(params.email)) {
       alert("Please enter a valid email address.");
       setIsSending(false);
       return;
