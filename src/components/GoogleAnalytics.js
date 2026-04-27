@@ -1,20 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const GoogleAnalytics = () => {
   useEffect(() => {
     // Create and append the gtag script
-    const script1 = document.createElement('script');
+    const script1 = document.createElement("script");
     script1.async = true;
-    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-3P5B85CEWY';
+    script1.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.REACT_APP_GA_TRACKING_ID}`;
     document.head.appendChild(script1);
 
     // Create and append the gtag configuration script
-    const script2 = document.createElement('script');
+    const script2 = document.createElement("script");
     script2.innerHTML = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-3P5B85CEWY');
+      gtag('config', '${process.env.REACT_APP_GA_TRACKING_ID}');
     `;
     document.head.appendChild(script2);
 

@@ -32,7 +32,7 @@ const SEO = ({
       // Create and append the gtag script
       const script1 = document.createElement("script");
       script1.async = true;
-      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-3P5B85CEWY";
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.REACT_APP_GA_TRACKING_ID}`;
       document.head.appendChild(script1);
 
       // Wait for the script to load, then configure
@@ -43,7 +43,7 @@ const SEO = ({
         }
         window.gtag = gtag;
         gtag("js", new Date());
-        gtag("config", "G-3P5B85CEWY", {
+        gtag("config", process.env.REACT_APP_GA_TRACKING_ID, {
           page_title: fullTitle,
           page_location: url,
         });
@@ -199,7 +199,7 @@ const SEO = ({
 
     // Track page view for Google Analytics
     if (window.gtag) {
-      window.gtag("config", "G-3P5B85CEWY", {
+      window.gtag("config", process.env.REACT_APP_GA_TRACKING_ID, {
         page_title: fullTitle,
         page_location: url,
       });

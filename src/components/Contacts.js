@@ -9,8 +9,18 @@ import {
 import SEO from "./SEO";
 import emailjs from "@emailjs/browser";
 
-// initialize EmailJS client (public key) — optional if you pass key to send/sendForm
-emailjs.init("Bwe4JKCqvjzm4RNGz");
+// Initialize EmailJS with env variable (set in Vercel dashboard)
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+
+if (EMAILJS_PUBLIC_KEY) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+} else {
+  console.warn(
+    "⚠️ REACT_APP_EMAILJS_PUBLIC_KEY not set in environment variables",
+  );
+}
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -24,35 +34,90 @@ const Contact = () => {
     window.open(cvDownloadUrl, "_blank");
   };
 
-  // EmailJS setup:
-  // - Service ID: service_rlac4th
-  // - Template ID: template_contact (create this in EmailJS dashboard or change to your template id)
-  // - Public (user) key: Bwe4JKCqvjzm4RNGz
+  // Rate limiting: max 3 submissions per 15 minutes
+  const checkRateLimit = () => {
+    const now = Date.now();
+    const windowMs = 15 * 60 * 1000; // 15 minutes
+    const maxSubmissions = 3;
+
+    let submissions = JSON.parse(
+      localStorage.getItem("contactSubmissions") || "[]",
+    );
+    submissions = submissions.filter((time) => now - time < windowMs);
+
+    if (submissions.length >= maxSubmissions) {
+      const oldest = submissions[0];
+      const waitMinutes = Math.ceil((windowMs - (now - oldest)) / 60000);
+      return { allowed: false, waitMinutes };
+    }
+
+    submissions.push(now);
+    localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
+    return { allowed: true };
+  };
+
+  // Input sanitization
+  const sanitizeInput = (str) => {
+    if (!str || typeof str !== "string") return "";
+    return str.trim().replace(/[<>]/g, "");
+  };
+
+  // EmailJS setup from environment variables
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    // Check env vars are configured
+    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+      alert("Contact form is not configured. Please try again later.");
+      console.error("EmailJS environment variables are missing");
+      return;
+    }
+
+    // Rate limit check
+    const rateCheck = checkRateLimit();
+    if (!rateCheck.allowed) {
+      alert(
+        `Too many messages sent. Please wait ${rateCheck.waitMinutes} minute(s) before trying again.`,
+      );
+      return;
+    }
+
     setIsSending(true);
 
-    // collect fields from the form (must match template variables in EmailJS)
+    // Collect and sanitize fields from the form
     const f = formRef.current;
     const params = {
-      from_name: f.from_name?.value || "",
-      reply_to: f.reply_to?.value || "",
-      message: f.message?.value || "",
+      from_name: sanitizeInput(f.from_name?.value),
+      reply_to: sanitizeInput(f.reply_to?.value),
+      message: sanitizeInput(f.message?.value),
     };
 
+    // Basic validation
+    if (!params.from_name || !params.reply_to || !params.message) {
+      alert("Please fill in all fields.");
+      setIsSending(false);
+      return;
+    }
+
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(params.reply_to)) {
+      alert("Please enter a valid email address.");
+      setIsSending(false);
+      return;
+    }
+
     try {
-      // DEBUG: use emailjs.send (easier to debug). Replace 'template_wczi6ir' with exact template id from dashboard.
       const res = await emailjs.send(
-        "service_rlac4th",
-        "template_wczi6ir",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         params,
       );
       console.log("EmailJS success:", res);
       alert("Message sent — thank you!");
       f.reset();
     } catch (err) {
-      // show full error for debugging
       console.error("EmailJS error:", err);
       const status = err?.status ?? err?.response?.status ?? "unknown";
       const text = err?.text ?? err?.message ?? JSON.stringify(err);
