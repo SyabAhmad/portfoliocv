@@ -76,49 +76,13 @@ const About = () => {
       name: "Instagram",
       icon: FaInstagram,
       url: "https://instagram.com/syedsyab",
-      color: "hover:text-pink-400",
-    },
-    {
-      name: "Facebook",
-      icon: FaFacebook,
-      url: "https://facebook.com/syed.syab",
-      color: "hover:text-blue-600",
-    },
-    {
-      name: "Discord",
-      icon: FaDiscord,
-      url: "https://discordapp.com/users/syabahmad",
-      color: "hover:text-indigo-400",
-    },
-    {
-      name: "WhatsApp",
-      icon: FaWhatsapp,
-      url: "https://wa.me/966546211818",
-      color: "hover:text-green-400",
-    },
-    {
-      name: "Telegram",
-      icon: FaTelegram,
-      url: "https://t.me/syedsyab",
-      color: "hover:text-blue-500",
-    },
-    {
-      name: "Snapchat",
-      icon: FaSnapchat,
-      url: "https://www.snapchat.com/add/syed.syab",
-      color: "hover:text-yellow-400",
-    },
-    {
-      name: "Medium",
-      icon: FaMedium,
-      url: "https://medium.com/@syedsyab",
-      color: "hover:text-green-400",
+      color: "hover:text-amber-400",
     },
     {
       name: "Dribbble",
       icon: FaDribbble,
       url: "https://dribbble.com/Syab_Ahmad",
-      color: "hover:text-pink-400",
+      color: "hover:text-amber-400",
     },
     {
       name: "Behance",
@@ -285,19 +249,17 @@ const About = () => {
         structuredData={aboutStructuredData}
       />
 
-      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
-        <div className="container mx-auto space-y-16">
-          {/* Introduction Section */}
+      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 transition-colors duration-300">
+        <div className="container mx-auto space-y-12 md:space-y-16">
+          {/* Introduction Section - Redesigned */}
           <section className="text-center">
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-5xl mx-auto transition-colors duration-300">
-              {/* Header with Image and Name */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-8">
-                {/* Profile Image */}
+            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-2xl p-6 md:p-8 max-w-5xl mx-auto transition-colors duration-300">
+              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6 md:mb-8">
+                {/* Profile Image - Compact */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-40 h-40 lg:w-48 lg:h-48 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 shadow-2xl shadow-cyan-500/20 relative">
+                  <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 shadow-xl">
                     <img
                       src="dp.jpeg"
-                      // src="https://media.licdn.com/dms/image/v2/D4D35AQEUv9FG-864tQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1736244636675?e=1749502800&v=beta&t=kumK-AXqzTK0RBF8vFYM1RbBoFC3Dl73PPZ5-foH4aQ"
                       alt="Syed Syab Ahmad"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -305,58 +267,54 @@ const About = () => {
                         e.target.nextElementSibling.classList.remove("hidden");
                       }}
                     />
-                    <div className="w-full h-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center text-4xl font-bold text-white hidden absolute top-0 left-0">
+                    <div className="w-full h-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-xl md:text-2xl font-bold text-white hidden absolute top-0 left-0">
                       SSA
                     </div>
                   </div>
-                  {/* Animated ring around image */}
-                  <div className="absolute inset-0 w-40 h-40 lg:w-48 lg:h-48 mx-auto rounded-full border-2 border-cyan-600/30 dark:border-cyan-400/30 animate-ping"></div>
-                  {/* Status indicator */}
-                  <div className="absolute bottom-2 right-2 lg:bottom-4 lg:right-4 w-6 h-6 bg-green-500 dark:bg-green-400 rounded-full border-2 border-white dark:border-gray-800 shadow-lg">
-                    <div className="w-full h-full bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
+                  {/* Animated ring */}
+                  <div className="absolute inset-0 w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full border-2 border-amber-400/30 animate-ping"></div>
+                  {/* Status */}
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-800 shadow-lg">
+                    <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
                   </div>
                 </div>
 
-                {/* Name and Title */}
-                <div className="flex-1 text-center lg:text-left">
-                  <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
+                {/* Name, Title & Actions */}
+                <div className="flex-1 text-center md:text-left">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
                     Syed Syab Ahmad
                   </h1>
-                  <h2 className="text-xl lg:text-2xl text-emerald-600 dark:text-emerald-400 font-semibold mb-4">
+                  <h2 className="text-base md:text-lg lg:text-xl text-amber-600 dark:text-amber-400 font-semibold mb-3">
                     AI Engineer & Full-Stack Developer
                   </h2>
 
-                  {/* Location and University */}
-                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4 text-gray-500 dark:text-gray-400 mb-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-cyan-600 dark:bg-cyan-400 rounded-full"></div>
-                      <span className="text-sm">Riyadh, Saudi Arabia</span>
-                    </div>
-                    <div className="hidden lg:block w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-purple-600 dark:bg-purple-400 rounded-full"></div>
-                      <span className="text-sm">
-                        Open to any / Relocate anywhere
-                      </span>
-                    </div>
-                    <div className="hidden lg:block w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full"></div>
-                      <span className="text-sm">🇸🇦 546211818</span>
-                    </div>
+                  {/* Location Tags */}
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-4 text-xs md:text-sm">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-amber-100/50 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 rounded-full">
+                      <span className="w-1.5 h-1.5 bg-amber-600 rounded-full"></span>
+                      Riyadh, SA
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-orange-100/50 dark:bg-orange-500/20 text-orange-700 dark:text-orange-300 rounded-full">
+                      <span className="w-1.5 h-1.5 bg-orange-600 rounded-full"></span>
+                      Open to Relocate
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-100/50 dark:bg-green-500/20 text-green-700 dark:text-green-300 rounded-full">
+                      <span className="w-1.5 h-1.5 bg-green-600 rounded-full"></span>
+                      📱 546211818
+                    </span>
                   </div>
 
-                  {/* Quick Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-2 justify-center md:justify-start">
                     <a
                       href="/contact"
-                      className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-purple-400 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105"
+                      className="px-5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:from-amber-400 hover:to-orange-400 transition-all duration-300 text-sm"
                     >
                       Get In Touch
                     </a>
                     <a
                       href="/projects"
-                      className="px-6 py-2.5 border-2 border-cyan-600 dark:border-cyan-400 text-cyan-600 dark:text-cyan-400 font-semibold rounded-full hover:bg-cyan-600 dark:hover:bg-cyan-400 hover:text-white dark:hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300"
+                      className="px-5 py-2 border-2 border-amber-600 dark:border-amber-400 text-amber-600 dark:text-amber-400 font-semibold rounded-full hover:bg-amber-600 hover:text-white dark:hover:bg-amber-400 dark:hover:text-stone-900 transition-all duration-300 text-sm"
                     >
                       View Projects
                     </a>
@@ -364,102 +322,64 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Description */}
-              <div className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8 space-y-4 max-w-4xl mx-auto">
+              {/* Description - Compact */}
+              <div className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-6 space-y-2 max-w-3xl mx-auto">
                 <p>
-                  Welcome to my digital portfolio! I'm a passionate AI Engineer
-                  and Full-Stack Developer with expertise in Machine Learning,
-                  Deep Learning, and modern web technologies. I'm dedicated to
-                  building innovative solutions that bridge the gap between
-                  artificial intelligence and real-world applications.
+                  Passionate <strong>AI Engineer</strong> & <strong>Full-Stack Developer</strong> with expertise in Machine Learning, Deep Learning, and modern web technologies.
                 </p>
-                <p>
-                  I’m currently freelancing, exploring new domains — from AI and
-                  Web to even modeling and creative stuff 😎📸 Basically, if
-                  it’s cool, I’m probably building it or breaking it (for
-                  science, of course 😅).
-                </p>
-                <p>
-                  My journey spans from developing healthcare AI systems for
-                  disease prediction to creating sophisticated RAG systems and
-                  generative AI applications. I thrive on solving complex
-                  problems and am constantly exploring the frontiers of
-                  technology to make a meaningful impact.
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
+                  Currently freelancing & exploring new domains — from AI to Web & creative tech 😎. Building innovative solutions that bridge AI with real-world applications.
                 </p>
               </div>
 
-              {/* Social Media Links */}
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Connect with me across platforms
-                </h3>
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-9 gap-3">
-                  {socialLinksToShow.map((social, index) => {
-                    const IconComponent = social.icon;
-                    return (
-                      <a
-                        key={index}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`text-gray-500 dark:text-gray-400 ${social.color} transition-all duration-300 transform hover:scale-110 p-3 bg-gray-100/50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-gray-300/50 dark:hover:border-gray-600/50 group relative`}
-                        title={social.name}
-                      >
-                        <IconComponent className="text-xl" />
-                        <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10 shadow-lg">
-                          {social.name}
-                        </span>
-                      </a>
-                    );
-                  })}
+              {/* Quick Stats - Inline */}
+              <div className="flex flex-wrap justify-center gap-4 md:gap-6 py-4 border-t border-gray-200 dark:border-gray-700/50">
+                <div className="text-center">
+                  <div className="text-lg md:text-xl font-bold text-amber-600 dark:text-amber-400">50+</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">Certifications</div>
                 </div>
+                <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
+                <div className="text-center">
+                  <div className="text-lg md:text-xl font-bold text-orange-600 dark:text-orange-400">20+</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">Research</div>
+                </div>
+                <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
+                <div className="text-center">
+                  <div className="text-lg md:text-xl font-bold text-emerald-600 dark:text-emerald-400">10+</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">Projects</div>
+                </div>
+                <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
+                <div className="text-center">
+                  <div className="text-lg md:text-xl font-bold text-purple-600 dark:text-purple-400">Open</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">To Work</div>
+                </div>
+              </div>
 
-                {socialLinks.length > 12 && (
+              {/* Social Links - Minimal */}
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                {socialLinksToShow.slice(0, 8).map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-gray-500 hover:text-amber-600 dark:text-gray-400 dark:hover:text-amber-400 transition-all duration-300 hover:bg-amber-100/50 dark:hover:bg-amber-500/20 rounded-lg"
+                      title={social.name}
+                    >
+                      <IconComponent className="text-lg" />
+                    </a>
+                  );
+                })}
+                {socialLinks.length > 8 && (
                   <button
                     onClick={() => setShowAllSocialLinks(!showAllSocialLinks)}
-                    className="mt-4 flex items-center justify-center mx-auto px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-600/30 dark:border-cyan-500/30 rounded-full text-cyan-600 dark:text-cyan-400 text-sm font-medium hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300"
+                    className="p-2 text-xs text-amber-600 dark:text-amber-400 hover:underline"
                   >
-                    {showAllSocialLinks ? (
-                      <>
-                        <FaChevronUp className="mr-2" />
-                        Show Less
-                      </>
-                    ) : (
-                      <>
-                        <FaChevronDown className="mr-2" />
-                        View More ({socialLinks.length - 12} more)
-                      </>
-                    )}
+                    +{socialLinks.length - 8} more
                   </button>
                 )}
-              </div>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">
-                    50+
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm">
-                    Certifications
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                    20+
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm">
-                    Research Ideas
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
-                    10+
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm">
-                    Projects Completed
-                  </div>
-                </div>
               </div>
             </div>
           </section>
@@ -471,16 +391,16 @@ const About = () => {
           <section>
             <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto transition-colors duration-300">
               <div className="text-center mb-6">
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent mb-3">
-                  Certificate Badges
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2 md:mb-3">
+                  Certifications
                 </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
                   Featured certification badges - Click on any badge to view
                   details
                 </p>
                 <a
                   href="/gallery"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-600/30 dark:border-cyan-500/30 rounded-full text-cyan-600 dark:text-cyan-400 text-sm font-medium hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-2.5 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-600/30 dark:border-amber-500/30 rounded-full text-amber-600 dark:text-amber-400 text-xs md:text-sm font-medium hover:from-amber-500/30 hover:to-orange-500/30 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4"
@@ -510,94 +430,39 @@ const About = () => {
 
           {/* Certifications Section */}
           <section>
-            <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-6 md:mb-8">
               Certifications
             </h2>
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6">
+            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
               {certificationsToShow.map((cert, index) => (
                 <div
                   key={index}
-                  className="break-inside-avoid mb-6 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-600/50 dark:hover:border-cyan-500/50"
+                  className="break-inside-avoid mb-4 md:mb-6 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg p-4 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-amber-500/20 hover:border-amber-600/50 dark:hover:border-amber-500/50"
                 >
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-3 md:mb-4">
                     {cert.title}
                   </h3>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm space-y-2">
+                  <div className="text-gray-600 dark:text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
                     <p>
-                      <span className="text-cyan-600 dark:text-cyan-400 font-medium">
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">
                         Issuer:
                       </span>{" "}
                       {cert.issuer}
                     </p>
-                    <p>
-                      <span className="text-cyan-600 dark:text-cyan-400 font-medium">
-                        Issued:
-                      </span>{" "}
-                      {cert.issuedDate}
-                    </p>
-                    {cert.credentialId && (
-                      <p>
-                        <span className="text-cyan-600 dark:text-cyan-400 font-medium">
-                          Credential ID:
-                        </span>{" "}
-                        {cert.credentialId}
-                      </p>
-                    )}
-                    {cert.skills && (
-                      <p>
-                        <span className="text-cyan-600 dark:text-cyan-400 font-medium">
-                          Skills:
-                        </span>{" "}
-                        {cert.skills}
-                      </p>
-                    )}
                   </div>
-                  {cert.credentialUrl && (
-                    <a
-                      href={cert.credentialUrl}
-                      className="inline-block mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg text-sm font-medium hover:from-cyan-400 hover:to-purple-400 transition-all duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Show credential
-                    </a>
-                  )}
                 </div>
               ))}
             </div>
-
-            {certifications.length > 8 && (
-              <div className="text-center mt-8">
-                <button
-                  onClick={() =>
-                    setShowAllCertifications(!showAllCertifications)
-                  }
-                  className="flex items-center justify-center mx-auto px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 transform hover:scale-105"
-                >
-                  {showAllCertifications ? (
-                    <>
-                      <FaChevronUp className="mr-2" />
-                      Show Less
-                    </>
-                  ) : (
-                    <>
-                      <FaChevronDown className="mr-2" />
-                      View All Certifications ({certifications.length - 8} more)
-                    </>
-                  )}
-                </button>
-              </div>
-            )}
           </section>
 
           {/* Recommendations Section */}
           <section>
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto transition-colors duration-300">
-              <div className="text-center mb-12">
-                <h2 className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent mb-3">
+            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 md:p-8 max-w-7xl mx-auto transition-colors duration-300">
+              <div className="text-center mb-6 md:mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2 md:mb-3">
                   Recommendations
                 </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-sm max-w-2xl mx-auto">
+                <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
                   What colleagues and mentors say about working with me
                 </p>
               </div>
@@ -607,46 +472,46 @@ const About = () => {
 
           {/* Volunteering Section */}
           <section>
-            <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-6 md:mb-8">
               Volunteering
             </h2>
-            <div className="columns-1 sm:columns-2 gap-6">
+            <div className="columns-1 sm:columns-2 gap-4 md:gap-6">
               {volunteering.map((vol, index) => (
                 <div
                   key={index}
-                  className="break-inside-avoid mb-6 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-purple-500/20 hover:border-purple-600/50 dark:hover:border-purple-500/50"
+                    className="break-inside-avoid mb-6 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-amber-500/20 hover:border-amber-600/50 dark:hover:border-amber-500/50"
                 >
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-4">
-                    {vol.title}
-                  </h3>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm space-y-2">
-                    <p>
-                      <span className="text-purple-600 dark:text-purple-400 font-medium">
-                        Organization:
-                      </span>{" "}
-                      {vol.organization}
-                    </p>
-                    <p>
-                      <span className="text-purple-600 dark:text-purple-400 font-medium">
-                        Role:
-                      </span>{" "}
-                      {vol.role}
-                    </p>
-                    <p>
-                      <span className="text-purple-600 dark:text-purple-400 font-medium">
-                        Duration:
-                      </span>{" "}
-                      {vol.duration}
-                    </p>
-                    {vol.category && (
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-3">
+                      {vol.title}
+                    </h3>
+                    <div className="text-gray-600 dark:text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
                       <p>
-                        <span className="text-purple-600 dark:text-purple-400 font-medium">
-                          Category:
+                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                          Organization:
                         </span>{" "}
-                        {vol.category}
+                        {vol.organization}
                       </p>
-                    )}
-                  </div>
+                      <p>
+                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                          Role:
+                        </span>{" "}
+                        {vol.role}
+                      </p>
+                      <p>
+                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                          Duration:
+                        </span>{" "}
+                        {vol.duration}
+                      </p>
+                      {vol.category && (
+                        <p>
+                          <span className="text-amber-600 dark:text-amber-400 font-medium">
+                            Category:
+                          </span>{" "}
+                          {vol.category}
+                        </p>
+                      )}
+                    </div>
                 </div>
               ))}
             </div>
