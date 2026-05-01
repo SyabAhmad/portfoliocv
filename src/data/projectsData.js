@@ -11,6 +11,7 @@ const projects = [
     skills:
       "React, TypeScript, Tailwind CSS, Zustand, JSON Architecture, Gamification, Frontend Engineering",
     category: "Web Development",
+    projectType: "personal",
     image: "/projects/pleaselive.png",
     liveUrl: "https://pleaselive.vercel.app",
   },
@@ -366,6 +367,51 @@ const projects = [
     techStack: "Java, XML, Android Design",
     skills: "Java, XML, Android",
     category: "Mobile App Development",
+    projectType: "personal",
+  },
+
+  // Client Demo Projects - Add your freelance/client demo projects below
+  {
+    title: "E-Commerce Platform (Demo)",
+    duration: "2025",
+    description:
+      "A full-featured e-commerce platform demo showcasing product catalog, cart functionality, secure checkout, and admin dashboard. Built as a demonstration of custom e-commerce solutions for retail businesses.",
+    keyFeatures:
+      "Product Catalog · Shopping Cart · Secure Checkout · Admin Dashboard · Order Management · User Authentication",
+    techStack: "React.js, Node.js, Express.js, MongoDB, Stripe API",
+    skills: "Full Stack Development, E-commerce, React.js, Node.js",
+    category: "Web Development",
+    projectType: "client-demo",
+    image: "/projects/ecommerce-demo.png",
+    liveUrl: "https://demo-ecommerce.vercel.app",
+  },
+  {
+    title: "Healthcare Patient Portal (Demo)",
+    duration: "2025",
+    description:
+      "A comprehensive patient portal demo featuring appointment booking, medical records access, prescription management, and secure messaging between patients and healthcare providers.",
+    keyFeatures:
+      "Appointment Booking · Medical Records · Prescription Management · Secure Messaging · Patient Dashboard",
+    techStack: "React.js, Python, Django, PostgreSQL, REST API",
+    skills: "Full Stack Development, Healthcare Tech, Python, React.js",
+    category: "Web Development",
+    projectType: "client-demo",
+    image: "/projects/healthcare-demo.png",
+    liveUrl: "https://demo-healthcare.vercel.app",
+  },
+  {
+    title: "Real Estate Listing Platform (Demo)",
+    duration: "2025",
+    description:
+      "A property listing platform demo with advanced search filters, interactive maps, virtual tours, and inquiry management system for real estate agencies.",
+    keyFeatures:
+      "Property Listings · Advanced Search · Interactive Maps · Virtual Tours · Inquiry Management",
+    techStack: "Next.js, Supabase, Tailwind CSS, Mapbox API",
+    skills: "Next.js, Supabase, Web Development, UI/UX",
+    category: "Web Development",
+    projectType: "client-demo",
+    image: "/projects/realestate-demo.png",
+    liveUrl: "https://demo-realestate.vercel.app",
   },
 ];
 
