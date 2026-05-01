@@ -104,8 +104,8 @@ const HomePage = () => {
         structuredData={homePageStructuredData}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
-        <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
+        <div className="relative min-h-screen bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
           {/* Animated Decorative Background Elements */}
           <motion.div
             animate={{
@@ -117,7 +117,7 @@ const HomePage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-0 left-0 w-96 h-96 bg-cyan-400/30 rounded-full filter blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"
+            className="absolute top-0 left-0 w-96 h-96 bg-amber-400/30 rounded-full filter blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"
           />
           <motion.div
             animate={{
@@ -130,7 +130,7 @@ const HomePage = () => {
               ease: "easeInOut",
               delay: 0.5,
             }}
-            className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/30 rounded-full filter blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"
+            className="absolute bottom-0 right-0 w-96 h-96 bg-orange-400/30 rounded-full filter blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"
           />
           <motion.div
             animate={{
@@ -157,7 +157,7 @@ const HomePage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-1/4 right-1/4 w-72 h-72 bg-pink-400/25 rounded-full filter blur-3xl pointer-events-none"
+            className="absolute top-1/4 right-1/4 w-72 h-72 bg-amber-400/25 rounded-full filter blur-3xl pointer-events-none"
           />
           {/* Corner accents */}
           <motion.div
@@ -169,7 +169,7 @@ const HomePage = () => {
               repeat: Infinity,
               linear: true,
             }}
-            className="absolute -bottom-40 -right-40 w-80 h-80 border border-cyan-400/20 rounded-full pointer-events-none"
+            className="absolute -bottom-40 -right-40 w-80 h-80 border border-amber-400/20 rounded-full pointer-events-none"
           />
           <motion.div
             animate={{
@@ -180,7 +180,7 @@ const HomePage = () => {
               repeat: Infinity,
               linear: true,
             }}
-            className="absolute lg:-top-40 lg:-left-40 top-0 left-0 w-80 h-80 border border-purple-400/20 rounded-full pointer-events-none"
+            className="absolute lg:-top-40 lg:-left-40 top-0 left-0 w-80 h-80 border border-orange-400/20 rounded-full pointer-events-none"
           />
 
           {/* Hero Section - Split Layout */}
@@ -190,18 +190,18 @@ const HomePage = () => {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex-1 lg:flex-[2] max-w-3xl lg:pr-16 mb-12 lg:mb-0 text-center lg:text-left order-2 lg:order-1 mt-10"
+              className="flex-1 lg:flex-[2] max-w-xl lg:max-w-2xl lg:pr-16 mb-12 lg:mb-0 text-center lg:text-left order-2 lg:order-1 mt-10"
             >
               {/* Decorative elements */}
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, linear: true }}
-                className="absolute top-20 left-10 w-16 h-16 border-2 border-cyan-400/30 rounded-full hidden lg:block"
+                className="absolute top-20 left-10 w-16 h-16 border-2 border-amber-400/30 rounded-full hidden lg:block"
               />
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-40 left-20 w-8 h-8 bg-purple-400/20 rounded-full hidden lg:block"
+                className="absolute top-40 left-20 w-8 h-8 bg-orange-400/20 rounded-full hidden lg:block"
               />
 
               <motion.div
@@ -209,8 +209,8 @@ const HomePage = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight drop-shadow-lg">
-                  Full Stack Web Developer & AI Engineer
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent leading-tight">
+                  Full Stack Developer & AI Engineer
                 </h1>
               </motion.div>
 
@@ -234,7 +234,7 @@ const HomePage = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-lg sm:text-xl md:text-2xl mb-4 md:mb-6 text-gray-600 dark:text-gray-300 font-light"
+                className="text-base sm:text-lg md:text-xl mb-3 md:mb-4 text-gray-600 dark:text-gray-300 font-light"
               >
                 Building intelligent solutions that transform ideas into reality
               </motion.p>
@@ -243,7 +243,7 @@ const HomePage = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-base md:text-lg mb-8 md:mb-10 text-gray-500 dark:text-gray-400 max-w-2xl"
+                className="text-sm md:text-base mb-6 md:mb-8 text-gray-500 dark:text-gray-400 max-w-xl"
               >
                 Specializing in Machine Learning, Full-Stack Development, and
                 cutting-edge AI technologies
@@ -259,10 +259,10 @@ const HomePage = () => {
                   href="/projects"
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.4)",
+                    boxShadow: "0 20px 40px rgba(217, 119, 6, 0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-amber-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   View My Work
                 </motion.a>
@@ -270,10 +270,10 @@ const HomePage = () => {
                   href="/contact"
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(34, 211, 238, 0.3)",
+                    boxShadow: "0 20px 40px rgba(217, 119, 6, 0.3)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-cyan-600 text-cyan-600 dark:border-cyan-400 dark:text-cyan-400 font-semibold rounded-full hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-slate-900 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-amber-600 text-amber-600 dark:border-amber-400 dark:text-amber-400 font-semibold rounded-full hover:bg-amber-600 hover:text-white dark:hover:bg-amber-400 dark:hover:text-stone-900 hover:shadow-lg hover:shadow-amber-400/20 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   Let's Connect
                 </motion.a>
@@ -289,47 +289,47 @@ const HomePage = () => {
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
-              {/* Background decorative elements */}
-              <motion.div
-                animate={{ rotate: [0, 180, 360] }}
-                transition={{ duration: 25, repeat: Infinity, linear: true }}
-                className="absolute lg:-top-10 lg:-right-10 top-0 right-0 w-32 h-32 border-2 border-cyan-400/20 rounded-full"
-              />
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-10 -left-10 w-24 h-24 bg-purple-400/10 rounded-full"
-              />
-
-              <motion.div
-                style={{ x: springX, y: springY }}
-                className="relative flex items-center justify-center"
-              >
-                {/* Soft glow behind */}
+                {/* Background decorative elements */}
                 <motion.div
-                  animate={{ opacity: [0.6, 0.9, 0.6] }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                  className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-pink-100/50 blur-3xl -z-10"
+                  animate={{ rotate: [0, 180, 360] }}
+                  transition={{ duration: 25, repeat: Infinity, linear: true }}
+                  className="absolute lg:-top-10 lg:-right-10 top-0 right-0 w-32 h-32 border-2 border-amber-400/20 rounded-full"
+                />
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="absolute -bottom-10 -left-10 w-24 h-24 bg-orange-400/10 rounded-full"
                 />
 
-                {/* Back decorative card */}
                 <motion.div
-                  animate={{ rotate: [-3, -6, -3] }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute -right-6 top-8 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-pink-50/60 dark:bg-pink-900/20 border-2 border-pink-300/60 shadow-lg z-0 transform -rotate-3"
-                />
-
-                {/* Main (top) card with profile image */}
-                <motion.div
-                  initial={{ rotate: 1 }}
-                  whileHover={{ rotate: 2, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="relative z-20 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-2xl shadow-cyan-500/20 border border-cyan-400/30 overflow-hidden transform rotate-1 mt-14"
+                  style={{ x: springX, y: springY }}
+                  className="relative flex items-center justify-center"
                 >
+                  {/* Soft glow behind */}
+                  <motion.div
+                    animate={{ opacity: [0.6, 0.9, 0.6] }}
+                    transition={{ duration: 5, repeat: Infinity }}
+                    className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-amber-100/50 dark:bg-amber-900/20 blur-3xl -z-10"
+                  />
+
+                  {/* Back decorative card */}
+                  <motion.div
+                    animate={{ rotate: [-3, -6, -3] }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="absolute -right-6 top-8 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-amber-50/60 dark:bg-amber-900/20 border-2 border-amber-300/60 dark:border-amber-700/60 shadow-lg z-0 transform -rotate-3"
+                  />
+
+                  {/* Main (top) card with profile image */}
+                  <motion.div
+                    initial={{ rotate: 1 }}
+                    whileHover={{ rotate: 2, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="relative z-20 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-2xl shadow-amber-500/20 border border-amber-400/30 overflow-hidden transform rotate-1 mt-14"
+                  >
                   <img
                     src="dp.jpeg"
                     alt="Syed Syab Ahmad"
@@ -339,7 +339,7 @@ const HomePage = () => {
                       e.target.nextSibling.style.display = "flex";
                     }}
                   />
-                  <div className="absolute inset-0 text-2xl font-bold text-white bg-gradient-to-br from-cyan-600/20 to-purple-600/10 hidden">
+                  <div className="absolute inset-0 text-2xl font-bold text-white bg-gradient-to-br from-amber-600/20 to-orange-600/10 hidden">
                     SSA
                   </div>
 
@@ -395,14 +395,14 @@ const HomePage = () => {
               <div className="max-w-4xl mx-auto text-center">
                 <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 mb-8">
                   <div className="mb-6">
-                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-600 dark:text-cyan-400 text-sm font-medium mb-4">
+                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-full text-amber-600 dark:text-amber-400 text-sm font-medium mb-4">
                       Tech Philosophy
                     </span>
                   </div>
                   <div className="h-20 flex items-center justify-center">
-                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent min-h-[1.2em] flex items-center">
+                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent min-h-[1.2em] flex items-center">
                       "{currentText}
-                      <span className="animate-pulse text-cyan-600 dark:text-cyan-400 ml-1">
+                      <span className="animate-pulse text-amber-600 dark:text-amber-400 ml-1">
                         |
                       </span>
                       "
@@ -416,24 +416,24 @@ const HomePage = () => {
 
                 {/* Tech Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-amber-500/20 hover:border-amber-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-2">
                       50+
                     </div>
                     <div className="text-gray-600 dark:text-gray-300 text-sm">
                       Certifications
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">
+                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-orange-500/20 hover:border-orange-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
                       20+
                     </div>
                     <div className="text-gray-600 dark:text-gray-300 text-sm">
                       Research Ideas
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-purple-500/20 hover:border-purple-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
                       10+
                     </div>
                     <div className="text-gray-600 dark:text-gray-300 text-sm">
