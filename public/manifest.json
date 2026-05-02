@@ -1,25 +1,32 @@
 {
-  "short_name": "Syed Syab Ahmad",
-  "name": "Syed Syab Ahmad's Portfolio",
+  "short_name": "Syed Syab",
+  "name": "Syed Syab Ahmad - ML Engineer & Full-Stack Developer Portfolio",
+  "description": "Machine Learning Engineer, AI Engineer, and Full-Stack Developer based in Riyadh. Expert in Python, React.js, Django, Flask, and Backend Engineering.",
   "icons": [
     {
       "src": "dp.jpeg",
       "sizes": "any",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     },
     {
       "src": "dp.jpeg",
       "type": "image/jpeg",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "dp.jpeg",
       "type": "image/jpeg",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#f59e0b",
+  "background_color": "#0f172a",
+  "categories": ["portfolio", "developer", "engineering"],
+  "lang": "en",
+  "dir": "ltr"
 }

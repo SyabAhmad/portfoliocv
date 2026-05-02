@@ -1,9 +1,203 @@
-# https://www.robotstxt.org/robotstxt.html
+# ============================================================
+# Premium robots.txt for https://syab.tech
+# Last Updated: 2025-05-02
+# ============================================================
+
+# ============================================================
+# GLOBAL RULES - All Search Engines
+# ============================================================
 User-agent: *
 Allow: /
+Allow: /projects
+Allow: /design
+Allow: /about
+Allow: /experience
+Allow: /research
+Allow: /skills
+Allow: /gallery
+Allow: /mentee
+Allow: /contact
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
 
-# Sitemap
+# Block sensitive/internal paths
+Disallow: /static/
+Disallow: /static/js/
+Disallow: /static/css/
+Disallow: /static/media/
+Disallow: /asset-manifest.json
+Disallow: /manifest.json
+Disallow: /robots.txt
+Disallow: /favicon.ico
+Disallow: /*.map$
+
+# ============================================================
+# GOOGLEBOT - Primary Search Engine
+# ============================================================
+User-agent: Googlebot
+Allow: /
+Allow: /projects
+Allow: /design
+Allow: /design/*
+Allow: /about
+Allow: /experience
+Allow: /research
+Allow: /skills
+Allow: /gallery
+Allow: /mentee
+Allow: /contact
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Disallow: /static/
+Disallow: /asset-manifest.json
+Disallow: /manifest.json
+
+# ============================================================
+# GOOGLEBOT-IMAGE - Image Crawling
+# ============================================================
+User-agent: Googlebot-Image
+Allow: /
+Allow: /projects/
+Allow: /revit/
+Allow: /autocad/
+Allow: /sketchup/
+Allow: /certificates/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Disallow: /static/
+Disallow: /asset-manifest.json
+
+# ============================================================
+# BINGBOT - Microsoft Search Engine
+# ============================================================
+User-agent: Bingbot
+Allow: /
+Allow: /projects
+Allow: /design
+Allow: /about
+Allow: /experience
+Allow: /research
+Allow: /skills
+Allow: /gallery
+Allow: /mentee
+Allow: /contact
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Disallow: /static/
+Disallow: /asset-manifest.json
+Crawl-delay: 2
+
+# ============================================================
+# SLURP - Yahoo Search Engine
+# ============================================================
+User-agent: Slurp
+Allow: /
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Disallow: /static/
+Crawl-delay: 3
+
+# ============================================================
+# DUCKDUCKBOT - DuckDuckGo
+# ============================================================
+User-agent: DuckDuckBot
+Allow: /
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Disallow: /static/
+
+# ============================================================
+# FACEBOOK CRAWLERS - Social Media
+# ============================================================
+User-agent: FacebookBot
+Allow: /
+Allow: /dp.jpeg
+Allow: /images/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /dp.jpeg
+Allow: /images/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+
+# ============================================================
+# TWITTER CRAWLER - Social Media
+# ============================================================
+User-agent: Twitterbot
+Allow: /
+Allow: /dp.jpeg
+Allow: /images/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+# ============================================================
+# LINKEDIN CRAWLER - Professional Network
+# ============================================================
+User-agent: LinkedInBot
+Allow: /
+Allow: /dp.jpeg
+Allow: /images/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+
+# ============================================================
+# AI/LLM TRAINING BOTS - Opt-in
+# ============================================================
+User-agent: GPTBot
+Allow: /
+Disallow: /static/
+
+User-agent: CCBot
+Allow: /
+Disallow: /static/
+
+# ============================================================
+# AGGRESSIVE BOTS - Block
+# ============================================================
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEX
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# ============================================================
+# SITEMAP LOCATIONS
+# ============================================================
 Sitemap: https://syab.tech/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
+Sitemap: https://syab.tech/sitemap-pages.xml
+Sitemap: https://syab.tech/sitemap-projects.xml
+Sitemap: https://syab.tech/sitemap-images.xml

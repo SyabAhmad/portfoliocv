@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============================================================ -->
+  <!-- CORE PAGES -->
+  <!-- ============================================================ -->
+
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://syab.tech/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://syab.tech/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/about" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Projects Portfolio -->
+  <url>
+    <loc>https://syab.tech/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/projects" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Skills Page -->
+  <url>
+    <loc>https://syab.tech/skills</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/skills" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Experience Page -->
+  <url>
+    <loc>https://syab.tech/experience</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/experience" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Research Page -->
+  <url>
+    <loc>https://syab.tech/research</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/research" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Gallery (Certificates & Achievements) -->
+  <url>
+    <loc>https://syab.tech/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/gallery" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://syab.tech/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/contact" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- MENTEE COMPANY -->
+  <!-- ============================================================ -->
+
+  <!-- MenteE Main Page -->
+  <url>
+    <loc>https://syab.tech/mentee</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/mentee" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- DESIGN PORTFOLIO PAGES -->
+  <!-- ============================================================ -->
+
+  <!-- Design Hub -->
+  <url>
+    <loc>https://syab.tech/design</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/design" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Design Sub-Pages -->
+  <url>
+    <loc>https://syab.tech/design/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/design/projects" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/revit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/design/revit" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/autocad</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/design/autocad" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/sketchup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syab.tech/design/sketchup" />
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>

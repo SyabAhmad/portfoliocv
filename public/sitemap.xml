@@ -1,39 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://syab.tech/</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://syab.tech/about</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://syab.tech/projects</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://syab.tech/research</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://syab.tech/experience</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://syab.tech/contact</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages Sitemap -->
+  <sitemap>
+    <loc>https://syab.tech/sitemap-pages.xml</loc>
+    <lastmod>2025-05-02</lastmod>
+  </sitemap>
+
+  <!-- Design Projects Sitemap -->
+  <sitemap>
+    <loc>https://syab.tech/sitemap-projects.xml</loc>
+    <lastmod>2025-05-02</lastmod>
+  </sitemap>
+
+  <!-- Image Sitemap -->
+  <sitemap>
+    <loc>https://syab.tech/sitemap-images.xml</loc>
+    <lastmod>2025-05-02</lastmod>
+  </sitemap>
+</sitemapindex>

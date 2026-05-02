@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ============================================================ -->
+  <!-- HOMEPAGE IMAGES -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/</loc>
+    <image:image>
+      <image:loc>https://syab.tech/dp.jpeg</image:loc>
+      <image:title>Syed Syab Ahmad - Machine Learning Engineer & Full-Stack Developer</image:title>
+      <image:caption>Professional headshot of Syed Syab Ahmad, an experienced Machine Learning Engineer and Full-Stack Developer based in Riyadh, Saudi Arabia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- SOFTWARE ENGINEERING PROJECTS -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/projects</loc>
+    <image:image>
+      <image:loc>https://syab.tech/projects/menteemart.png</image:loc>
+      <image:title>MenteeMart - E-Commerce Platform</image:title>
+      <image:caption>Full-stack e-commerce platform built with React.js and Django</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/projects/docxbox.png</image:loc>
+      <image:title>DocxBox - Document Processing Tool</image:title>
+      <image:caption>Document conversion and processing application</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/projects/nainzaka.png</image:loc>
+      <image:title>Nainzaka - Project Showcase</image:title>
+      <image:caption>Web application project demonstrating full-stack capabilities</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/projects/pleaselive.png</image:loc>
+      <image:title>PleaseLive - Live Streaming Platform</image:title>
+      <image:caption>Live streaming and video content platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/projects/fayaz.png</image:loc>
+      <image:title>Fayaz - Client Project</image:title>
+      <image:caption>Custom web development project for client</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- REVIT BIM PROJECTS -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/design/project/revit-1bedroom</loc>
+    <image:image>
+      <image:loc>https://syab.tech/revit/1bedroomhouse 1.png</image:loc>
+      <image:title>Single Bedroom Residence - Revit BIM Model</image:title>
+      <image:caption>Complete BIM model of a single bedroom residential unit with architectural details</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/revit-3floors</loc>
+    <image:image>
+      <image:loc>https://syab.tech/revit/3floorshouse 1.png</image:loc>
+      <image:title>Three-Storey Mixed Use Building - Revit BIM</image:title>
+      <image:caption>Multi-storey mixed-use building with commercial and residential spaces</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/revit-switchgear</loc>
+    <image:image>
+      <image:loc>https://syab.tech/revit/6x2 gang 1.png</image:loc>
+      <image:title>Industrial Switchgear Panel - Revit Family</image:title>
+      <image:caption>Parametric Revit family for industrial electrical switchgear panels</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/revit-panel</loc>
+    <image:image>
+      <image:loc>https://syab.tech/revit/family panel 1.png</image:loc>
+      <image:title>Curtain Wall Panel - Revit Family</image:title>
+      <image:caption>Custom curtain wall panel family for architectural BIM modeling</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/revit-desk-drawers</loc>
+    <image:image>
+      <image:loc>https://syab.tech/revit/desk_with_drawers.png</image:loc>
+      <image:title>Modular Office Desk with Drawers - Revit</image:title>
+      <image:caption>Parametric office desk with customizable drawer configurations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/revit/desk_with_drawers_2.png</image:loc>
+      <image:title>Office Desk Detail View</image:title>
+      <image:caption>Detailed rendering of modular desk assembly</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/revit/desk_with_drawers_3.png</image:loc>
+      <image:title>Office Desk Alternate View</image:title>
+      <image:caption>Alternative perspective of the desk design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/revit-dumbbell</loc>
+    <image:image>
+      <image:loc>https://syab.tech/revit/dumbbell.png</image:loc>
+      <image:title>Adjustable Weight Dumbbell - Revit Family</image:title>
+      <image:caption>Parametric Revit family for adjustable weight dumbbell model</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- AUTOCAD PROJECTS -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/design/project/autocad-1300</loc>
+    <image:image>
+      <image:loc>https://syab.tech/autocad/1300feethome 1.png</image:loc>
+      <image:title>1300 sq.ft Residence - AutoCAD Floor Plan</image:title>
+      <image:caption>Detailed AutoCAD floor plan for a 1300 square foot residential home</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/autocad-1700</loc>
+    <image:image>
+      <image:loc>https://syab.tech/autocad/1700feethome 1.png</image:loc>
+      <image:title>1700 sq.ft Modern Home - AutoCAD</image:title>
+      <image:caption>Modern residential floor plan with contemporary layout design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/autocad-400m</loc>
+    <image:image>
+      <image:loc>https://syab.tech/autocad/400m home 1.png</image:loc>
+      <image:title>400 sq.m Estate - AutoCAD Planning</image:title>
+      <image:caption>Large estate floor plan with comprehensive architectural detailing</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/autocad-clinic</loc>
+    <image:image>
+      <image:loc>https://syab.tech/autocad/Clinic 1.png</image:loc>
+      <image:title>Outpatient Clinic Layout - AutoCAD</image:title>
+      <image:caption>Medical clinic floor plan optimized for patient flow and accessibility</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/autocad-callcenter</loc>
+    <image:image>
+      <image:loc>https://syab.tech/autocad/callcenter 1.png</image:loc>
+      <image:title>Call Center Fit-Out - AutoCAD</image:title>
+      <image:caption>Commercial office space design for call center operations</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- SKETCHUP 3D VISUALIZATIONS -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/design/project/sketchup-house</loc>
+    <image:image>
+      <image:loc>https://syab.tech/sketchup/house 1.png</image:loc>
+      <image:title>Modern Villa 3D Visualization - SketchUp</image:title>
+      <image:caption>Photorealistic 3D rendering of a modern residential villa</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/sketchup-clinic</loc>
+    <image:image>
+      <image:loc>https://syab.tech/sketchup/clinic 1.png</image:loc>
+      <image:title>Dental Clinic Interior - SketchUp 3D</image:title>
+      <image:caption>Interior visualization of a modern dental clinic space</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/sketchup-daraz</loc>
+    <image:image>
+      <image:loc>https://syab.tech/sketchup/daraz 1.png</image:loc>
+      <image:title>Retail Pop-Up Store - SketchUp</image:title>
+      <image:caption>3D visualization of a retail pop-up store concept</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/sketchup-cpu</loc>
+    <image:image>
+      <image:loc>https://syab.tech/sketchup/cpu 1.png</image:loc>
+      <image:title>Desktop Workstation Mockup - SketchUp</image:title>
+      <image:caption>3D product mockup of a desktop computer workstation</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/sketchup-screen</loc>
+    <image:image>
+      <image:loc>https://syab.tech/sketchup/screen 1.png</image:loc>
+      <image:title>Digital Kiosk Display - SketchUp</image:title>
+      <image:caption>3D visualization of a digital kiosk and display system</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://syab.tech/design/project/sketchup-door</loc>
+    <image:image>
+      <image:loc>https://syab.tech/sketchup/door 1.png</image:loc>
+      <image:title>Architectural Door Assembly - SketchUp</image:title>
+      <image:caption>Detailed 3D model of an architectural door assembly with hardware</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- CERTIFICATES & ACHIEVEMENTS (Key Highlights) -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/gallery</loc>
+    <image:image>
+      <image:loc>https://syab.tech/certificates/facts/google talk about Syab.jpg</image:loc>
+      <image:title>Google Recognition - AI Facts About Syed Syab Ahmad</image:title>
+      <image:caption>AI-generated facts about Syed Syab Ahmad from Google</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/certificates/facts/Perplexity talk about syab.png</image:loc>
+      <image:title>Perplexity AI Recognition</image:title>
+      <image:caption>AI profile recognition from Perplexity AI platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/certificates/facts/Chatgpt talk about syab.png</image:loc>
+      <image:title>ChatGPT Recognition</image:title>
+      <image:caption>AI profile recognition from ChatGPT platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/certificates/facts/YOLO.png</image:loc>
+      <image:title>YOLO Achievement - GitHub</image:title>
+      <image:caption>GitHub achievement badge for YOLO object detection project</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/certificates/facts/QUICKDRAW.png</image:loc>
+      <image:title>QuickDraw Achievement - GitHub</image:title>
+      <image:caption>GitHub achievement for QuickDraw neural network project</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://syab.tech/certificates/facts/PULL SHARK.png</image:loc>
+      <image:caption>Pull Shark GitHub achievement badge for contributions</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- OPEN GRAPH & SOCIAL SHARING IMAGE -->
+  <!-- ============================================================ -->
+
+  <url>
+    <loc>https://syab.tech/</loc>
+    <image:image>
+      <image:loc>https://syab.tech/images/og-image.jpg</image:loc>
+      <image:title>Syed Syab Ahmad - Portfolio Cover Image</image:title>
+      <image:caption>Official Open Graph cover image for Syed Syab Ahmad portfolio website</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
