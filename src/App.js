@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -57,6 +58,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         {/* Main app content above background */}
         <div className="App min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
           <GoogleAnalytics />

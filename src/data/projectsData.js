@@ -384,6 +384,19 @@ const projects = [
     projectType: "client-demo",
     liveUrl: "https://eatbiryani.vercel.app",
   },
+  {
+    title: "Arabian Deccan Restaurant Hyderabad",
+    duration: "2026",
+    description:
+      "A restaurant website for Arabian Deccan Restaurant in Hyderabad, featuring menu display, location information, and contact details.",
+    keyFeatures:
+      "Restaurant Menu · Location Map · Contact Information · Responsive Design",
+    techStack: "ReactJS, Tailwind CSS 4",
+    skills: "ReactJS, Tailwind CSS, Web Development",
+    category: "Web Development",
+    projectType: "client-demo",
+    liveUrl: "https://arabian-deccan-restaurant-hyderabad.vercel.app",
+  },
 ];
 
 export default projects;
