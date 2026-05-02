@@ -1,129 +1,150 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { designSkills, designProjects } from "../data/designData";
+import { ChevronRight, CheckCircle2, Calendar } from "lucide-react";
 
 const SketchUpPortfolio = () => {
-  const sketchupProjects = designProjects.filter(
-    (p) => p.category === "sketchup"
-  );
+  const sketchupProjects = designProjects.filter((p) => p.category === "sketchup");
   const skillInfo = designSkills.sketchup;
+  const accentGradient = "from-emerald-500 to-teal-500";
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.5 },
+  };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 transition-colors duration-300">
-      <div className="container mx-auto px-8">
+    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-emerald-50/20 to-teal-50/10 dark:from-slate-900 dark:via-emerald-900/5 dark:to-slate-900 transition-colors duration-300">
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Breadcrumb */}
-        <div className="mb-8 text-gray-500 dark:text-gray-400">
-          <Link
-            to="/design"
-            className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300"
-          >
+        <div className="mb-8 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <Link to="/design" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             Design & Architecture
           </Link>
-          <span className="mx-2">/</span>
-          <span>SketchUp</span>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <span className="text-gray-700 dark:text-gray-300">SketchUp</span>
         </div>
 
         {/* Hero Section */}
-        <section className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <motion.section
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent mb-4">
             {skillInfo.name} - {skillInfo.category}
           </h1>
-          <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 rounded-full font-semibold">
+          <span className="inline-block px-4 py-1.5 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-full text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-4">
             {skillInfo.level}
           </span>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mt-6 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {skillInfo.description}
           </p>
-        </section>
+        </motion.section>
 
         {/* Capabilities */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-            Capabilities
-          </h2>
+        <motion.section
+          className="mb-16"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {skillInfo.features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-lg border border-gray-200 dark:border-gray-700/50 rounded-lg p-4"
+                variants={fadeInUp}
+                className="flex items-center gap-3 bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-4"
               >
-                <span className="text-emerald-600 dark:text-emerald-400 text-xl mr-3 font-bold">
-                  ✓
-                </span>
-                <span className="text-gray-600 dark:text-gray-300">
-                  {feature}
-                </span>
-              </div>
+                <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                <span className="text-gray-600 dark:text-gray-300 text-sm font-medium">{feature}</span>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Projects */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-            Projects
-          </h2>
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Projects</h2>
           {sketchupProjects.length > 0 ? (
             <div className="space-y-8">
-              {sketchupProjects.map((project) => (
-                <div
+              {sketchupProjects.map((project, index) => (
+                <motion.div
                   key={project.id}
-                  className="grid md:grid-cols-[400px_1fr] gap-6 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-lg border border-gray-200 dark:border-gray-700/50 rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02]"
+                  variants={fadeInUp}
+                  className="group grid md:grid-cols-[350px_1fr] gap-6 bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 overflow-hidden hover:shadow-emerald-500/10 transition-all duration-500"
+                  whileHover={{ y: -4 }}
                 >
-                  <img
-                    src={project.thumbnail}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.src =
-                        "https://via.placeholder.com/400x300?text=SketchUp+Project";
-                    }}
-                  />
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
-                      {new Date(project.date).toLocaleDateString("en-US", {
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      {project.description}
-                    </p>
-                    {project.details && (
-                      <div className="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-4 mb-4">
-                        {Object.entries(project.details).map(([key, value]) => (
-                          <div key={key} className="mb-2">
-                            <strong className="text-cyan-600 dark:text-cyan-400">
-                              {key}:
-                            </strong>
-                            <span className="text-gray-600 dark:text-gray-300 ml-2">
-                              {Array.isArray(value) ? value.join(", ") : value}
-                            </span>
-                          </div>
-                        ))}
+                  <div className="relative overflow-hidden h-56 md:h-auto">
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.target.src =
+                          "https://via.placeholder.com/400x300?text=SketchUp+Project";
+                      }}
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-r ${accentGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  </div>
+
+                  <div className="p-6 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        {project.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <Calendar className="w-4 h-4" />
+                        {new Date(project.date).toLocaleDateString("en-US", {
+                          month: "long",
+                          year: "numeric",
+                        })}
                       </div>
-                    )}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      {project.details && (
+                        <div className="bg-gray-50 dark:bg-slate-800/50 rounded-xl p-4 mb-4 border border-gray-100 dark:border-slate-700/50">
+                          {Object.entries(project.details).map(([key, value]) => (
+                            <div key={key} className="mb-1.5 last:mb-0">
+                              <strong className="text-emerald-600 dark:text-emerald-400 text-sm">{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
+                              <span className="text-gray-600 dark:text-gray-300 text-sm ml-2">
+                                {Array.isArray(value) ? value.join(", ") : value}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="inline-block px-3 py-1 text-xs font-semibold bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300 rounded-full"
+                          className="px-2.5 py-1 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-md text-emerald-700 dark:text-emerald-400 text-xs font-medium"
                         >
                           {tag}
                         </span>
                       ))}
+                      <Link
+                        to={`/design/project/${project.id}`}
+                        className="ml-auto inline-flex items-center gap-1 text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 font-semibold transition-colors group/link"
+                      >
+                        View Full Project
+                        <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
                     </div>
-                    <Link
-                      to={`/design/project/${project.id}`}
-                      className="inline-block text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 font-semibold transition-colors"
-                    >
-                      View Full Project →
-                    </Link>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           ) : (
@@ -131,7 +152,7 @@ const SketchUpPortfolio = () => {
               Projects coming soon...
             </p>
           )}
-        </section>
+        </motion.section>
       </div>
     </div>
   );
