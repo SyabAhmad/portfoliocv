@@ -408,6 +408,17 @@ const projects = [
     projectType: "client-demo",
     liveUrl: "https://arabian-deccan-restaurant-hyderabad.vercel.app",
   },
+  {
+    title: "Mashwi Singary",
+    duration: "2026",
+    description: "A restaurant website for Mashwi Singary, a Riyadh-based seafood restaurant specializing in fresh fish and grilled seafood dishes, featuring menu display, location information, and contact details.",
+    keyFeatures: "Fresh Seafood · Grilled Fish · Riyadh Based · Location Map · Contact Information · Responsive Design",
+    techStack: "ReactJS, Tailwind CSS 4",
+    skills: "ReactJS, Tailwind CSS, Web Development",
+    category: "Web Development",
+    projectType: "client-demo",
+    liveUrl: "https://mashwi-singary.vercel.app",
+  },
 ];
 
 export default projects;
