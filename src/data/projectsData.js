@@ -1,5 +1,16 @@
 const projects = [
   {
+    title: "AI Voice Agent",
+    duration: "2026",
+    description: "An AI-powered voice agent system for automated appointment booking, built with a Python FastAPI backend. Integrates with Retell for voice interactions, uses Google Sheets as a CRM, and SMTP for personal email notifications. Implements webhooks for seamless third-party system integration.",
+    keyFeatures: "Voice Appointment Booking · Retell AI Integration · FastAPI Backend · Google Sheets CRM · SMTP Email Notifications · Webhook Support",
+    techStack: "Python, FastAPI, Retell API, Google Sheets API, SMTP, Webhooks",
+    skills: "Python, FastAPI, Backend Development, API Integration, Voice AI, CRM Integration",
+    category: "AI & Machine Learning",
+    projectType: "personal",
+    githubUrl: "https://github.com/syabahmad/ai-voice-agent",
+  },
+  {
     title: "RunAI (MenteE)",
     duration: "2025",
     description:
