@@ -419,6 +419,17 @@ const projects = [
     projectType: "client-demo",
     liveUrl: "https://mashwi-singary.vercel.app",
   },
+  {
+    title: "Sabqa (سبقة)",
+    duration: "2026",
+    description: "A modern, responsive website for a casual fast-food restaurant in Al Malaz, Riyadh, Saudi Arabia. Features complete menu with 50+ items across 10 categories, WhatsApp ordering integration, and essential business information.",
+    keyFeatures: "WhatsApp Ordering · Full Menu Display · Responsive Design · Real Food Images · Location & Hours · Customer Reviews",
+    techStack: "React 19, Vite 8, Tailwind CSS v4, React Router DOM v7",
+    skills: "React, Tailwind CSS, Responsive Design, WhatsApp API Integration",
+    category: "Web Development",
+    projectType: "client-demo",
+    liveUrl: "https://sabqa.vercel.app/",
+  },
 ];
 
 export default projects;
