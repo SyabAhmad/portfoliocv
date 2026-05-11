@@ -430,6 +430,22 @@ const projects = [
     projectType: "client-demo",
     liveUrl: "https://sabqa.vercel.app/",
   },
+  {
+    title: "Machali Kingdom Riyadh",
+    duration: "2026",
+    description:
+      "A professional dark-themed website for a Mangalorean seafood restaurant in Riyadh. Features home page with hero section and featured dishes, category-filtered menu with real food images and SAR pricing, WhatsApp-based ordering system, and location page with Google Maps embed and customer reviews.",
+    keyFeatures:
+      "Dark Theme Design · WhatsApp Ordering · Category-Filtered Menu · Real Food Images · Customer Testimonials · Google Maps Integration · Responsive Design",
+    techStack:
+      "React 19, Vite 8, Tailwind CSS v4, React Router DOM v7, Vercel",
+    skills:
+      "React.js, Tailwind CSS v4, Responsive Design, WhatsApp API Integration, SPA Routing",
+    category: "Web Development",
+    projectType: "client-demo",
+    liveUrl: "https://machali-kingdom-riyadh.vercel.app/",
+    githubUrl: "https://github.com/SyabAhmad/Machali-Kingdom-Riyadh",
+  },
 ];
 
 export default projects;
