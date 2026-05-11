@@ -31,14 +31,12 @@ const RandomNotification = () => {
     const timer = setTimeout(() => {
       const randomMessage =
         messages[Math.floor(Math.random() * messages.length)];
-      console.log("📢 Showing notification:", randomMessage);
       setCurrentMessage(randomMessage);
       setShowNotification(true);
       setGifLoaded(false);
 
       // Auto-hide after 8 seconds
       const hideTimer = setTimeout(() => {
-        console.log("📢 Hiding notification");
         setShowNotification(false);
       }, 8000);
 
@@ -46,7 +44,6 @@ const RandomNotification = () => {
     }, firstDelay);
 
     return () => {
-      console.log("🧹 Notification cleanup");
       clearTimeout(timer);
     };
   }, []);
@@ -71,7 +68,6 @@ const RandomNotification = () => {
                   className="w-full h-full object-contain"
                   loading="eager"
                   onLoad={() => {
-                    console.log("✅ Sticker loaded");
                     setGifLoaded(true);
                   }}
                   onError={(e) => {

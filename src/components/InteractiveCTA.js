@@ -134,7 +134,6 @@ const InteractiveCTA = () => {
                   gifLoaded ? "opacity-100" : "opacity-50"
                 }`}
                 onLoad={() => {
-                  console.log("✅ GIF loaded:", currentCTA.gif);
                   setGifLoaded(true);
                 }}
                 onError={(e) => {

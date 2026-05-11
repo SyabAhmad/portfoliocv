@@ -277,6 +277,19 @@ const HomePage = () => {
                 >
                   Let's Connect
                 </motion.a>
+                <motion.a
+                  href="https://calendly.com/syedsyab/new-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(217, 119, 6, 0.4)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                >
+                  Book a Call
+                </motion.a>
               </motion.div>
             </motion.div>
 

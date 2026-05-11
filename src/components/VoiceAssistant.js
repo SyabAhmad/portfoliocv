@@ -102,11 +102,8 @@ const VoiceAssistant = () => {
     setError(null);
     setIsListening(true);
     setCurrentMessage("Listening...");
-    console.log("Starting to listen...");
-
     voiceService.startListening(
       (transcript) => {
-        console.log("Transcript received:", transcript);
         setIsListening(false);
         setCurrentMessage("");
 
@@ -118,7 +115,6 @@ const VoiceAssistant = () => {
         }
       },
       (recognitionError) => {
-        console.log("Speech recognition error:", recognitionError);
         setIsListening(false);
         setCurrentMessage("");
 

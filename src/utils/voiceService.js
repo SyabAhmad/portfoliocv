@@ -113,7 +113,6 @@ class VoiceService {
     try {
       this.recognition.start();
       this.isListening = true;
-      console.log('✅ Speech recognition started successfully');
     } catch (error) {
       console.error('Error starting recognition:', error);
       this.isListening = false;
@@ -128,7 +127,6 @@ class VoiceService {
     if (this.recognition && this.isListening) {
       try {
         this.recognition.stop();
-        console.log('🛑 Speech recognition stopped');
       } catch (error) {
         console.error('Error stopping recognition:', error);
       }
@@ -203,7 +201,6 @@ class VoiceService {
     }
 
     const voiceName = options.voiceName || this.groqVoiceName;
-    console.log('🎤 Groq TTS: Speaking with voice:', voiceName);
 
     try {
       // Call Groq TTS API
@@ -230,7 +227,6 @@ class VoiceService {
 
       // Get audio blob directly
       const audioBlob = await response.blob();
-      console.log('✅ Groq TTS audio received, size:', audioBlob.size);
       const audioUrl = URL.createObjectURL(audioBlob);
 
       // Play audio
