@@ -58,6 +58,14 @@ const Navbar = () => {
               Design
             </Link>
 
+            {/* Terminal View */}
+            <Link
+              to="/terminal"
+              className="px-3 py-2 rounded-lg text-sm transition-all text-green-400 hover:text-green-300 hover:bg-green-400/10 font-mono"
+            >
+              {'>_'}
+            </Link>
+
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -146,6 +154,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Design & Architecture
+            </Link>
+            <Link
+              to="/terminal"
+              className="block px-4 py-2 rounded-lg text-sm transition-all text-green-400 hover:text-green-300 hover:bg-green-400/10 font-mono"
+              onClick={() => setIsOpen(false)}
+            >
+              {'>_'} Terminal
             </Link>
           </div>
         )}

@@ -23,6 +23,7 @@ import DesignProjectDetail from "./components/DesignProjectDetail";
 import Gallery from "./components/Gallery";
 import MenteE from "./components/MenteE";
 import { ThemeProvider } from "./context/ThemeContext";
+import TerminalView from "./components/TerminalView";
 import "./App.css";
 import "./styles/global.css";
 
@@ -31,46 +32,49 @@ function App() {
     <ThemeProvider>
       <Router>
         <ScrollToTop />
-        {/* Main app content above background */}
-        <div className="App min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
-          <GoogleAnalytics />
-          <Layout>
-            <Navbar />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/research" element={<Research />} />
-                <Route path="/experience" element={<Experience />} />
-                <Route path="/mentee" element={<MenteE />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/skills" element={<Skills />} />
-                <Route path="/gallery" element={<Gallery />} />
-                {/* Design & Architecture Routes */}
-                <Route path="/design" element={<DesignPortfolio />} />
-                <Route path="/design/revit" element={<RevitPortfolio />} />
-                <Route path="/design/autocad" element={<AutoCADPortfolio />} />
-                <Route
-                  path="/design/sketchup"
-                  element={<SketchUpPortfolio />}
-                />
-                <Route
-                  path="/design/projects"
-                  element={<AllDesignProjects />}
-                />
-                <Route
-                  path="/design/project/:projectId"
-                  element={<DesignProjectDetail />}
-                />
-              </Routes>
-            </main>
-            <Footer />
-          </Layout>
-          <AnimatedPatterns />
-          {/* Global Chatbot - Available on all pages */}
-          <SimpleChatbot />
-        </div>
+        <Routes>
+          <Route
+            path="/terminal"
+            element={
+              <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
+                <TerminalView />
+              </div>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
+                <GoogleAnalytics />
+                <Layout>
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Routes>
+                      <Route path="/" element={<HomePage />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/projects" element={<Projects />} />
+                      <Route path="/research" element={<Research />} />
+                      <Route path="/experience" element={<Experience />} />
+                      <Route path="/mentee" element={<MenteE />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/skills" element={<Skills />} />
+                      <Route path="/gallery" element={<Gallery />} />
+                      <Route path="/design" element={<DesignPortfolio />} />
+                      <Route path="/design/revit" element={<RevitPortfolio />} />
+                      <Route path="/design/autocad" element={<AutoCADPortfolio />} />
+                      <Route path="/design/sketchup" element={<SketchUpPortfolio />} />
+                      <Route path="/design/projects" element={<AllDesignProjects />} />
+                      <Route path="/design/project/:projectId" element={<DesignProjectDetail />} />
+                    </Routes>
+                  </main>
+                  <Footer />
+                </Layout>
+                <AnimatedPatterns />
+                <SimpleChatbot />
+              </div>
+            }
+          />
+        </Routes>
       </Router>
     </ThemeProvider>
   );
