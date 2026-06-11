@@ -22,6 +22,7 @@ import AllDesignProjects from "./components/AllDesignProjects";
 import DesignProjectDetail from "./components/DesignProjectDetail";
 import Gallery from "./components/Gallery";
 import MenteE from "./components/MenteE";
+import CallPage from "./components/CallPage";
 import { ThemeProvider } from "./context/ThemeContext";
 import TerminalView from "./components/TerminalView";
 import "./App.css";
@@ -59,6 +60,7 @@ function App() {
                       <Route path="/contact" element={<Contact />} />
                       <Route path="/skills" element={<Skills />} />
                       <Route path="/gallery" element={<Gallery />} />
+                      <Route path="/call" element={<CallPage />} />
                       <Route path="/design" element={<DesignPortfolio />} />
                       <Route path="/design/revit" element={<RevitPortfolio />} />
                       <Route path="/design/autocad" element={<AutoCADPortfolio />} />

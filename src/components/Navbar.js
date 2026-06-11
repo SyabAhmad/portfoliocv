@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSun, FaMoon, FaPhone } from "react-icons/fa";
 
 const Navbar = () => {
   const location = useLocation();
@@ -16,6 +16,7 @@ const Navbar = () => {
     { path: "/research", label: "Research" },
     { path: "/mentee", label: "MenteE" },
     { path: "/contact", label: "Contact" },
+    { path: "/call", label: "Call" },
   ];
 
   return (
@@ -56,6 +57,19 @@ const Navbar = () => {
               }`}
             >
               Design
+            </Link>
+
+            {/* Call Button */}
+            <Link
+              to="/call"
+              className={`px-3 py-2 rounded-lg text-sm transition-all flex items-center gap-1.5 ${
+                location.pathname === "/call"
+                  ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-500 dark:text-green-400"
+                  : "text-green-500/70 hover:text-green-400 hover:bg-green-500/10"
+              }`}
+            >
+              <FaPhone size={12} className="rotate-90" />
+              <span>Call</span>
             </Link>
 
             {/* Terminal View */}
