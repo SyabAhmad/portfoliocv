@@ -16,7 +16,7 @@ module.exports = {
           800: "#3730a3",
           900: "#312e81",
         },
-        accent: "#ec4899", // pink
+        accent: "#000000",
         dark: "#18181b",
         light: "#f9fafb",
       },
@@ -24,6 +24,9 @@ module.exports = {
         "main-gradient": "linear-gradient(135deg, #6366f1 0%, #a21caf 100%)",
         "footer-gradient": "linear-gradient(90deg, #18181b 0%, #6366f1 100%)",
         "card-gradient": "linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%)",
+      },
+      fontFamily: {
+        calligraphy: ["Send Flowers", "cursive"],
       },
     },
   },

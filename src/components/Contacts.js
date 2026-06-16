@@ -159,11 +159,11 @@ const Contact = () => {
         structuredData={contactStructuredData}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 flex flex-col items-center justify-center py-12 px-6 mt-16 transition-colors duration-300">
-        <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-6 md:mb-8">
+      <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center py-12 px-6 mt-16 transition-colors duration-300">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6 md:mb-8 font-calligraphy">
           Get In Touch
         </h2>
-        <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-3xl shadow-2xl w-full max-w-4xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-8 transition-colors duration-300">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-3xl shadow-2xl w-full max-w-4xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-8 transition-colors duration-300">
           {/* Contact Form */}
           <div className="flex-1">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -178,7 +178,7 @@ const Contact = () => {
                   type="text"
                   name="from_name"
                   id="name"
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-400 focus:outline-none shadow-sm transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-gray-400 focus:outline-none shadow-sm transition-colors duration-300"
                   placeholder="Your Name"
                   required
                 />
@@ -194,7 +194,7 @@ const Contact = () => {
                   type="email"
                   name="reply_to"
                   id="email"
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-400 focus:outline-none shadow-sm transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-gray-400 focus:outline-none shadow-sm transition-colors duration-300"
                   placeholder="you@example.com"
                   required
                 />
@@ -210,7 +210,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows="4"
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-400 focus:outline-none shadow-sm transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-gray-400 focus:outline-none shadow-sm transition-colors duration-300"
                   placeholder="Your message..."
                   required
                 ></textarea>
@@ -218,7 +218,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-full flex justify-center py-3 px-4 rounded-xl text-lg font-bold text-white bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
+                className="w-full flex justify-center py-3 px-4 rounded-xl text-lg font-bold text-white bg-gray-800 hover:bg-gray-700 shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
               >
                 {isSending ? "Sending..." : "Send Message"}
               </button>
@@ -238,13 +238,13 @@ const Contact = () => {
               </p>
               <a
                 href="mailto:syedsyabahmadshah@gmail.com"
-                className="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 block mb-1"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 block mb-1"
               >
                 syedsyabahmadshah@gmail.com
               </a>
               <a
                 href="mailto:engr.syab@gmail.com"
-                className="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 block mb-1"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 block mb-1"
               >
                 engr.syab@gmail.com
               </a>
@@ -262,7 +262,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/syedsyab/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-600 dark:text-amber-400 text-2xl hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-amber-400/50"
+                className="text-gray-700 dark:text-gray-300 text-2xl hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-gray-400/50"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin />
@@ -271,14 +271,14 @@ const Contact = () => {
                 href="https://github.com/syabahmad"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-600 dark:text-amber-400 text-2xl hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-amber-400/50"
+                className="text-gray-700 dark:text-gray-300 text-2xl hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-gray-400/50"
                 aria-label="GitHub"
               >
                 <FaGithub />
               </a>
               <a
                 href="mailto:syedsyabahmadshah@gmail.com"
-                className="text-amber-600 dark:text-amber-400 text-2xl hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-amber-400/50"
+                className="text-gray-700 dark:text-gray-300 text-2xl hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-gray-400/50"
                 aria-label="Email"
               >
                 <FaEnvelope />
@@ -288,7 +288,7 @@ const Contact = () => {
                 href="https://t.me/syedsyab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-600 dark:text-amber-400 text-2xl hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-amber-400/50"
+                className="text-gray-700 dark:text-gray-300 text-2xl hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-gray-400/50"
                 aria-label="Telegram"
               >
                 <FaTelegram />
@@ -298,7 +298,7 @@ const Contact = () => {
                 href="https://x.com/syabsays"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-amber-400/50"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-300 p-2 bg-gray-100 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700/30 hover:border-gray-400/50"
                 aria-label="X (Twitter)"
               >
                 <svg
@@ -318,7 +318,7 @@ const Contact = () => {
               </p>
               <button
                 onClick={handleCVDownload}
-                className="flex items-center justify-center bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold py-3 px-6 rounded-xl hover:from-amber-400 hover:to-orange-400 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300 ease-in-out transform hover:scale-105"
+                className="flex items-center justify-center bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl hover:bg-gray-700 hover:shadow-lg hover:shadow-gray-500/20 transition-all duration-300 ease-in-out transform hover:scale-105"
               >
                 <FaDownload className="mr-2" />
                 Download My CV
@@ -332,10 +332,10 @@ const Contact = () => {
 
         {/* Calendly Section */}
         <div className="w-full max-w-4xl mt-8">
-          <h3 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-6 text-center">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-6 text-center">
             Book a 15-min Call
           </h3>
-          <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-3xl shadow-2xl p-6 md:p-10 transition-colors duration-300">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-3xl shadow-2xl p-6 md:p-10 transition-colors duration-300">
             <CalendlyWidget />
           </div>
         </div>

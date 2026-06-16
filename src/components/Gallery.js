@@ -266,12 +266,12 @@ const Gallery = () => {
         structuredData={galleryStructuredData}
       />
 
-      <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
+      <div className="min-h-screen pt-24 pb-16 from-gray-50 via-purple-50 to-gray-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-8">
           {/* Header */}
           <div className="text-center mb-12">
             <motion.h1
-              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-600 via-purple-600 to-emerald-600 dark:from-cyan-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent mb-4"
+              className="text-5xl md:text-6xl font-bold bg-purple-700 dark:from-cyan-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent mb-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -287,7 +287,7 @@ const Gallery = () => {
               certifications
             </motion.p>
             <motion.div
-              className="mt-4 inline-block px-4 py-2 bg-gradient-to-r from-cyan-100 to-purple-100 border border-cyan-200 dark:from-cyan-500/20 dark:to-purple-500/20 dark:border-cyan-500/30 rounded-full transition-colors duration-300"
+              className="mt-4 inline-block px-4 py-2 bg-purple-100 border border-cyan-200 dark:from-cyan-500/20 dark:to-purple-500/20 dark:border-cyan-500/30 rounded-full transition-colors duration-300"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
@@ -338,7 +338,7 @@ const Gallery = () => {
                   onClick={() => setFilter(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     filter === category
-                      ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg"
+                      ? "bg-purple-600 text-white shadow-lg"
                       : "bg-gray-100 text-gray-600 border border-gray-200 dark:bg-gray-800/50 dark:text-gray-300 dark:border-gray-700/50 hover:border-cyan-500/50 hover:text-cyan-600 dark:hover:text-cyan-400"
                   }`}
                 >
@@ -360,7 +360,7 @@ const Gallery = () => {
                   transition={{ delay: index * 0.05 }}
                   onClick={() => setSelectedImage(cert)}
                 >
-                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 border border-gray-200 dark:border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                  <div className="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
                     {/* Image */}
                     <div className="relative overflow-hidden flex items-center justify-center">
                       <img
@@ -374,14 +374,14 @@ const Gallery = () => {
                         }}
                       />
                       {/* Fallback */}
-                      <div className="hidden w-full aspect-video bg-gradient-to-br from-cyan-100 to-purple-100 dark:from-cyan-500/20 dark:to-purple-500/20 flex items-center justify-center p-4">
+                      <div className="hidden w-full aspect-video bg-purple-100 dark:from-cyan-500/20 dark:to-purple-500/20 flex items-center justify-center p-4">
                         <span className="text-center text-sm font-semibold text-gray-900 dark:text-white">
                           {cert.issuer}
                         </span>
                       </div>
 
                       {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                         <div className="text-white">
                           <p className="text-sm font-semibold mb-1 line-clamp-2">
                             {cert.title}
@@ -479,7 +479,7 @@ const Gallery = () => {
 
                 <div className="flex flex-col lg:flex-row">
                   {/* Image Side */}
-                  <div className="lg:w-2/3 p-6 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-800 dark:to-slate-900 transition-colors duration-300">
+                  <div className="lg:w-2/3 p-6 flex items-center justify-center bg-gray-100 dark:from-slate-800 dark:to-slate-900 transition-colors duration-300">
                     <img
                       src={selectedImage.badge}
                       alt={selectedImage.title}
@@ -620,7 +620,7 @@ const Gallery = () => {
                             href={selectedImage.credentialUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block w-full mt-6 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 text-center"
+                            className="block w-full mt-6 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-500 transition-all duration-300 text-center"
                           >
                             View Credential
                           </a>

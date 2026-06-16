@@ -14,25 +14,25 @@ const DesignProjectDetail = () => {
 
   const categoryColors = {
     revit: "from-blue-500 to-indigo-500",
-    autocad: "from-amber-500 to-orange-500",
+    autocad: "from-gray-800 to-gray-600",
     sketchup: "from-emerald-500 to-teal-500",
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-amber-50/30 to-orange-50/20 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
           <Link
             to="/design"
-            className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+            className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
           >
             Design & Architecture
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
           <Link
             to="/design/projects"
-            className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+            className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
           >
             Projects
           </Link>
@@ -50,7 +50,7 @@ const DesignProjectDetail = () => {
         >
           <div className="flex items-center gap-2 mb-3">
             <span
-              className={`px-2.5 py-0.5 rounded-full text-xs font-medium text-white bg-gradient-to-r ${categoryColors[project.category] || "from-amber-500 to-orange-500"}`}
+              className={`px-2.5 py-0.5 rounded-full text-xs font-medium text-white bg-${categoryColors[project.category] || "from-gray-800 to-gray-600"}`}
             >
               {project.category}
             </span>
@@ -73,7 +73,7 @@ const DesignProjectDetail = () => {
                 key={sw}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg text-sm text-gray-700 dark:text-gray-300 font-medium"
               >
-                <Box className="w-3.5 h-3.5 text-amber-500" />
+                <Box className="w-3.5 h-3.5 text-gray-500" />
                 {sw}
               </span>
             ))}
@@ -130,7 +130,7 @@ const DesignProjectDetail = () => {
                   key={key}
                   className="bg-gray-50 dark:bg-slate-800/50 rounded-xl p-4 border border-gray-100 dark:border-slate-700/50"
                 >
-                  <strong className="text-amber-600 dark:text-amber-400 text-sm block mb-1 font-semibold">
+                  <strong className="text-gray-700 dark:text-gray-300 text-sm block mb-1 font-semibold">
                     {key.charAt(0).toUpperCase() + key.slice(1)}
                   </strong>
                   <span className="text-gray-600 dark:text-gray-400 text-sm">
@@ -184,14 +184,14 @@ const DesignProjectDetail = () => {
           transition={{ delay: 0.5 }}
         >
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-            <Tag className="w-5 h-5 text-amber-500" />
+            <Tag className="w-5 h-5 text-gray-500" />
             Tags
           </h2>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 rounded-lg text-amber-700 dark:text-amber-400 text-sm font-medium"
+                className="px-3 py-1.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-lg text-gray-700 dark:text-gray-400 text-sm font-medium"
               >
                 {tag}
               </span>
@@ -208,7 +208,7 @@ const DesignProjectDetail = () => {
         >
           <Link
             to="/design/projects"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-amber-50 dark:hover:bg-slate-700 transition-all hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700 transition-all hover:shadow-lg"
           >
             <ArrowLeft size={16} />
             Back to All Projects

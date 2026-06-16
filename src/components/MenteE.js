@@ -49,7 +49,7 @@ const MenteE = () => {
       status: "Coming Soon",
       link: null,
       icon: <Smartphone className="w-7 h-7" />,
-      gradient: "from-amber-500 to-orange-500",
+      gradient: "from-gray-800 to-gray-600",
       isComingSoon: true,
       isHidden: true,
     },
@@ -66,7 +66,7 @@ const MenteE = () => {
       status: "Beta Launch",
       link: "https://recru-ai-lime.vercel.app",
       icon: <Cloud className="w-7 h-7" />,
-      gradient: "from-amber-500 to-yellow-500",
+      gradient: "from-gray-800 to-gray-600",
       isComingSoon: false,
       isHidden: false,
       isBeta: true,
@@ -85,7 +85,7 @@ const MenteE = () => {
         linkedin: "https://linkedin.com/in/syedsyab",
         email: "syedsyabahmadshah@gmail.com",
       },
-      gradient: "from-amber-500 to-orange-500",
+      gradient: "from-gray-800 to-gray-600",
     },
     {
       name: "Sania Shakeel",
@@ -178,7 +178,7 @@ const MenteE = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-amber-50/20 to-gray-100 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center px-4 overflow-hidden">
         {/* Animated Background */}
@@ -187,12 +187,12 @@ const MenteE = () => {
 
         {/* Floating orbs */}
         <motion.div
-          className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-amber-400/20 to-orange-500/20 dark:from-amber-500/10 dark:to-orange-600/10 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-64 h-64 from-gray-400/20 to-gray-500/20 dark:from-gray-500/10 dark:to-gray-600/10 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], x: [0, -20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-br from-teal-400/20 to-emerald-500/20 dark:from-teal-500/10 dark:to-emerald-600/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-48 h-48 from-teal-400/20 to-emerald-500/20 dark:from-teal-500/10 dark:to-emerald-600/10 rounded-full blur-3xl"
           animate={{ scale: [1, 1.3, 1], x: [0, 30, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -208,14 +208,14 @@ const MenteE = () => {
             >
               {/* Badge */}
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-500/10 dark:to-orange-500/10 border border-amber-200 dark:border-amber-500/30 rounded-full text-amber-700 dark:text-amber-400 text-sm font-medium mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-400 text-sm font-medium mb-6"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-500" />
                 </span>
                 Privacy-First Innovation
               </motion.div>
@@ -224,7 +224,7 @@ const MenteE = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 <span className="text-gray-900 dark:text-white">Welcome to</span>
                 <br />
-                <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 dark:from-amber-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent">
+                <span className="text-gray-900 dark:text-white font-calligraphy">
                   MenteE
                 </span>
               </h1>
@@ -232,8 +232,8 @@ const MenteE = () => {
               {/* Subtitle */}
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0">
                 Building secure, privacy-first digital solutions that prioritize
-                <span className="text-amber-600 dark:text-amber-400 font-medium"> user control</span> and
-                <span className="text-amber-600 dark:text-amber-400 font-medium"> data protection</span>.
+                <span className="text-gray-700 dark:text-gray-300 font-medium"> user control</span> and
+                <span className="text-gray-700 dark:text-gray-300 font-medium"> data protection</span>.
               </p>
 
               {/* CTAs */}
@@ -242,7 +242,7 @@ const MenteE = () => {
                   href="https://docs-box-liart.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/25 hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gray-800 text-white font-semibold rounded-xl hover:bg-gray-700 transition-all duration-300 hover:shadow-xl hover:shadow-gray-500/25 hover:-translate-y-0.5"
                 >
                   <Shield className="w-4 h-4" />
                   Try DocxBox
@@ -252,14 +252,14 @@ const MenteE = () => {
                   href="https://recru-ai-lime.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white font-semibold rounded-xl hover:border-amber-300 dark:hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white font-semibold rounded-xl hover:border-gray-300 dark:hover:border-gray-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10 hover:-translate-y-0.5"
                 >
                   <Rocket className="w-4 h-4 text-teal-500" />
                   RecruAI Beta
                 </a>
                 <Link
                   to="/projects"
-                  className="group inline-flex items-center gap-2 px-5 py-3.5 text-gray-600 dark:text-gray-400 font-medium rounded-xl hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                  className="group inline-flex items-center gap-2 px-5 py-3.5 text-gray-600 dark:text-gray-400 font-medium rounded-xl hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
                 >
                   View All
                   <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -270,21 +270,21 @@ const MenteE = () => {
               <div className="flex items-center justify-center lg:justify-start gap-6 md:gap-10">
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-                    2<span className="text-amber-500">+</span>
+                    2<span className="text-gray-500">+</span>
                   </div>
                   <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Products</div>
                 </div>
                 <div className="w-px h-10 bg-gray-200 dark:bg-slate-700" />
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-                    3<span className="text-amber-500">+</span>
+                    3<span className="text-gray-500">+</span>
                   </div>
                   <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Team Members</div>
                 </div>
                 <div className="w-px h-10 bg-gray-200 dark:bg-slate-700" />
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-                    Est.<span className="text-amber-500"> 2023</span>
+                    Est.<span className="text-gray-500"> 2023</span>
                   </div>
                   <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Founded</div>
                 </div>
@@ -306,12 +306,12 @@ const MenteE = () => {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2.5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl text-white">
+                    <div className="p-2.5 bg-indigo-600 rounded-xl text-white">
                       <Shield className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900 dark:text-white">DocxBox</h3>
-                      <p className="text-xs text-amber-600 dark:text-amber-400">Document Manager</p>
+                      <p className="text-xs text-gray-700 dark:text-gray-300">Document Manager</p>
                     </div>
                   </div>
                   <div className="space-y-2 mb-4">
@@ -329,7 +329,7 @@ const MenteE = () => {
                     </div>
                   </div>
                   <div className="h-2 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                    <div className="h-full w-3/4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full" />
+                    <div className="h-full w-3/4 bg-gray-800 rounded-full" />
                   </div>
                   <p className="text-xs text-gray-400 mt-2">75% Secure</p>
                 </motion.div>
@@ -348,7 +348,7 @@ const MenteE = () => {
 
                 {/* Floating badge 2 */}
                 <motion.div
-                  className="absolute -bottom-4 -left-10 px-3 py-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl shadow-lg"
+                  className="absolute -bottom-4 -left-10 px-3 py-2 bg-gray-800 rounded-xl shadow-lg"
                   animate={{ y: [0, -6, 0], rotate: [0, -2, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
@@ -374,13 +374,13 @@ const MenteE = () => {
         >
           <motion.div
             variants={fadeInUp}
-            className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 p-6 md:p-8 hover:shadow-amber-500/5 transition-all duration-500"
+            className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 p-6 md:p-8 hover:shadow-gray-500/5 transition-all duration-500"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-amber-50 dark:bg-amber-500/10 rounded-xl">
-                <Target className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+              <div className="p-2.5 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                <Target className="w-6 h-6 text-gray-700 dark:text-gray-300" />
               </div>
-              <h2 className="text-xl font-bold text-amber-600 dark:text-amber-400">
+              <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">
                 Our Mission
               </h2>
             </div>
@@ -393,13 +393,13 @@ const MenteE = () => {
 
           <motion.div
             variants={fadeInUp}
-            className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 p-6 md:p-8 hover:shadow-amber-500/5 transition-all duration-500"
+            className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 p-6 md:p-8 hover:shadow-gray-500/5 transition-all duration-500"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-orange-50 dark:bg-orange-500/10 rounded-xl">
-                <Lightbulb className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              <div className="p-2.5 bg-gray-50 dark:bg-gray-500/10 rounded-xl">
+                <Lightbulb className="w-6 h-6 text-gray-600 dark:text-gray-400" />
               </div>
-              <h2 className="text-xl font-bold text-orange-600 dark:text-orange-400">
+              <h2 className="text-xl font-bold text-gray-600 dark:text-gray-400">
                 Our Vision
               </h2>
             </div>
@@ -422,7 +422,7 @@ const MenteE = () => {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
               Our Products
             </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
@@ -436,24 +436,24 @@ const MenteE = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-amber-500/10 transition-all duration-500 overflow-hidden"
+                className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
                 whileHover={{ y: -4 }}
               >
                 <div
-                  className={`h-1 bg-gradient-to-r ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  className={`h-1 bg-${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div
-                      className={`p-2.5 rounded-xl bg-gradient-to-br ${product.gradient} text-white`}
+                      className={`p-2.5 rounded-xl ${product.gradient} text-white`}
                     >
                       {product.icon}
                     </div>
                     <span
                       className={`px-2.5 py-1 rounded-full text-xs font-medium ${
                         product.isComingSoon
-                          ? "bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/30"
+                          ? "bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-gray-500/30"
                           : product.isBeta
                           ? "bg-teal-50 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-500/30"
                           : "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30"
@@ -466,7 +466,7 @@ const MenteE = () => {
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                     {product.name}
                   </h3>
-                  <p className="text-amber-600 dark:text-amber-400 text-xs font-medium mb-4">
+                  <p className="text-gray-700 dark:text-gray-300 text-xs font-medium mb-4">
                     {product.isHidden ? "---" : product.category}
                   </p>
 
@@ -501,7 +501,7 @@ const MenteE = () => {
                             >
                               <ChevronRight
                                 size={14}
-                                className="text-amber-500 mt-0.5 flex-shrink-0"
+                                className="text-gray-500 mt-0.5 flex-shrink-0"
                               />
                               {feature.split(":")[0]}
                             </li>
@@ -514,7 +514,7 @@ const MenteE = () => {
                           href={product.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-teal-600 hover:to-emerald-600 transition-all duration-300 text-sm w-full"
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 text-sm w-full"
                         >
                           <Rocket className="w-4 h-4" />
                           Join Beta
@@ -524,7 +524,7 @@ const MenteE = () => {
                           href={product.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r ${product.gradient} text-white font-semibold rounded-lg hover:opacity-90 transition-all duration-300 text-sm w-full`}
+                          className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-${product.gradient} text-white font-semibold rounded-lg hover:opacity-90 transition-all duration-300 text-sm w-full`}
                         >
                           Visit Website <ExternalLink size={14} />
                         </a>
@@ -549,10 +549,10 @@ const MenteE = () => {
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="p-2.5 bg-amber-50 dark:bg-amber-500/10 rounded-xl">
-                <Users className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+              <div className="p-2.5 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                <Users className="w-6 h-6 text-gray-700 dark:text-gray-300" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                 Our Team
               </h2>
             </div>
@@ -567,7 +567,7 @@ const MenteE = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-900/80 backdrop-blur-xl transition-all duration-500 hover:shadow-amber-500/10"
+                className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-900/80 backdrop-blur-xl transition-all duration-500 hover:shadow-gray-500/10"
                 whileHover={{ y: member.isPrivate ? 0 : -4 }}
               >
                 {member.isPrivate ? (
@@ -580,7 +580,7 @@ const MenteE = () => {
                     <div className="relative p-6 flex flex-col items-center text-center">
                       {/* Lock Icon */}
                       <div className="relative mb-4">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center text-3xl opacity-60 shadow-inner">
+                        <div className="w-20 h-20 rounded-full bg-gray-500 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center text-3xl opacity-60 shadow-inner">
                           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                           </svg>
@@ -617,11 +617,11 @@ const MenteE = () => {
                 ) : (
                   <>
                     {/* Regular Team Member Card */}
-                    <div className={`h-1 bg-gradient-to-r ${member.gradient}`} />
+                    <div className={`h-1 bg-${member.gradient}`} />
                     <div className="p-6">
                       {/* Avatar & Info */}
                       <div className="flex items-center gap-4 mb-5">
-                        <div className={`relative w-14 h-14 flex-shrink-0 rounded-xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-xl shadow-lg`}>
+                        <div className={`relative w-14 h-14 flex-shrink-0 rounded-xl ${member.gradient} flex items-center justify-center text-xl shadow-lg`}>
                           {member.icon
                             ? member.icon
                             : member.name
@@ -633,15 +633,15 @@ const MenteE = () => {
                           <h3 className="text-lg font-bold text-gray-900 dark:text-white truncate">
                             {member.name}
                           </h3>
-                          <p className="text-amber-600 dark:text-amber-400 text-sm font-medium">
+                          <p className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                             {member.role}
                           </p>
                         </div>
                       </div>
 
                       {/* Expertise */}
-                      <div className="px-3 py-2 bg-amber-50 dark:bg-amber-500/10 rounded-lg mb-4">
-                        <p className="text-xs text-amber-700 dark:text-amber-300 font-medium leading-relaxed">
+                      <div className="px-3 py-2 bg-gray-50 dark:bg-gray-800 rounded-lg mb-4">
+                        <p className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
                           {member.expertise}
                         </p>
                       </div>
@@ -675,7 +675,7 @@ const MenteE = () => {
                             href={member.social.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300 text-gray-500 dark:text-gray-400"
+                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-600 dark:hover:text-gray-400 transition-all duration-300 text-gray-500 dark:text-gray-400"
                           >
                             <Github size={16} />
                           </a>
@@ -683,13 +683,13 @@ const MenteE = () => {
                             href={member.social.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300 text-gray-500 dark:text-gray-400"
+                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-600 dark:hover:text-gray-400 transition-all duration-300 text-gray-500 dark:text-gray-400"
                           >
                             <Linkedin size={16} />
                           </a>
                           <a
                             href={`mailto:${member.social.email}`}
-                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300 text-gray-500 dark:text-gray-400"
+                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-600 dark:hover:text-gray-400 transition-all duration-300 text-gray-500 dark:text-gray-400"
                           >
                             <Mail size={16} />
                           </a>
@@ -714,7 +714,7 @@ const MenteE = () => {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
               Our Journey
             </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
@@ -724,7 +724,7 @@ const MenteE = () => {
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500 via-orange-500 to-transparent opacity-30" />
+            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px from-gray-500 via-gray-500 to-transparent opacity-30" />
 
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
@@ -734,15 +734,15 @@ const MenteE = () => {
                   className="relative pl-12 md:pl-16"
                 >
                   <div
-                    className={`absolute left-2 md:left-6 top-2 w-4 h-4 rounded-full bg-gradient-to-br ${
+                    className={`absolute left-2 md:left-6 top-2 w-4 h-4 rounded-full ${
                       index === 0
-                        ? "from-amber-500 to-orange-500"
-                        : "from-orange-400 to-amber-400"
+                        ? "from-gray-800 to-gray-600"
+                        : "from-gray-400 to-gray-400"
                     } ring-4 ring-white dark:ring-slate-900 z-10`}
                   />
-                  <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-5 hover:shadow-amber-500/5 transition-all duration-300">
+                  <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-5 hover:shadow-gray-500/5 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2.5 py-0.5 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 rounded-full text-amber-700 dark:text-amber-400 text-xs font-medium">
+                      <span className="px-2.5 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-400 text-xs font-medium">
                         {milestone.year}
                       </span>
                     </div>
@@ -761,14 +761,14 @@ const MenteE = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20">
+      <section className="py-16 px-4 bg-gray-50 dark:from-gray-900/20 dark:to-gray-900/20">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Get in Touch
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
@@ -780,7 +780,7 @@ const MenteE = () => {
               href="https://docs-box-liart.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-xl hover:bg-gray-700 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/30"
             >
               Try DocxBox <ExternalLink size={18} />
             </a>

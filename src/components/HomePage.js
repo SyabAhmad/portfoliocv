@@ -104,8 +104,11 @@ const HomePage = () => {
         structuredData={homePageStructuredData}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
-        <div className="relative min-h-screen bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
+        <div className="relative min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
+          {/* Plus pattern overlay */}
+          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+
           {/* Animated Decorative Background Elements */}
           <motion.div
             animate={{
@@ -117,7 +120,7 @@ const HomePage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-0 left-0 w-96 h-96 bg-amber-400/30 rounded-full filter blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"
+            className="absolute top-0 left-0 w-96 h-96 bg-gray-400/30 rounded-full filter blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"
           />
           <motion.div
             animate={{
@@ -130,7 +133,7 @@ const HomePage = () => {
               ease: "easeInOut",
               delay: 0.5,
             }}
-            className="absolute bottom-0 right-0 w-96 h-96 bg-orange-400/30 rounded-full filter blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"
+            className="absolute bottom-0 right-0 w-96 h-96 bg-gray-400/30 rounded-full filter blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"
           />
           <motion.div
             animate={{
@@ -157,7 +160,7 @@ const HomePage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-1/4 right-1/4 w-72 h-72 bg-amber-400/25 rounded-full filter blur-3xl pointer-events-none"
+            className="absolute top-1/4 right-1/4 w-72 h-72 bg-gray-400/25 rounded-full filter blur-3xl pointer-events-none"
           />
           {/* Corner accents */}
           <motion.div
@@ -169,7 +172,7 @@ const HomePage = () => {
               repeat: Infinity,
               linear: true,
             }}
-            className="absolute -bottom-40 -right-40 w-80 h-80 border border-amber-400/20 rounded-full pointer-events-none"
+            className="absolute -bottom-40 -right-40 w-80 h-80 border border-gray-400/20 rounded-full pointer-events-none"
           />
           <motion.div
             animate={{
@@ -180,7 +183,7 @@ const HomePage = () => {
               repeat: Infinity,
               linear: true,
             }}
-            className="absolute lg:-top-40 lg:-left-40 top-0 left-0 w-80 h-80 border border-orange-400/20 rounded-full pointer-events-none"
+            className="absolute lg:-top-40 lg:-left-40 top-0 left-0 w-80 h-80 border border-gray-400/20 rounded-full pointer-events-none"
           />
 
           {/* Hero Section - Split Layout */}
@@ -196,12 +199,12 @@ const HomePage = () => {
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, linear: true }}
-                className="absolute top-20 left-10 w-16 h-16 border-2 border-amber-400/30 rounded-full hidden lg:block"
+                className="absolute top-20 left-10 w-16 h-16 border-2 border-gray-400/30 rounded-full hidden lg:block"
               />
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-40 left-20 w-8 h-8 bg-orange-400/20 rounded-full hidden lg:block"
+                className="absolute top-40 left-20 w-8 h-8 bg-gray-400/20 rounded-full hidden lg:block"
               />
 
               <motion.div
@@ -209,7 +212,7 @@ const HomePage = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white leading-tight font-calligraphy">
                   Full Stack Developer & AI Engineer
                 </h1>
               </motion.div>
@@ -219,7 +222,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-200 to-pink-100 dark:from-yellow-700 dark:to-pink-800 border border-yellow-300 dark:border-yellow-600 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 shadow-sm"
+                className="inline-flex items-center gap-3 bg-yellow-100 dark:from-yellow-700 dark:to-pink-800 border border-yellow-300 dark:border-yellow-600 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 shadow-sm"
               >
                 <span className="text-sm font-semibold">🚀 Recruiai Beta</span>
                 <a
@@ -262,7 +265,7 @@ const HomePage = () => {
                     boxShadow: "0 20px 40px rgba(217, 119, 6, 0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-amber-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-gray-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   View My Work
                 </motion.a>
@@ -273,7 +276,7 @@ const HomePage = () => {
                     boxShadow: "0 20px 40px rgba(217, 119, 6, 0.3)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-amber-600 text-amber-600 dark:border-amber-400 dark:text-amber-400 font-semibold rounded-full hover:bg-amber-600 hover:text-white dark:hover:bg-amber-400 dark:hover:text-stone-900 hover:shadow-lg hover:shadow-amber-400/20 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-gray-600 text-gray-700 dark:border-gray-400 dark:text-gray-400 font-semibold rounded-full hover:bg-gray-600 hover:text-white dark:hover:bg-gray-400 dark:hover:text-stone-900 hover:shadow-lg hover:shadow-gray-400/20 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   Let's Connect
                 </motion.a>
@@ -286,7 +289,7 @@ const HomePage = () => {
                     boxShadow: "0 20px 40px rgba(217, 119, 6, 0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 md:px-8 py-2.5 md:py-3 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
                 >
                   Book a Call
                 </motion.a>
@@ -306,12 +309,12 @@ const HomePage = () => {
                 <motion.div
                   animate={{ rotate: [0, 180, 360] }}
                   transition={{ duration: 25, repeat: Infinity, linear: true }}
-                  className="absolute lg:-top-10 lg:-right-10 top-0 right-0 w-32 h-32 border-2 border-amber-400/20 rounded-full"
+                  className="absolute lg:-top-10 lg:-right-10 top-0 right-0 w-32 h-32 border-2 border-gray-400/20 rounded-full"
                 />
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -bottom-10 -left-10 w-24 h-24 bg-orange-400/10 rounded-full"
+                  className="absolute -bottom-10 -left-10 w-24 h-24 bg-gray-400/10 rounded-full"
                 />
 
                 <motion.div
@@ -322,7 +325,7 @@ const HomePage = () => {
                   <motion.div
                     animate={{ opacity: [0.6, 0.9, 0.6] }}
                     transition={{ duration: 5, repeat: Infinity }}
-                    className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-amber-100/50 dark:bg-amber-900/20 blur-3xl -z-10"
+                    className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-gray-100/50 dark:bg-gray-900/20 blur-3xl -z-10"
                   />
 
                   {/* Back decorative card */}
@@ -333,7 +336,7 @@ const HomePage = () => {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="absolute -right-6 top-8 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-amber-50/60 dark:bg-amber-900/20 border-2 border-amber-300/60 dark:border-amber-700/60 shadow-lg z-0 transform -rotate-3"
+                    className="absolute -right-6 top-8 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-gray-50/60 dark:bg-gray-800/20 border-2 border-gray-300/60 dark:border-gray-700/60 shadow-lg z-0 transform -rotate-3"
                   />
 
                   {/* Main (top) card with profile image */}
@@ -341,7 +344,7 @@ const HomePage = () => {
                     initial={{ rotate: 1 }}
                     whileHover={{ rotate: 2, scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="relative z-20 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-2xl shadow-amber-500/20 border border-amber-400/30 overflow-hidden transform rotate-1 mt-14"
+                    className="relative z-20 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-gray-500/20 border border-gray-400/30 overflow-hidden transform rotate-1 mt-14"
                   >
                   <img
                     src="dp.jpeg"
@@ -352,7 +355,7 @@ const HomePage = () => {
                       e.target.nextSibling.style.display = "flex";
                     }}
                   />
-                  <div className="absolute inset-0 text-2xl font-bold text-white bg-gradient-to-br from-amber-600/20 to-orange-600/10 hidden">
+                  <div className="absolute inset-0 text-2xl font-bold text-white from-gray-600/20 to-gray-600/10 hidden">
                     SSA
                   </div>
 
@@ -386,7 +389,7 @@ const HomePage = () => {
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute -bottom-2 -right-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full border-2 border-white dark:border-slate-900 z-20 flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none backdrop-blur-sm"
+                  className="absolute -bottom-2 -right-8 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full border-2 border-white dark:border-slate-900 z-20 flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none backdrop-blur-sm"
                 >
                   <span className="animate-spin">🚀</span> Open to Work
                 </motion.div>
@@ -406,16 +409,16 @@ const HomePage = () => {
             {/* Tech Sayings Section */}
             <section className="py-16 px-4">
               <div className="max-w-4xl mx-auto text-center">
-                <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 mb-8">
+                <div className="bg-white dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 mb-8">
                   <div className="mb-6">
-                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-full text-amber-600 dark:text-amber-400 text-sm font-medium mb-4">
+                    <span className="inline-block px-4 py-2 bg-gray-500/20 border border-gray-500/30 rounded-full text-gray-700 dark:text-gray-300 text-sm font-medium mb-4">
                       Tech Philosophy
                     </span>
                   </div>
                   <div className="h-20 flex items-center justify-center">
-                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent min-h-[1.2em] flex items-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white min-h-[1.2em] flex items-center">
                       "{currentText}
-                      <span className="animate-pulse text-amber-600 dark:text-amber-400 ml-1">
+                      <span className="animate-pulse text-gray-700 dark:text-gray-300 ml-1">
                         |
                       </span>
                       "
@@ -429,23 +432,23 @@ const HomePage = () => {
 
                 {/* Tech Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-amber-500/20 hover:border-amber-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-2">
+                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-gray-700 dark:text-gray-300 mb-2">
                       50+
                     </div>
                     <div className="text-gray-600 dark:text-gray-300 text-sm">
                       Certifications
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-orange-500/20 hover:border-orange-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
+                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-gray-600 dark:text-gray-400 mb-2">
                       20+
                     </div>
                     <div className="text-gray-600 dark:text-gray-300 text-sm">
                       Research Ideas
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50 transition-all duration-300">
+                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50 transition-all duration-300">
                     <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
                       10+
                     </div>
@@ -453,7 +456,7 @@ const HomePage = () => {
                       Projects
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-teal-500/20 hover:border-teal-500/50 transition-all duration-300">
+                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-teal-500/20 hover:border-teal-500/50 transition-all duration-300">
                     <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">
                       Recruiai
                     </div>

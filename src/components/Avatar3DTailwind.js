@@ -146,10 +146,10 @@ const Avatar3DTailwind = ({
         <motion.div
           className={`absolute inset-0 rounded-full blur-2xl ${
             isListening
-              ? "bg-gradient-to-br from-blue-500 to-cyan-500"
+              ? "from-blue-500 to-cyan-500"
               : isSpeaking
-                ? "bg-gradient-to-br from-purple-500 to-pink-500"
-                : "bg-gradient-to-br from-slate-600 to-slate-700"
+                ? "from-purple-500 to-pink-500"
+                : "from-slate-600 to-slate-700"
           }`}
           animate={{
             scale: isListening || isSpeaking ? [1, 1.15, 1] : 1,
@@ -169,7 +169,7 @@ const Avatar3DTailwind = ({
 
         {/* Main Avatar Circle */}
         <div
-          className={`relative ${avatarSizes.shell} rounded-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 p-1 shadow-2xl`}
+          className={`relative ${avatarSizes.shell} rounded-full bg-purple-600 p-1 shadow-2xl`}
         >
           <div className="w-full h-full rounded-full bg-slate-900 flex flex-col items-center justify-center relative overflow-hidden">
             {/* Animated Background Pattern */}
@@ -371,7 +371,7 @@ const Avatar3DTailwind = ({
           {[...Array(compact ? 10 : 15)].map((_, i) => (
             <motion.div
               key={i}
-              className={`${compact ? "w-[3px]" : "w-1"} bg-gradient-to-t from-purple-500 to-pink-500 rounded-full`}
+              className={`${compact ? "w-[3px]" : "w-1"} from-purple-500 to-pink-500 rounded-full`}
               animate={{
                 height: [
                   compact ? 8 : 10,

@@ -17,7 +17,7 @@ const SketchUpPortfolio = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-emerald-50/20 to-teal-50/10 dark:from-slate-900 dark:via-emerald-900/5 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen pt-24 pb-16 from-gray-50 via-emerald-50/20 to-teal-50/10 dark:from-slate-900 dark:via-emerald-900/5 dark:to-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -34,7 +34,7 @@ const SketchUpPortfolio = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold bg-from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent mb-4">
             {skillInfo.name} - {skillInfo.category}
           </h1>
           <span className="inline-block px-4 py-1.5 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-full text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-4">
@@ -93,7 +93,7 @@ const SketchUpPortfolio = () => {
                           "https://via.placeholder.com/400x300?text=SketchUp+Project";
                       }}
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${accentGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                    <div className={`absolute inset-0 bg-${accentGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                   </div>
 
                   <div className="p-6 flex flex-col justify-between">

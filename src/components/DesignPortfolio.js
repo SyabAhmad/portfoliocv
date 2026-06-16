@@ -50,12 +50,12 @@ const DesignPortfolio = () => {
 
   const skillGradients = {
     Revit: "from-blue-500 to-indigo-500",
-    AutoCAD: "from-amber-500 to-orange-500",
+    AutoCAD: "from-gray-800 to-gray-600",
     SketchUp: "from-emerald-500 to-teal-500",
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-amber-50/30 to-orange-50/20 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
         {/* Hero Section */}
         <motion.section
@@ -66,15 +66,15 @@ const DesignPortfolio = () => {
         >
           {/* Decorative background */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(251,146,60,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_50%,rgba(251,146,60,0.05),transparent_50%)]" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative p-8 md:p-14 lg:p-16">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left: Content */}
               <div className="text-center lg:text-left">
                 <motion.div
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 rounded-full text-amber-700 dark:text-amber-400 text-sm font-medium mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-400 text-sm font-medium mb-6"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
@@ -86,7 +86,7 @@ const DesignPortfolio = () => {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
                   <span className="text-gray-900 dark:text-white">Design &</span>
                   <br />
-                  <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 dark:from-amber-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent">
+                  <span className="text-gray-900 dark:text-white font-calligraphy">
                     Architecture
                   </span>
                 </h1>
@@ -98,14 +98,14 @@ const DesignPortfolio = () => {
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
                   <Link
                     to="/design/projects"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all hover:shadow-lg hover:shadow-amber-500/25 hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-xl hover:bg-gray-700 transition-all hover:shadow-lg hover:shadow-gray-500/25 hover:-translate-y-0.5"
                   >
                     <ExternalLink size={16} />
                     View Projects
                   </Link>
                   <a
                     href="#certifications"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-amber-50 dark:hover:bg-slate-700 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700 transition-all"
                   >
                     <Award className="w-4 h-4" />
                     Certifications
@@ -117,7 +117,7 @@ const DesignPortfolio = () => {
               <div className="grid grid-cols-2 gap-4">
                 {/* Stat Cards */}
                 <motion.div
-                  className="p-5 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-500/10 dark:to-indigo-500/10 rounded-2xl border border-blue-200/50 dark:border-blue-500/20"
+                  className="p-5 bg-blue-50 dark:from-blue-500/10 dark:to-indigo-500/10 rounded-2xl border border-blue-200/50 dark:border-blue-500/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
@@ -131,21 +131,21 @@ const DesignPortfolio = () => {
                 </motion.div>
 
                 <motion.div
-                  className="p-5 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-500/10 dark:to-orange-500/10 rounded-2xl border border-amber-200/50 dark:border-amber-500/20"
+                  className="p-5 bg-gray-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-gray-200/50 dark:border-gray-500/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <PencilRuler className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-                    <span className="text-xs font-medium text-amber-600 dark:text-amber-400 uppercase tracking-wider">AutoCAD</span>
+                    <PencilRuler className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">AutoCAD</span>
                   </div>
                   <div className="text-3xl font-bold text-gray-900 dark:text-white">5</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">Projects</div>
                 </motion.div>
 
                 <motion.div
-                  className="p-5 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-500/10 dark:to-teal-500/10 rounded-2xl border border-emerald-200/50 dark:border-emerald-500/20"
+                  className="p-5 bg-emerald-50 dark:from-emerald-500/10 dark:to-teal-500/10 rounded-2xl border border-emerald-200/50 dark:border-emerald-500/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
@@ -159,7 +159,7 @@ const DesignPortfolio = () => {
                 </motion.div>
 
                 <motion.div
-                  className="p-5 bg-gradient-to-br from-gray-50 to-slate-50 dark:from-gray-500/10 dark:to-slate-500/10 rounded-2xl border border-gray-200/50 dark:border-gray-500/20"
+                  className="p-5 bg-gray-50 dark:from-gray-500/10 dark:to-slate-500/10 rounded-2xl border border-gray-200/50 dark:border-gray-500/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
@@ -206,7 +206,7 @@ const DesignPortfolio = () => {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
               Core Competencies
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-sm">
@@ -219,15 +219,15 @@ const DesignPortfolio = () => {
               <motion.div
                 key={skill.name}
                 variants={fadeInUp}
-                className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-6 hover:shadow-amber-500/10 transition-all duration-500 overflow-hidden"
+                className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-6 hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
                 whileHover={{ y: -4 }}
               >
                 <div
-                  className={`h-1 bg-gradient-to-r ${skillGradients[skill.name] || "from-amber-500 to-orange-500"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  className={`h-1 bg-${skillGradients[skill.name] || "from-gray-800 to-gray-600"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className={`p-2.5 rounded-xl bg-gradient-to-br ${skillGradients[skill.name] || "from-amber-500 to-orange-500"} text-white`}
+                    className={`p-2.5 rounded-xl ${skillGradients[skill.name] || "from-gray-800 to-gray-600"} text-white`}
                   >
                     {skillIcons[skill.name] || <Layers className="w-5 h-5" />}
                   </div>
@@ -255,7 +255,7 @@ const DesignPortfolio = () => {
                       key={index}
                       className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"
                     >
-                      <ChevronRight className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
+                      <ChevronRight className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -263,7 +263,7 @@ const DesignPortfolio = () => {
 
                 <Link
                   to={`/design/${skill.name.toLowerCase()}`}
-                  className="inline-flex items-center gap-1 text-sm text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-semibold transition-colors group/link"
+                  className="inline-flex items-center gap-1 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 font-semibold transition-colors group/link"
                 >
                   Explore Projects
                   <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -282,7 +282,7 @@ const DesignPortfolio = () => {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
               Recent Projects
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-sm">
@@ -295,7 +295,7 @@ const DesignPortfolio = () => {
               <motion.div
                 key={project.id}
                 variants={fadeInUp}
-                className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 overflow-hidden hover:shadow-amber-500/10 transition-all duration-500"
+                className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 overflow-hidden hover:shadow-gray-500/10 transition-all duration-500"
                 whileHover={{ y: -4 }}
               >
                 <div className="relative overflow-hidden">
@@ -335,7 +335,7 @@ const DesignPortfolio = () => {
                   </p>
                   <Link
                     to={`/design/project/${project.id}`}
-                    className="inline-flex items-center gap-1 text-sm text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-semibold transition-colors group/link"
+                    className="inline-flex items-center gap-1 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 font-semibold transition-colors group/link"
                   >
                     View Details
                     <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -348,7 +348,7 @@ const DesignPortfolio = () => {
           <motion.div variants={fadeInUp} className="text-center mt-8">
             <Link
               to="/design/projects"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-gray-800 text-white text-sm font-semibold rounded-xl hover:bg-gray-700 transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-gray-500/25"
             >
               View All Projects
               <ExternalLink size={14} />
@@ -367,8 +367,8 @@ const DesignPortfolio = () => {
         >
           <motion.div variants={fadeInUp} className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Award className="w-6 h-6 text-amber-500" />
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+              <Award className="w-6 h-6 text-gray-500" />
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
                 Certifications
               </h2>
             </div>
@@ -382,11 +382,11 @@ const DesignPortfolio = () => {
               <motion.div
                 key={cert.credentialId}
                 variants={fadeInUp}
-                className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-5 hover:shadow-amber-500/10 transition-all duration-500 flex items-start gap-4"
+                className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-5 hover:shadow-gray-500/10 transition-all duration-500 flex items-start gap-4"
                 whileHover={{ y: -2 }}
               >
-                <div className="p-2.5 bg-amber-50 dark:bg-amber-500/10 rounded-xl flex-shrink-0">
-                  <Award className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                <div className="p-2.5 bg-gray-50 dark:bg-gray-800 rounded-xl flex-shrink-0">
+                  <Award className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-1">
@@ -397,7 +397,7 @@ const DesignPortfolio = () => {
                       {cert.date}
                     </span>
                   </div>
-                  <p className="text-sm text-amber-600 dark:text-amber-400 font-medium mb-1">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 font-medium mb-1">
                     {cert.issuer}
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
@@ -411,7 +411,7 @@ const DesignPortfolio = () => {
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-semibold transition-colors group/link"
+                      className="inline-flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 font-semibold transition-colors group/link"
                     >
                       View Credential
                       <ExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
@@ -440,7 +440,7 @@ const DesignPortfolio = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-gray-800 text-white font-semibold rounded-xl hover:bg-gray-700 transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-gray-500/25"
             >
               Get in Touch
               <ChevronRight size={16} />

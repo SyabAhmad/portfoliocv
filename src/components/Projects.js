@@ -162,12 +162,12 @@ const Projects = () => {
           url="https://syab.tech/projects"
           structuredData={projectsStructuredData}
         />
-        <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
+        <div className="min-h-screen p-8 pt-24 bg-white dark:bg-slate-900 transition-colors duration-300">
           <div className="container mx-auto text-center">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent mb-12">
+            <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-12">
               Projects
             </h2>
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
               <p className="text-gray-600 dark:text-gray-300 text-lg">
                 Projects are being loaded...
               </p>
@@ -188,15 +188,15 @@ const Projects = () => {
         structuredData={projectsStructuredData}
       />
 
-      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 transition-colors duration-300">
+      <div className="min-h-screen p-8 pt-24 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-8">
+          <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-8 font-calligraphy">
             Projects
           </h2>
 
           {/* Tab Navigation */}
           <div className="flex justify-center mb-8">
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-1.5 inline-flex gap-1">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl p-1.5 inline-flex gap-1">
               <button
                 onClick={() => {
                   setActiveTab("all");
@@ -206,8 +206,8 @@ const Projects = () => {
                 }}
                 className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                   activeTab === "all"
-                    ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg"
-                    : "text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400"
+                    ? "bg-gray-800 text-white shadow-lg"
+                    : "text-gray-600 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400"
                 }`}
               >
                 <FaFolderOpen />
@@ -222,13 +222,13 @@ const Projects = () => {
                 }}
                 className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                   activeTab === "client-demos"
-                    ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg"
-                    : "text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400"
+                    ? "bg-gray-800 text-white shadow-lg"
+                    : "text-gray-600 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400"
                 }`}
               >
                 <FaBriefcase />
                 Client Demos
-                <span className="ml-1 px-2 py-0.5 text-xs rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300">
+                <span className="ml-1 px-2 py-0.5 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
                   {validProjects.filter((p) => p.projectType === "client-demo").length}
                 </span>
               </button>
@@ -236,10 +236,10 @@ const Projects = () => {
           </div>
 
           {/* Filter Section */}
-          <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-6 mb-8 transition-colors duration-300">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl p-6 mb-8 transition-colors duration-300">
             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
               <div className="flex items-center gap-2">
-                <FaFilter className="text-amber-600 dark:text-amber-400" />
+                <FaFilter className="text-gray-700 dark:text-gray-300" />
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Filter Projects
                 </h3>
@@ -257,8 +257,8 @@ const Projects = () => {
                     }}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
                       selectedCategory === category
-                        ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg"
-                        : "bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 border border-gray-300/50 dark:border-gray-600/50 hover:border-amber-500/50 dark:hover:border-amber-400/50 hover:text-amber-600 dark:hover:text-amber-400"
+                        ? "bg-gray-800 text-white shadow-lg"
+                        : "bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 border border-gray-300/50 dark:border-gray-600/50 hover:border-gray-500/50 dark:hover:border-gray-400/50 hover:text-gray-600 dark:hover:text-gray-400"
                     }`}
                   >
                     {category}
@@ -281,7 +281,7 @@ const Projects = () => {
                   }}
                   className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
                     selectedBroadSkill === skill
-                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md"
+                      ? "bg-emerald-600 text-white shadow-md"
                       : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-emerald-600 dark:hover:text-emerald-400"
                   }`}
                 >
@@ -294,12 +294,12 @@ const Projects = () => {
             <div className="flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700/50">
               <button
                 onClick={resetFilters}
-                className="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 text-xs transition-colors duration-300"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-400 text-xs transition-colors duration-300"
               >
                 Reset Filters
               </button>
               <div className="text-gray-500 dark:text-gray-400 text-xs">
-                Showing <span className="font-semibold text-amber-600 dark:text-amber-400">{filteredProjects.length}</span> of {typeFilteredProjects.length} projects
+                Showing <span className="font-semibold text-gray-700 dark:text-gray-300">{filteredProjects.length}</span> of {typeFilteredProjects.length} projects
               </div>
             </div>
           </div>
@@ -307,13 +307,13 @@ const Projects = () => {
           {/* Projects Grid */}
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
-              <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
                 <p className="text-gray-600 dark:text-gray-300 text-lg mb-4">
                   No projects found with the selected filters.
                 </p>
                 <button
                   onClick={resetFilters}
-                  className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg hover:from-amber-400 hover:to-orange-400 transition-all duration-300"
+                  className="px-6 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-all duration-300"
                 >
                   View All Projects
                 </button>
@@ -328,12 +328,12 @@ const Projects = () => {
                 return (
                   <div
                     key={index}
-                    className="group bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:border-amber-600/50 dark:hover:border-amber-500/50 h-fit relative overflow-hidden"
+                    className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:border-gray-600/50 dark:hover:border-gray-500/50 h-fit relative overflow-hidden"
                   >
                     {/* Demo Badge */}
                     {project.projectType === "client-demo" && (
                       <div className="absolute top-4 right-4 z-10">
-                        <span className="px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-lg">
+                        <span className="px-3 py-1 text-xs font-bold rounded-full bg-gray-500 text-white shadow-lg">
                           DEMO
                         </span>
                       </div>
@@ -355,7 +355,7 @@ const Projects = () => {
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white pb-2 flex-1 pr-2">
                         {project.title}
                         {project.projectType === "client-demo" && (
-                          <span className="ml-2 text-xs font-normal text-amber-600 dark:text-amber-400">
+                          <span className="ml-2 text-xs font-normal text-gray-700 dark:text-gray-300">
                             (Demo Version)
                           </span>
                         )}
@@ -379,8 +379,8 @@ const Projects = () => {
                     <div className="text-gray-600 dark:text-gray-300 text-sm space-y-3">
                       {/* Duration */}
                       <div className="flex items-center text-gray-500 dark:text-gray-400">
-                        <FaCalendarAlt className="mr-2 text-amber-600 dark:text-amber-400" />
-                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                        <FaCalendarAlt className="mr-2 text-gray-700 dark:text-gray-300" />
+                        <span className="text-gray-700 dark:text-gray-300 font-medium">
                           Duration:
                         </span>
                         <span className="ml-2">{project.duration}</span>
@@ -389,7 +389,7 @@ const Projects = () => {
                       {/* Category & Skills */}
                       <div className="flex flex-wrap gap-2 mb-3">
                         {project.category && (
-                          <span className="inline-block px-2 py-1 bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 text-xs rounded-full border border-amber-300 dark:border-amber-500/30">
+                          <span className="inline-block px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full border border-gray-300 dark:border-gray-500/30">
                             {project.category}
                           </span>
                         )}
@@ -415,7 +415,7 @@ const Projects = () => {
                         {shouldTruncate && (
                           <button
                             onClick={() => toggleProjectExpansion(index)}
-                            className="mt-2 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 text-xs flex items-center transition-colors duration-300"
+                            className="mt-2 text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 text-xs flex items-center transition-colors duration-300"
                           >
                             {isExpanded ? (
                               <>
@@ -437,7 +437,7 @@ const Projects = () => {
                         <div className="space-y-3 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
                           {project.keyFeatures && (
                             <div>
-                              <span className="text-amber-600 dark:text-amber-400 font-medium">
+                              <span className="text-gray-700 dark:text-gray-300 font-medium">
                                 Key Features:
                               </span>
                               <p className="mt-1">{project.keyFeatures}</p>
@@ -446,7 +446,7 @@ const Projects = () => {
 
                           {project.techStack && (
                             <div>
-                              <span className="text-amber-600 dark:text-amber-400 font-medium">
+                              <span className="text-gray-700 dark:text-gray-300 font-medium">
                                 Tech Stack:
                               </span>
                               <div className="flex flex-wrap gap-1 mt-1">
@@ -485,7 +485,7 @@ const Projects = () => {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center px-3 py-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 text-xs rounded-lg border border-amber-600/30 dark:border-amber-500/30 transition-all duration-300"
+                            className="flex items-center px-3 py-2 bg-gray-500/20 hover:bg-gray-500/30 text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 text-xs rounded-lg border border-gray-600/30 dark:border-gray-500/30 transition-all duration-300"
                           >
                             <FaExternalLinkAlt className="mr-2" />
                             Live Demo
@@ -511,7 +511,7 @@ const Projects = () => {
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAllProjects(!showAllProjects)}
-                className="flex items-center justify-center mx-auto px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg hover:from-amber-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105"
+                className="flex items-center justify-center mx-auto px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
               >
                 {showAllProjects ? (
                   <>
@@ -529,13 +529,13 @@ const Projects = () => {
           )}
 
           {/* Projects Stats */}
-          <div className="mt-16 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
+          <div className="mt-16 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl p-8 transition-colors duration-300">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               Projects Overview
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-2">
+                <div className="text-3xl font-bold text-gray-700 dark:text-gray-300 mb-2">
                   {validProjects.length}
                 </div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">
@@ -543,7 +543,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
+                <div className="text-3xl font-bold text-gray-600 dark:text-gray-400 mb-2">
                   {validProjects.filter((p) => p.projectType === "client-demo").length}
                 </div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">

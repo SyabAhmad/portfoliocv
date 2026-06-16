@@ -21,18 +21,18 @@ const Recommendations = ({ recommendations, maxItems = 6 }) => {
               transition={{ delay: index * 0.08, duration: 0.5, ease: "easeOut" }}
             >
               <motion.div
-                className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 shadow-lg hover:shadow-amber-500/10 transition-all duration-500 overflow-hidden"
+                className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 shadow-lg hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
                 whileHover={{ y: -4 }}
               >
                 {/* Amber top border accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-from-gray-500 via-gray-500 to-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="p-6 md:p-8">
                   {/* Header: Avatar + Info */}
                   <div className="flex items-start gap-4 mb-5">
                     {/* Avatar */}
                     <motion.div
-                      className={`relative flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br ${rec.avatarColor} flex items-center justify-center shadow-lg ring-2 ring-white dark:ring-slate-800`}
+                      className={`relative flex-shrink-0 w-14 h-14 rounded-full ${rec.avatarColor} flex items-center justify-center shadow-lg ring-2 ring-white dark:ring-slate-800`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                     >
                       <span className="text-white font-bold text-lg">
@@ -47,7 +47,7 @@ const Recommendations = ({ recommendations, maxItems = 6 }) => {
                       <h4 className="text-gray-900 dark:text-white font-bold text-lg truncate">
                         {rec.recommender}
                       </h4>
-                      <p className="text-amber-600 dark:text-amber-400 text-sm font-medium leading-snug">
+                      <p className="text-gray-700 dark:text-gray-400 text-sm font-medium leading-snug">
                         {rec.designation}
                       </p>
                       <p className="text-gray-400 dark:text-gray-500 text-xs mt-0.5">
@@ -58,7 +58,7 @@ const Recommendations = ({ recommendations, maxItems = 6 }) => {
                     {/* Expand button */}
                     <button
                       onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                      className="flex-shrink-0 p-2 rounded-lg text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 transition-all duration-300"
+                      className="flex-shrink-0 p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-500/10 transition-all duration-300"
                     >
                       {expandedCard === index ? (
                         <FaCompress className="w-4 h-4" />
@@ -69,8 +69,8 @@ const Recommendations = ({ recommendations, maxItems = 6 }) => {
                   </div>
 
                   {/* Quote */}
-                  <div className="relative pl-6 border-l-2 border-amber-300 dark:border-amber-500/30">
-                    <FaQuoteLeft className="absolute -left-3 -top-2 w-5 h-5 text-amber-400/30" />
+                  <div className="relative pl-6 border-l-2 border-gray-300 dark:border-gray-500/30">
+                    <FaQuoteLeft className="absolute -left-3 -top-2 w-5 h-5 text-gray-400/30" />
                     <motion.p
                       className={`text-gray-600 dark:text-gray-300 leading-relaxed ${
                         expandedCard === index ? '' : 'line-clamp-3'
@@ -105,7 +105,7 @@ const Recommendations = ({ recommendations, maxItems = 6 }) => {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-amber-500/10 to-orange-500/10 dark:from-amber-500/20 dark:to-orange-500/20 border border-amber-300 dark:border-amber-500/30 text-amber-700 dark:text-amber-400 font-semibold rounded-xl hover:from-amber-500/20 hover:to-orange-500/20 dark:hover:from-amber-500/30 dark:hover:to-orange-500/30 hover:border-amber-400 dark:hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 group"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-from-gray-500/10 to-gray-500/10 dark:from-gray-500/20 dark:to-gray-500/20 border border-gray-300 dark:border-gray-500/30 text-gray-700 dark:text-gray-400 font-semibold rounded-xl hover:from-gray-500/20 hover:to-gray-500/20 dark:hover:from-gray-500/30 dark:hover:to-gray-500/30 hover:border-gray-400 dark:hover:border-gray-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10 group"
           >
             {showAll ? (
               <>

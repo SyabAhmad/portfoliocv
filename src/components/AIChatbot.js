@@ -223,25 +223,25 @@ const AIChatbot = () => {
         <div className="fixed bottom-6 right-6 z-50">
           <button
             onClick={() => setIsOpen(true)}
-            className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white p-4 rounded-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-110 animate-pulse"
+            className="group relative bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-110 animate-pulse"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-full animate-ping opacity-20"></div>
+            <div className="absolute inset-0 bg-purple-600 rounded-full animate-ping opacity-20"></div>
             
             {/* Floating particles */}
             <div className="absolute -top-3 -left-2 text-yellow-300 animate-bounce text-lg">✨</div>
             <div className="absolute -bottom-2 -right-3 text-blue-300 animate-bounce text-sm" style={{ animationDelay: '0.5s' }}>💫</div>
             <div className="absolute -top-1 -right-4 text-green-300 animate-pulse text-xs">🚀</div>
             
-            <div className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-400 to-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center animate-bounce font-bold">
+            <div className="absolute -top-2 -right-2 bg-from-gray-400 to-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center animate-bounce font-bold">
               AI
             </div>
             
             <MessageCircle size={28} className="relative z-10" />
             
-            <div className="absolute bottom-full right-0 mb-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 py-3 rounded-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl border border-purple-500/20">
+            <div className="absolute bottom-full right-0 mb-3 bg-gray-800 text-white px-4 py-3 rounded-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl border border-purple-500/20">
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse"></div>
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-bold">
+                <div className="w-3 h-3 bg-from-green-400 to-blue-500 rounded-full animate-pulse"></div>
+                <span className="bg-purple-500 bg-clip-text text-transparent font-bold">
                   Chat with Syab
                 </span>
               </div>
@@ -257,7 +257,7 @@ const AIChatbot = () => {
         <div className="fixed bottom-6 right-6 w-[420px] h-[650px] bg-white rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden border-2 border-purple-200">
           
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 p-4 text-white relative overflow-hidden">
+          <div className="bg-purple-600 p-4 text-white relative overflow-hidden">
             {/* Background decorations */}
             <div className="absolute top-0 left-0 w-full h-full opacity-20">
               <div className="absolute top-2 left-4 text-2xl animate-pulse">🌟</div>
@@ -272,7 +272,7 @@ const AIChatbot = () => {
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-white/30">
                     <Bot size={24} className="text-white" />
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white animate-pulse"></div>
+                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white animate-pulse"></div>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">MenteE AI🥀</h3>
@@ -297,14 +297,14 @@ const AIChatbot = () => {
                     <div className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-xl border border-gray-200 py-2 w-44 z-20 backdrop-blur-sm">
                       <button
                         onClick={showStats}
-                        className="w-full px-4 py-3 text-left text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 flex items-center space-x-3 transition-all"
+                        className="w-full px-4 py-3 text-left text-sm text-gray-700 hover:bg-purple-50 flex items-center space-x-3 transition-all"
                       >
                         <Database size={16} className="text-blue-500" />
                         <span className="font-medium">Portfolio Stats</span>
                       </button>
                       <button
                         onClick={clearChat}
-                        className="w-full px-4 py-3 text-left text-sm text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 flex items-center space-x-3 transition-all"
+                        className="w-full px-4 py-3 text-left text-sm text-red-600 hover:bg-red-50 flex items-center space-x-3 transition-all"
                       >
                         <Trash2 size={16} />
                         <span className="font-medium">Clear Chat</span>
@@ -324,7 +324,7 @@ const AIChatbot = () => {
           </div>
 
           {/* Quick Questions Bar */}
-          <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 border-b border-purple-100">
+          <div className="p-4 bg-purple-50 border-b border-purple-100">
             <div className="text-xs text-gray-600 mb-3 flex items-center font-medium">
               <Sparkles size={12} className="mr-2 text-purple-500" />
               Quick questions:
@@ -334,7 +334,7 @@ const AIChatbot = () => {
                 <button
                   key={index}
                   onClick={() => handleQuickQuestion(question)}
-                  className="flex-shrink-0 text-xs bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 border border-purple-200 hover:border-purple-300 text-purple-700 px-3 py-2 rounded-full transition-all transform hover:scale-105 font-medium"
+                  className="flex-shrink-0 text-xs bg-purple-100 hover:from-purple-200 hover:to-pink-200 border border-purple-200 hover:border-purple-300 text-purple-700 px-3 py-2 rounded-full transition-all transform hover:scale-105 font-medium"
                 >
                   {question}
                 </button>
@@ -372,9 +372,9 @@ const AIChatbot = () => {
                   {/* Message bubble */}
                   <div className={`relative px-4 py-3 rounded-2xl shadow-lg transform transition-all hover:scale-[1.02] ${
                     message.type === 'user'
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-br-md shadow-purple-200'
+                      ? 'bg-purple-600 text-white rounded-br-md shadow-purple-200'
                       : message.type === 'system'
-                      ? 'bg-gradient-to-r from-yellow-100 to-orange-100 text-orange-800 border border-orange-200 rounded-bl-md shadow-orange-100'
+                      ? 'bg-yellow-100 text-gray-800 border border-gray-200 rounded-bl-md shadow-gray-100'
                       : 'bg-white text-gray-800 border border-gray-200 rounded-bl-md shadow-gray-100'
                   }`}>
                     
@@ -388,7 +388,7 @@ const AIChatbot = () => {
                       message.type === 'user' 
                         ? 'text-purple-100' 
                         : message.type === 'system'
-                        ? 'text-orange-600'
+                        ? 'text-gray-600'
                         : 'text-gray-400'
                     }`}>
                       <span>{message.timestamp.toLocaleTimeString([], { 
@@ -406,7 +406,7 @@ const AIChatbot = () => {
                     message.type === 'user'
                       ? 'float-right border-l-[12px] border-l-pink-500 border-t-[12px] border-t-transparent'
                       : message.type === 'system'
-                      ? 'float-left border-r-[12px] border-r-orange-100 border-t-[12px] border-t-transparent'
+                      ? 'float-left border-r-[12px] border-r-gray-100 border-t-[12px] border-t-transparent'
                       : 'float-left border-r-[12px] border-r-white border-t-[12px] border-t-transparent'
                   }`}></div>
                 </div>
@@ -414,10 +414,10 @@ const AIChatbot = () => {
                 {/* Avatar */}
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg ${
                   message.type === 'user' 
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white order-1 ml-3' 
+                    ? 'bg-purple-600 text-white order-1 ml-3' 
                     : message.type === 'system'
-                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white order-2 mr-3'
-                    : 'bg-gradient-to-r from-gray-600 to-gray-800 text-white order-2 mr-3'
+                    ? 'bg-yellow-500 text-white order-2 mr-3'
+                    : 'bg-gray-700 text-white order-2 mr-3'
                 }`}>
                   {message.type === 'user' ? <User size={16} /> : 
                    message.type === 'system' ? <Database size={16} /> : <Bot size={16} />}
@@ -441,7 +441,7 @@ const AIChatbot = () => {
                   </div>
                   <div className="w-0 h-0 float-left border-r-[12px] border-r-white border-t-[12px] border-t-transparent"></div>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-600 to-gray-800 text-white flex items-center justify-center flex-shrink-0 order-2 mr-3 shadow-lg">
+                <div className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center flex-shrink-0 order-2 mr-3 shadow-lg">
                   <Bot size={16} />
                 </div>
               </div>
@@ -450,7 +450,7 @@ const AIChatbot = () => {
           </div>
 
           {/* Fixed Input Section */}
-          <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-100">
+          <div className="p-4 bg-purple-50 border-t border-purple-100">
             <div className="flex items-end space-x-3">
               <div className="flex-1 relative">
                 <textarea
@@ -468,7 +468,7 @@ const AIChatbot = () => {
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isTyping}
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-2xl transition-all duration-200 hover:scale-105 flex items-center justify-center shadow-lg hover:shadow-purple-300"
+                className="bg-purple-600 hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-2xl transition-all duration-200 hover:scale-105 flex items-center justify-center shadow-lg hover:shadow-purple-300"
               >
                 {isTyping ? (
                   <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -480,7 +480,7 @@ const AIChatbot = () => {
             
             {/* Status bar */}
             <div className="text-xs text-gray-500 mt-3 text-center flex items-center justify-center space-x-2">
-              <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
               <span className="font-medium">Fact: our Leader own Google's first Index Page</span>
             </div>
           </div>

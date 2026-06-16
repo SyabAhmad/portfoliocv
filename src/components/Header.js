@@ -33,13 +33,13 @@ const Header = () => {
   }, [isDesignDropdownOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/95 to-purple-900/95 backdrop-blur-sm border-b border-gray-700/50 shadow-2xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-gray-700/50 shadow-2xl">
       <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link
             to="/"
-            className="text-lg md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-300 transition-all duration-300 truncate max-w-[180px] md:max-w-none"
+            className="text-lg md:text-2xl font-bold text-purple-400 transition-all duration-300 truncate max-w-[180px] md:max-w-none"
           >
             Syed Syab Ahmad
           </Link>
@@ -133,7 +133,7 @@ const Header = () => {
 
             <Link
               to="/mentee"
-              className="relative inline-flex items-center text-base lg:text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 hover:from-purple-400 hover:to-cyan-400 transition-all duration-300 drop-shadow-lg focus:outline-none whitespace-nowrap"
+              className="relative inline-flex items-center text-base lg:text-lg font-medium text-purple-400 transition-all duration-300 drop-shadow-lg focus:outline-none whitespace-nowrap"
               title="About MenteE"
             >
               MenteE™
@@ -168,7 +168,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="px-4 py-2 lg:px-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-purple-400 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 whitespace-nowrap text-sm lg:text-base"
+              className="px-4 py-2 lg:px-6 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:scale-105 whitespace-nowrap text-sm lg:text-base"
             >
               Let's Connect
             </Link>
@@ -332,7 +332,7 @@ const Header = () => {
 
               <Link
                 to="/contact"
-                className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 text-center"
+                className="inline-block mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-500 transition-all duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Let's Connect

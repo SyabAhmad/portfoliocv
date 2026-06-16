@@ -8,9 +8,9 @@ const AiFacts = () => {
       id: 1,
       title: "ChatGPT",
       icon: SiOpenai,
-      color: "from-amber-500 to-orange-500",
-      bgColor: "bg-amber-500/10",
-      borderColor: "border-amber-500/30",
+      color: "from-gray-800 to-gray-600",
+      bgColor: "bg-gray-500/10",
+      borderColor: "border-gray-500/30",
       image: "/certificates/facts/Chatgpt talk about syab.png",
       description: "What OpenAI's ChatGPT says about me",
     },
@@ -41,9 +41,9 @@ const AiFacts = () => {
       id: 1,
       title: "Pull Shark",
       icon: SiOpenai,
-      color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-500/10",
-      borderColor: "border-orange-500/30",
+      color: "from-gray-500 to-red-500",
+      bgColor: "bg-gray-500/10",
+      borderColor: "border-gray-500/30",
       image: "/certificates/facts/PULL SHARK.png",
       description: "GitHub Pull Shark achievement",
     },
@@ -51,7 +51,7 @@ const AiFacts = () => {
       id: 2,
       title: "Quickdraw",
       icon: SiGoogle,
-      color: "from-yellow-500 to-orange-500",
+      color: "from-yellow-500 to-gray-500",
       bgColor: "bg-yellow-500/10",
       borderColor: "border-yellow-500/30",
       image: "/certificates/facts/QUICKDRAW.png",
@@ -91,10 +91,10 @@ const AiFacts = () => {
 
   return (
     <section className="mb-8 md:mb-12">
-      <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-xl p-6 md:p-8 max-w-7xl mx-auto">
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-xl p-6 md:p-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
             What AI Thinks About Me
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-3xl mx-auto">
@@ -118,11 +118,11 @@ const AiFacts = () => {
                 className="group"
               >
                 <motion.div
-                  className={`relative h-full flex flex-col bg-gradient-to-br from-white/50 to-gray-50/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${fact.borderColor} hover:border-opacity-100`}
+                  className={`relative h-full flex flex-col bg-white/50 dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${fact.borderColor} hover:border-opacity-100`}
                   whileHover={{ y: -2 }}
                 >
                   {/* Top Accent */}
-                  <div className={`h-1 bg-gradient-to-r ${fact.color}`}></div>
+                  <div className={`h-1 bg-${fact.color}`}></div>
 
                   {/* Icon Area */}
                   <div
@@ -130,7 +130,7 @@ const AiFacts = () => {
                   >
                     <div className="flex items-center gap-3">
                       <div
-                        className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br ${fact.color} flex items-center justify-center`}
+                        className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${fact.color} flex items-center justify-center`}
                       >
                         <IconComponent className="text-lg md:text-xl text-white" />
                       </div>
@@ -155,7 +155,7 @@ const AiFacts = () => {
 
                     {/* Gradient Overlay */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
+                      className={`absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
                     ></div>
                   </div>
                 </motion.div>
@@ -164,13 +164,13 @@ const AiFacts = () => {
           })}
         </motion.div>
         {/* Fun Note */}
-        <div className="mt-4 md:mt-6 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center mb-6 md:mb-8">
-          <p className="text-amber-700 dark:text-amber-300 text-xs md:text-sm">
+        <div className="mt-4 md:mt-6 p-3 bg-gray-500/10 border border-gray-500/30 rounded-lg text-center mb-6 md:mb-8">
+          <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm">
             ✨ Pretty cool to see what different AI models think about my profile!
           </p>
         </div>
         <div className="mb-6">
-          <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-4 md:mb-6 text-center">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 text-center">
             GitHub Achievements
           </h3>
           <div className="overflow-x-auto pb-4">
@@ -187,12 +187,12 @@ const AiFacts = () => {
                     animate="visible"
                   >
                     <motion.div
-                      className={`relative h-full flex flex-col bg-gradient-to-br from-white/50 to-gray-50/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${achievement.borderColor} hover:border-opacity-100`}
+                      className={`relative h-full flex flex-col bg-white/50 dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${achievement.borderColor} hover:border-opacity-100`}
                       whileHover={{ y: -2 }}
                     >
                       {/* Top Accent */}
                       <div
-                        className={`h-1 bg-gradient-to-r ${achievement.color}`}
+                        className={`h-1 bg-${achievement.color}`}
                       ></div>
 
                       {/* Icon Area */}
@@ -201,7 +201,7 @@ const AiFacts = () => {
                       >
                         <div className="flex items-center gap-3">
                           <div
-                            className={`w-10 h-10 rounded-lg bg-gradient-to-br ${achievement.color} flex items-center justify-center`}
+                            className={`w-10 h-10 rounded-lg ${achievement.color} flex items-center justify-center`}
                           >
                             <IconComponent className="text-lg text-white" />
                           </div>
@@ -226,7 +226,7 @@ const AiFacts = () => {
 
                         {/* Gradient Overlay */}
                         <div
-                          className={`absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
+                          className={`absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
                         ></div>
                       </div>
                     </motion.div>
@@ -237,8 +237,8 @@ const AiFacts = () => {
           </div>
         </div>
         {/* Fun Note */}
-        <div className="mt-4 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center">
-          <p className="text-amber-700 dark:text-amber-300 text-xs">✨ My GitHub Badges!</p>
+        <div className="mt-4 p-3 bg-gray-500/10 border border-gray-500/30 rounded-lg text-center">
+          <p className="text-gray-700 dark:text-gray-300 text-xs">✨ My GitHub Badges!</p>
         </div>
       </div>
     </section>

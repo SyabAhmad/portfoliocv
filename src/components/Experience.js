@@ -141,8 +141,8 @@ const Experience = () => {
   });
 
   const companyColors = {
-    Freelance: "from-amber-500 to-orange-500",
-    "BLACKBOX.AI": "from-orange-500 to-red-500",
+    Freelance: "from-gray-800 to-gray-600",
+    "BLACKBOX.AI": "from-gray-500 to-red-500",
     "Suvastu Tech": "from-emerald-500 to-teal-500",
     SkillBuild: "from-blue-500 to-indigo-500",
     AI3: "from-purple-500 to-pink-500",
@@ -150,20 +150,20 @@ const Experience = () => {
     CodeAlpha: "from-rose-500 to-pink-500",
     CodSoft: "from-indigo-500 to-purple-500",
     "Interns Pakistan": "from-teal-500 to-emerald-500",
-    LetsGrowMore: "from-amber-500 to-yellow-500",
+    LetsGrowMore: "from-gray-800 to-gray-600",
     "iNeuron.ai": "from-sky-500 to-blue-500",
-    "The Sparks Foundation": "from-orange-500 to-amber-500",
+    "The Sparks Foundation": "from-gray-500 to-gray-500",
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-amber-50/30 to-gray-100 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 relative transition-colors duration-300">
+    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 relative transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Header */}
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 dark:from-amber-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent mb-3"
+            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 font-calligraphy"
           >
             Professional Experience
           </motion.h2>
@@ -190,8 +190,8 @@ const Experience = () => {
               onClick={() => setFilter(tab.key)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 filter === tab.key
-                  ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
-                  : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
+                  ? "bg-gray-800 text-white shadow-lg shadow-gray-500/30"
+                  : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
               }`}
             >
               {tab.label}
@@ -202,13 +202,13 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500 via-orange-500 to-transparent opacity-30" />
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px from-gray-500 via-gray-500 to-transparent opacity-30" />
 
           <div className="space-y-6">
             <AnimatePresence>
               {filtered.map((exp, index) => {
                 const color =
-                  companyColors[exp.company] || "from-amber-500 to-orange-500";
+                  companyColors[exp.company] || "from-gray-800 to-gray-600";
                 const isExpanded = expandedId === exp.id;
 
                 return (
@@ -222,19 +222,19 @@ const Experience = () => {
                   >
                     {/* Timeline dot */}
                     <div
-                      className={`absolute left-4 md:left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br ${color} ring-4 ring-white dark:ring-slate-900 z-10 ${
+                      className={`absolute left-4 md:left-6 top-8 w-4 h-4 rounded-full ${color} ring-4 ring-white dark:ring-slate-900 z-10 ${
                         exp.current ? "animate-pulse" : ""
                       }`}
                     />
 
                     {/* Card */}
                     <motion.div
-                      className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-amber-500/10 transition-all duration-500 overflow-hidden"
+                      className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
                       whileHover={{ y: -2 }}
                     >
                       {/* Top gradient accent */}
                       <div
-                        className={`h-1 bg-gradient-to-r ${color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                        className={`h-1 bg-${color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                       />
 
                       <div className="p-5 md:p-6">
@@ -253,7 +253,7 @@ const Experience = () => {
                             </div>
                             <div className="flex items-center gap-3 flex-wrap text-sm">
                               <span
-                                className={`font-semibold bg-gradient-to-r ${color} bg-clip-text text-transparent`}
+                                className={`font-semibold bg-${color} bg-clip-text text-transparent`}
                               >
                                 {exp.company}
                               </span>
@@ -269,7 +269,7 @@ const Experience = () => {
                             onClick={() =>
                               setExpandedId(isExpanded ? null : exp.id)
                             }
-                            className="flex-shrink-0 p-2 rounded-lg text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 transition-all duration-300"
+                            className="flex-shrink-0 p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300"
                           >
                             {isExpanded ? (
                               <FaChevronUp className="w-4 h-4" />
@@ -300,14 +300,14 @@ const Experience = () => {
                             >
                               {exp.badge && (
                                 <div className="flex items-center gap-2">
-                                  <FaBriefcase className="w-4 h-4 text-amber-500" />
-                                  <span className="text-xs text-amber-600 dark:text-amber-400 font-medium">
+                                  <FaBriefcase className="w-4 h-4 text-gray-500" />
+                                  <span className="text-xs text-gray-700 dark:text-gray-300 font-medium">
                                     Certificate available
                                   </span>
                                 </div>
                               )}
                               <div className="mt-3 flex gap-2 flex-wrap">
-                                <span className="px-3 py-1 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 rounded-full text-amber-700 dark:text-amber-400 text-xs font-medium">
+                                <span className="px-3 py-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-400 text-xs font-medium">
                                   {exp.period}
                                 </span>
                                 {exp.badge && (

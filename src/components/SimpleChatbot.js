@@ -82,7 +82,7 @@ const SimpleChatbot = () => {
           <button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || isTyping}
-            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 disabled:opacity-50 disabled:cursor-not-allowed text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl font-medium flex items-center space-x-1 sm:space-x-2"
+            className="bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl font-medium flex items-center space-x-1 sm:space-x-2"
           >
             <Send size={14} className="sm:hidden" />
             <Send size={16} className="hidden sm:block" />

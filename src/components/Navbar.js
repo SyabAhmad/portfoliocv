@@ -26,7 +26,7 @@ const Navbar = () => {
           {/* Logo/Brand */}
           <Link
             to="/"
-            className="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent"
+            className="text-xl font-bold text-gray-900 dark:text-white font-calligraphy"
           >
             Syed Syab
           </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
                 to={item.path}
                 className={`px-3 py-2 rounded-lg text-sm transition-all ${
                   location.pathname === item.path
-                    ? "bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400"
+                    ? "bg-gray-500/10 text-gray-700 dark:text-gray-300"
                     : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
                 }`}
               >
@@ -52,7 +52,7 @@ const Navbar = () => {
               to="/design"
               className={`px-3 py-2 rounded-lg text-sm transition-all ${
                 location.pathname.startsWith("/design")
-                  ? "bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400"
+                  ? "bg-gray-500/10 text-gray-700 dark:text-gray-300"
                   : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
               }`}
             >
@@ -64,7 +64,7 @@ const Navbar = () => {
               to="/call"
               className={`px-3 py-2 rounded-lg text-sm transition-all flex items-center gap-1.5 ${
                 location.pathname === "/call"
-                  ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-500 dark:text-green-400"
+                  ? "bg-from-green-500/10 to-emerald-500/10 text-green-500 dark:text-green-400"
                   : "text-green-500/70 hover:text-green-400 hover:bg-green-500/10"
               }`}
             >
@@ -94,7 +94,7 @@ const Navbar = () => {
               href="https://github.com/syabahmad"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-gray-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+              className="p-2 text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
             >
               <FaGithub size={16} />
             </a>
@@ -102,7 +102,7 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/syedsyab/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-gray-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+              className="p-2 text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
             >
               <FaLinkedin size={16} />
             </a>
@@ -110,7 +110,7 @@ const Navbar = () => {
             {/* Contact Button */}
             <Link
               to="/contact"
-              className="ml-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-medium rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all"
+              className="ml-2 px-4 py-2 bg-gray-800 text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition-all"
             >
               Hire Me
             </Link>
@@ -150,7 +150,7 @@ const Navbar = () => {
                 to={item.path}
                 className={`block px-4 py-2 rounded-lg text-sm transition-all ${
                   location.pathname === item.path
-                    ? "bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400"
+                    ? "bg-gray-500/10 text-gray-700 dark:text-gray-300"
                     : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -162,7 +162,7 @@ const Navbar = () => {
               to="/design"
               className={`block px-4 py-2 rounded-lg text-sm transition-all ${
                 location.pathname.startsWith("/design")
-                  ? "bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400"
+                  ? "bg-gray-500/10 text-gray-700 dark:text-gray-300"
                   : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
               }`}
               onClick={() => setIsOpen(false)}

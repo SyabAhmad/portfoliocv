@@ -15,11 +15,11 @@ const domainColors = {
   "Healthcare AI": "from-red-500 to-rose-500",
   "Medical Imaging": "from-blue-500 to-indigo-500",
   "Natural Language Processing": "from-purple-500 to-violet-500",
-  "Data Science": "from-amber-500 to-orange-500",
+  "Data Science": "from-gray-800 to-gray-600",
   "Smart Cities": "from-emerald-500 to-teal-500",
   "Social Computing": "from-pink-500 to-rose-500",
   "Blockchain & Security": "from-cyan-500 to-blue-500",
-  "Educational Technology": "from-yellow-500 to-amber-500",
+  "Educational Technology": "from-yellow-500 to-gray-500",
   "Green Technology": "from-green-500 to-emerald-500",
   "AgriTech": "from-lime-500 to-green-500",
   "Cybersecurity": "from-slate-500 to-gray-600",
@@ -95,9 +95,9 @@ const Research = () => {
 
   if (validResearchIdeas.length === 0) {
     return (
-      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-gray-50 via-amber-50/30 to-gray-100 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 transition-colors duration-300">
+      <div className="min-h-screen p-8 pt-24 bg-white dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">
             Research & Ideas
           </h1>
           <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8">
@@ -120,14 +120,14 @@ const Research = () => {
         structuredData={researchStructuredData}
       />
 
-      <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-amber-50/30 to-gray-100 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 transition-colors duration-300">
+      <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           {/* Header */}
           <div className="text-center mb-12">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 dark:from-amber-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent mb-3"
+              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 font-calligraphy"
             >
               Research & Ideas
             </motion.h1>
@@ -152,8 +152,8 @@ const Research = () => {
                 }}
                 className={`px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-300 ${
                   activeDomain === domain
-                    ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
-                    : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
+                    ? "bg-gray-800 text-white shadow-lg shadow-gray-500/30"
+                    : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
                 }`}
               >
                 {domain}
@@ -167,7 +167,7 @@ const Research = () => {
               {filtered.map((research, index) => {
                 const status = getResearchStatus(research.title);
                 const gradient =
-                  domainColors[research.domain] || "from-amber-500 to-orange-500";
+                  domainColors[research.domain] || "from-gray-800 to-gray-600";
 
                 return (
                   <motion.div
@@ -176,12 +176,12 @@ const Research = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ delay: index * 0.05, duration: 0.3 }}
-                    className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-amber-500/10 transition-all duration-500 overflow-hidden"
+                    className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
                     whileHover={{ y: -4 }}
                   >
                     {/* Top gradient accent */}
                     <div
-                      className={`h-1 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                      className={`h-1 bg-${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                     />
 
                     <div className="p-5">
@@ -191,13 +191,13 @@ const Research = () => {
                           className={`px-2.5 py-1 text-xs font-medium rounded-full ${
                             status === "Worked On"
                               ? "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30"
-                              : "bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/30"
+                              : "bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-gray-500/30"
                           }`}
                         >
                           {status}
                         </span>
                         <span
-                          className={`inline-block w-2 h-2 rounded-full bg-gradient-to-r ${gradient}`}
+                          className={`inline-block w-2 h-2 rounded-full bg-${gradient}`}
                         />
                       </div>
 
@@ -213,9 +213,9 @@ const Research = () => {
 
                       {/* Domain */}
                       <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 mb-3">
-                        <FaBullseye className="w-3 h-3 text-amber-500" />
+                        <FaBullseye className="w-3 h-3 text-gray-500" />
                         <span
-                          className={`font-medium bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}
+                          className={`font-medium bg-${gradient} bg-clip-text text-transparent`}
                         >
                           {research.domain}
                         </span>
@@ -240,7 +240,7 @@ const Research = () => {
 
                       {/* Impact */}
                       <div className="pt-3 border-t border-gray-100 dark:border-slate-800 flex items-start gap-2">
-                        <FaFlask className="w-3 h-3 text-amber-500 mt-0.5 flex-shrink-0" />
+                        <FaFlask className="w-3 h-3 text-gray-500 mt-0.5 flex-shrink-0" />
                         <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">
                           {research.expectedImpact}
                         </p>
@@ -257,7 +257,7 @@ const Research = () => {
             <div className="text-center mb-12">
               <button
                 onClick={() => setShowAllResearch(true)}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-amber-500/10 to-orange-500/10 dark:from-amber-500/20 dark:to-orange-500/20 border border-amber-300 dark:border-amber-500/30 text-amber-700 dark:text-amber-400 font-semibold rounded-xl hover:from-amber-500/20 hover:to-orange-500/20 dark:hover:from-amber-500/30 dark:hover:to-orange-500/30 hover:border-amber-400 dark:hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 group"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gray-500/10 dark:from-gray-500/20 dark:to-gray-500/20 border border-gray-300 dark:border-gray-500/30 text-gray-700 dark:text-gray-400 font-semibold rounded-xl hover:from-gray-500/20 hover:to-gray-500/20 dark:hover:from-gray-500/30 dark:hover:to-gray-500/30 hover:border-gray-400 dark:hover:border-gray-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10 group"
               >
                 <FaChevronDown className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
                 View All Research ({validResearchIdeas.length - 6} more)
@@ -282,9 +282,9 @@ const Research = () => {
                 {
                   label: "In Planning",
                   value: stats.planning,
-                  color: "text-amber-600 dark:text-amber-400",
-                  bg: "bg-amber-50 dark:bg-amber-500/10",
-                  border: "border-amber-200 dark:border-amber-500/30",
+                  color: "text-gray-700 dark:text-gray-300",
+                  bg: "bg-gray-50 dark:bg-gray-800",
+                  border: "border-gray-200 dark:border-gray-500/30",
                 },
                 {
                   label: "Total Ideas",
@@ -296,9 +296,9 @@ const Research = () => {
                 {
                   label: "Domains",
                   value: stats.domains,
-                  color: "text-orange-600 dark:text-orange-400",
-                  bg: "bg-orange-50 dark:bg-orange-500/10",
-                  border: "border-orange-200 dark:border-orange-500/30",
+                  color: "text-gray-600 dark:text-gray-400",
+                  bg: "bg-gray-50 dark:bg-gray-500/10",
+                  border: "border-gray-200 dark:border-gray-500/30",
                 },
               ].map((stat, idx) => (
                 <div

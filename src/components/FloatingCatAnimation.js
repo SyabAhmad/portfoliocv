@@ -135,7 +135,7 @@ const FloatingCatAnimation = () => {
 
               {/* Fallback emoji if GIF fails */}
               <motion.div
-                className="w-32 h-32 flex items-center justify-center text-6xl bg-gradient-to-br from-orange-300 to-yellow-300 rounded-lg shadow-2xl"
+                className="w-32 h-32 flex items-center justify-center text-6xl bg-gray-400 rounded-lg shadow-2xl"
                 initial={{ display: "none" }}
               >
                 🐱

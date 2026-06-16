@@ -76,13 +76,13 @@ const About = () => {
       name: "Instagram",
       icon: FaInstagram,
       url: "https://instagram.com/syedsyab",
-      color: "hover:text-amber-400",
+      color: "hover:text-gray-400",
     },
     {
       name: "Dribbble",
       icon: FaDribbble,
       url: "https://dribbble.com/Syab_Ahmad",
-      color: "hover:text-amber-400",
+      color: "hover:text-gray-400",
     },
     {
       name: "Behance",
@@ -94,7 +94,7 @@ const About = () => {
       name: "Stack Overflow",
       icon: FaStackOverflow,
       url: "https://stackoverflow.com/users/20266067/syed-syab-ahmad-shah",
-      color: "hover:text-orange-500",
+      color: "hover:text-gray-500",
     },
     {
       name: "LeetCode",
@@ -112,7 +112,7 @@ const About = () => {
       name: "CodeChef",
       icon: SiCodechef,
       url: "https://www.codechef.com/users/syedsyabb",
-      color: "hover:text-orange-600",
+      color: "hover:text-gray-600",
     },
     {
       name: "Kaggle",
@@ -249,15 +249,15 @@ const About = () => {
         structuredData={aboutStructuredData}
       />
 
-      <div className="min-h-screen p-8 pt-24 bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/30 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900 transition-colors duration-300">
+      <div className="min-h-screen p-8 pt-24 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto space-y-12 md:space-y-16">
           {/* Introduction Section - Redesigned */}
           <section className="text-center">
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-2xl p-6 md:p-8 max-w-5xl mx-auto transition-colors duration-300">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-2xl p-6 md:p-8 max-w-5xl mx-auto transition-colors duration-300">
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6 md:mb-8">
                 {/* Profile Image - Compact */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 shadow-xl">
+                  <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full overflow-hidden border-4 border-gray-900 dark:border-white shadow-xl">
                     <img
                       src="dp.jpeg"
                       alt="Syed Syab Ahmad"
@@ -267,12 +267,12 @@ const About = () => {
                         e.target.nextElementSibling.classList.remove("hidden");
                       }}
                     />
-                    <div className="w-full h-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-xl md:text-2xl font-bold text-white hidden absolute top-0 left-0">
+                    <div className="w-full h-full bg-gray-800 flex items-center justify-center text-xl md:text-2xl font-bold text-white hidden absolute top-0 left-0">
                       SSA
                     </div>
                   </div>
                   {/* Animated ring */}
-                  <div className="absolute inset-0 w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full border-2 border-amber-400/30 animate-ping"></div>
+                  <div className="absolute inset-0 w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full border-2 border-gray-400/30 animate-ping"></div>
                   {/* Status */}
                   <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-800 shadow-lg">
                     <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
@@ -281,21 +281,21 @@ const About = () => {
 
                 {/* Name, Title & Actions */}
                 <div className="flex-1 text-center md:text-left">
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2 font-calligraphy">
                     Syed Syab Ahmad
                   </h1>
-                  <h2 className="text-base md:text-lg lg:text-xl text-amber-600 dark:text-amber-400 font-semibold mb-3">
+                  <h2 className="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 font-semibold mb-3">
                     AI Engineer & Full-Stack Developer
                   </h2>
 
                   {/* Location Tags */}
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-4 text-xs md:text-sm">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-amber-100/50 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 rounded-full">
-                      <span className="w-1.5 h-1.5 bg-amber-600 rounded-full"></span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">
+                      <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
                       Riyadh, SA
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-orange-100/50 dark:bg-orange-500/20 text-orange-700 dark:text-orange-300 rounded-full">
-                      <span className="w-1.5 h-1.5 bg-orange-600 rounded-full"></span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 dark:bg-gray-500/20 text-gray-700 dark:text-gray-300 rounded-full">
+                      <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
                       Open to Relocate
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-100/50 dark:bg-green-500/20 text-green-700 dark:text-green-300 rounded-full">
@@ -308,13 +308,13 @@ const About = () => {
                   <div className="flex flex-col sm:flex-row gap-2 justify-center md:justify-start">
                     <a
                       href="/contact"
-                      className="px-5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:from-amber-400 hover:to-orange-400 transition-all duration-300 text-sm"
+                      className="px-5 py-2 bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-gray-700 transition-all duration-300 text-sm"
                     >
                       Get In Touch
                     </a>
                     <a
                       href="/projects"
-                      className="px-5 py-2 border-2 border-amber-600 dark:border-amber-400 text-amber-600 dark:text-amber-400 font-semibold rounded-full hover:bg-amber-600 hover:text-white dark:hover:bg-amber-400 dark:hover:text-stone-900 transition-all duration-300 text-sm"
+                      className="px-5 py-2 border-2 border-gray-600 dark:border-gray-400 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-600 hover:text-white dark:hover:bg-gray-400 dark:hover:text-stone-900 transition-all duration-300 text-sm"
                     >
                       View Projects
                     </a>
@@ -335,12 +335,12 @@ const About = () => {
               {/* Quick Stats - Inline */}
               <div className="flex flex-wrap justify-center gap-4 md:gap-6 py-4 border-t border-gray-200 dark:border-gray-700/50">
                 <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-amber-600 dark:text-amber-400">50+</div>
+                  <div className="text-lg md:text-xl font-bold text-gray-700 dark:text-gray-300">50+</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">Certifications</div>
                 </div>
                 <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
                 <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-orange-600 dark:text-orange-400">20+</div>
+                  <div className="text-lg md:text-xl font-bold text-gray-600 dark:text-gray-400">20+</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">Research</div>
                 </div>
                 <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
@@ -365,7 +365,7 @@ const About = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-gray-500 hover:text-amber-600 dark:text-gray-400 dark:hover:text-amber-400 transition-all duration-300 hover:bg-amber-100/50 dark:hover:bg-amber-500/20 rounded-lg"
+                      className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-400 transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-500/20 rounded-lg"
                       title={social.name}
                     >
                       <IconComponent className="text-lg" />
@@ -375,7 +375,7 @@ const About = () => {
                 {socialLinks.length > 8 && (
                   <button
                     onClick={() => setShowAllSocialLinks(!showAllSocialLinks)}
-                    className="p-2 text-xs text-amber-600 dark:text-amber-400 hover:underline"
+                    className="p-2 text-xs text-gray-700 dark:text-gray-300 hover:underline"
                   >
                     +{socialLinks.length - 8} more
                   </button>
@@ -389,9 +389,9 @@ const About = () => {
 
           {/* Certificate Badges Section */}
           <section>
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto transition-colors duration-300">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto transition-colors duration-300">
               <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2 md:mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">
                   Certifications
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
@@ -400,7 +400,7 @@ const About = () => {
                 </p>
                 <a
                   href="/gallery"
-                    className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-2.5 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-600/30 dark:border-amber-500/30 rounded-full text-amber-600 dark:text-amber-400 text-xs md:text-sm font-medium hover:from-amber-500/30 hover:to-orange-500/30 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-2.5 bg-gray-500/20 border border-gray-600/30 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-300 text-xs md:text-sm font-medium hover:bg-gray-500/30 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4"
@@ -430,21 +430,21 @@ const About = () => {
 
           {/* Certifications Section */}
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6 md:mb-8">
               Certifications
             </h2>
             <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
               {certificationsToShow.map((cert, index) => (
                 <div
                   key={index}
-                  className="break-inside-avoid mb-4 md:mb-6 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg p-4 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-amber-500/20 hover:border-amber-600/50 dark:hover:border-amber-500/50"
+                  className="break-inside-avoid mb-4 md:mb-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg p-4 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-gray-500/20 hover:border-gray-600/50 dark:hover:border-gray-500/50"
                 >
                   <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-3 md:mb-4">
                     {cert.title}
                   </h3>
                   <div className="text-gray-600 dark:text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
                     <p>
-                      <span className="text-amber-600 dark:text-amber-400 font-medium">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">
                         Issuer:
                       </span>{" "}
                       {cert.issuer}
@@ -457,9 +457,9 @@ const About = () => {
 
           {/* Recommendations Section */}
           <section>
-            <div className="bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 md:p-8 max-w-7xl mx-auto transition-colors duration-300">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 md:p-8 max-w-7xl mx-auto transition-colors duration-300">
               <div className="text-center mb-6 md:mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2 md:mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">
                   Recommendations
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
@@ -472,40 +472,40 @@ const About = () => {
 
           {/* Volunteering Section */}
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6 md:mb-8">
               Volunteering
             </h2>
             <div className="columns-1 sm:columns-2 gap-4 md:gap-6">
               {volunteering.map((vol, index) => (
                 <div
                   key={index}
-                    className="break-inside-avoid mb-6 bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-amber-500/20 hover:border-amber-600/50 dark:hover:border-amber-500/50"
+                    className="break-inside-avoid mb-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-600/50 dark:hover:border-gray-500/50"
                 >
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-3">
                       {vol.title}
                     </h3>
                     <div className="text-gray-600 dark:text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
                       <p>
-                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                        <span className="text-gray-700 dark:text-gray-300 font-medium">
                           Organization:
                         </span>{" "}
                         {vol.organization}
                       </p>
                       <p>
-                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                        <span className="text-gray-700 dark:text-gray-300 font-medium">
                           Role:
                         </span>{" "}
                         {vol.role}
                       </p>
                       <p>
-                        <span className="text-amber-600 dark:text-amber-400 font-medium">
+                        <span className="text-gray-700 dark:text-gray-300 font-medium">
                           Duration:
                         </span>{" "}
                         {vol.duration}
                       </p>
                       {vol.category && (
                         <p>
-                          <span className="text-amber-600 dark:text-amber-400 font-medium">
+                          <span className="text-gray-700 dark:text-gray-300 font-medium">
                             Category:
                           </span>{" "}
                           {vol.category}

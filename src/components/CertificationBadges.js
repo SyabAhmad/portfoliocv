@@ -41,7 +41,7 @@ const CertificationBadges = ({ certifications, maxItems = 12, showCategory = tru
             onClick={() => setSelectedBadge(cert)}
           >
             {/* Badge Image */}
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50 p-1">
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-slate-800 border border-slate-700/50 p-1">
               <img
                 src={cert.badge}
                 alt={cert.title}
@@ -52,7 +52,7 @@ const CertificationBadges = ({ certifications, maxItems = 12, showCategory = tru
                 }}
               />
               {/* Fallback for missing images */}
-              <div className="hidden w-full h-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center rounded-md">
+              <div className="hidden w-full h-full bg-purple-500/20 flex items-center justify-center rounded-md">
                 <span className="text-center text-xs font-semibold text-white px-2">
                   {cert.issuer}
                 </span>

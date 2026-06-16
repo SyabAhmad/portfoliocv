@@ -7,7 +7,7 @@ import { ChevronRight, CheckCircle2, Calendar } from "lucide-react";
 const AutoCADPortfolio = () => {
   const autocadProjects = designProjects.filter((p) => p.category === "autocad");
   const skillInfo = designSkills.autocad;
-  const accentGradient = "from-amber-500 to-orange-500";
+  const accentGradient = "from-gray-800 to-gray-600";
 
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -17,11 +17,11 @@ const AutoCADPortfolio = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 via-amber-50/20 to-orange-50/10 dark:from-slate-900 dark:via-amber-900/5 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-          <Link to="/design" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+          <Link to="/design" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
             Design & Architecture
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
@@ -34,7 +34,7 @@ const AutoCADPortfolio = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {skillInfo.name} - {skillInfo.category}
           </h1>
           <span className="inline-block px-4 py-1.5 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-full text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-4">
@@ -60,7 +60,7 @@ const AutoCADPortfolio = () => {
                 variants={fadeInUp}
                 className="flex items-center gap-3 bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 p-4"
               >
-                <CheckCircle2 className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-gray-500 flex-shrink-0" />
                 <span className="text-gray-600 dark:text-gray-300 text-sm font-medium">{feature}</span>
               </motion.div>
             ))}
@@ -80,7 +80,7 @@ const AutoCADPortfolio = () => {
                 <motion.div
                   key={project.id}
                   variants={fadeInUp}
-                  className="group grid md:grid-cols-[350px_1fr] gap-6 bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 overflow-hidden hover:shadow-amber-500/10 transition-all duration-500"
+                  className="group grid md:grid-cols-[350px_1fr] gap-6 bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-slate-700/50 overflow-hidden hover:shadow-gray-500/10 transition-all duration-500"
                   whileHover={{ y: -4 }}
                 >
                   <div className="relative overflow-hidden h-56 md:h-auto">
@@ -93,7 +93,7 @@ const AutoCADPortfolio = () => {
                           "https://via.placeholder.com/400x300?text=AutoCAD+Project";
                       }}
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${accentGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                    <div className={`absolute inset-0 bg-${accentGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                   </div>
 
                   <div className="p-6 flex flex-col justify-between">
@@ -116,7 +116,7 @@ const AutoCADPortfolio = () => {
                         <div className="bg-gray-50 dark:bg-slate-800/50 rounded-xl p-4 mb-4 border border-gray-100 dark:border-slate-700/50">
                           {Object.entries(project.details).map(([key, value]) => (
                             <div key={key} className="mb-1.5 last:mb-0">
-                              <strong className="text-amber-600 dark:text-amber-400 text-sm">{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
+                              <strong className="text-gray-700 dark:text-gray-300 text-sm">{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
                               <span className="text-gray-600 dark:text-gray-300 text-sm ml-2">
                                 {Array.isArray(value) ? value.join(", ") : value}
                               </span>
@@ -130,14 +130,14 @@ const AutoCADPortfolio = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 rounded-md text-amber-700 dark:text-amber-400 text-xs font-medium"
+                          className="px-2.5 py-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-md text-gray-700 dark:text-gray-400 text-xs font-medium"
                         >
                           {tag}
                         </span>
                       ))}
                       <Link
                         to={`/design/project/${project.id}`}
-                        className="ml-auto inline-flex items-center gap-1 text-sm text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-semibold transition-colors group/link"
+                        className="ml-auto inline-flex items-center gap-1 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 font-semibold transition-colors group/link"
                       >
                         View Full Project
                         <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />

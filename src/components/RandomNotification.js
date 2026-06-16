@@ -58,7 +58,7 @@ const RandomNotification = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="fixed top-20 right-8 z-50 max-w-xs"
         >
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-lg border border-purple-400 overflow-hidden">
+          <div className="bg-from-purple-600 to-pink-600 rounded-xl shadow-lg border border-purple-400 overflow-hidden">
             <div className="px-5 py-4 flex items-center justify-between gap-4">
               {/* Sticker GIF - Always visible */}
               <div className="w-16 h-16 flex-shrink-0 bg-white/10 rounded-lg flex items-center justify-center overflow-hidden">

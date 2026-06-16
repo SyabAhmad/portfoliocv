@@ -36,8 +36,8 @@ const recommendations = [
         date: "July 2, 2024",
         text: "I had the pleasure of working with Mr. Syed Syab Ahmad, and I am delighted to recommend him. Syab is a professional with really good work ethics and consistently delivers high-quality work on time. His commitment to excellence and his proactive approach ensure that he always meets and often exceeds expectations.",
         initials: "MI",
-        avatarColor: "from-orange-500 to-red-500",
-        avatarBg: "bg-orange-600"
+        avatarColor: "from-gray-500 to-gray-600",
+        avatarBg: "bg-gray-600"
     },
     {
         recommender: "Abu Bakar",
@@ -76,8 +76,8 @@ const recommendations = [
         date: "June 23, 2024",
         text: "A passionate and hard-working machine learning expert. I had a great time working with him and will highly recommend him for relevant roles.",
         initials: "SU",
-        avatarColor: "from-yellow-500 to-amber-500",
-        avatarBg: "bg-yellow-600"
+        avatarColor: "from-gray-500 to-gray-600",
+        avatarBg: "bg-gray-600"
     }
 ];
 

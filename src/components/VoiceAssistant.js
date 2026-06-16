@@ -236,7 +236,7 @@ const VoiceAssistant = () => {
         label: "Speaking",
         icon: Volume2,
         classes:
-          "bg-amber-400/15 border border-amber-300/40 text-amber-100 shadow-[0_0_20px_rgba(251,191,36,0.2)]",
+          "bg-gray-400/15 border border-gray-300/40 text-gray-100 shadow-[0_0_20px_rgba(200,200,200,0.2)]",
       };
     }
 
@@ -262,7 +262,7 @@ const VoiceAssistant = () => {
             exit={{ scale: 0 }}
             whileHover={{ scale: 1.06, y: -3 }}
             whileTap={{ scale: 0.94 }}
-            className="fixed bottom-20 right-6 z-[999] h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 text-white shadow-[0_24px_50px_-28px_rgba(20,184,166,0.75)] flex items-center justify-center"
+            className="fixed bottom-20 right-6 z-[999] h-14 w-14 rounded-2xl bg-teal-500 text-white shadow-[0_24px_50px_-28px_rgba(20,184,166,0.75)] flex items-center justify-center"
             aria-label="Open voice call assistant"
           >
             <Phone size={24} />
@@ -307,7 +307,7 @@ const VoiceAssistant = () => {
 
               <div className="relative shrink-0 flex items-center justify-between border-b border-slate-700/60 px-4 py-3">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 text-white flex items-center justify-center shadow-lg shrink-0">
+                  <div className="h-9 w-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-lg shrink-0">
                     <Phone size={16} />
                   </div>
                   <div className="min-w-0">
@@ -382,7 +382,7 @@ const VoiceAssistant = () => {
                       {/* Mini animated face */}
                       <div className="relative shrink-0">
                         <motion.div
-                          className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 p-0.5 shadow-md"
+                          className="w-10 h-10 rounded-xl bg-purple-600 p-0.5 shadow-md"
                           animate={{
                             scale: isListening || isSpeaking ? [1, 1.06, 1] : 1,
                           }}
@@ -523,7 +523,7 @@ const VoiceAssistant = () => {
                         <div
                           className={`px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed border ${
                             msg.role === "user"
-                              ? "bg-gradient-to-br from-cyan-500 to-teal-500 border-cyan-300/25 text-white rounded-br-xl shadow-[0_18px_35px_-24px_rgba(20,184,166,0.8)]"
+                              ? "bg-teal-500 border-cyan-300/25 text-white rounded-br-xl shadow-[0_18px_35px_-24px_rgba(20,184,166,0.8)]"
                               : "bg-slate-800/75 border-slate-700/70 text-slate-100 rounded-bl-xl"
                           }`}
                         >
@@ -569,8 +569,8 @@ const VoiceAssistant = () => {
                         whileTap={{ scale: 0.94 }}
                         className={`h-16 w-16 rounded-2xl border flex flex-col items-center justify-center gap-0.5 text-[11px] font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                           isListening
-                            ? "bg-gradient-to-br from-rose-500 to-red-500 border-rose-300/40 text-white shadow-[0_20px_35px_-24px_rgba(244,63,94,0.8)]"
-                            : "bg-gradient-to-br from-cyan-500 to-emerald-500 border-cyan-300/35 text-white shadow-[0_20px_35px_-24px_rgba(16,185,129,0.75)]"
+                            ? "bg-red-500 border-rose-300/40 text-white shadow-[0_20px_35px_-24px_rgba(244,63,94,0.8)]"
+                            : "bg-emerald-500 border-cyan-300/35 text-white shadow-[0_20px_35px_-24px_rgba(16,185,129,0.75)]"
                         }`}
                         title={
                           isListening ? "Stop listening" : "Start listening"
@@ -587,7 +587,7 @@ const VoiceAssistant = () => {
                         whileTap={{ scale: isSpeaking ? 0.94 : 1 }}
                         className={`h-12 w-12 rounded-xl border flex items-center justify-center transition-colors ${
                           isSpeaking
-                            ? "bg-amber-500/20 border-amber-300/45 text-amber-100"
+                            ? "bg-gray-500/20 border-gray-300/45 text-gray-100"
                             : "bg-slate-800/60 border-slate-700/60 text-slate-500 cursor-not-allowed"
                         }`}
                         title="Stop voice output"

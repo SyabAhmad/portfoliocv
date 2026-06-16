@@ -116,7 +116,7 @@ const InteractiveCTA = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="fixed bottom-8 right-8 z-50 max-w-sm"
         >
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+          <div className="bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
             {/* GIF Section */}
             <div className="relative h-48 bg-black overflow-hidden flex items-center justify-center">
               {!gifLoaded && (
@@ -184,7 +184,7 @@ const InteractiveCTA = () => {
                 initial={{ width: "100%" }}
                 animate={{ width: "0%" }}
                 transition={{ duration: 8, ease: "linear" }}
-                className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
+                className="h-1 bg-from-blue-500 via-purple-500 to-pink-500 rounded-full"
               />
             </div>
           </div>
