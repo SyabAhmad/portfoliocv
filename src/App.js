@@ -49,7 +49,7 @@ function App() {
                 <GoogleAnalytics />
                 <Layout>
                   <Navbar />
-                  <main className="flex-grow">
+                  <main className="flex-grow pt-16">
                     <Routes>
                       <Route path="/" element={<HomePage />} />
                       <Route path="/about" element={<About />} />
