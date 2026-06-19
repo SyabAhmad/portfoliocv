@@ -409,7 +409,7 @@ const HomePage = () => {
             {/* Tech Sayings Section */}
             <section className="py-16 px-4">
               <div className="max-w-4xl mx-auto text-center">
-                <div className="bg-white dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 mb-8">
+                <div className="bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 mb-8">
                   <div className="mb-6">
                     <span className="inline-block px-4 py-2 bg-gray-500/20 border border-gray-500/30 rounded-full text-gray-700 dark:text-gray-300 text-sm font-medium mb-4">
                       Tech Philosophy
@@ -424,7 +424,7 @@ const HomePage = () => {
                       "
                     </h2>
                   </div>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                  <p className="text-gray-500 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
                     Exploring the intersection of innovation, technology, and
                     human potential through every line of code
                   </p>
@@ -441,7 +441,7 @@ const HomePage = () => {
                     </div>
                   </div>
                   <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-gray-600 dark:text-gray-400 mb-2">
+                    <div className="text-3xl font-bold text-gray-600 dark:text-gray-300 mb-2">
                       20+
                     </div>
                     <div className="text-gray-600 dark:text-gray-300 text-sm">
