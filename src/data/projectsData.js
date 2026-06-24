@@ -1,5 +1,22 @@
 const projects = [
   {
+    title: "Req2Ops",
+    duration: "2026",
+    description:
+      "An AI-powered requirements-to-execution-plan engine that transforms messy, unstructured client inputs — text, PDFs, Word docs, Excel sheets, CSVs, audio recordings, videos, and screenshots — into structured, actionable project plans with architecture decisions, task breakdowns, sprint estimates, risk assessments, and delivery reviews. Built with a LangGraph + LangChain multi-agent pipeline where a classifier agent dynamically selects from 56 plan types, a requirements analyst extracts intent, and specialized planner agents generate domain-specific outputs — all streamed in real-time via SSE.",
+    keyFeatures:
+      "Multi-Format Input Processing · AI Plan Classification (56 Types) · Multi-Agent Pipeline · Real-Time SSE Streaming · Architecture Decisions · Sprint Estimation · Risk Assessment · PDF Export · Speech-to-Text Transcription · Image OCR",
+    techStack:
+      "Python, FastAPI, LangGraph, LangChain, Groq (Llama 4 Scout, Whisper, Vision), React 19, Tailwind CSS v4, Framer Motion, PyMuPDF, python-docx, openpyxl, Server-Sent Events",
+    skills:
+      "Python, FastAPI, LangGraph, LangChain, Multi-Agent Systems, NLP, Speech-to-Text, Document Processing, Real-Time Streaming, React",
+    category: "AI & Machine Learning",
+    projectType: "personal",
+    image: "/projects/req2ops.png",
+    liveUrl: "https://req2ops.vercel.app",
+    githubUrl: "https://github.com/syabahmad/req2ops",
+  },
+  {
     title: "AI Voice Agent",
     duration: "2026",
     description: "An AI-powered voice agent system for automated appointment booking, built with a Python FastAPI backend. Integrates with Retell for voice interactions, uses Google Sheets as a CRM, and SMTP for personal email notifications. Implements webhooks for seamless third-party system integration.",
