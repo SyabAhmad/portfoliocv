@@ -13,6 +13,7 @@ const AiFacts = () => {
       borderColor: "border-gray-500/30",
       image: "/certificates/facts/Chatgpt talk about syab.png",
       description: "What OpenAI's ChatGPT says about me",
+      url: "https://chatgpt.com/?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience",
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ const AiFacts = () => {
       borderColor: "border-blue-500/30",
       image: "/certificates/facts/google talk about Syab.jpg",
       description: "What Google's AI Search thinks about me",
+      url: "https://gemini.google.com/app?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience",
     },
     {
       id: 3,
@@ -33,6 +35,7 @@ const AiFacts = () => {
       borderColor: "border-purple-500/30",
       image: "/certificates/facts/Perplexity talk about syab.png",
       description: "What Perplexity AI says about me",
+      url: "https://www.perplexity.ai/search?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience",
     },
   ];
 
@@ -112,10 +115,13 @@ const AiFacts = () => {
             const IconComponent = fact.icon;
 
             return (
-              <motion.div
+              <motion.a
                 key={fact.id}
+                href={fact.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={itemVariants}
-                className="group"
+                className="group block"
               >
                 <motion.div
                   className={`relative h-full flex flex-col bg-white/50 dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${fact.borderColor} hover:border-opacity-100`}
@@ -157,9 +163,16 @@ const AiFacts = () => {
                     <div
                       className={`absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
                     ></div>
+
+                    {/* Hover CTA */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="px-4 py-2 bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white text-sm font-semibold rounded-full shadow-lg">
+                        Ask {fact.title} →
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </motion.div>

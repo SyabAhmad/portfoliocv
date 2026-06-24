@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
           {/* Brand */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white font-calligraphy">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white font-bebas">
               Syed Syab Ahmad
             </h3>
             <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">

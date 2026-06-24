@@ -105,7 +105,7 @@ const HomePage = () => {
       />
 
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
-        <div className="relative min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
+        <div className="relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
           {/* Plus pattern overlay */}
           <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
 
@@ -187,7 +187,7 @@ const HomePage = () => {
           />
 
           {/* Hero Section - Split Layout */}
-          <header className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen pt-20 py-16 lg:py-20 px-4 lg:px-8 gap-8 lg:gap-12">
+          <header className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen pt-14 pb-6 px-4 lg:px-8 gap-8 lg:gap-12">
             {/* Left Side - Text Content */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -195,88 +195,63 @@ const HomePage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex-1 lg:flex-[2] max-w-xl lg:max-w-2xl lg:pr-16 mb-12 lg:mb-0 text-center lg:text-left order-2 lg:order-1 mt-10"
             >
-              {/* Decorative elements */}
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, linear: true }}
-                className="absolute top-20 left-10 w-16 h-16 border-2 border-gray-400/30 rounded-full hidden lg:block"
-              />
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-40 left-20 w-8 h-8 bg-gray-400/20 rounded-full hidden lg:block"
-              />
-
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white leading-tight font-calligraphy">
-                  Full Stack Developer & AI Engineer
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 text-gray-900 dark:text-white leading-none font-bebas tracking-wide">
+                  SYED SYAB AHMAD
                 </h1>
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light mb-6 md:mb-8">
+                  Full Stack Developer & AI Engineer
+                </p>
               </motion.div>
 
-              {/* Recruiai Beta Launch Banner */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-base sm:text-lg mb-8 md:mb-10 text-gray-600 dark:text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed"
+              >
+                Building intelligent solutions that transform ideas into reality — specializing in Machine Learning, Full-Stack Development, and cutting-edge AI technologies.
+              </motion.div>
+
+              {/* Recruiai Beta Banner */}
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-3 bg-yellow-100 dark:from-yellow-700 dark:to-pink-800 border border-yellow-300 dark:border-yellow-600 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 shadow-sm"
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="inline-flex items-center gap-3 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-600/50 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 shadow-sm"
               >
                 <span className="text-sm font-semibold">🚀 Recruiai Beta</span>
                 <a
                   href="/mentee"
-                  className="ml-2 px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-bold hover:bg-yellow-600 transition-all"
+                  className="ml-1 px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-bold hover:bg-yellow-600 transition-all"
                 >
                   Join Beta
                 </a>
               </motion.div>
 
-              <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-base sm:text-lg md:text-xl mb-3 md:mb-4 text-gray-600 dark:text-gray-300 font-light"
-              >
-                Building intelligent solutions that transform ideas into reality
-              </motion.p>
-
-              <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-sm md:text-base mb-6 md:mb-8 text-gray-500 dark:text-gray-400 max-w-xl"
-              >
-                Specializing in Machine Learning, Full-Stack Development, and
-                cutting-edge AI technologies
-              </motion.p>
-
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start items-center lg:items-start"
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-wrap gap-3 justify-center lg:justify-start"
               >
                 <motion.a
                   href="/projects"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(217, 119, 6, 0.4)",
-                  }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-gray-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 py-2.5 bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-gray-500/50 transition-all duration-300 text-center cursor-pointer"
                 >
                   View My Work
                 </motion.a>
                 <motion.a
                   href="/contact"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(217, 119, 6, 0.3)",
-                  }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-gray-600 text-gray-700 dark:border-gray-400 dark:text-gray-400 font-semibold rounded-full hover:bg-gray-600 hover:text-white dark:hover:bg-gray-400 dark:hover:text-stone-900 hover:shadow-lg hover:shadow-gray-400/20 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 py-2.5 border-2 border-gray-600 text-gray-700 dark:border-gray-400 dark:text-gray-400 font-semibold rounded-full hover:bg-gray-600 hover:text-white dark:hover:bg-gray-400 dark:hover:text-stone-900 transition-all duration-300 text-center cursor-pointer"
                 >
                   Let's Connect
                 </motion.a>
@@ -284,14 +259,24 @@ const HomePage = () => {
                   href="https://calendly.com/syedsyab/new-meeting"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(217, 119, 6, 0.4)",
-                  }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 md:px-8 py-2.5 md:py-3 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer"
+                  className="px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 text-center cursor-pointer"
                 >
                   Book a Call
+                </motion.a>
+                <motion.a
+                  href="https://chatgpt.com/?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-5 py-2.5 bg-emerald-500 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+                >
+                  ASK
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                    <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365 2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" />
+                  </svg>
                 </motion.a>
               </motion.div>
             </motion.div>

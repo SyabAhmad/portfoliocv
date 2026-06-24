@@ -160,7 +160,7 @@ const Contact = () => {
       />
 
       <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center py-12 px-6 mt-16 transition-colors duration-300">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6 md:mb-8 font-calligraphy">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6 md:mb-8 font-bebas">
           Get In Touch
         </h2>
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-3xl shadow-2xl w-full max-w-4xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-8 transition-colors duration-300">

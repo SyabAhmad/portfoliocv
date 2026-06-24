@@ -27,6 +27,7 @@ module.exports = {
       },
       fontFamily: {
         calligraphy: ["Send Flowers", "cursive"],
+        bebas: ["Bebas Neue", "sans-serif"],
       },
     },
   },

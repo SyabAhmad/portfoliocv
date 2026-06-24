@@ -26,7 +26,7 @@ const Navbar = () => {
           {/* Logo/Brand */}
           <Link
             to="/"
-            className="text-xl font-bold text-gray-900 dark:text-white font-calligraphy"
+            className="text-xl font-bold text-gray-900 dark:text-white font-bebas"
           >
             Syed Syab
           </Link>

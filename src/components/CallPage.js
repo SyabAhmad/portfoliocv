@@ -60,7 +60,7 @@ const CallPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white font-calligraphy">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white font-bebas">
             Let's Talk
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">

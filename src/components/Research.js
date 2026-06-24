@@ -127,7 +127,7 @@ const Research = () => {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 font-calligraphy"
+              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 font-bebas"
             >
               Research & Ideas
             </motion.h1>

@@ -190,7 +190,7 @@ const Projects = () => {
 
       <div className="min-h-screen p-8 pt-24 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-8 font-calligraphy">
+          <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-8 font-bebas">
             Projects
           </h2>
 

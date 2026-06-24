@@ -86,7 +86,7 @@ const DesignPortfolio = () => {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
                   <span className="text-gray-900 dark:text-white">Design &</span>
                   <br />
-                  <span className="text-gray-900 dark:text-white font-calligraphy">
+                  <span className="text-gray-900 dark:text-white font-bebas">
                     Architecture
                   </span>
                 </h1>

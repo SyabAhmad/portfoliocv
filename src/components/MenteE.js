@@ -224,7 +224,7 @@ const MenteE = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 <span className="text-gray-900 dark:text-white">Welcome to</span>
                 <br />
-                <span className="text-gray-900 dark:text-white font-calligraphy">
+                <span className="text-gray-900 dark:text-white font-bebas">
                   MenteE
                 </span>
               </h1>
