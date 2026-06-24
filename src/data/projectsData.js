@@ -3,13 +3,13 @@ const projects = [
     title: "Req2Ops",
     duration: "2026",
     description:
-      "An AI-powered requirements-to-execution-plan engine that transforms messy, unstructured client inputs — text, PDFs, Word docs, Excel sheets, CSVs, audio recordings, videos, and screenshots — into structured, actionable project plans with architecture decisions, task breakdowns, sprint estimates, risk assessments, and delivery reviews. Built with a LangGraph + LangChain multi-agent pipeline where a classifier agent dynamically selects from 56 plan types, a requirements analyst extracts intent, and specialized planner agents generate domain-specific outputs — all streamed in real-time via SSE.",
+      "Top AI project 2026 — an open-source requirements-to-execution engine that turns messy client inputs (text, PDFs, audio, screenshots) into structured project plans. Built with LangGraph + LangChain multi-agent pipeline, Groq LLMs for ultra-fast inference, and real-time SSE streaming. Features AI plan classification across 56 types, sprint estimation, risk assessment, and architecture decisions. Full-stack with FastAPI backend and React 19 frontend.",
     keyFeatures:
-      "Multi-Format Input Processing · AI Plan Classification (56 Types) · Multi-Agent Pipeline · Real-Time SSE Streaming · Architecture Decisions · Sprint Estimation · Risk Assessment · PDF Export · Speech-to-Text Transcription · Image OCR",
+      "LangGraph Multi-Agent Pipeline · Groq Llama 4 Scout · 56 AI Plan Types · Real-Time SSE Streaming · Speech-to-Text (Whisper) · Image OCR · PDF Export · Sprint Estimation · Risk Assessment · Architecture Decisions",
     techStack:
-      "Python, FastAPI, LangGraph, LangChain, Groq (Llama 4 Scout, Whisper, Vision), React 19, Tailwind CSS v4, Framer Motion, PyMuPDF, python-docx, openpyxl, Server-Sent Events",
+      "Python, FastAPI, LangGraph, LangChain, Groq, Llama 4 Scout, Whisper, React 19, Tailwind CSS v4, Framer Motion, PyMuPDF, Server-Sent Events",
     skills:
-      "Python, FastAPI, LangGraph, LangChain, Multi-Agent Systems, NLP, Speech-to-Text, Document Processing, Real-Time Streaming, React",
+      "LangGraph, LangChain, Multi-Agent AI, LLMs, NLP, FastAPI, Python, Real-Time Streaming, Speech-to-Text, Document AI",
     category: "AI & Machine Learning",
     projectType: "personal",
     image: "/projects/req2ops.png",
@@ -19,10 +19,12 @@ const projects = [
   {
     title: "AI Voice Agent",
     duration: "2026",
-    description: "An AI-powered voice agent system for automated appointment booking, built with a Python FastAPI backend. Integrates with Retell for voice interactions, uses Google Sheets as a CRM, and SMTP for personal email notifications. Implements webhooks for seamless third-party system integration.",
-    keyFeatures: "Voice Appointment Booking · Retell AI Integration · FastAPI Backend · Google Sheets CRM · SMTP Email Notifications · Webhook Support",
-    techStack: "Python, FastAPI, Retell API, Google Sheets API, SMTP, Webhooks",
-    skills: "Python, FastAPI, Backend Development, API Integration, Voice AI, CRM Integration",
+    description:
+      "Best voice AI project 2026 — a production-ready AI voice agent for automated appointment booking. Built with Python FastAPI and Retell AI for natural voice interactions. Uses Google Sheets as a live CRM, SMTP for email notifications, and webhooks for seamless third-party integration. Demonstrates real-world Voice AI, API integration, and backend automation skills.",
+    keyFeatures:
+      "Voice AI Appointment Booking · Retell AI Integration · FastAPI Backend · Google Sheets CRM · SMTP Email Automation · Webhook Integration · Real-Time Voice Processing · Natural Language Understanding",
+    techStack: "Python, FastAPI, Retell AI, Google Sheets API, SMTP, Webhooks, Voice AI",
+    skills: "Python, FastAPI, Voice AI, API Integration, Backend Automation, CRM Integration, NLP",
     category: "AI & Machine Learning",
     projectType: "personal",
     githubUrl: "https://github.com/syabahmad/ai-voice-agent",
@@ -31,13 +33,13 @@ const projects = [
     title: "RunAI (MenteE)",
     duration: "2025",
     description:
-      "An interactive, gamified educational platform built to teach hands-on AI/ML engineering and software development skills through mission-based coding challenges. Users progress through curated chapters such as SQL Fundamentals, Command Line Essentials, CI/CD Pipelines, and ML Pipeline Engineering via an embedded code editor, terminal, and pipeline builder. The app is entirely JSON-driven with a sequential mission-unlocking system, XP rewards, localStorage persistence, and regex-based code validation.",
+      "Top web development project 2025 — an interactive, gamified AI/ML learning platform teaching hands-on engineering skills through mission-based coding challenges. Features an embedded code editor, terminal simulation, and pipeline builder. Users progress through SQL, CI/CD, and ML Pipeline Engineering missions with XP rewards and sequential unlocking. Fully JSON-driven with localStorage persistence.",
     keyFeatures:
-      "Gamified Learning · Mission-Based Challenges · XP Progression · Code Editor with Regex Validation · Terminal Simulation · Pipeline Builder · localStorage Persistence · Sequential Mission Unlocking · JSON-Driven Content",
+      "Gamified AI/ML Learning · Mission-Based Challenges · Embedded Code Editor · Terminal Simulation · Pipeline Builder · XP Progression System · Sequential Mission Unlocking · JSON-Driven Architecture · localStorage Persistence",
     techStack:
-      "React 19, Vite, Tailwind CSS v4, React Router DOM v7, Zustand, Babel, React Compiler, ESLint v10",
+      "React 19, Vite, Tailwind CSS v4, React Router DOM v7, Zustand, React Compiler",
     skills:
-      "React, TypeScript, Tailwind CSS, Zustand, JSON Architecture, Gamification, Frontend Engineering",
+      "React, Tailwind CSS, Gamification, Frontend Engineering, JSON Architecture, Zustand",
     category: "Web Development",
     projectType: "personal",
     image: "/projects/pleaselive.png",
@@ -173,11 +175,11 @@ const projects = [
     title: "Viddeo Enhancing Project",
     duration: "Jun 2025 to Present",
     description:
-      "Developing an API for video enhancement system using REALESRGAN a Deep Learning Model. The API will allow users to upload videos, which will then be processed to enhance their quality using advanced AI techniques. The project aims to provide a seamless experience for users looking to improve the visual quality of their video content.",
+      "Best AI video enhancement project 2025 — a deep learning API that upscales and enhances video quality using RealESRGAN. Upload any video and get AI-enhanced output with improved resolution, sharpness, and clarity. Built with FastAPI for high-performance inference and optimized for real-world video processing workflows. Demonstrates Computer Vision, Deep Learning, and API development skills.",
     keyFeatures:
-      "Video Upload · AI-Powered Enhancement · High-Quality Output · User-Friendly Interface",
-    techStack: "Python, REALESRGAN, FASTAPI, VidAIo Subnit",
-    skills: "Deep Learning, Video Processing, API Development",
+      "AI Video Upscaling · RealESRGAN Deep Learning · FastAPI High-Performance API · Batch Video Processing · Quality Enhancement · Resolution Improvement · Real-World Deployment",
+    techStack: "Python, RealESRGAN, FastAPI, Deep Learning, Computer Vision",
+    skills: "Deep Learning, Computer Vision, Video Processing, API Development, Python",
     category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/video-enhancing-project",
   },
@@ -234,11 +236,11 @@ const projects = [
     title: "CamWatch",
     duration: "April 2025",
     description:
-      "Developed an AI-powered school surveillance system using YOLOv8 for real-time weapon detection. Integrated SmolVLM-500 with LLaMA.cpp for generating natural language descriptions from camera feeds. Trained on a custom dataset and optimized for smart monitoring in educational environments.",
+      "Top computer vision project 2025 — an AI-powered school surveillance system using YOLOv8 for real-time weapon detection. Integrates SmolVLM-500 with LLaMA.cpp for generating natural language descriptions from camera feeds. Trained on a custom dataset, optimized for smart monitoring in educational environments. Demonstrates Object Detection, Vision-Language Models, and Edge AI deployment skills.",
     keyFeatures:
-      "Weapon Detection · Real-Time Alerts · Image Captioning · Vision-Language Integration",
+      "YOLOv8 Real-Time Weapon Detection · SmolVLM-500 Vision-Language AI · LLaMA.cpp Edge Inference · Custom Dataset Training · Smart School Surveillance · Natural Language Camera Descriptions · Real-Time Alerts",
     techStack: "YOLOv8, Python, OpenCV, SmolVLM-500, LLaMA.cpp, Flask, MySQL",
-    skills: "Computer Vision, Object Detection, LLMs",
+    skills: "Computer Vision, Object Detection, Vision-Language Models, LLMs, Edge AI, Python",
     category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/CamWatch",
   },
