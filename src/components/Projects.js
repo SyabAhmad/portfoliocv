@@ -29,7 +29,7 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [featuredIndex, setFeaturedIndex] = useState(0);
 
-  const FEATURED_TITLES = ["Req2Ops", "AI Voice Agent", "RunAI (MenteE)", "Viddeo Enhancing Project", "CamWatch"];
+  const FEATURED_TITLES = ["StitchPoint", "Req2Ops", "AI Voice Agent", "RunAI (MenteE)", "Viddeo Enhancing Project", "CamWatch"];
 
   const BROAD_SKILL_CATEGORIES = ["Web Development", "Backend Engineering", "AI Development", "Computer Vision", "Application Development", "DevOps"];
 

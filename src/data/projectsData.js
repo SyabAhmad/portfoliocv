@@ -1,5 +1,19 @@
 const projects = [
   {
+    title: "StitchPoint",
+    duration: "2025",
+    description:
+      "Best artisan marketplace platform 2025 — a full-stack art and fashion e-commerce platform connecting artisans, vendors, and customers. Features multi-vendor management, admin dashboard, customer profiles, product listings, order management, and secure payments. Built for the creative economy — empowering local artisans to sell handcrafted fashion and art globally.",
+    keyFeatures:
+      "Multi-Vendor Marketplace · Admin Dashboard · Artisan & Customer Portfolios · Product Listings · Order Management · Secure Payments · Fashion & Art E-Commerce · Vendor Analytics",
+    techStack: "React, Vite, Node.js, Express, MongoDB, Stripe, Tailwind CSS",
+    skills: "React, Full-Stack Development, E-Commerce, Marketplace Architecture, Payment Integration, MongoDB",
+    category: "Web Development",
+    projectType: "personal",
+    image: "/projects/stitchpiont.jpg",
+    liveUrl: "https://stitchpoint.vercel.app",
+  },
+  {
     title: "Req2Ops",
     duration: "2026",
     description:
@@ -296,7 +310,19 @@ const projects = [
     techStack: "Python, NumPy, Pandas, Scikit-Learn",
     skills: "Python, NumPy, Pandas, Scikit-Learn",
     category: "AI & Machine Learning",
+    liveUrl: "https://pypi.org/project/datafit/",
     githubUrl: "https://github.com/SyabAhmad/datafit",
+  },
+  {
+    title: "menteedb",
+    duration: "2025",
+    description:
+      "Lightweight local Python database with vector similarity search, fluent query API, and AES-256-GCM encryption. Combines table-like records with semantic search and Binary MessagePack format. Published on PyPI with CI/CD automation.",
+    techStack: "Python, PyPI, Vector Search, MessagePack, AES-256, GitHub Actions",
+    skills: "Python, Database Design, Vector Search, Encryption, Open Source",
+    category: "Developer Tools",
+    liveUrl: "https://pypi.org/project/menteedb/",
+    githubUrl: "https://github.com/syabahmad/menteedb",
   },
   {
     title: "BioPanel",
