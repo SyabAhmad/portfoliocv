@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import Skills from "./SKill";
 import Contact from "./Contacts";
 import SEO from "./SEO";
@@ -9,29 +9,7 @@ const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springConfig = { damping: 15, stiffness: 150 };
-  const springX = useSpring(x, springConfig);
-  const springY = useSpring(y, springConfig);
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const distanceX = e.clientX - centerX;
-    const distanceY = e.clientY - centerY;
-
-    // Resistance effect: move opposite to cursor
-    x.set(distanceX * -0.2);
-    y.set(distanceY * -0.2);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
+  const [activeImage, setActiveImage] = useState("me");
 
   const techSayings = useMemo(
     () => [
@@ -287,8 +265,6 @@ const HomePage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="flex-1 lg:flex-[1] max-w-sm lg:max-w-md relative flex justify-center lg:justify-end order-1 lg:order-2"
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
             >
                 {/* Background decorative elements */}
                 <motion.div
@@ -302,10 +278,7 @@ const HomePage = () => {
                   className="absolute -bottom-10 -left-10 w-24 h-24 bg-gray-400/10 rounded-full"
                 />
 
-                <motion.div
-                  style={{ x: springX, y: springY }}
-                  className="relative flex items-center justify-center"
-                >
+                <div className="relative flex items-center justify-center">
                   {/* Soft glow behind */}
                   <motion.div
                     animate={{ opacity: [0.6, 0.9, 0.6] }}
@@ -313,53 +286,61 @@ const HomePage = () => {
                     className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-gray-100/50 dark:bg-gray-900/20 blur-3xl -z-10"
                   />
 
-                  {/* Back decorative card */}
-                  <motion.div
-                    animate={{ rotate: [-3, -6, -3] }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute -right-6 top-8 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-gray-50/60 dark:bg-gray-800/20 border-2 border-gray-300/60 dark:border-gray-700/60 shadow-lg z-0 transform -rotate-3"
-                  />
+                  {/* Profile image cards */}
+                  <div className="relative w-64 md:w-72 h-96 md:h-[28rem]">
+                    {/* Back card */}
+                    <div className="absolute -right-6 top-8 w-full h-80 md:h-96 rounded-2xl bg-white dark:bg-gray-800 border-2 border-gray-300/60 dark:border-gray-700/60 shadow-lg overflow-hidden">
+                      <img
+                        src={activeImage === "me" ? "dp.jpeg" : "me.png"}
+                        alt="Syed Syab Ahmad"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-                  {/* Main (top) card with profile image */}
-                  <motion.div
-                    initial={{ rotate: 1 }}
-                    whileHover={{ rotate: 2, scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="relative z-20 w-64 md:w-72 h-80 md:h-96 rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-gray-500/20 border border-gray-400/30 overflow-hidden transform rotate-1 mt-14"
-                  >
-                  <img
-                    src="dp.jpeg"
-                    alt="Syed Syab Ahmad"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.nextSibling.style.display = "flex";
-                    }}
-                  />
-                  <div className="absolute inset-0 text-2xl font-bold text-white from-gray-600/20 to-gray-600/10 hidden">
-                    SSA
+                    {/* Front card */}
+                    <div className="absolute z-20 top-14 w-full h-80 md:h-96 rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-gray-500/20 border border-gray-400/30 overflow-hidden">
+                      <img
+                        src={activeImage === "me" ? "me.png" : "dp.jpeg"}
+                        alt="Syed Syab Ahmad"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                          e.target.nextSibling.style.display = "flex";
+                        }}
+                      />
+                      <div className="absolute inset-0 text-2xl font-bold text-white from-gray-600/20 to-gray-600/10 hidden">
+                        SSA
+                      </div>
+
+                      {/* Top-right badge */}
+                      <div className="absolute top-4 right-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30">
+                        🎨
+                      </div>
+
+                      {/* Bottom-left badge */}
+                      <div className="absolute bottom-4 left-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30">
+                        ✨
+                      </div>
+                    </div>
+
+                    {/* Dot switch */}
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+                      <button
+                        onClick={() => setActiveImage("me")}
+                        className={`w-3 h-3 rounded-full transition-all ${
+                          activeImage === "me" ? "bg-gray-800 dark:bg-white scale-125" : "bg-gray-400 dark:bg-gray-600"
+                        }`}
+                        aria-label="Show me.png"
+                      />
+                      <button
+                        onClick={() => setActiveImage("dp")}
+                        className={`w-3 h-3 rounded-full transition-all ${
+                          activeImage === "dp" ? "bg-gray-800 dark:bg-white scale-125" : "bg-gray-400 dark:bg-gray-600"
+                        }`}
+                        aria-label="Show dp.jpeg"
+                      />
+                    </div>
                   </div>
-
-                  {/* Top-right badge (palette) */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="absolute top-4 right-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30"
-                  >
-                    🎨
-                  </motion.div>
-
-                  {/* Bottom-left badge (sparkle) */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="absolute bottom-4 left-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30"
-                  >
-                    ✨
-                  </motion.div>
-                </motion.div>
 
                 {/* Graduation Cap with enhanced animation */}
                 <motion.div
@@ -378,8 +359,8 @@ const HomePage = () => {
                 >
                   <span className="animate-spin">🚀</span> Open to Work
                 </motion.div>
+                </div>
               </motion.div>
-            </motion.div>
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
