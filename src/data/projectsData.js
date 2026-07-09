@@ -1,5 +1,21 @@
 const projects = [
   {
+    title: "DOCX AI Translator (Chinese to English)",
+    duration: "2026",
+    description:
+      "Best AI document translation project 2026 — an open-source, automated DOCX translation pipeline that converts Chinese research papers and technical documents into English using the Groq LLM API (meta-llama/llama-4-scout-17b-16e-instruct). Built with python-docx, this AI document-translation tool batches paragraphs for fast, context-aware translation while preserving embedded images in place and never sending them to the model. A modular reader → translator → writer → pipeline design walks the document in true order (including table cells), classifies text runs versus image runs, and translates only the text in batched LLM calls. Verified end-to-end on a real 55 MB, 668-paragraph paper: 668/668 blocks translated, 9 images preserved, zero data loss. Features checkpoint/resume, daily-quota fail-fast handling, plain-text output flattening, exponential-backoff retries, and secure .env-based key management. Ideal for academic manuscript translation, technical documentation localization, and bilingual document automation.",
+    keyFeatures:
+      "Chinese-to-English DOCX Translation · Groq Llama 4 Scout LLM · Structure-Preserving Parser · Image-Preserving In-Place Writer · Batched Context-Aware Translation · Checkpoint & Resume · Daily-Quota Fail-Fast · Exponential-Backoff Retries · Table Cell Support · Secure .env Key Management · Academic & Technical Document Localization",
+    techStack:
+      "Python 3.9+, python-docx, OOXML, lxml, Groq API, meta-llama/llama-4-scout-17b-16e-instruct, groq Python SDK, python-dotenv, Git, GitHub, virtualenv",
+    skills:
+      "Python, NLP, LLM Integration, Document Automation, API Resilience, Machine Translation, Prompt Engineering, Git",
+    category: "AI & Machine Learning",
+    projectType: "personal",
+    image: "/default.png",
+    githubUrl: "https://github.com/SyabAhmad/chines-translation-to-English",
+  },
+  {
     title: "StitchPoint",
     duration: "2025",
     description:
