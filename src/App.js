@@ -25,12 +25,14 @@ import MenteE from "./components/MenteE";
 import CallPage from "./components/CallPage";
 import { ThemeProvider } from "./context/ThemeContext";
 import TerminalView from "./components/TerminalView";
+import CursorMoon from "./components/CursorMoon";
 import "./App.css";
 import "./styles/global.css";
 
 function App() {
   return (
     <ThemeProvider>
+      <CursorMoon />
       <Router>
         <ScrollToTop />
         <Routes>
