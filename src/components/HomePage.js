@@ -27,11 +27,9 @@ const HomePage = () => {
     [],
   );
 
-  // Typing effect
   useEffect(() => {
     const handleTyping = () => {
       const current = techSayings[currentIndex];
-
       if (isDeleting) {
         setCurrentText(current.substring(0, currentText.length - 1));
         setTypingSpeed(50);
@@ -39,7 +37,6 @@ const HomePage = () => {
         setCurrentText(current.substring(0, currentText.length + 1));
         setTypingSpeed(150);
       }
-
       if (!isDeleting && currentText === current) {
         setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && currentText === "") {
@@ -47,7 +44,6 @@ const HomePage = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % techSayings.length);
       }
     };
-
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentIndex, typingSpeed, techSayings]);
@@ -71,384 +67,317 @@ const HomePage = () => {
     },
   };
 
+  const stickers = [
+    { text: "AI", color: "bg-slate-700", rotate: -12, top: "8%", left: "5%" },
+    { text: "ML", color: "bg-stone-600", rotate: 8, top: "15%", right: "8%" },
+    { text: "Python", color: "bg-stone-500", rotate: -6, bottom: "25%", left: "3%" },
+    { text: "React", color: "bg-slate-600", rotate: 14, top: "45%", right: "4%" },
+    { text: "Open Source", color: "bg-stone-700", rotate: -10, bottom: "12%", right: "6%" },
+    { text: "Full Stack", color: "bg-rose-900", rotate: 5, top: "60%", left: "2%" },
+  ];
+
   return (
     <>
-      {/* use structured data in SEO so it's not unused */}
       <SEO
         title="Home - Syed Syab Ahmad - Hire AI Engineer & Full-Stack Developer"
-        description="AI Engineer & Full-Stack Developer building intelligent solutions. Available for hire and open to any opportunity worldwide. Specializing in Python, Machine Learning, Deep Learning, React, Django, TensorFlow. Remote work or relocation. Riyadh based. Visa sponsorship available."
-        keywords="Hire AI engineer, Full-stack developer for hire, Machine learning specialist, Python developer for hire, Freelance AI developer, Remote AI engineer, Python expert, React developer, Django developer, Flask developer, JavaScript specialist, Web development services, AI project development, Machine learning services, Deep learning services, Job opportunities, Career opportunities, Skilled developer, Worldwide remote, Saudi Arabia, Pakistan, Available worldwide, Visa sponsorship, Work sponsorship"
+        description="AI Engineer & Full-Stack Developer building intelligent solutions. Available for hire and open to any opportunity worldwide."
+        keywords="Hire AI engineer, Full-stack developer for hire, Machine learning specialist, Python developer for hire"
         url="https://syab.tech/"
         structuredData={homePageStructuredData}
       />
 
-      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300">
-        <div className="relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
-          {/* Plus pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+      <div className="min-h-screen bg-stone-900 dark:bg-gray-950 overflow-hidden relative transition-colors duration-300">
+        {/* Grain texture overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+          }}
+        />
 
-          {/* Animated Decorative Background Elements */}
+        {/* Scattered sticker tags */}
+        {stickers.map((s, i) => (
           <motion.div
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.6, 1, 0.6],
+            key={i}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1 + i * 0.15, type: "spring", stiffness: 200 }}
+            className={`absolute ${s.color} text-stone-300 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10 pointer-events-none select-none hidden md:block border border-stone-500/30`}
+            style={{
+              top: s.top,
+              left: s.left,
+              right: s.right,
+              bottom: s.bottom,
+              transform: `rotate(${s.rotate}deg)`,
             }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute top-0 left-0 w-96 h-96 bg-gray-400/30 rounded-full filter blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"
-          />
-          <motion.div
-            animate={{
-              y: [0, 30, 0],
-              opacity: [0.6, 1, 0.6],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5,
-            }}
-            className="absolute bottom-0 right-0 w-96 h-96 bg-gray-400/30 rounded-full filter blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.5, 0.9, 0.5],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-            className="absolute top-1/3 left-1/3 w-80 h-80 bg-emerald-400/25 rounded-full filter blur-3xl pointer-events-none"
-          />
-          {/* Additional floating elements */}
-          <motion.div
-            animate={{
-              y: [0, -25, 0],
-              x: [0, 15, 0],
-              opacity: [0.5, 0.8, 0.5],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute top-1/4 right-1/4 w-72 h-72 bg-gray-400/25 rounded-full filter blur-3xl pointer-events-none"
-          />
-          {/* Corner accents */}
-          <motion.div
-            animate={{
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              linear: true,
-            }}
-            className="absolute -bottom-40 -right-40 w-80 h-80 border border-gray-400/20 rounded-full pointer-events-none"
-          />
-          <motion.div
-            animate={{
-              rotate: [360, 0],
-            }}
-            transition={{
-              duration: 35,
-              repeat: Infinity,
-              linear: true,
-            }}
-            className="absolute lg:-top-40 lg:-left-40 top-0 left-0 w-80 h-80 border border-gray-400/20 rounded-full pointer-events-none"
-          />
+          >
+            {s.text}
+          </motion.div>
+        ))}
 
-          {/* Hero Section - Split Layout */}
-          <header className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen pt-14 pb-6 px-4 lg:px-8 gap-8 lg:gap-12">
-            {/* Left Side - Text Content */}
+        {/* Hero Section - Split Layout with Flyer Aesthetic */}
+        <header className="relative min-h-screen pt-20 pb-10 px-4 sm:px-6 lg:px-8 flex items-center">
+          <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-6 lg:gap-4">
+            {/* Left Side - Text Flyer */}
             <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ opacity: 0, x: -40, rotate: -3 }}
+              animate={{ opacity: 1, x: 0, rotate: -2.5 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex-1 lg:flex-[2] max-w-xl lg:max-w-2xl lg:pr-16 mb-12 lg:mb-0 text-center lg:text-left order-2 lg:order-1 mt-10"
+              className="flex-1 lg:flex-[3] max-w-2xl relative"
+              style={{ transform: "rotate(-2.5deg)" }}
             >
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 text-gray-900 dark:text-white leading-none font-bebas tracking-wide">
-                  SYED SYAB AHMAD
+              {/* Main pinned flyer card */}
+              <div className="relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-6 sm:p-8 lg:p-10">
+                {/* Tape strips */}
+                <div className="absolute -top-3 left-[15%] w-20 h-6 bg-stone-400/40 rotate-[-8deg] rounded-sm shadow-sm" />
+                <div className="absolute -top-3 right-[15%] w-20 h-6 bg-stone-400/40 rotate-[5deg] rounded-sm shadow-sm" />
+
+                {/* Pin */}
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-rose-800 rounded-full shadow-md border border-rose-950 z-10" />
+
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-none font-handwriting tracking-wide mb-3">
+                  Syed Syab Ahmad
                 </h1>
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light mb-6 md:mb-8">
+                <p className="text-lg sm:text-xl md:text-2xl text-stone-500 dark:text-stone-400 font-handwriting mb-5">
                   Full Stack Developer & AI Engineer
                 </p>
-              </motion.div>
+                <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-8 max-w-lg">
+                  Building intelligent solutions that transform ideas into reality — specializing in Machine Learning, Full-Stack Development, and cutting-edge AI technologies.
+                </p>
 
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-base sm:text-lg mb-8 md:mb-10 text-gray-600 dark:text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed"
-              >
-                Building intelligent solutions that transform ideas into reality — specializing in Machine Learning, Full-Stack Development, and cutting-edge AI technologies.
-              </motion.div>
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-3">
+                  <motion.a
+                    href="/projects"
+                    whileHover={{ scale: 1.05, rotate: 1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-2.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting text-lg cursor-pointer"
+                  >
+                    View My Work
+                  </motion.a>
+                  <motion.a
+                    href="/contact"
+                    whileHover={{ scale: 1.05, rotate: -1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-2.5 border-2 border-stone-500 dark:border-stone-400 text-stone-300 dark:text-stone-400 font-bold rounded-full hover:bg-stone-700 hover:text-white dark:hover:bg-stone-400 dark:hover:text-stone-900 transition-all duration-300 font-handwriting text-lg cursor-pointer"
+                  >
+                    Let's Connect
+                  </motion.a>
+                  <motion.a
+                    href="https://calendly.com/syedsyab/new-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-2.5 bg-rose-800 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting text-lg cursor-pointer"
+                  >
+                    Book a Call
+                  </motion.a>
+                </div>
+              </div>
 
-              {/* Recruiai Beta Banner */}
+              {/* Scattered mini stickers below the card */}
               <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
-                className="inline-flex items-center gap-3 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-600/50 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full mb-6 shadow-sm"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, type: "spring" }}
+                className="absolute -bottom-4 left-8 bg-slate-700 text-stone-300 text-[10px] font-bold px-3 py-1 rounded-full shadow-md font-handwriting hidden sm:block border border-slate-500/30"
+                style={{ transform: "rotate(6deg)" }}
               >
-                <span className="text-sm font-semibold">🚀 Recruiai Beta</span>
-                <a
-                  href="/mentee"
-                  className="ml-1 px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-bold hover:bg-yellow-600 transition-all"
-                >
-                  Join Beta
-                </a>
+                React ⚛️
               </motion.div>
-
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-wrap gap-3 justify-center lg:justify-start"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1, type: "spring" }}
+                className="absolute -bottom-3 left-36 bg-stone-600 text-stone-200 text-[10px] font-bold px-3 py-1 rounded-full shadow-md font-handwriting hidden sm:block border border-stone-500/30"
+                style={{ transform: "rotate(-4deg)" }}
               >
-                <motion.a
-                  href="/projects"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-2.5 bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-gray-500/50 transition-all duration-300 text-center cursor-pointer"
-                >
-                  View My Work
-                </motion.a>
-                <motion.a
-                  href="/contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-2.5 border-2 border-gray-600 text-gray-700 dark:border-gray-400 dark:text-gray-400 font-semibold rounded-full hover:bg-gray-600 hover:text-white dark:hover:bg-gray-400 dark:hover:text-stone-900 transition-all duration-300 text-center cursor-pointer"
-                >
-                  Let's Connect
-                </motion.a>
-                <motion.a
-                  href="https://calendly.com/syedsyab/new-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 text-center cursor-pointer"
-                >
-                  Book a Call
-                </motion.a>
-                <motion.a
-                  href="https://chatgpt.com/?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-5 py-2.5 bg-emerald-500 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
-                >
-                  ASK
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                    <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365 2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" />
-                  </svg>
-                </motion.a>
+                Python 🐍
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Profile Cards */}
+            {/* Right Side - Profile Image Flyers */}
             <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="flex-1 lg:flex-[1] max-w-sm lg:max-w-md relative flex justify-center lg:justify-end order-1 lg:order-2"
+              initial={{ opacity: 0, x: 40, rotate: 3 }}
+              animate={{ opacity: 1, x: 0, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+              className="flex-1 lg:flex-[2] max-w-sm lg:max-w-md relative flex justify-center"
             >
-                {/* Background decorative elements */}
-                <motion.div
-                  animate={{ rotate: [0, 180, 360] }}
-                  transition={{ duration: 25, repeat: Infinity, linear: true }}
-                  className="absolute lg:-top-10 lg:-right-10 top-0 right-0 w-32 h-32 border-2 border-gray-400/20 rounded-full"
+              {/* Back flyer (offset, rotated) */}
+              <motion.div
+                animate={{ rotate: [-5, -4, -5] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-4 -right-2 sm:right-2 w-48 sm:w-56 h-64 sm:h-72 rounded-sm bg-stone-200 dark:bg-stone-800 shadow-xl shadow-black/30 overflow-hidden border border-stone-300 dark:border-stone-700 z-0"
+                style={{ transform: "rotate(-5deg)" }}
+              >
+                {/* Tape */}
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-14 h-5 bg-stone-400/40 rotate-3 rounded-sm shadow-sm" />
+                <img
+                  src={activeImage === "me" ? "dp.jpeg" : "me.png"}
+                  alt="Syed Syab Ahmad"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.style.display = "none"; }}
                 />
-                <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -bottom-10 -left-10 w-24 h-24 bg-gray-400/10 rounded-full"
-                />
+              </motion.div>
 
-                <div className="relative flex items-center justify-center">
-                  {/* Soft glow behind */}
-                  <motion.div
-                    animate={{ opacity: [0.6, 0.9, 0.6] }}
-                    transition={{ duration: 5, repeat: Infinity }}
-                    className="absolute -right-10 top-8 w-80 md:w-96 h-80 md:h-96 rounded-2xl bg-gray-100/50 dark:bg-gray-900/20 blur-3xl -z-10"
+              {/* Front flyer (main photo) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="relative z-10"
+                style={{ transform: "rotate(3deg)" }}
+              >
+                {/* Tape on top */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-stone-400/40 rotate-2 rounded-sm shadow-sm z-10" />
+
+                <div className="relative w-56 sm:w-64 h-72 sm:h-80 rounded-sm bg-stone-100 dark:bg-stone-800 shadow-2xl shadow-black/40 overflow-hidden border border-stone-300 dark:border-stone-700">
+                  <img
+                    src={activeImage === "me" ? "me.png" : "dp.jpeg"}
+                    alt="Syed Syab Ahmad"
+                    className="w-full h-full object-cover"
+                    onError={(e) => { e.target.style.display = "none"; }}
                   />
 
-                  {/* Profile image cards */}
-                  <div className="relative w-64 md:w-72 h-96 md:h-[28rem]">
-                    {/* Back card */}
-                    <div className="absolute -right-6 top-8 w-full h-80 md:h-96 rounded-2xl bg-white dark:bg-gray-800 border-2 border-gray-300/60 dark:border-gray-700/60 shadow-lg overflow-hidden">
-                      <img
-                        src={activeImage === "me" ? "dp.jpeg" : "me.png"}
-                        alt="Syed Syab Ahmad"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* Front card */}
-                    <div className="absolute z-20 top-14 w-full h-80 md:h-96 rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-gray-500/20 border border-gray-400/30 overflow-hidden">
-                      <img
-                        src={activeImage === "me" ? "me.png" : "dp.jpeg"}
-                        alt="Syed Syab Ahmad"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.nextSibling.style.display = "flex";
-                        }}
-                      />
-                      <div className="absolute inset-0 text-2xl font-bold text-white from-gray-600/20 to-gray-600/10 hidden">
-                        SSA
-                      </div>
-
-                      {/* Top-right badge */}
-                      <div className="absolute top-4 right-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30">
-                        🎨
-                      </div>
-
-                      {/* Bottom-left badge */}
-                      <div className="absolute bottom-4 left-4 bg-white w-11 h-11 rounded-lg flex items-center justify-center shadow-md z-30">
-                        ✨
-                      </div>
-                    </div>
-
-                    {/* Dot switch */}
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-                      <button
-                        onClick={() => setActiveImage("me")}
-                        className={`w-3 h-3 rounded-full transition-all ${
-                          activeImage === "me" ? "bg-gray-800 dark:bg-white scale-125" : "bg-gray-400 dark:bg-gray-600"
-                        }`}
-                        aria-label="Show me.png"
-                      />
-                      <button
-                        onClick={() => setActiveImage("dp")}
-                        className={`w-3 h-3 rounded-full transition-all ${
-                          activeImage === "dp" ? "bg-gray-800 dark:bg-white scale-125" : "bg-gray-400 dark:bg-gray-600"
-                        }`}
-                        aria-label="Show dp.jpeg"
-                      />
-                    </div>
+                  {/* Polaroid bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-stone-100 dark:bg-stone-800 px-3 py-2">
+                    <p className="text-center font-handwriting text-stone-600 dark:text-stone-300 text-sm">
+                      That's me
+                    </p>
                   </div>
 
-                {/* Graduation Cap with enhanced animation */}
+                  {/* Dot switch */}
+                  <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+                    <button
+                      onClick={() => setActiveImage("me")}
+                      className={`w-3 h-3 rounded-full transition-all border border-stone-400 ${
+                        activeImage === "me" ? "bg-stone-800 dark:bg-stone-100 scale-125" : "bg-stone-500 dark:bg-stone-600"
+                      }`}
+                    />
+                    <button
+                      onClick={() => setActiveImage("dp")}
+                      className={`w-3 h-3 rounded-full transition-all border border-stone-400 ${
+                        activeImage === "dp" ? "bg-stone-800 dark:bg-stone-100 scale-125" : "bg-stone-500 dark:bg-stone-600"
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                {/* Open to Work sticker */}
                 <motion.div
-                  animate={{ y: [-5, 5, -5], rotate: [12, 20, 12] }}
+                  animate={{ rotate: [3, -3, 3] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute lg:-top-8 lg:right-4 top-20 right-4 text-6xl filter drop-shadow-lg z-20 pointer-events-none"
+                  className="absolute -bottom-4 -right-6 sm:-right-8 bg-rose-800 text-stone-100 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg z-20 font-handwriting whitespace-nowrap pointer-events-none"
+                  style={{ transform: "rotate(-8deg)" }}
+                >
+                  Open to Work
+                </motion.div>
+
+                {/* Graduation sticker */}
+                <motion.div
+                  animate={{ y: [-3, 3, -3], rotate: [10, 15, 10] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute -top-6 -left-4 text-4xl pointer-events-none z-20 grayscale opacity-80"
                 >
                   🎓
                 </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
 
-                {/* Open to Work Badge with enhanced animation */}
-                <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute -bottom-2 -right-8 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full border-2 border-white dark:border-slate-900 z-20 flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none backdrop-blur-sm"
-                >
-                  <span className="animate-spin">🚀</span> Open to Work
-                </motion.div>
+          {/* Scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+          >
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="font-handwriting text-stone-500 text-sm text-center"
+            >
+              scroll down ↓
+            </motion.div>
+          </motion.div>
+        </header>
+
+        {/* Main Content */}
+        <main className="relative z-10">
+          {/* Tech Sayings - Pinned Note */}
+          <section className="py-12 px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotate: 1 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-xl shadow-black/30 p-6 sm:p-8 mb-8"
+                style={{ transform: "rotate(1deg)" }}
+              >
+                {/* Tape */}
+                <div className="absolute -top-3 left-1/3 w-16 h-5 bg-stone-400/40 rotate-[-4deg] rounded-sm" />
+                {/* Pin */}
+                <div className="absolute -top-2 right-1/3 w-3 h-3 bg-slate-500 rounded-full shadow border border-slate-700 z-10" />
+
+                <div className="text-center">
+                  <span className="inline-block px-4 py-1.5 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-stone-600 dark:text-stone-300 text-xs font-bold font-handwriting mb-4">
+                    Tech Philosophy
+                  </span>
+                  <div className="h-16 flex items-center justify-center">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 min-h-[1.2em] flex items-center font-handwriting">
+                      "{currentText}
+                      <span className="animate-pulse text-stone-500 dark:text-stone-400 ml-1">|</span>"
+                    </h2>
+                  </div>
+                  <p className="text-stone-500 dark:text-stone-400 mt-3 text-sm font-handwriting">
+                    Exploring the intersection of innovation, technology, and human potential
+                  </p>
                 </div>
               </motion.div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
-              <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
+              {/* Stats Row - Scattered flyers */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                {[
+                  { label: "Certifications", value: "50+", color: "text-stone-300", rotate: -2, emoji: "🏅" },
+                  { label: "Research Ideas", value: "20+", color: "text-slate-400", rotate: 1.5, emoji: "🔬" },
+                  { label: "Projects", value: "10+", color: "text-rose-400", rotate: -1, emoji: "🚀" },
+                  { label: "Recruiai", value: "Est. 2025", color: "text-stone-400", rotate: 2, emoji: "💡" },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20, rotate: stat.rotate }}
+                    whileInView={{ opacity: 1, y: 0, rotate: stat.rotate }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    whileHover={{ scale: 1.05, rotate: 0 }}
+                    className="bg-stone-100 dark:bg-stone-800 rounded-sm shadow-lg shadow-black/20 p-4 sm:p-5 border border-stone-200 dark:border-stone-700 relative"
+                  >
+                    {/* Mini pin */}
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-rose-800 rounded-full shadow-sm border border-rose-950 z-10" />
+                    <div className="text-2xl mb-1 grayscale opacity-80">{stat.emoji}</div>
+                    <div className={`text-2xl sm:text-3xl font-bold ${stat.color} font-handwriting`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-stone-500 text-xs font-handwriting">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
-          </header>
+          </section>
 
-          {/* Main Content */}
-          <main className="relative">
-            {/* Tech Sayings Section */}
-            <section className="py-16 px-4">
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 mb-8">
-                  <div className="mb-6">
-                    <span className="inline-block px-4 py-2 bg-gray-500/20 border border-gray-500/30 rounded-full text-gray-700 dark:text-gray-300 text-sm font-medium mb-4">
-                      Tech Philosophy
-                    </span>
-                  </div>
-                  <div className="h-20 flex items-center justify-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white min-h-[1.2em] flex items-center">
-                      "{currentText}
-                      <span className="animate-pulse text-gray-700 dark:text-gray-300 ml-1">
-                        |
-                      </span>
-                      "
-                    </h2>
-                  </div>
-                  <p className="text-gray-500 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
-                    Exploring the intersection of innovation, technology, and
-                    human potential through every line of code
-                  </p>
-                </div>
+          <section id="skills" className="py-12">
+            <Skills />
+          </section>
 
-                {/* Tech Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-gray-700 dark:text-gray-300 mb-2">
-                      50+
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-300 text-sm">
-                      Certifications
-                    </div>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-gray-600 dark:text-gray-300 mb-2">
-                      20+
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-300 text-sm">
-                      Research Ideas
-                    </div>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-emerald-500/20 hover:border-emerald-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
-                      10+
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-300 text-sm">
-                      Projects
-                    </div>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-lg p-6 hover:-translate-y-2 hover:shadow-teal-500/20 hover:border-teal-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">
-                      Recruiai
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-300 text-sm mb-3">
-                      Company Foundation (Est. 2025)
-                    </div>
-                    <a
-                      href="/projects/recruiai"
-                      className="inline-block px-3 py-1 text-xs bg-teal-500 text-white rounded-full font-semibold hover:bg-teal-600 transition-all"
-                    >
-                      Join Beta
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section id="skills" className="py-16">
-              <Skills />
-            </section>
-
-            <section id="contact" className="py-16">
-              <Contact />
-            </section>
-          </main>
-        </div>
+          <section id="contact" className="py-12">
+            <Contact />
+          </section>
+        </main>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp, FaFlask, FaBullseye, FaCogs } from "react-icons/fa";
+import { FaChevronDown, FaFlask, FaBullseye } from "react-icons/fa";
 import SEO from "./SEO";
 
 let researchIdeas = [];
@@ -10,23 +10,6 @@ try {
   console.warn("Research data not found, using empty array");
   researchIdeas = [];
 }
-
-const domainColors = {
-  "Healthcare AI": "from-red-500 to-rose-500",
-  "Medical Imaging": "from-blue-500 to-indigo-500",
-  "Natural Language Processing": "from-purple-500 to-violet-500",
-  "Data Science": "from-gray-800 to-gray-600",
-  "Smart Cities": "from-emerald-500 to-teal-500",
-  "Social Computing": "from-pink-500 to-rose-500",
-  "Blockchain & Security": "from-cyan-500 to-blue-500",
-  "Educational Technology": "from-yellow-500 to-gray-500",
-  "Green Technology": "from-green-500 to-emerald-500",
-  "AgriTech": "from-lime-500 to-green-500",
-  "Cybersecurity": "from-slate-500 to-gray-600",
-  "IoT & Smart Homes": "from-sky-500 to-blue-500",
-  "FinTech": "from-indigo-500 to-purple-500",
-  "Climate Science": "from-teal-500 to-cyan-500",
-};
 
 const getResearchStatus = (title) => {
   const lowerTitle = title.toLowerCase();
@@ -41,6 +24,9 @@ const getResearchStatus = (title) => {
   }
   return "Planning";
 };
+
+const cardRotations = [-2, 1.5, -1, 2, -1.5, 0.8, -0.5, 1.8, -1.2, 0.6, -1.8, 1.2];
+const pinColors = ["bg-rose-800", "bg-slate-500", "bg-stone-500", "bg-rose-700", "bg-slate-600", "bg-stone-600"];
 
 const Research = () => {
   const [showAllResearch, setShowAllResearch] = useState(false);
@@ -77,13 +63,9 @@ const Research = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Research & Ideas - Syed Syab Ahmad",
-    description:
-      "Explore AI and machine learning research projects including healthcare AI, malaria detection, heart disease prediction, and innovative technology solutions.",
+    description: "Explore AI and machine learning research projects including healthcare AI, malaria detection, heart disease prediction, and innovative technology solutions.",
     url: "https://syab.tech/research",
-    author: {
-      "@type": "Person",
-      name: "Syed Syab Ahmad",
-    },
+    author: { "@type": "Person", name: "Syed Syab Ahmad" },
     hasPart: validResearchIdeas.map((research) => ({
       "@type": "ResearchProject",
       name: research.title,
@@ -95,15 +77,11 @@ const Research = () => {
 
   if (validResearchIdeas.length === 0) {
     return (
-      <div className="min-h-screen p-8 pt-24 bg-white dark:bg-slate-900 transition-colors duration-300">
+      <div className="min-h-screen p-8 pt-24 bg-stone-900 transition-colors duration-300">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">
-            Research & Ideas
-          </h1>
-          <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-xl p-8">
-            <p className="text-gray-600 dark:text-gray-300 text-lg">
-              Research data is being loaded...
-            </p>
+          <h1 className="text-4xl font-bold text-stone-100 mb-12 font-handwriting">Research & Ideas</h1>
+          <div className="bg-stone-800 border border-stone-700 rounded-sm p-8">
+            <p className="text-stone-400 text-lg">Research data is being loaded...</p>
           </div>
         </div>
       </div>
@@ -114,20 +92,21 @@ const Research = () => {
     <>
       <SEO
         title="Research & Ideas - Syed Syab Ahmad"
-        description="Explore cutting-edge AI and machine learning research projects including healthcare AI systems, malaria detection, heart disease prediction, CNN, LSTM, NLP, computer vision. Hire a research-focused AI engineer. Remote work worldwide."
-        keywords="AI research, machine learning research projects, healthcare AI research, malaria detection AI, heart disease prediction, Computer vision research, NLP research, Deep learning research, CNN research, LSTM networks, Research papers, Academic projects, Innovation, Problem solving, Technical research, AI consulting, Research engineer, Data science research, Predictive modeling, Algorithm research, Intelligent systems research, Open source research"
+        description="Explore cutting-edge AI and machine learning research projects including healthcare AI systems, malaria detection, heart disease prediction."
+        keywords="AI research, machine learning research projects, healthcare AI research"
         url="https://syab.tech/research"
         structuredData={researchStructuredData}
       />
 
-      <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 transition-colors duration-300">
+      <div className="min-h-screen pt-24 pb-16 bg-stone-900 dark:bg-gray-950 transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           {/* Header */}
           <div className="text-center mb-12">
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 font-bebas"
+              initial={{ opacity: 0, y: 20, rotate: -1 }}
+              animate={{ opacity: 1, y: 0, rotate: -1 }}
+              className="text-4xl md:text-5xl font-bold text-stone-100 mb-3 font-handwriting"
+              style={{ transform: "rotate(-1deg)" }}
             >
               Research & Ideas
             </motion.h1>
@@ -135,7 +114,7 @@ const Research = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+              className="text-stone-500 max-w-2xl mx-auto font-handwriting"
             >
               {stats.total} research concepts across {stats.domains} domains
             </motion.p>
@@ -146,14 +125,11 @@ const Research = () => {
             {domains.map((domain) => (
               <button
                 key={domain}
-                onClick={() => {
-                  setActiveDomain(domain);
-                  setShowAllResearch(false);
-                }}
-                className={`px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-300 ${
+                onClick={() => { setActiveDomain(domain); setShowAllResearch(false); }}
+                className={`px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 font-handwriting ${
                   activeDomain === domain
-                    ? "bg-gray-800 text-white shadow-lg shadow-gray-500/30"
-                    : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
+                    ? "bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 shadow-lg"
+                    : "bg-stone-800/50 text-stone-400 hover:bg-stone-700 hover:text-stone-300"
                 }`}
               >
                 {domain}
@@ -161,89 +137,76 @@ const Research = () => {
             ))}
           </div>
 
-          {/* Research Cards Grid */}
+          {/* Research Cards Grid - Flyer style */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
             <AnimatePresence mode="popLayout">
               {filtered.map((research, index) => {
                 const status = getResearchStatus(research.title);
-                const gradient =
-                  domainColors[research.domain] || "from-gray-800 to-gray-600";
+                const rot = cardRotations[index % cardRotations.length];
+                const pinColor = pinColors[index % pinColors.length];
 
                 return (
                   <motion.div
                     key={research.title + index}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ delay: index * 0.05, duration: 0.3 }}
-                    className="group relative bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
-                    whileHover={{ y: -4 }}
+                    initial={{ opacity: 0, scale: 0.9, rotate: rot }}
+                    animate={{ opacity: 1, scale: 1, rotate: rot }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ delay: index * 0.05, duration: 0.4 }}
+                    whileHover={{ scale: 1.03, rotate: 0 }}
+                    className="group relative"
+                    style={{ transform: `rotate(${rot}deg)` }}
                   >
-                    {/* Top gradient accent */}
-                    <div
-                      className={`h-1 bg-${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                    />
+                    {/* Tape */}
+                    <div className="absolute -top-2.5 left-[15%] w-14 h-5 bg-stone-400/40 rounded-sm shadow-sm z-10" style={{ transform: `rotate(${-rot * 2}deg)` }} />
+                    {/* Pin */}
+                    <div className={`absolute -top-1.5 right-[12%] w-2.5 h-2.5 ${pinColor} rounded-full shadow border border-black/20 z-10`} />
 
-                    <div className="p-5">
-                      {/* Status badge */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span
-                          className={`px-2.5 py-1 text-xs font-medium rounded-full ${
+                    <div className="relative bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-lg transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-black/20">
+                      <div className="p-5">
+                        {/* Status + domain badge */}
+                        <div className="flex items-center justify-between mb-3">
+                          <span className={`px-2.5 py-1 text-xs font-medium rounded-full font-handwriting ${
                             status === "Worked On"
-                              ? "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30"
-                              : "bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-gray-500/30"
-                          }`}
-                        >
-                          {status}
-                        </span>
-                        <span
-                          className={`inline-block w-2 h-2 rounded-full bg-${gradient}`}
-                        />
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3 leading-snug">
-                        {research.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-gray-600 dark:text-gray-300 text-xs leading-relaxed mb-4 line-clamp-3">
-                        {research.description}
-                      </p>
-
-                      {/* Domain */}
-                      <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 mb-3">
-                        <FaBullseye className="w-3 h-3 text-gray-500" />
-                        <span
-                          className={`font-medium bg-${gradient} bg-clip-text text-transparent`}
-                        >
-                          {research.domain}
-                        </span>
-                      </div>
-
-                      {/* Techniques */}
-                      <div className="flex flex-wrap gap-1.5 mb-3">
-                        {(research.techniques || []).slice(0, 3).map((tech, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2 py-0.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded text-xs text-gray-600 dark:text-gray-400"
-                          >
-                            {tech}
+                              ? "bg-rose-800/20 text-rose-300 border border-rose-700/30"
+                              : "bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 border border-stone-300 dark:border-stone-600"
+                          }`}>
+                            {status}
                           </span>
-                        ))}
-                        {(research.techniques || []).length > 3 && (
-                          <span className="px-2 py-0.5 text-xs text-gray-400">
-                            +{research.techniques.length - 3}
-                          </span>
-                        )}
-                      </div>
+                          <FaBullseye className="w-3 h-3 text-stone-500" />
+                        </div>
 
-                      {/* Impact */}
-                      <div className="pt-3 border-t border-gray-100 dark:border-slate-800 flex items-start gap-2">
-                        <FaFlask className="w-3 h-3 text-gray-500 mt-0.5 flex-shrink-0" />
-                        <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">
-                          {research.expectedImpact}
+                        {/* Title */}
+                        <h3 className="text-base font-bold text-stone-900 dark:text-stone-100 mb-3 leading-snug font-handwriting">
+                          {research.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed mb-4 line-clamp-3 font-handwriting">
+                          {research.description}
                         </p>
+
+                        {/* Domain */}
+                        <div className="text-xs text-stone-500 mb-3 font-handwriting">
+                          <span className="font-bold text-stone-600 dark:text-stone-300">{research.domain}</span>
+                        </div>
+
+                        {/* Techniques */}
+                        <div className="flex flex-wrap gap-1.5 mb-3">
+                          {(research.techniques || []).slice(0, 3).map((tech, idx) => (
+                            <span key={idx} className="px-2 py-0.5 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-[10px] text-stone-600 dark:text-stone-300 font-handwriting">
+                              {tech}
+                            </span>
+                          ))}
+                          {(research.techniques || []).length > 3 && (
+                            <span className="px-2 py-0.5 text-[10px] text-stone-500 font-handwriting">+{research.techniques.length - 3}</span>
+                          )}
+                        </div>
+
+                        {/* Impact */}
+                        <div className="pt-3 border-t border-stone-200 dark:border-stone-700 flex items-start gap-2">
+                          <FaFlask className="w-3 h-3 text-stone-500 mt-0.5 flex-shrink-0" />
+                          <p className="text-[11px] text-stone-500 leading-snug font-handwriting">{research.expectedImpact}</p>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -252,66 +215,45 @@ const Research = () => {
             </AnimatePresence>
           </div>
 
-          {/* View More Button */}
+          {/* View More */}
           {!showAllResearch && validResearchIdeas.length > 6 && (
             <div className="text-center mb-12">
-              <button
+              <motion.button
                 onClick={() => setShowAllResearch(true)}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-gray-500/10 dark:from-gray-500/20 dark:to-gray-500/20 border border-gray-300 dark:border-gray-500/30 text-gray-700 dark:text-gray-400 font-semibold rounded-xl hover:from-gray-500/20 hover:to-gray-500/20 dark:hover:from-gray-500/30 dark:hover:to-gray-500/30 hover:border-gray-400 dark:hover:border-gray-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10 group"
+                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 font-semibold rounded-full hover:shadow-lg transition-all duration-300 font-handwriting text-sm"
               >
-                <FaChevronDown className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-                View All Research ({validResearchIdeas.length - 6} more)
-              </button>
+                <FaChevronDown className="w-4 h-4" />
+                View All ({validResearchIdeas.length - 6} more)
+              </motion.button>
             </div>
           )}
 
-          {/* Stats Section */}
-          <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-lg p-6 md:p-8">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          {/* Stats - Scattered flyers */}
+          <div className="bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-lg p-6 md:p-8">
+            <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 mb-6 text-center font-handwriting">
               Research Overview
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                {
-                  label: "Worked On",
-                  value: stats.workedOn,
-                  color: "text-emerald-600 dark:text-emerald-400",
-                  bg: "bg-emerald-50 dark:bg-emerald-500/10",
-                  border: "border-emerald-200 dark:border-emerald-500/30",
-                },
-                {
-                  label: "In Planning",
-                  value: stats.planning,
-                  color: "text-gray-700 dark:text-gray-300",
-                  bg: "bg-gray-50 dark:bg-gray-800",
-                  border: "border-gray-200 dark:border-gray-500/30",
-                },
-                {
-                  label: "Total Ideas",
-                  value: stats.total,
-                  color: "text-gray-900 dark:text-white",
-                  bg: "bg-gray-50 dark:bg-slate-800",
-                  border: "border-gray-200 dark:border-slate-700",
-                },
-                {
-                  label: "Domains",
-                  value: stats.domains,
-                  color: "text-gray-600 dark:text-gray-400",
-                  bg: "bg-gray-50 dark:bg-gray-500/10",
-                  border: "border-gray-200 dark:border-gray-500/30",
-                },
+                { label: "Worked On", value: stats.workedOn, color: "text-rose-400", rotate: -1.5 },
+                { label: "In Planning", value: stats.planning, color: "text-stone-400", rotate: 1 },
+                { label: "Total Ideas", value: stats.total, color: "text-stone-100", rotate: -0.5 },
+                { label: "Domains", value: stats.domains, color: "text-slate-400", rotate: 1.5 },
               ].map((stat, idx) => (
-                <div
+                <motion.div
                   key={idx}
-                  className={`${stat.bg} ${stat.border} border rounded-xl p-4 text-center`}
+                  initial={{ opacity: 0, y: 15, rotate: stat.rotate }}
+                  whileInView={{ opacity: 1, y: 0, rotate: stat.rotate }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, rotate: 0 }}
+                  className="bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-sm p-4 text-center relative"
+                  style={{ transform: `rotate(${stat.rotate}deg)` }}
                 >
-                  <div className={`text-3xl font-bold ${stat.color} mb-1`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-500 dark:text-gray-400 text-xs font-medium">
-                    {stat.label}
-                  </div>
-                </div>
+                  <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-rose-800 rounded-full shadow-sm border border-rose-950 z-10" />
+                  <div className={`text-3xl font-bold ${stat.color} mb-1 font-handwriting`}>{stat.value}</div>
+                  <div className="text-stone-500 text-xs font-medium font-handwriting">{stat.label}</div>
+                </motion.div>
               ))}
             </div>
           </div>

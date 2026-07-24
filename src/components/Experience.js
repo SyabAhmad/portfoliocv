@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp, FaCalendarAlt, FaBriefcase, FaExternalLinkAlt } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaCalendarAlt, FaBriefcase } from "react-icons/fa";
 
 const experienceData = [
   {
@@ -8,8 +8,7 @@ const experienceData = [
     role: "Full Stack Web Developer & ML/AI Engineer",
     company: "Freelance",
     period: "Nov 2023 - Present",
-    description:
-      "Building Next GEN AI, working for clients on web development and AI projects using modern technologies.",
+    description: "Building Next GEN AI, working for clients on web development and AI projects using modern technologies.",
     current: true,
   },
   {
@@ -17,8 +16,7 @@ const experienceData = [
     role: "Student Ambassador",
     company: "BLACKBOX.AI",
     period: "Nov 2024 - Present",
-    description:
-      "Represent BLACKBOX.AI as a Student Ambassador, fostering AI education, community engagement, and promoting innovative solutions.",
+    description: "Represent BLACKBOX.AI as a Student Ambassador, fostering AI education, community engagement, and promoting innovative solutions.",
     current: true,
   },
   {
@@ -26,68 +24,58 @@ const experienceData = [
     role: "Python Developer",
     company: "Suvastu Tech",
     period: "Oct 2024 - Jan 2025",
-    description:
-      "Developed a Retrieval-Augmented Generation (RAG) system for an e-commerce platform, and designed a custom ETL pipeline using Python, enabling scalable data processes.",
+    description: "Developed a Retrieval-Augmented Generation (RAG) system for an e-commerce platform, and designed a custom ETL pipeline using Python, enabling scalable data processes.",
   },
   {
     id: 3,
     role: "Machine Learning Intern",
     company: "SkillBuild",
     period: "Aug 2024 - Sep 2024",
-    description:
-      "Contributed to ML projects involving Pandas, NumPy, Scikit-Learn, and Python. Enhanced model performance and deployed solutions remotely.",
+    description: "Contributed to ML projects involving Pandas, NumPy, Scikit-Learn, and Python. Enhanced model performance and deployed solutions remotely.",
   },
   {
     id: 4,
     role: "Chief Operating Officer",
     company: "AI3",
     period: "Apr 2024 - Jul 2024",
-    description:
-      "Oversaw operations and generative AI development, managing projects and cross-functional teams to deliver cutting-edge AI solutions.",
+    description: "Oversaw operations and generative AI development, managing projects and cross-functional teams to deliver cutting-edge AI solutions.",
   },
   {
     id: 5,
     role: "Software Engineer",
     company: "AI3",
     period: "Nov 2023 - Apr 2024",
-    description:
-      "Built AI-driven applications including article generators, text-to-speech tools, and improved blog content with generative AI technologies.",
+    description: "Built AI-driven applications including article generators, text-to-speech tools, and improved blog content with generative AI technologies.",
   },
   {
     id: 6,
     role: "Machine Learning Intern",
     company: "InternCareer",
     period: "Nov 2023 - Dec 2023",
-    description:
-      "Worked remotely on ML tasks including data preprocessing, model building, and evaluation.",
+    description: "Worked remotely on ML tasks including data preprocessing, model building, and evaluation.",
   },
   {
     id: 7,
     role: "Machine Learning Intern",
     company: "CodeAlpha",
     period: "Sep 2023 - Nov 2023",
-    description:
-      "Implemented ML pipelines with Python and contributed to multiple AI projects.",
-    badge:
-      "/certificates/Internships/CodeAlpha/Offer Letter/offer letter code alpha.jpg",
+    description: "Implemented ML pipelines with Python and contributed to multiple AI projects.",
+    badge: "/certificates/Internships/CodeAlpha/Offer Letter/offer letter code alpha.jpg",
   },
   {
     id: 8,
     role: "Data Science Intern",
     company: "CodSoft",
     period: "Sep 2023 - Oct 2023",
-    description:
-      "Worked on data analysis using Pandas, NumPy, and Linear Regression. Improved model accuracy with feature engineering.",
-    badge:
-      "/certificates/Internships/CodSoft/Completion Certificate/Certificate.png",
+    description: "Worked on data analysis using Pandas, NumPy, and Linear Regression. Improved model accuracy with feature engineering.",
+    badge: "/certificates/Internships/CodSoft/Completion Certificate/Certificate.png",
   },
   {
     id: 9,
     role: "Frontend Web Developer",
     company: "Interns Pakistan",
     period: "Aug 2023 - Sep 2023",
-    description:
-      "Developed responsive front-end applications using HTML, CSS, and React.js.",
+    description: "Developed responsive front-end applications using HTML, CSS, and React.js.",
     badge: "/certificates/Internships/Interns.pk/Certificate (5) conv 1.png",
   },
   {
@@ -95,40 +83,36 @@ const experienceData = [
     role: "Web Developer",
     company: "LetsGrowMore",
     period: "Jul 2023 - Sep 2023",
-    description:
-      "Contributed to web development projects using JavaScript, HTML, CSS, and React.js.",
-    badge:
-      "/certificates/Internships/Lets Grow More/Syed Syab Ahmad Shah (2) conv 1.png",
+    description: "Contributed to web development projects using JavaScript, HTML, CSS, and React.js.",
+    badge: "/certificates/Internships/Lets Grow More/Syed Syab Ahmad Shah (2) conv 1.png",
   },
   {
     id: 11,
     role: "Web Developer",
     company: "iNeuron.ai",
     period: "Jun 2023 - Aug 2023",
-    description:
-      "Developed web applications with React.js, Tailwind CSS, and JavaScript.",
-    badge:
-      "/certificates/Internships/iNeuron/Completion Certificate conv 1.png",
+    description: "Developed web applications with React.js, Tailwind CSS, and JavaScript.",
+    badge: "/certificates/Internships/iNeuron/Completion Certificate conv 1.png",
   },
   {
     id: 12,
     role: "Data Science and Business Analytics Intern",
     company: "The Sparks Foundation",
     period: "May 2023 - Jul 2023",
-    description:
-      "Worked on data visualization and business analytics using various data science tools.",
-    badge:
-      "/certificates/Internships/The Spark Foundation/Completion Certificat/Certificate of Completion.png",
+    description: "Worked on data visualization and business analytics using various data science tools.",
+    badge: "/certificates/Internships/The Spark Foundation/Completion Certificat/Certificate of Completion.png",
   },
   {
     id: 13,
     role: "Junior Java Developer",
     company: "Freelance",
     period: "Dec 2022 - Jul 2023",
-    description:
-      "Built Android apps and contributed to Java-based projects, including design and testing.",
+    description: "Built Android apps and contributed to Java-based projects, including design and testing.",
   },
 ];
+
+const cardRotations = [-1.5, 1, -0.8, 1.2, -0.5, 0.8, -1.2, 0.6, -1, 1.5, -0.7, 1.1, -0.9, 0.4];
+const pinColors = ["bg-rose-800", "bg-slate-500", "bg-stone-500", "bg-rose-700", "bg-slate-600", "bg-stone-600", "bg-rose-900"];
 
 const Experience = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -140,30 +124,16 @@ const Experience = () => {
     return true;
   });
 
-  const companyColors = {
-    Freelance: "from-gray-800 to-gray-600",
-    "BLACKBOX.AI": "from-gray-500 to-red-500",
-    "Suvastu Tech": "from-emerald-500 to-teal-500",
-    SkillBuild: "from-blue-500 to-indigo-500",
-    AI3: "from-purple-500 to-pink-500",
-    InternCareer: "from-cyan-500 to-blue-500",
-    CodeAlpha: "from-rose-500 to-pink-500",
-    CodSoft: "from-indigo-500 to-purple-500",
-    "Interns Pakistan": "from-teal-500 to-emerald-500",
-    LetsGrowMore: "from-gray-800 to-gray-600",
-    "iNeuron.ai": "from-sky-500 to-blue-500",
-    "The Sparks Foundation": "from-gray-500 to-gray-500",
-  };
-
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-900 relative transition-colors duration-300">
+    <div className="min-h-screen pt-24 pb-16 bg-stone-900 dark:bg-gray-950 relative transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Header */}
         <div className="text-center mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 font-bebas"
+            initial={{ opacity: 0, y: 20, rotate: -1 }}
+            animate={{ opacity: 1, y: 0, rotate: -1 }}
+            className="text-4xl md:text-5xl font-bold text-stone-100 mb-3 font-handwriting"
+            style={{ transform: "rotate(-1deg)" }}
           >
             Professional Experience
           </motion.h2>
@@ -171,10 +141,9 @@ const Experience = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            className="text-stone-500 max-w-2xl mx-auto font-handwriting"
           >
-            {experienceData.length} roles spanning full-time, freelance &
-            internships
+            {experienceData.length} roles spanning full-time, freelance & internships
           </motion.p>
         </div>
 
@@ -188,10 +157,10 @@ const Experience = () => {
             <button
               key={tab.key}
               onClick={() => setFilter(tab.key)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 font-handwriting ${
                 filter === tab.key
-                  ? "bg-gray-800 text-white shadow-lg shadow-gray-500/30"
-                  : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
+                  ? "bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 shadow-lg"
+                  : "bg-stone-800/50 text-stone-400 hover:bg-stone-700 hover:text-stone-300"
               }`}
             >
               {tab.label}
@@ -202,62 +171,55 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px from-gray-500 via-gray-500 to-transparent opacity-30" />
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-stone-700 opacity-40" />
 
-          <div className="space-y-6">
+          <div className="space-y-5">
             <AnimatePresence>
               {filtered.map((exp, index) => {
-                const color =
-                  companyColors[exp.company] || "from-gray-800 to-gray-600";
+                const rot = cardRotations[index % cardRotations.length];
+                const pinColor = pinColors[index % pinColors.length];
                 const isExpanded = expandedId === exp.id;
 
                 return (
                   <motion.div
                     key={exp.id}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -30, rotate: rot }}
+                    animate={{ opacity: 1, x: 0, rotate: rot }}
                     exit={{ opacity: 0, x: -20 }}
-                    transition={{ delay: index * 0.05, duration: 0.4 }}
+                    transition={{ delay: index * 0.04, duration: 0.4 }}
+                    whileHover={{ scale: 1.01, rotate: 0 }}
                     className="relative pl-16 md:pl-20"
+                    style={{ transform: `rotate(${rot}deg)` }}
                   >
                     {/* Timeline dot */}
-                    <div
-                      className={`absolute left-4 md:left-6 top-8 w-4 h-4 rounded-full ${color} ring-4 ring-white dark:ring-slate-900 z-10 ${
-                        exp.current ? "animate-pulse" : ""
-                      }`}
-                    />
+                    <div className={`absolute left-4 md:left-6 top-8 w-4 h-4 rounded-full ${exp.current ? "bg-rose-800 animate-pulse" : "bg-stone-500"} ring-4 ring-stone-900 z-10`} />
 
-                    {/* Card */}
-                    <motion.div
-                      className="group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-slate-700/50 shadow-md hover:shadow-gray-500/10 transition-all duration-500 overflow-hidden"
-                      whileHover={{ y: -2 }}
-                    >
-                      {/* Top gradient accent */}
-                      <div
-                        className={`h-1 bg-${color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                      />
+                    {/* Card - flyer style */}
+                    <div className="relative bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-lg transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-black/20">
+                      {/* Tape */}
+                      <div className="absolute -top-2.5 left-[12%] w-14 h-5 bg-stone-400/40 rounded-sm shadow-sm z-10" style={{ transform: `rotate(${-rot * 2}deg)` }} />
+                      {/* Pin */}
+                      <div className={`absolute -top-1.5 right-[10%] w-2.5 h-2.5 ${pinColor} rounded-full shadow border border-black/20 z-10`} />
 
                       <div className="p-5 md:p-6">
                         {/* Header row */}
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 flex-wrap mb-1">
-                              <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100 font-handwriting">
                                 {exp.role}
                               </h3>
                               {exp.current && (
-                                <span className="px-2 py-0.5 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-full text-emerald-700 dark:text-emerald-400 text-xs font-medium">
+                                <span className="px-2 py-0.5 bg-rose-800/20 border border-rose-700/30 rounded-full text-rose-300 text-xs font-medium font-handwriting">
                                   Current
                                 </span>
                               )}
                             </div>
                             <div className="flex items-center gap-3 flex-wrap text-sm">
-                              <span
-                                className={`font-semibold bg-${color} bg-clip-text text-transparent`}
-                              >
+                              <span className="font-semibold text-stone-600 dark:text-stone-300 font-handwriting">
                                 {exp.company}
                               </span>
-                              <span className="flex items-center gap-1 text-gray-400 dark:text-gray-500">
+                              <span className="flex items-center gap-1 text-stone-500 font-handwriting text-xs">
                                 <FaCalendarAlt className="w-3 h-3" />
                                 {exp.period}
                               </span>
@@ -266,25 +228,15 @@ const Experience = () => {
 
                           {/* Expand button */}
                           <button
-                            onClick={() =>
-                              setExpandedId(isExpanded ? null : exp.id)
-                            }
-                            className="flex-shrink-0 p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300"
+                            onClick={() => setExpandedId(isExpanded ? null : exp.id)}
+                            className="flex-shrink-0 p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all duration-300"
                           >
-                            {isExpanded ? (
-                              <FaChevronUp className="w-4 h-4" />
-                            ) : (
-                              <FaChevronDown className="w-4 h-4" />
-                            )}
+                            {isExpanded ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
                           </button>
                         </div>
 
-                        {/* Description (compact) */}
-                        <p
-                          className={`text-gray-600 dark:text-gray-300 text-sm leading-relaxed mt-3 ${
-                            isExpanded ? "" : "line-clamp-2"
-                          }`}
-                        >
+                        {/* Description */}
+                        <p className={`text-stone-600 dark:text-stone-400 text-sm leading-relaxed mt-3 font-handwriting ${isExpanded ? "" : "line-clamp-2"}`}>
                           {exp.description}
                         </p>
 
@@ -296,22 +248,20 @@ const Experience = () => {
                               animate={{ opacity: 1, height: "auto" }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.3 }}
-                              className="mt-4 pt-4 border-t border-gray-100 dark:border-slate-800"
+                              className="mt-4 pt-4 border-t border-stone-200 dark:border-stone-700"
                             >
                               {exp.badge && (
-                                <div className="flex items-center gap-2">
-                                  <FaBriefcase className="w-4 h-4 text-gray-500" />
-                                  <span className="text-xs text-gray-700 dark:text-gray-300 font-medium">
-                                    Certificate available
-                                  </span>
+                                <div className="flex items-center gap-2 mb-3">
+                                  <FaBriefcase className="w-4 h-4 text-stone-500" />
+                                  <span className="text-xs text-stone-500 font-handwriting">Certificate available</span>
                                 </div>
                               )}
-                              <div className="mt-3 flex gap-2 flex-wrap">
-                                <span className="px-3 py-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-400 text-xs font-medium">
+                              <div className="flex gap-2 flex-wrap">
+                                <span className="px-3 py-1 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-stone-600 dark:text-stone-300 text-xs font-handwriting">
                                   {exp.period}
                                 </span>
                                 {exp.badge && (
-                                  <span className="px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 rounded-full text-emerald-700 dark:text-emerald-400 text-xs font-medium">
+                                  <span className="px-3 py-1 bg-rose-800/20 border border-rose-700/30 rounded-full text-rose-300 text-xs font-handwriting">
                                     Certified
                                   </span>
                                 )}
@@ -320,7 +270,7 @@ const Experience = () => {
                           )}
                         </AnimatePresence>
                       </div>
-                    </motion.div>
+                    </div>
                   </motion.div>
                 );
               })}

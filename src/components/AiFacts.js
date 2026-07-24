@@ -8,34 +8,31 @@ const AiFacts = () => {
       id: 1,
       title: "ChatGPT",
       icon: SiOpenai,
-      color: "from-gray-800 to-gray-600",
-      bgColor: "bg-gray-500/10",
-      borderColor: "border-gray-500/30",
       image: "/certificates/facts/Chatgpt talk about syab.png",
       description: "What OpenAI's ChatGPT says about me",
       url: "https://chatgpt.com/?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience",
+      rotate: -2,
+      pin: "bg-rose-800",
     },
     {
       id: 2,
       title: "Google AI",
       icon: SiGoogle,
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-500/10",
-      borderColor: "border-blue-500/30",
       image: "/certificates/facts/google talk about Syab.jpg",
       description: "What Google's AI Search thinks about me",
       url: "https://gemini.google.com/app?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience",
+      rotate: 1.5,
+      pin: "bg-slate-500",
     },
     {
       id: 3,
       title: "Perplexity",
       icon: SiOpenai,
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/30",
       image: "/certificates/facts/Perplexity talk about syab.png",
       description: "What Perplexity AI says about me",
       url: "https://www.perplexity.ai/search?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience",
+      rotate: -1,
+      pin: "bg-stone-500",
     },
   ];
 
@@ -43,215 +40,163 @@ const AiFacts = () => {
     {
       id: 1,
       title: "Pull Shark",
-      icon: SiOpenai,
-      color: "from-gray-500 to-red-500",
-      bgColor: "bg-gray-500/10",
-      borderColor: "border-gray-500/30",
       image: "/certificates/facts/PULL SHARK.png",
       description: "GitHub Pull Shark achievement",
+      rotate: 1,
+      pin: "bg-rose-700",
     },
     {
       id: 2,
       title: "Quickdraw",
-      icon: SiGoogle,
-      color: "from-yellow-500 to-gray-500",
-      bgColor: "bg-yellow-500/10",
-      borderColor: "border-yellow-500/30",
       image: "/certificates/facts/QUICKDRAW.png",
       description: "GitHub Quickdraw achievement",
+      rotate: -1.5,
+      pin: "bg-slate-600",
     },
     {
       id: 3,
       title: "YOLO",
-      icon: SiOpenai,
-      color: "from-pink-500 to-rose-500",
-      bgColor: "bg-pink-500/10",
-      borderColor: "border-pink-500/30",
       image: "/certificates/facts/YOLO.png",
       description: "GitHub YOLO achievement",
+      rotate: 2,
+      pin: "bg-stone-600",
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <section className="mb-8 md:mb-12">
-      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-xl p-6 md:p-8 max-w-7xl mx-auto">
+      <div className="bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-sm shadow-xl shadow-black/30 p-6 md:p-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
             What AI Thinks About Me
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-3xl mx-auto">
+          <p className="text-stone-500 text-xs md:text-sm font-handwriting">
             ChatGPT, Google AI Search, and Perplexity's perspective on my skills
           </p>
         </div>
-        {/* AI Facts Grid - Compact */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {aiFacts.map((fact) => {
-            const IconComponent = fact.icon;
 
+        {/* AI Facts Grid - Flyer cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-6 md:mb-8">
+          {aiFacts.map((fact) => {
+            const Icon = fact.icon;
             return (
               <motion.a
                 key={fact.id}
                 href={fact.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                variants={itemVariants}
-                className="group block"
+                initial={{ opacity: 0, y: 20, rotate: fact.rotate }}
+                whileInView={{ opacity: 1, y: 0, rotate: fact.rotate }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.04, rotate: 0 }}
+                className="group block relative"
+                style={{ transform: `rotate(${fact.rotate}deg)` }}
               >
-                <motion.div
-                  className={`relative h-full flex flex-col bg-white/50 dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${fact.borderColor} hover:border-opacity-100`}
-                  whileHover={{ y: -2 }}
-                >
-                  {/* Top Accent */}
-                  <div className={`h-1 bg-${fact.color}`}></div>
+                {/* Tape */}
+                <div className="absolute -top-2.5 left-[20%] w-14 h-5 bg-stone-400/40 rotate-[-4deg] rounded-sm shadow-sm z-10" />
+                {/* Pin */}
+                <div className={`absolute -top-1.5 right-[15%] w-3 h-3 ${fact.pin} rounded-full shadow border border-black/20 z-10`} />
 
+                <div className="relative bg-stone-200 dark:bg-stone-700 rounded-sm overflow-hidden shadow-lg transition-all duration-300 border border-stone-300 dark:border-stone-600">
                   {/* Icon Area */}
-                  <div
-                    className={`p-4 md:p-6 ${fact.bgColor} border-b border-gray-200 dark:border-gray-700/50`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${fact.color} flex items-center justify-center`}
-                      >
-                        <IconComponent className="text-lg md:text-xl text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white">
-                          {fact.title}
-                        </h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          {fact.description}
-                        </p>
-                      </div>
+                  <div className="p-4 flex items-center gap-3 border-b border-stone-300 dark:border-stone-600">
+                    <div className="w-10 h-10 rounded-lg bg-stone-500 dark:bg-stone-600 flex items-center justify-center">
+                      <Icon className="text-lg text-stone-100" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-stone-900 dark:text-stone-100 font-handwriting">
+                        {fact.title}
+                      </h3>
+                      <p className="text-xs text-stone-500 font-handwriting">
+                        {fact.description}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Image - Compact */}
+                  {/* Image */}
                   <div className="relative overflow-hidden h-48 md:h-64">
                     <img
                       src={fact.image}
                       alt={`${fact.title} about Syab`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
-
-                    {/* Gradient Overlay */}
-                    <div
-                      className={`absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
-                    ></div>
-
-                    {/* Hover CTA */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="px-4 py-2 bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white text-sm font-semibold rounded-full shadow-lg">
+                    <div className="absolute inset-0 bg-stone-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="px-4 py-2 bg-stone-100 text-stone-900 text-sm font-bold rounded-full shadow-lg font-handwriting">
                         Ask {fact.title} →
                       </span>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </motion.a>
             );
           })}
-        </motion.div>
+        </div>
+
         {/* Fun Note */}
-        <div className="mt-4 md:mt-6 p-3 bg-gray-500/10 border border-gray-500/30 rounded-lg text-center mb-6 md:mb-8">
-          <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm">
-            ✨ Pretty cool to see what different AI models think about my profile!
+        <div className="mt-4 p-3 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-sm text-center mb-6 md:mb-8">
+          <p className="text-stone-600 dark:text-stone-300 text-xs md:text-sm font-handwriting">
+            Pretty cool to see what different AI models think about my profile
           </p>
         </div>
+
+        {/* GitHub Achievements */}
         <div className="mb-6">
-          <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 text-center">
+          <h3 className="text-xl md:text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4 md:mb-6 text-center font-handwriting">
             GitHub Achievements
           </h3>
           <div className="overflow-x-auto pb-4">
-            <div className="flex gap-4 md:gap-6 justify-center px-4">
-              {githubAchievements.map((achievement) => {
-                const IconComponent = achievement.icon;
+            <div className="flex gap-5 md:gap-6 justify-center px-4">
+              {githubAchievements.map((ach) => (
+                <motion.div
+                  key={ach.id}
+                  initial={{ opacity: 0, y: 20, rotate: ach.rotate }}
+                  whileInView={{ opacity: 1, y: 0, rotate: ach.rotate }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.04, rotate: 0 }}
+                  className="flex-shrink-0 w-64 md:w-80 relative"
+                  style={{ transform: `rotate(${ach.rotate}deg)` }}
+                >
+                  {/* Tape */}
+                  <div className="absolute -top-2.5 left-[25%] w-14 h-5 bg-stone-400/40 rotate-[3deg] rounded-sm shadow-sm z-10" />
+                  {/* Pin */}
+                  <div className={`absolute -top-1.5 right-[15%] w-2.5 h-2.5 ${ach.pin} rounded-full shadow border border-black/20 z-10`} />
 
-                return (
-                  <motion.div
-                    key={achievement.id}
-                    variants={itemVariants}
-                    className="group flex-shrink-0 w-64 md:w-80"
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <motion.div
-                      className={`relative h-full flex flex-col bg-white/50 dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${achievement.borderColor} hover:border-opacity-100`}
-                      whileHover={{ y: -2 }}
-                    >
-                      {/* Top Accent */}
-                      <div
-                        className={`h-1 bg-${achievement.color}`}
-                      ></div>
-
-                      {/* Icon Area */}
-                      <div
-                        className={`p-4 ${achievement.bgColor} border-b border-gray-200 dark:border-gray-700/50`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <div
-                            className={`w-10 h-10 rounded-lg ${achievement.color} flex items-center justify-center`}
-                          >
-                            <IconComponent className="text-lg text-white" />
-                          </div>
-                          <div>
-                            <h4 className="text-base font-bold text-gray-900 dark:text-white">
-                              {achievement.title}
-                            </h4>
-                            <p className="text-xs text-gray-500 dark:text-gray-400">
-                              {achievement.description}
-                            </p>
-                          </div>
-                        </div>
+                  <div className="relative bg-stone-200 dark:bg-stone-700 rounded-sm overflow-hidden shadow-lg border border-stone-300 dark:border-stone-600">
+                    <div className="p-4 flex items-center gap-3 border-b border-stone-300 dark:border-stone-600">
+                      <div className="w-10 h-10 rounded-lg bg-stone-500 dark:bg-stone-600 flex items-center justify-center text-stone-100 font-bold font-handwriting">
+                        {ach.title[0]}
                       </div>
-
-                      {/* Image - Compact */}
-                      <div className="relative overflow-hidden h-48 md:h-64">
-                        <img
-                          src={achievement.image}
-                          alt={`${achievement.title} achievement`}
-                          className="w-full h-full object-cover"
-                        />
-
-                        {/* Gradient Overlay */}
-                        <div
-                          className={`absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-60 transition-opacity duration-300`}
-                        ></div>
+                      <div>
+                        <h4 className="text-base font-bold text-stone-900 dark:text-stone-100 font-handwriting">
+                          {ach.title}
+                        </h4>
+                        <p className="text-xs text-stone-500 font-handwriting">
+                          {ach.description}
+                        </p>
                       </div>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
+                    </div>
+                    <div className="relative overflow-hidden h-48 md:h-64">
+                      <img
+                        src={ach.image}
+                        alt={`${ach.title} achievement`}
+                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
+
         {/* Fun Note */}
-        <div className="mt-4 p-3 bg-gray-500/10 border border-gray-500/30 rounded-lg text-center">
-          <p className="text-gray-700 dark:text-gray-300 text-xs">✨ My GitHub Badges!</p>
+        <div className="mt-4 p-3 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-sm text-center">
+          <p className="text-stone-600 dark:text-stone-300 text-xs font-handwriting">
+            My GitHub Badges
+          </p>
         </div>
       </div>
     </section>

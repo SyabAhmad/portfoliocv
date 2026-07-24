@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaLinkedin,
   FaGithub,
   FaTwitter,
   FaInstagram,
-  FaFacebook,
   FaDiscord,
   FaWhatsapp,
   FaTelegram,
@@ -49,160 +49,67 @@ const volunteering = [
   },
 ];
 
+const cardRotations = [-1.5, 1, -0.5, 1.5, -1, 0.8];
+const pinStyles = [
+  "bg-rose-800", "bg-slate-500", "bg-stone-500",
+  "bg-rose-700", "bg-slate-600", "bg-stone-600",
+];
+
+const FlyerCard = ({ children, rotate = 0, pin = "bg-rose-800", className = "" }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30, rotate }}
+    whileInView={{ opacity: 1, y: 0, rotate }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    whileHover={{ scale: 1.02, rotate: 0 }}
+    className={`relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-xl shadow-black/30 p-6 sm:p-8 border border-stone-200 dark:border-stone-700 ${className}`}
+    style={{ transform: `rotate(${rotate}deg)` }}
+  >
+    <div className="absolute -top-3 left-[20%] w-16 h-5 bg-stone-400/40 rotate-[-5deg] rounded-sm shadow-sm" />
+    <div className="absolute -top-2 right-[15%] w-3 h-3 rounded-full shadow border border-black/20 z-10" style={{ backgroundColor: "var(--pin)" }} />
+    <div className={`absolute -top-2 right-[15%] w-3 h-3 ${pin} rounded-full shadow border border-black/20 z-10`} />
+    {children}
+  </motion.div>
+);
+
 const About = () => {
   const [showAllCertifications, setShowAllCertifications] = useState(false);
   const [showAllSocialLinks, setShowAllSocialLinks] = useState(false);
 
   const socialLinks = [
-    {
-      name: "LinkedIn",
-      icon: FaLinkedin,
-      url: "https://www.linkedin.com/in/syedsyab/",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "GitHub",
-      icon: FaGithub,
-      url: "https://github.com/syabahmad",
-      color: "hover:text-gray-300",
-    },
-    {
-      name: "Twitter",
-      icon: FaTwitter,
-      url: "https://twitter.com/SyabSays",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "Instagram",
-      icon: FaInstagram,
-      url: "https://instagram.com/syedsyab",
-      color: "hover:text-gray-400",
-    },
-    {
-      name: "Dribbble",
-      icon: FaDribbble,
-      url: "https://dribbble.com/Syab_Ahmad",
-      color: "hover:text-gray-400",
-    },
-    {
-      name: "Behance",
-      icon: FaBehance,
-      url: "https://www.behance.net/syabahmad",
-      color: "hover:text-blue-500",
-    },
-    {
-      name: "Stack Overflow",
-      icon: FaStackOverflow,
-      url: "https://stackoverflow.com/users/20266067/syed-syab-ahmad-shah",
-      color: "hover:text-gray-500",
-    },
-    {
-      name: "LeetCode",
-      icon: SiLeetcode,
-      url: "https://leetcode.com/u/syab_ahmad/",
-      color: "hover:text-yellow-500",
-    },
-    {
-      name: "HackerRank",
-      icon: SiHackerrank,
-      url: "https://www.hackerrank.com/profile/syabblogger",
-      color: "hover:text-green-400",
-    },
-    {
-      name: "CodeChef",
-      icon: SiCodechef,
-      url: "https://www.codechef.com/users/syedsyabb",
-      color: "hover:text-gray-600",
-    },
-    {
-      name: "Kaggle",
-      icon: FaKaggle,
-      url: "https://www.kaggle.com/syabahmad",
-      color: "hover:text-cyan-400",
-    },
-    {
-      name: "ResearchGate",
-      icon: FaResearchgate,
-      url: "https://www.researchgate.net/profile/Syed-Syab-Ahmad",
-      color: "hover:text-teal-400",
-    },
-    {
-      name: "Personal Link",
-      icon: FaLink,
-      url: "https://syab.link/",
-      color: "hover:text-blue-300",
-    },
-    {
-      name: "Read.cv",
-      icon: FaUser,
-      url: "https://read.cv/syedsyab",
-      color: "hover:text-purple-400",
-    },
-    {
-      name: "GulfTalent",
-      icon: FaBriefcase,
-      url: "https://www.gulftalent.com/people/syed-syab-ahmad-shah-11988245",
-      color: "hover:text-blue-500",
-    },
-    {
-      name: "Hugging Face",
-      icon: SiHuggingface,
-      url: "https://huggingface.co/SyedSyab",
-      color: "hover:text-yellow-600",
-    },
-    {
-      name: "ORCID",
-      icon: SiOrcid,
-      url: "https://orcid.org/0009-0003-9183-582X",
-      color: "hover:text-green-500",
-    },
-    {
-      name: "Fiverr",
-      icon: SiFiverr,
-      url: "https://www.fiverr.com/syabahmad?msockid=14c21eb90f7369dc2b930b850e766880",
-      color: "hover:text-green-600",
-    },
-    {
-      name: "CodePen",
-      icon: SiCodepen,
-      url: "https://codepen.io/SyabAhmad",
-      color: "hover:text-white",
-    },
-    {
-      name: "About.me",
-      icon: FaUser,
-      url: "https://about.me/syedsyab",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "Archinect",
-      icon: FaCode,
-      url: "https://archinect.com/syab",
-      color: "hover:text-red-400",
-    },
-    {
-      name: "CodeWars",
-      icon: SiCodewars,
-      url: "https://www.codewars.com/users/SyabAhmad",
-      color: "hover:text-red-500",
-    },
+    { name: "LinkedIn", icon: FaLinkedin, url: "https://www.linkedin.com/in/syedsyab/" },
+    { name: "GitHub", icon: FaGithub, url: "https://github.com/syabahmad" },
+    { name: "Twitter", icon: FaTwitter, url: "https://twitter.com/SyabSays" },
+    { name: "Instagram", icon: FaInstagram, url: "https://instagram.com/syedsyab" },
+    { name: "Dribbble", icon: FaDribbble, url: "https://dribbble.com/Syab_Ahmad" },
+    { name: "Behance", icon: FaBehance, url: "https://www.behance.net/syabahmad" },
+    { name: "Stack Overflow", icon: FaStackOverflow, url: "https://stackoverflow.com/users/20266067/syed-syab-ahmad-shah" },
+    { name: "LeetCode", icon: SiLeetcode, url: "https://leetcode.com/u/syab_ahmad/" },
+    { name: "HackerRank", icon: SiHackerrank, url: "https://www.hackerrank.com/profile/syabblogger" },
+    { name: "CodeChef", icon: SiCodechef, url: "https://www.codechef.com/users/syedsyabb" },
+    { name: "Kaggle", icon: FaKaggle, url: "https://www.kaggle.com/syabahmad" },
+    { name: "ResearchGate", icon: FaResearchgate, url: "https://www.researchgate.net/profile/Syed-Syab-Ahmad" },
+    { name: "Personal Link", icon: FaLink, url: "https://syab.link/" },
+    { name: "Read.cv", icon: FaUser, url: "https://read.cv/syedsyab" },
+    { name: "GulfTalent", icon: FaBriefcase, url: "https://www.gulftalent.com/people/syed-syab-ahmad-shah-11988245" },
+    { name: "Hugging Face", icon: SiHuggingface, url: "https://huggingface.co/SyedSyab" },
+    { name: "ORCID", icon: SiOrcid, url: "https://orcid.org/0009-0003-9183-582X" },
+    { name: "Fiverr", icon: SiFiverr, url: "https://www.fiverr.com/syabahmad" },
+    { name: "CodePen", icon: SiCodepen, url: "https://codepen.io/SyabAhmad" },
+    { name: "About.me", icon: FaUser, url: "https://about.me/syedsyab" },
+    { name: "Archinect", icon: FaCode, url: "https://archinect.com/syab" },
+    { name: "CodeWars", icon: SiCodewars, url: "https://www.codewars.com/users/SyabAhmad" },
   ];
 
-  // Limit items shown initially
-  const socialLinksToShow = showAllSocialLinks
-    ? socialLinks
-    : socialLinks.slice(0, 12);
-  const certificationsToShow = showAllCertifications
-    ? certifications
-    : certifications.slice(0, 8);
+  const socialLinksToShow = showAllSocialLinks ? socialLinks : socialLinks.slice(0, 12);
+  const certificationsToShow = showAllCertifications ? certifications : certifications.slice(0, 8);
 
   const aboutStructuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Syed Syab Ahmad",
     jobTitle: "AI Engineer & Full-Stack Developer",
-    description:
-      "Passionate AI Engineer and Full-Stack Developer with expertise in Machine Learning, Deep Learning, and modern web technologies. Currently pursuing studies at University of Swat.",
+    description: "Passionate AI Engineer and Full-Stack Developer with expertise in Machine Learning, Deep Learning, and modern web technologies.",
     url: "https://syab.tech/about",
     image: "https://syab.tech/dp.jpeg",
     alumniOf: "University of Swat",
@@ -210,323 +117,229 @@ const About = () => {
       "@type": "EducationalOccupationalCredential",
       name: cert.title,
       credentialCategory: "certificate",
-      recognizedBy: {
-        "@type": "Organization",
-        name: cert.issuer,
-      },
+      recognizedBy: { "@type": "Organization", name: cert.issuer },
     })),
-    knowsAbout: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Deep Learning",
-      "Full Stack Development",
-      "Python Programming",
-      "JavaScript",
-      "React",
-      "TensorFlow",
-      "PyTorch",
-      "Healthcare AI",
-      "Computer Vision",
-    ],
-    sameAs: [
-      "https://www.linkedin.com/in/syedsyab/",
-      "https://github.com/syabahmad",
-      "https://twitter.com/SyabSays",
-      "https://medium.com/@syedsyab",
-      "https://www.kaggle.com/syabahmad",
-      "https://www.researchgate.net/profile/Syed-Syab-Ahmad",
-      "https://huggingface.co/SyedSyab",
-    ],
+    knowsAbout: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Full Stack Development", "Python Programming", "JavaScript", "React", "TensorFlow", "PyTorch", "Healthcare AI", "Computer Vision"],
+    sameAs: ["https://www.linkedin.com/in/syedsyab/", "https://github.com/syabahmad", "https://twitter.com/SyabSays", "https://medium.com/@syedsyab", "https://www.kaggle.com/syabahmad", "https://www.researchgate.net/profile/Syed-Syab-Ahmad", "https://huggingface.co/SyedSyab"],
   };
 
   return (
     <>
       <SEO
         title="About - Syed Syab Ahmad"
-        description="Meet Syed Syab Ahmad, an AI Engineer and Full-Stack Developer with 50+ certifications. Specializing in Python, Machine Learning, Deep Learning, React, Django, Flask, and Web Development. Available for freelance work and job opportunities. Remote work worldwide. Visa sponsorship available."
-        keywords="About Syed Syab Ahmad, AI Engineer biography, Machine Learning expert, Full Stack Developer Saudi Arabia, Python expert, JavaScript developer, React specialist, Django backend, Flask developer, Data scientist, ML engineer, Hire AI engineer, Freelance developer profile, Tech resume, AI specialist credentials, Machine learning portfolio, Deep learning engineer, Professional skills, Certifications, 50+ certifications, Job seeker, Career profile, Available for hire, Remote work, Worldwide remote, Visa sponsorship, Contract developer, AI consulting, Pakistan background"
+        description="Meet Syed Syab Ahmad, an AI Engineer and Full-Stack Developer with 50+ certifications."
+        keywords="About Syed Syab Ahmad, AI Engineer biography, Machine Learning expert"
         url="https://syab.link/about"
         structuredData={aboutStructuredData}
       />
 
-      <div className="min-h-screen p-8 pt-24 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div className="container mx-auto space-y-12 md:space-y-16">
-          {/* Introduction Section - Redesigned */}
-          <section className="text-center">
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-2xl p-6 md:p-8 max-w-5xl mx-auto transition-colors duration-300">
-              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6 md:mb-8">
-                {/* Profile Image - Compact */}
-                <div className="relative flex-shrink-0">
-                  <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full overflow-hidden border-4 border-gray-900 dark:border-white shadow-xl">
-                    <img
-                      src="dp.jpeg"
-                      alt="Syed Syab Ahmad"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                        e.target.nextElementSibling.classList.remove("hidden");
-                      }}
-                    />
-                    <div className="w-full h-full bg-gray-800 flex items-center justify-center text-xl md:text-2xl font-bold text-white hidden absolute top-0 left-0">
-                      SSA
-                    </div>
-                  </div>
-                  {/* Animated ring */}
-                  <div className="absolute inset-0 w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 mx-auto rounded-full border-2 border-gray-400/30 animate-ping"></div>
-                  {/* Status */}
-                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-800 shadow-lg">
-                    <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
-                  </div>
+      <div className="min-h-screen p-4 sm:p-8 pt-24 bg-stone-900 dark:bg-gray-950 transition-colors duration-300">
+        <div className="container mx-auto space-y-10 md:space-y-14 max-w-6xl">
+
+          {/* Hero Flyer - Profile */}
+          <motion.div
+            initial={{ opacity: 0, y: 30, rotate: -1.5 }}
+            animate={{ opacity: 1, y: 0, rotate: -1.5 }}
+            transition={{ duration: 0.7 }}
+            className="relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-6 sm:p-8 md:p-10 border border-stone-200 dark:border-stone-700"
+            style={{ transform: "rotate(-1.5deg)" }}
+          >
+            {/* Tape */}
+            <div className="absolute -top-3 left-[15%] w-20 h-6 bg-stone-400/40 rotate-[-6deg] rounded-sm shadow-sm" />
+            <div className="absolute -top-3 right-[20%] w-16 h-5 bg-stone-400/40 rotate-[4deg] rounded-sm shadow-sm" />
+            {/* Pin */}
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-rose-800 rounded-full shadow-md border border-rose-950 z-10" />
+
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+              {/* Profile Image */}
+              <div className="relative flex-shrink-0">
+                <div className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-sm overflow-hidden border-2 border-stone-300 dark:border-stone-600 shadow-xl">
+                  <img
+                    src="dp.jpeg"
+                    alt="Syed Syab Ahmad"
+                    className="w-full h-full object-cover"
+                    onError={(e) => { e.target.style.display = "none"; }}
+                  />
                 </div>
-
-                {/* Name, Title & Actions */}
-                <div className="flex-1 text-center md:text-left">
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2 font-bebas">
-                    Syed Syab Ahmad
-                  </h1>
-                  <h2 className="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 font-semibold mb-3">
-                    AI Engineer & Full-Stack Developer
-                  </h2>
-
-                  {/* Location Tags */}
-                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-4 text-xs md:text-sm">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">
-                      <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
-                      Riyadh, SA
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 dark:bg-gray-500/20 text-gray-700 dark:text-gray-300 rounded-full">
-                      <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
-                      Open to Relocate
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-100/50 dark:bg-green-500/20 text-green-700 dark:text-green-300 rounded-full">
-                      <span className="w-1.5 h-1.5 bg-green-600 rounded-full"></span>
-                      📱 546211818
-                    </span>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    <a
-                      href="/contact"
-                      className="px-5 py-2 bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-gray-700 transition-all duration-300 text-sm"
-                    >
-                      Get In Touch
-                    </a>
-                    <a
-                      href="/projects"
-                      className="px-5 py-2 border-2 border-gray-600 dark:border-gray-400 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-600 hover:text-white dark:hover:bg-gray-400 dark:hover:text-stone-900 transition-all duration-300 text-sm"
-                    >
-                      View Projects
-                    </a>
-                    <a
-                      href="https://chatgpt.com/?q=Tell%20me%20about%20Syed%20Syab%20Ahmad%20and%20his%20experience"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-emerald-500 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 hover:bg-emerald-600 transition-all duration-300 text-sm flex items-center justify-center gap-1.5"
-                    >
-                      ASK
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                        <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365 2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" />
-                      </svg>
-                    </a>
-                  </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-600 rounded-full border-2 border-stone-100 dark:border-stone-800 shadow-lg">
+                  <div className="w-full h-full bg-green-500 rounded-full animate-pulse" />
                 </div>
               </div>
 
-              {/* Description - Compact */}
-              <div className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-6 space-y-2 max-w-3xl mx-auto">
-                <p>
-                  Passionate <strong>AI Engineer</strong> & <strong>Full-Stack Developer</strong> with expertise in Machine Learning, Deep Learning, and modern web technologies.
-                </p>
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
-                  Currently freelancing & exploring new domains — from AI to Web & creative tech 😎. Building innovative solutions that bridge AI with real-world applications.
-                </p>
-              </div>
+              {/* Name & Info */}
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
+                  Syed Syab Ahmad
+                </h1>
+                <h2 className="text-base md:text-lg text-stone-500 dark:text-stone-400 font-handwriting mb-3">
+                  AI Engineer & Full-Stack Developer
+                </h2>
 
-              {/* Quick Stats - Inline */}
-              <div className="flex flex-wrap justify-center gap-4 md:gap-6 py-4 border-t border-gray-200 dark:border-gray-700/50">
-                <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-gray-700 dark:text-gray-300">50+</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Certifications</div>
+                {/* Location tags */}
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-handwriting">
+                    <span className="w-1.5 h-1.5 bg-stone-500 rounded-full" />
+                    Riyadh, SA
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-handwriting">
+                    <span className="w-1.5 h-1.5 bg-stone-500 rounded-full" />
+                    Open to Relocate
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-handwriting">
+                    <span className="w-1.5 h-1.5 bg-green-600 rounded-full" />
+                    Available
+                  </span>
                 </div>
-                <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
-                <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-gray-600 dark:text-gray-400">20+</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Research</div>
-                </div>
-                <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
-                <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-emerald-600 dark:text-emerald-400">10+</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Projects</div>
-                </div>
-                <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
-                <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-purple-600 dark:text-purple-400">Open</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">To Work</div>
-                </div>
-              </div>
 
-              {/* Social Links - Minimal */}
-              <div className="flex flex-wrap justify-center gap-2 mt-4">
-                {socialLinksToShow.slice(0, 8).map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-400 transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-500/20 rounded-lg"
-                      title={social.name}
-                    >
-                      <IconComponent className="text-lg" />
-                    </a>
-                  );
-                })}
-                {socialLinks.length > 8 && (
-                  <button
-                    onClick={() => setShowAllSocialLinks(!showAllSocialLinks)}
-                    className="p-2 text-xs text-gray-700 dark:text-gray-300 hover:underline"
-                  >
-                    +{socialLinks.length - 8} more
-                  </button>
-                )}
+                {/* Action Buttons */}
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                  <motion.a href="/contact" whileHover={{ scale: 1.05 }} className="px-5 py-2 bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm font-handwriting">
+                    Get In Touch
+                  </motion.a>
+                  <motion.a href="/projects" whileHover={{ scale: 1.05 }} className="px-5 py-2 border-2 border-stone-500 text-stone-300 font-bold rounded-full hover:bg-stone-700 hover:text-white transition-all duration-300 text-sm font-handwriting">
+                    View Projects
+                  </motion.a>
+                </div>
               </div>
             </div>
-          </section>
 
-          {/* AI Facts Section */}
+            {/* Bio */}
+            <p className="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mt-6 max-w-3xl font-handwriting">
+              Passionate <strong>AI Engineer</strong> & <strong>Full-Stack Developer</strong> with expertise in Machine Learning, Deep Learning, and modern web technologies. Currently freelancing & exploring new domains — from AI to Web & creative tech. Building innovative solutions that bridge AI with real-world applications.
+            </p>
+
+            {/* Quick Stats */}
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 pt-5 border-t border-stone-200 dark:border-stone-700">
+              {[
+                { value: "50+", label: "Certifications", color: "text-stone-300" },
+                { value: "20+", label: "Research", color: "text-slate-400" },
+                { value: "10+", label: "Projects", color: "text-rose-400" },
+                { value: "Open", label: "To Work", color: "text-green-400" },
+              ].map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className={`text-lg md:text-xl font-bold ${s.color} font-handwriting`}>{s.value}</div>
+                  <div className="text-xs text-stone-500 font-handwriting">{s.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Social Links */}
+            <div className="flex flex-wrap justify-center gap-2 mt-5">
+              {socialLinksToShow.slice(0, 8).map((social, i) => {
+                const Icon = social.icon;
+                return (
+                  <a key={i} href={social.url} target="_blank" rel="noopener noreferrer" className="p-2 text-stone-500 hover:text-stone-300 transition-all duration-300 hover:bg-stone-200 dark:hover:bg-stone-700 rounded-lg" title={social.name}>
+                    <Icon className="text-lg" />
+                  </a>
+                );
+              })}
+              {socialLinks.length > 8 && (
+                <button onClick={() => setShowAllSocialLinks(!showAllSocialLinks)} className="p-2 text-xs text-stone-400 hover:text-stone-200 font-handwriting">
+                  +{socialLinks.length - 8} more
+                </button>
+              )}
+            </div>
+          </motion.div>
+
+          {/* AI Facts */}
           <AiFacts />
 
-          {/* Certificate Badges Section */}
-          <section>
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-8 max-w-7xl mx-auto transition-colors duration-300">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">
-                  Certifications
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
-                  Featured certification badges - Click on any badge to view
-                  details
-                </p>
-                <a
-                  href="/gallery"
-                    className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-2.5 bg-gray-500/20 border border-gray-600/30 dark:border-gray-500/30 rounded-full text-gray-700 dark:text-gray-300 text-xs md:text-sm font-medium hover:bg-gray-500/30 transition-all duration-300"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  View Full Gallery (
-                  {certifications.filter((cert) => cert.badge).length}{" "}
-                  Certificates)
-                </a>
-              </div>
-              <CertificationBadges
-                certifications={certifications}
-                maxItems={6}
-                showCategory={true}
-              />
+          {/* Certificate Badges Flyer */}
+          <FlyerCard rotate={1} pin="bg-slate-500">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
+                Certifications
+              </h2>
+              <p className="text-stone-500 text-xs md:text-sm font-handwriting">
+                Featured certification badges — click any badge to view details
+              </p>
+              <a href="/gallery" className="inline-flex items-center gap-2 px-4 py-2 mt-3 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-stone-600 dark:text-stone-300 text-xs font-medium hover:bg-stone-300 dark:hover:bg-stone-600 transition-all duration-300 font-handwriting">
+                View Full Gallery ({certifications.filter(c => c.badge).length})
+              </a>
             </div>
-          </section>
+            <CertificationBadges certifications={certifications} maxItems={6} showCategory={true} />
+          </FlyerCard>
 
-          {/* Certifications Section */}
+          {/* Certifications List - Scattered flyers */}
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6 md:mb-8">
-              Certifications
-            </h2>
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
-              {certificationsToShow.map((cert, index) => (
-                <div
-                  key={index}
-                  className="break-inside-avoid mb-4 md:mb-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-lg p-4 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-gray-500/20 hover:border-gray-600/50 dark:hover:border-gray-500/50"
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold text-center text-stone-100 mb-6 md:mb-8 font-handwriting"
+              style={{ transform: "rotate(-1deg)" }}
+            >
+              All Certifications
+            </motion.h2>
+            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-5">
+              {certificationsToShow.map((cert, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20, rotate: cardRotations[i % cardRotations.length] }}
+                  whileInView={{ opacity: 1, y: 0, rotate: cardRotations[i % cardRotations.length] }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03, duration: 0.4 }}
+                  whileHover={{ scale: 1.03, rotate: 0 }}
+                  className="break-inside-avoid mb-4 md:mb-5 relative bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-sm shadow-lg p-4 md:p-5 transition-all duration-300"
+                  style={{ transform: `rotate(${cardRotations[i % cardRotations.length]}deg)` }}
                 >
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-3 md:mb-4">
+                  {/* Tape */}
+                  <div className="absolute -top-2 left-[25%] w-12 h-4 bg-stone-400/40 rounded-sm" style={{ transform: `rotate(${-cardRotations[i % cardRotations.length] * 2}deg)` }} />
+                  {/* Pin */}
+                  <div className={`absolute -top-1.5 right-[15%] w-2.5 h-2.5 ${pinStyles[i % pinStyles.length]} rounded-full shadow border border-black/20 z-10`} />
+
+                  <h3 className="text-sm md:text-base font-bold text-stone-900 dark:text-stone-100 border-b border-stone-200 dark:border-stone-700 pb-2 mb-2 font-handwriting">
                     {cert.title}
                   </h3>
-                  <div className="text-gray-600 dark:text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
-                    <p>
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        Issuer:
-                      </span>{" "}
-                      {cert.issuer}
-                    </p>
-                  </div>
-                </div>
+                  <p className="text-stone-600 dark:text-stone-400 text-xs font-handwriting">
+                    {cert.issuer}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </section>
 
-          {/* Recommendations Section */}
-          <section>
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 md:p-8 max-w-7xl mx-auto transition-colors duration-300">
-              <div className="text-center mb-6 md:mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">
-                  Recommendations
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
-                  What colleagues and mentors say about working with me
-                </p>
-              </div>
-              <Recommendations recommendations={recommendations} maxItems={6} />
+          {/* Recommendations Flyer */}
+          <FlyerCard rotate={-1} pin="bg-stone-600">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
+                Recommendations
+              </h2>
+              <p className="text-stone-500 text-xs md:text-sm font-handwriting">
+                What colleagues and mentors say about working with me
+              </p>
             </div>
-          </section>
+            <Recommendations recommendations={recommendations} maxItems={6} />
+          </FlyerCard>
 
-          {/* Volunteering Section */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6 md:mb-8">
+          {/* Volunteering Flyer */}
+          <FlyerCard rotate={1.5} pin="bg-rose-700">
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-5 font-handwriting text-center">
               Volunteering
             </h2>
-            <div className="columns-1 sm:columns-2 gap-4 md:gap-6">
-              {volunteering.map((vol, index) => (
-                <div
-                  key={index}
-                    className="break-inside-avoid mb-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/50 rounded-xl shadow-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-gray-500/20 hover:border-gray-600/50 dark:hover:border-gray-500/50"
-                >
-                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2 mb-3">
-                      {vol.title}
-                    </h3>
-                    <div className="text-gray-600 dark:text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
-                      <p>
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">
-                          Organization:
-                        </span>{" "}
-                        {vol.organization}
-                      </p>
-                      <p>
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">
-                          Role:
-                        </span>{" "}
-                        {vol.role}
-                      </p>
-                      <p>
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">
-                          Duration:
-                        </span>{" "}
-                        {vol.duration}
-                      </p>
-                      {vol.category && (
-                        <p>
-                          <span className="text-gray-700 dark:text-gray-300 font-medium">
-                            Category:
-                          </span>{" "}
-                          {vol.category}
-                        </p>
-                      )}
-                    </div>
-                </div>
-              ))}
-            </div>
-          </section>
+            {volunteering.map((vol, i) => (
+              <div key={i} className="space-y-2">
+                <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100 border-b border-stone-200 dark:border-stone-700 pb-2 font-handwriting">
+                  {vol.title}
+                </h3>
+                <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
+                  <span className="font-bold text-stone-700 dark:text-stone-300">Organization:</span> {vol.organization}
+                </p>
+                <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
+                  <span className="font-bold text-stone-700 dark:text-stone-300">Role:</span> {vol.role}
+                </p>
+                <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
+                  <span className="font-bold text-stone-700 dark:text-stone-300">Duration:</span> {vol.duration}
+                </p>
+                {vol.category && (
+                  <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
+                    <span className="font-bold text-stone-700 dark:text-stone-300">Category:</span> {vol.category}
+                  </p>
+                )}
+              </div>
+            ))}
+          </FlyerCard>
+
         </div>
       </div>
     </>

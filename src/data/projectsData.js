@@ -12,7 +12,7 @@ const projects = [
       "Python, NLP, LLM Integration, Document Automation, API Resilience, Machine Translation, Prompt Engineering, Git",
     category: "AI & Machine Learning",
     projectType: "personal",
-    image: "/default.png",
+    image: "/default.webp",
     githubUrl: "https://github.com/SyabAhmad/chines-translation-to-English",
   },
   {
@@ -294,7 +294,6 @@ const projects = [
     skills: "Full Stack Development, E-commerce, React.js",
     category: "Web Development",
     githubUrl: "https://github.com/SyabAhmad/global_craft_hub",
-    image: "",
   },
   {
     title: "University Chatbot AI",
@@ -307,7 +306,6 @@ const projects = [
     skills: "Natural Language Processing, Chatbot Development",
     category: "AI & Machine Learning",
     githubUrl: "https://github.com/SyabAhmad/swat-assist-bot",
-    image: "",
   },
   {
     title: "PodcastMaker",
@@ -330,7 +328,6 @@ const projects = [
     techStack: "Flask, PostgreSQL, Python, HTML, CSS, JavaScript",
     skills: "Backend Development, REST APIs, Database Design",
     category: "Web Development",
-    image: "",
   },
   {
     title: "CamWatch",
@@ -384,7 +381,6 @@ const projects = [
       "A Visual Studio Code extension to boost productivity by providing a comprehensive collection of Python and Machine Learning code snippets for tasks including data manipulation, model building, and visualization.",
     techStack: "Visual Studio Code Extension, Python, ML",
     skills: "Python",
-    category: "AI & Machine Learning",
     category: "Developer Tools",
     githubUrl: "https://github.com/SyabAhmad/python-quick-snippets",
   },
@@ -463,7 +459,6 @@ const projects = [
       "A React.js-based music streaming application featuring a homepage with top trending songs and an integrated music player.",
     techStack: "React.js, JavaScript",
     skills: "JavaScript, React.js",
-    category: "Web Development",
     category: "Web Development",
   },
   {
