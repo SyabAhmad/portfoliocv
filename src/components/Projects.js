@@ -68,6 +68,9 @@ const Projects = () => {
     if (activeTab === "client-demos") {
       return project.projectType === "client-demo";
     }
+    if (activeTab === "inspirations") {
+      return project.projectType === "portfolio";
+    }
     return true;
   });
 
@@ -219,6 +222,20 @@ const Projects = () => {
                 {validProjects.filter((p) => p.projectType === "client-demo").length}
               </span>
             </button>
+            <button
+              onClick={() => { setActiveTab("inspirations"); setSelectedCategory("All"); setSelectedBroadSkill("All"); setShowAllProjects(false); }}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeTab === "inspirations"
+                  ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
+                  : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+              }`}
+            >
+              <FaFolderOpen size={14} />
+              Inspirations
+              <span className="ml-1 px-2 py-0.5 text-xs rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                {validProjects.filter((p) => p.projectType === "portfolio").length}
+              </span>
+            </button>
           </div>
 
           {/* Filter */}
@@ -285,10 +302,10 @@ const Projects = () => {
                       >
                         <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden">
                           <img
-                            src={currentFeatured.image || "/default.png"}
+                            src={currentFeatured.image || "/default.webp"}
                             alt={currentFeatured.title}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            onError={(e) => { e.target.src = "/default.png"; }}
+                            onError={(e) => { e.target.src = "/default.webp"; }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
@@ -385,11 +402,11 @@ const Projects = () => {
                                 src={project.image}
                                 alt={project.title}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                onError={(e) => { e.target.src = "/default.png"; }}
+                                onError={(e) => { e.target.src = "/default.webp"; }}
                               />
                             ) : (
                               <img
-                                src="/default.png"
+                                src="/default.webp"
                                 alt={project.title}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                               />
