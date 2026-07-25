@@ -3,67 +3,6 @@ import { motion } from "framer-motion";
 import SEO from "./SEO";
 import CTASection from "./CTASection";
 
-const packages = [
-  {
-    name: "Starter",
-    price: "$2,500",
-    period: "one-time",
-    description: "Professional website for your business — fast, clean, and live in 3 days.",
-    features: [
-      "Responsive Business Website",
-      "Up to 5 Pages",
-      "Basic SEO Setup",
-      "Contact Form Integration",
-      "Mobile-First Design",
-      "1 Round Revisions",
-      "3-Day Delivery",
-    ],
-    cta: "Get Started",
-    highlighted: false,
-  },
-  {
-    name: "Growth",
-    price: "$5,900",
-    period: "one-time",
-    description: "Full-stack web app with AI capabilities — the package most clients choose.",
-    features: [
-      "Custom Full-Stack Web App",
-      "AI/ML Integration",
-      "Database Design & Setup",
-      "User Authentication",
-      "Admin Dashboard",
-      "API Development",
-      "Up to 15 Pages",
-      "3 Rounds Revisions",
-      "7-Day Delivery",
-      "30-Day Support",
-    ],
-    cta: "Start Project",
-    highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    price: "$12,000+",
-    period: "one-time",
-    description: "Complex systems, multi-platform AI, and ongoing engineering partnership.",
-    features: [
-      "Custom AI/ML Pipeline",
-      "Multi-Service Architecture",
-      "Cloud Deployment & DevOps",
-      "Ongoing Maintenance",
-      "Priority Support",
-      "Scalable Infrastructure",
-      "Up to 30 Pages / Features",
-      "Unlimited Revisions",
-      "14-Day Delivery",
-      "90-Day Support",
-      "Monthly Retainer Option",
-    ],
-    cta: "Book Consultation",
-    highlighted: false,
-  },
-];
-
 const services = [
   {
     title: "Full-Stack Web Applications",
@@ -160,7 +99,7 @@ const Services = () => {
           <div className="max-w-4xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
-                Services & Pricing
+                Services
               </p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-stone-900 font-heading mb-6">
                 I build what your<br />business needs.
@@ -250,77 +189,6 @@ const Services = () => {
                       <p className="text-stone-400 text-xs font-handwriting">{item.tech}</p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-stone-900 font-heading mb-2">
-                Choose Your Package
-              </h2>
-              <p className="text-stone-500 font-handwriting">
-                Transparent pricing, no hidden fees.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {packages.map((pkg, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`rounded-xl border p-6 sm:p-8 ${
-                    pkg.highlighted
-                      ? "bg-stone-900 border-stone-900 text-white"
-                      : "bg-white border-stone-200"
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="inline-block px-3 py-1 bg-amber-400 text-stone-900 text-xs font-bold rounded-full font-heading mb-4">
-                      MOST POPULAR
-                    </div>
-                  )}
-                  <h3 className={`text-xl font-bold font-heading mb-1 ${pkg.highlighted ? "text-white" : "text-stone-900"}`}>
-                    {pkg.name}
-                  </h3>
-                  <div className="flex items-baseline gap-1 mb-3">
-                    <span className={`text-3xl font-bold font-heading ${pkg.highlighted ? "text-white" : "text-stone-900"}`}>
-                      {pkg.price}
-                    </span>
-                    <span className={`text-sm font-handwriting ${pkg.highlighted ? "text-stone-400" : "text-stone-500"}`}>
-                      {pkg.period}
-                    </span>
-                  </div>
-                  <p className={`text-sm font-handwriting mb-6 ${pkg.highlighted ? "text-stone-300" : "text-stone-500"}`}>
-                    {pkg.description}
-                  </p>
-
-                  <ul className="space-y-2.5 mb-8">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm font-handwriting">
-                        <span className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? "text-amber-400" : "text-stone-400"}`}>✓</span>
-                        <span className={pkg.highlighted ? "text-stone-200" : "text-stone-600"}>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href="/contact"
-                    className={`block w-full py-3 px-6 rounded-lg font-bold font-heading text-sm text-center ${
-                      pkg.highlighted
-                        ? "bg-white text-stone-900"
-                        : "bg-stone-900 text-white"
-                    }`}
-                  >
-                    {pkg.cta}
-                  </a>
                 </motion.div>
               ))}
             </div>
