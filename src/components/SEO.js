@@ -53,13 +53,13 @@ const SEO = ({
 
  const favicon = document.createElement("link");
  favicon.rel = "icon";
- favicon.type = "image/jpeg";
- favicon.href = "/dp.jpeg?v=2";
+ favicon.type = "image/png";
+ favicon.href = "/me.png?v=2";
  document.head.appendChild(favicon);
 
  const appleFavicon = document.createElement("link");
  appleFavicon.rel = "apple-touch-icon";
- appleFavicon.href = "/dp.jpeg?v=2";
+ appleFavicon.href = "/me.png?v=2";
  document.head.appendChild(appleFavicon);
  };
 
@@ -160,7 +160,7 @@ const SEO = ({
  jobTitle: "Machine Learning Engineer & Full-Stack Developer",
  description: description,
  url: url,
- image: `${url}/dp.jpeg`,
+ image: `${url}/me.png`,
  sameAs: [
  "https://www.linkedin.com/in/syedsyab/",
  "https://github.com/SyabAhmad",
@@ -254,7 +254,7 @@ const SEO = ({
  "@type": "ProfessionalService",
  "@id": `${url}#professional-service`,
  name: "Syed Syab Ahmad - AI & Software Development Services",
- image: `${url}/dp.jpeg`,
+ image: `${url}/me.png`,
  url: url,
  description: "Freelance Machine Learning Engineer, AI Engineer, and Full-Stack Developer offering custom AI solutions, backend development, web applications, ML model deployment, LLM integration, and RAG pipelines. Based in Riyadh, Saudi Arabia. Available worldwide for freelance, remote, and contract work.",
  priceRange: "$$",
