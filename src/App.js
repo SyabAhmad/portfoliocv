@@ -12,6 +12,7 @@ import Research from "./components/Research";
 import Experience from "./components/Experience";
 import Contact from "./components/Contacts";
 import Skills from "./components/SKill";
+import Services from "./components/Services";
 import SimpleChatbot from "./components/SimpleChatbot";
 import AnimatedPatterns from "./components/AnimatedPatterns";
 import DesignPortfolio from "./components/DesignPortfolio";
@@ -55,6 +56,7 @@ function App() {
                     <Routes>
                       <Route path="/" element={<HomePage />} />
                       <Route path="/about" element={<About />} />
+                      <Route path="/services" element={<Services />} />
                       <Route path="/projects" element={<Projects />} />
                       <Route path="/research" element={<Research />} />
                       <Route path="/experience" element={<Experience />} />

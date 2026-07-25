@@ -13,16 +13,16 @@ const HomePage = () => {
 
   const techSayings = useMemo(
     () => [
-      "Code is poetry written in logic",
-      "AI is the new electricity",
-      "Machine Learning transforms data into wisdom",
+      "I build software that solves real business problems",
+      "AI is the new electricity — I wire your business",
+      "Machine Learning turns your data into decisions",
       "Innovation distinguishes leaders from followers",
-      "The future belongs to those who code it",
-      "Deep Learning, Deeper Insights",
-      "Algorithms are the recipes for digital magic",
-      "Data is the oil of the 21st century",
-      "Building tomorrow's solutions today",
-      "Where creativity meets technology",
+      "Code that delivers, not just compiles",
+      "Deep Learning, Deeper Business Impact",
+      "Data is the oil — I build the refinery",
+      "Building tomorrow's solutions for today's challenges",
+      "Where your business goals meet technical execution",
+      "I don't just write code — I deliver working software",
     ],
     [],
   );
@@ -79,9 +79,9 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        title="Home - Syed Syab Ahmad - Hire AI Engineer & Full-Stack Developer"
-        description="AI Engineer & Full-Stack Developer building intelligent solutions. Available for hire and open to any opportunity worldwide."
-        keywords="Hire AI engineer, Full-stack developer for hire, Machine learning specialist, Python developer for hire"
+        title="Hire Syed Syab Ahmad | AI Engineer & Full-Stack Developer"
+        description="I build AI-powered web applications, ML systems, mobile apps, and data pipelines. Hire me for your next project — delivered software, not just promises."
+        keywords="hire AI engineer, hire full-stack developer, ML development service, web application development, AI consultant"
         url="https://syab.tech/"
         structuredData={homePageStructuredData}
       />
@@ -142,27 +142,27 @@ const HomePage = () => {
                 <p className="text-lg sm:text-xl md:text-2xl text-stone-500 dark:text-stone-400 font-handwriting mb-5">
                   Full Stack Developer & AI Engineer
                 </p>
-                <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-8 max-w-lg">
-                  Building intelligent solutions that transform ideas into reality — specializing in Machine Learning, Full-Stack Development, and cutting-edge AI technologies.
+<p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-8 max-w-lg">
+                  I build AI-powered software that solves real business problems — from web applications and ML pipelines to mobile apps and data systems. Hire me and get working software, not just promises.
                 </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-3">
                   <motion.a
-                    href="/projects"
+                    href="/services"
                     whileHover={{ scale: 1.05, rotate: 1 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-6 py-2.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting text-lg cursor-pointer"
                   >
-                    View My Work
+                    View Services
                   </motion.a>
                   <motion.a
-                    href="/contact"
+                    href="/projects"
                     whileHover={{ scale: 1.05, rotate: -1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-6 py-2.5 border-2 border-stone-500 dark:border-stone-400 text-stone-300 dark:text-stone-400 font-bold rounded-full hover:bg-stone-700 hover:text-white dark:hover:bg-stone-400 dark:hover:text-stone-900 transition-all duration-300 font-handwriting text-lg cursor-pointer"
+                    className="px-6 py-2.5 border-2 border-stone-500 text-stone-300 font-bold rounded-full hover:bg-stone-700 hover:text-white dark:hover:bg-stone-400 dark:hover:text-stone-900 transition-all duration-300 font-handwriting text-lg cursor-pointer"
                   >
-                    Let's Connect
+                    See Projects
                   </motion.a>
                   <motion.a
                     href="https://calendly.com/syedsyab/new-meeting"
