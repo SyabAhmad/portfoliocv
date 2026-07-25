@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaLinkedin,
@@ -128,234 +129,178 @@ const Contact = () => {
         structuredData={contactStructuredData}
       />
 
-      <div className="min-h-screen bg-stone-900 dark:bg-gray-950 flex flex-col items-center py-12 px-4 sm:px-6 mt-8 transition-colors duration-300">
-        {/* Section Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20, rotate: -1 }}
-          whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-stone-100 mb-10 font-handwriting"
-          style={{ transform: "rotate(-1deg)" }}
-        >
-          Get In Touch
-        </motion.h2>
+      <div className="min-h-screen bg-stone-50 pt-20 pb-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Main contact card - two flyer layout */}
-        <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-6 lg:gap-4 items-start">
-          {/* Left flyer - Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, rotate: -2 }}
-            whileInView={{ opacity: 1, y: 0, rotate: -2 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex-[3] w-full relative"
-            style={{ transform: "rotate(-2deg)" }}
-          >
-            {/* Tape */}
-            <div className="absolute -top-3 left-[20%] w-20 h-6 bg-stone-400/40 rotate-[-5deg] rounded-sm shadow-sm" />
-            <div className="absolute -top-3 right-[25%] w-16 h-5 bg-stone-400/40 rotate-[3deg] rounded-sm shadow-sm" />
-            {/* Pin */}
-            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-rose-800 rounded-full shadow-md border border-rose-950 z-10" />
-
-            <div className="bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-6 sm:p-8 border border-stone-200 dark:border-stone-700">
-              <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 font-handwriting mb-5">
-                Send me a message ✉️
-              </h3>
-
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-stone-600 dark:text-stone-300 mb-1 font-handwriting">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    name="from_name"
-                    id="name"
-                    className="w-full px-4 py-2.5 bg-stone-200/50 dark:bg-stone-700/50 text-stone-900 dark:text-stone-100 placeholder-stone-400 border border-stone-300 dark:border-stone-600 rounded-lg focus:ring-2 focus:ring-stone-500 focus:outline-none shadow-sm transition-colors duration-300 font-handwriting"
-                    placeholder="Your Name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-stone-600 dark:text-stone-300 mb-1 font-handwriting">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="reply_to"
-                    id="email"
-                    className="w-full px-4 py-2.5 bg-stone-200/50 dark:bg-stone-700/50 text-stone-900 dark:text-stone-100 placeholder-stone-400 border border-stone-300 dark:border-stone-600 rounded-lg focus:ring-2 focus:ring-stone-500 focus:outline-none shadow-sm transition-colors duration-300 font-handwriting"
-                    placeholder="you@example.com"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-stone-600 dark:text-stone-300 mb-1 font-handwriting">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    className="w-full px-4 py-2.5 bg-stone-200/50 dark:bg-stone-700/50 text-stone-900 dark:text-stone-100 placeholder-stone-400 border border-stone-300 dark:border-stone-600 rounded-lg focus:ring-2 focus:ring-stone-500 focus:outline-none shadow-sm transition-colors duration-300 font-handwriting resize-none"
-                    placeholder="Your message..."
-                    required
-                  ></textarea>
-                </div>
-                <motion.button
-                  type="submit"
-                  disabled={isSending}
-                  whileHover={{ scale: 1.03, rotate: 1 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="w-full py-3 px-4 rounded-lg text-lg font-bold text-stone-100 bg-stone-800 hover:bg-stone-700 dark:bg-stone-200 dark:text-stone-900 dark:hover:bg-stone-300 shadow-lg transition-all duration-300 font-handwriting cursor-pointer"
-                >
-                  {isSending ? "Sending..." : "Send Message 📨"}
-                </motion.button>
-              </form>
-            </div>
+          {/* Header */}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
+            <p className="text-sm font-medium text-stone-400 mb-3 font-handwriting tracking-widest uppercase">
+              Contact
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-stone-900 font-heading mb-3">
+              Let's work together.
+            </h1>
+            <p className="text-stone-500 text-lg max-w-xl font-handwriting">
+              Have a project in mind? Need an AI engineer or full-stack developer? Let's talk.
+            </p>
           </motion.div>
 
-          {/* Right flyer - Social Links & CV */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, rotate: 2 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 2 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex-[2] w-full relative"
-            style={{ transform: "rotate(2deg)" }}
-          >
-            {/* Tape */}
-            <div className="absolute -top-3 left-[30%] w-16 h-5 bg-stone-400/40 rotate-[4deg] rounded-sm shadow-sm" />
-            {/* Pin */}
-            <div className="absolute -top-2 right-[20%] w-3 h-3 bg-slate-500 rounded-full shadow border border-slate-700 z-10" />
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-5 gap-8">
 
-            <div className="bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-6 sm:p-8 border border-stone-200 dark:border-stone-700">
-              <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 font-handwriting mb-4">
-                Let's connect 🤝
-              </h3>
+            {/* Contact Form */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="lg:col-span-3">
+              <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8">
+                <h2 className="text-xl font-bold text-stone-900 font-heading mb-6">
+                  Send a message
+                </h2>
+
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-bold text-stone-600 mb-1.5 font-handwriting">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="from_name"
+                      id="name"
+                      className="w-full px-4 py-3 bg-stone-50 text-stone-900 placeholder-stone-400 border border-stone-200 rounded-lg focus:ring-2 focus:ring-stone-900 focus:outline-none font-handwriting"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-bold text-stone-600 mb-1.5 font-handwriting">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="reply_to"
+                      id="email"
+                      className="w-full px-4 py-3 bg-stone-50 text-stone-900 placeholder-stone-400 border border-stone-200 rounded-lg focus:ring-2 focus:ring-stone-900 focus:outline-none font-handwriting"
+                      placeholder="you@example.com"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-bold text-stone-600 mb-1.5 font-handwriting">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      className="w-full px-4 py-3 bg-stone-50 text-stone-900 placeholder-stone-400 border border-stone-200 rounded-lg focus:ring-2 focus:ring-stone-900 focus:outline-none font-handwriting resize-none"
+                      placeholder="Tell me about your project, timeline, and budget..."
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSending}
+                    className="w-full py-3.5 px-4 rounded-lg text-lg font-bold text-stone-50 bg-stone-900 font-heading"
+                  >
+                    {isSending ? "Sending..." : "Send Message"}
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+
+            {/* Sidebar */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="lg:col-span-2 space-y-6">
 
               {/* Direct Contact */}
-              <div className="mb-5">
-                <p className="text-stone-500 text-xs font-handwriting mb-2 uppercase tracking-wider">
+              <div className="bg-white border border-stone-200 rounded-xl p-6">
+                <h3 className="text-lg font-bold text-stone-900 font-heading mb-4">
                   Direct Contact
-                </p>
-                <a
-                  href="mailto:syedsyabahmadshah@gmail.com"
-                  className="text-stone-700 dark:text-stone-300 hover:text-stone-500 dark:hover:text-stone-100 transition-colors text-sm block mb-1 font-handwriting"
-                >
-                  syedsyabahmadshah@gmail.com
-                </a>
-                <a
-                  href="mailto:engr.syab@gmail.com"
-                  className="text-stone-700 dark:text-stone-300 hover:text-stone-500 dark:hover:text-stone-100 transition-colors text-sm block mb-1 font-handwriting"
-                >
-                  engr.syab@gmail.com
-                </a>
-                <p className="text-stone-600 dark:text-stone-300 text-sm font-handwriting">
-                  🇸🇦 +966 546 211 818
-                </p>
+                </h3>
+                <div className="space-y-3">
+                  <a href="mailto:syedsyabahmadshah@gmail.com" className="flex items-center gap-3 text-stone-600 text-sm font-handwriting">
+                    <FaEnvelope className="text-stone-400" size={14} />
+                    syedsyabahmadshah@gmail.com
+                  </a>
+                  <a href="mailto:engr.syab@gmail.com" className="flex items-center gap-3 text-stone-600 text-sm font-handwriting">
+                    <FaEnvelope className="text-stone-400" size={14} />
+                    engr.syab@gmail.com
+                  </a>
+                  <p className="flex items-center gap-3 text-stone-600 text-sm font-handwriting">
+                    <span className="text-stone-400">📱</span>
+                    +966 546 211 818
+                  </p>
+                </div>
               </div>
 
               {/* Social Links */}
-              <p className="text-stone-500 text-xs font-handwriting mb-3 uppercase tracking-wider">
-                Socials
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {[
-                  { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/syedsyab/", label: "LinkedIn" },
-                  { icon: <FaGithub />, href: "https://github.com/syabahmad", label: "GitHub" },
-                  { icon: <FaEnvelope />, href: "mailto:syedsyabahmadshah@gmail.com", label: "Email" },
-                  { icon: <FaTelegram />, href: "https://t.me/syedsyab", label: "Telegram" },
-                  {
-                    icon: (
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                      </svg>
-                    ),
-                    href: "https://x.com/syabsays",
-                    label: "X",
-                  },
-                ].map((s, i) => (
-                  <motion.a
-                    key={i}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, rotate: -5 }}
-                    className="p-2.5 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-lg text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 hover:border-stone-400 transition-all duration-300"
-                    aria-label={s.label}
-                  >
-                    {s.icon}
-                  </motion.a>
-                ))}
+              <div className="bg-white border border-stone-200 rounded-xl p-6">
+                <h3 className="text-lg font-bold text-stone-900 font-heading mb-4">
+                  Find Me Online
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/syedsyab/", label: "LinkedIn" },
+                    { icon: <FaGithub />, href: "https://github.com/syabahmad", label: "GitHub" },
+                    { icon: <FaEnvelope />, href: "mailto:syedsyabahmadshah@gmail.com", label: "Email" },
+                    { icon: <FaTelegram />, href: "https://t.me/syedsyab", label: "Telegram" },
+                    {
+                      icon: (
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                      ),
+                      href: "https://x.com/syabsays",
+                      label: "X",
+                    },
+                  ].map((s, i) => (
+                    <a
+                      key={i}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 bg-stone-50 border border-stone-200 rounded-lg text-stone-500"
+                      aria-label={s.label}
+                    >
+                      {s.icon}
+                    </a>
+                  ))}
+                </div>
               </div>
 
               {/* CV Download */}
-              <div className="bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-lg p-4 text-center">
-                <p className="text-stone-500 text-xs font-handwriting mb-2">
+              <div className="bg-white border border-stone-200 rounded-xl p-6 text-center">
+                <p className="text-stone-400 text-sm font-handwriting mb-3">
                   Get my resume
                 </p>
-                <motion.button
+                <button
                   onClick={handleCVDownload}
-                  whileHover={{ scale: 1.05, rotate: -1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center gap-2 mx-auto bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 font-bold py-2.5 px-5 rounded-full hover:shadow-lg transition-all duration-300 font-handwriting text-sm cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-stone-900 text-stone-50 font-bold rounded-lg font-heading text-sm"
                 >
                   <FaDownload />
                   Download CV
-                </motion.button>
-                <p className="text-[10px] text-stone-500 mt-2 font-handwriting">PDF · Updated recently</p>
+                </button>
+                <p className="text-xs text-stone-400 mt-2 font-handwriting">PDF · Updated recently</p>
               </div>
+
+            </motion.div>
+          </div>
+
+          {/* Book a Call */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8 text-center">
+              <h2 className="text-2xl font-bold text-stone-900 font-heading mb-2">
+                Prefer to talk?
+              </h2>
+              <p className="text-stone-400 text-sm font-handwriting mb-6">
+                Book a 15-minute call — free, no commitment.
+              </p>
+              <Link to="/call" className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-stone-50 font-bold rounded-lg font-heading">
+                Book a Call →
+              </Link>
             </div>
           </motion.div>
+
         </div>
-
-        {/* Calendly Flyer */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, rotate: 1 }}
-          whileInView={{ opacity: 1, y: 0, rotate: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full max-w-4xl mt-8 relative"
-          style={{ transform: "rotate(1deg)" }}
-        >
-          {/* Tape */}
-          <div className="absolute -top-3 left-1/3 w-20 h-6 bg-stone-400/40 rotate-[-3deg] rounded-sm shadow-sm" />
-          {/* Pin */}
-          <div className="absolute -top-2 right-1/3 w-3 h-3 bg-stone-500 rounded-full shadow border border-stone-700 z-10" />
-
-          <div className="bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-6 md:p-8 border border-stone-200 dark:border-stone-700">
-            <h3 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-5 font-handwriting text-center">
-              Book a 15-min Call 📞
-            </h3>
-            <CalendlyWidget />
-          </div>
-        </motion.div>
       </div>
     </>
-  );
-};
-
-const CalendlyWidget = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="calendly-inline-widget"
-      data-url="https://calendly.com/syedsyab/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=ff9200"
-      style={{ minWidth: "320px", height: "700px" }}
-    />
   );
 };
 

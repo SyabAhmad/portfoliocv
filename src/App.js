@@ -8,24 +8,18 @@ import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Research from "./components/Research";
 import Experience from "./components/Experience";
 import Contact from "./components/Contacts";
-import Skills from "./components/SKill";
 import Services from "./components/Services";
 import SimpleChatbot from "./components/SimpleChatbot";
 import AnimatedPatterns from "./components/AnimatedPatterns";
 import DesignPortfolio from "./components/DesignPortfolio";
-import RevitPortfolio from "./components/RevitPortfolio";
-import AutoCADPortfolio from "./components/AutoCADPortfolio";
-import SketchUpPortfolio from "./components/SketchUpPortfolio";
+import { RevitPortfolio, AutoCADPortfolio, SketchUpPortfolio } from "./components/ToolPortfolio";
 import AllDesignProjects from "./components/AllDesignProjects";
 import DesignProjectDetail from "./components/DesignProjectDetail";
-import Gallery from "./components/Gallery";
 import MenteE from "./components/MenteE";
 import CallPage from "./components/CallPage";
 import { ThemeProvider } from "./context/ThemeContext";
-import TerminalView from "./components/TerminalView";
 import CursorMoon from "./components/CursorMoon";
 import "./App.css";
 import "./styles/global.css";
@@ -38,17 +32,9 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route
-            path="/terminal"
-            element={
-              <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
-                <TerminalView />
-              </div>
-            }
-          />
-          <Route
             path="*"
             element={
-              <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
+              <div className="min-h-screen bg-stone-50 relative z-10">
                 <GoogleAnalytics />
                 <Layout>
                   <Navbar />
@@ -58,12 +44,9 @@ function App() {
                       <Route path="/about" element={<About />} />
                       <Route path="/services" element={<Services />} />
                       <Route path="/projects" element={<Projects />} />
-                      <Route path="/research" element={<Research />} />
                       <Route path="/experience" element={<Experience />} />
                       <Route path="/mentee" element={<MenteE />} />
                       <Route path="/contact" element={<Contact />} />
-                      <Route path="/skills" element={<Skills />} />
-                      <Route path="/gallery" element={<Gallery />} />
                       <Route path="/call" element={<CallPage />} />
                       <Route path="/design" element={<DesignPortfolio />} />
                       <Route path="/design/revit" element={<RevitPortfolio />} />

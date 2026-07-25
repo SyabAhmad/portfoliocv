@@ -1,23 +1,13 @@
 const recommendations = [
     {
-        recommender: "Sajad Khan",
+        recommender: "Mazhar Islam",
         connection: "1st degree connection",
-        designation: "Flutter Developer | Software Engineer",
-        date: "August 29, 2024",
-        text: "I highly recommend Syed Syab for any role or opportunity in data science and machine learning. With extensive experience as a machine learning engineer, Syed has demonstrated exceptional skills in Python, SQL, Scikit-Learn, and data visualization tools like Power BI. Their innovative projects, such as 'Talk 2 PDF' and the AI-based chatbot, showcase their ability to apply cutting-edge technology to solve real-world problems. Syed is a proactive learner and a dedicated professional, making them an excellent asset to any team.",
-        initials: "SK",
-        avatarColor: "from-blue-500 to-cyan-500",
-        avatarBg: "bg-blue-600"
-    },
-    {
-        recommender: "Muhammad Fayaz",
-        connection: "1st degree connection",
-        designation: "Full Stack ASP.NET Developer",
-        date: "July 4, 2024",
-        text: "I am writing to highly recommend Syed Syab Ahmad for any opportunity in the field of software engineering. I have had the pleasure of teaching Syed in several courses over the past years at University Of Swat, and I have consistently been impressed by their outstanding technical abilities, strong work ethic, and enthusiasm for learning.",
-        initials: "MF",
-        avatarColor: "from-purple-500 to-pink-500",
-        avatarBg: "bg-purple-600"
+        designation: "Entrepreneur/Startup Growth Manager/Trainer/Incubator Management",
+        date: "June 24, 2024",
+        text: "I have had the pleasure of working with Syab Ahmad in our incubator, and I can confidently say that he is an exceptional resource. Syab consistently demonstrates a high level of dedication, innovation, and professionalism. His strong work ethic and keen problem-solving skills have significantly contributed to the success of the startup.",
+        initials: "MI",
+        avatarColor: "from-cyan-500 to-blue-500",
+        avatarBg: "bg-cyan-600"
     },
     {
         recommender: "Fida Hussain",
@@ -40,16 +30,6 @@ const recommendations = [
         avatarBg: "bg-gray-600"
     },
     {
-        recommender: "Abu Bakar",
-        connection: "1st degree connection",
-        designation: "Entrepreneur Empowering Touch Tally Startup",
-        date: "June 30, 2024",
-        text: "Syed Syab Ahmad is an outstanding Junior Machine Learning Engineer with expertise in generative AI and bioinformatics. His proficiency in Python, Scikit-learn, and TensorFlow is impressive, and he excels at deriving biological insights through machine learning. Highly recommend Syed for his technical skills and dedication.",
-        initials: "AB",
-        avatarColor: "from-rose-500 to-pink-500",
-        avatarBg: "bg-rose-600"
-    },
-    {
         recommender: "Umar Gul",
         connection: "1st degree connection",
         designation: "Managing Director at Techsol Labs",
@@ -60,14 +40,34 @@ const recommendations = [
         avatarBg: "bg-indigo-600"
     },
     {
-        recommender: "Mazhar Islam",
+        recommender: "Sajad Khan",
         connection: "1st degree connection",
-        designation: "Entrepreneur/Startup Growth Manager/Trainer/Incubator Management",
-        date: "June 24, 2024",
-        text: "I have had the pleasure of working with Syab Ahmad in our incubator, and I can confidently say that he is an exceptional resource. Syab consistently demonstrates a high level of dedication, innovation, and professionalism. His strong work ethic and keen problem-solving skills have significantly contributed to the success of the startup.",
-        initials: "MI",
-        avatarColor: "from-cyan-500 to-blue-500",
-        avatarBg: "bg-cyan-600"
+        designation: "Flutter Developer | Software Engineer",
+        date: "August 29, 2024",
+        text: "I highly recommend Syed Syab for any role or opportunity in data science and machine learning. With extensive experience as a machine learning engineer, Syed has demonstrated exceptional skills in Python, SQL, Scikit-Learn, and data visualization tools like Power BI. Their innovative projects, such as 'Talk 2 PDF' and the AI-based chatbot, showcase their ability to apply cutting-edge technology to solve real-world problems. Syed is a proactive learner and a dedicated professional, making them an excellent asset to any team.",
+        initials: "SK",
+        avatarColor: "from-blue-500 to-cyan-500",
+        avatarBg: "bg-blue-600"
+    },
+    {
+        recommender: "Muhammad Fayaz",
+        connection: "1st degree connection",
+        designation: "Full Stack ASP.NET Developer",
+        date: "July 4, 2024",
+        text: "I am writing to highly recommend Syed Syab Ahmad for any opportunity in the field of software engineering. I have had the pleasure of teaching Syed in several courses over the past years at University Of Swat, and I have consistently been impressed by their outstanding technical abilities, strong work ethic, and enthusiasm for learning.",
+        initials: "MF",
+        avatarColor: "from-purple-500 to-pink-500",
+        avatarBg: "bg-purple-600"
+    },
+    {
+        recommender: "Abu Bakar",
+        connection: "1st degree connection",
+        designation: "Entrepreneur Empowering Touch Tally Startup",
+        date: "June 30, 2024",
+        text: "Syed Syab Ahmad is an outstanding Junior Machine Learning Engineer with expertise in generative AI and bioinformatics. His proficiency in Python, Scikit-learn, and TensorFlow is impressive, and he excels at deriving biological insights through machine learning. Highly recommend Syed for his technical skills and dedication.",
+        initials: "AB",
+        avatarColor: "from-rose-500 to-pink-500",
+        avatarBg: "bg-rose-600"
     },
     {
         recommender: "Sami ullah",

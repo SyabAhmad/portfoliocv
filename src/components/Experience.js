@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp, FaCalendarAlt, FaBriefcase } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const experienceData = [
   {
@@ -38,14 +37,16 @@ const experienceData = [
     role: "Chief Operating Officer",
     company: "AI3",
     period: "Apr 2024 - Jul 2024",
-    description: "Oversaw operations and generative AI development, managing projects and cross-functional teams to deliver cutting-edge AI solutions.",
+    description: "Promoted to COO after demonstrating strong technical and leadership skills as Software Engineer. Oversaw operations and generative AI development, managing projects and cross-functional teams to deliver cutting-edge AI solutions.",
+    badge: "/certificates/Internships/CodeAlpha/Offer Letter/offer letter code alpha.jpg",
   },
   {
     id: 5,
     role: "Software Engineer",
     company: "AI3",
     period: "Nov 2023 - Apr 2024",
-    description: "Built AI-driven applications including article generators, text-to-speech tools, and improved blog content with generative AI technologies.",
+    description: "Started as a Software Engineer building AI-driven applications including article generators, text-to-speech tools, and improved blog content with generative AI technologies. Promoted to COO within 5 months based on performance.",
+    badge: "/certificates/Internships/CodeAlpha/Offer Letter/offer letter code alpha.jpg",
   },
   {
     id: 6,
@@ -111,11 +112,7 @@ const experienceData = [
   },
 ];
 
-const cardRotations = [-1.5, 1, -0.8, 1.2, -0.5, 0.8, -1.2, 0.6, -1, 1.5, -0.7, 1.1, -0.9, 0.4];
-const pinColors = ["bg-rose-800", "bg-slate-500", "bg-stone-500", "bg-rose-700", "bg-slate-600", "bg-stone-600", "bg-rose-900"];
-
 const Experience = () => {
-  const [expandedId, setExpandedId] = useState(null);
   const [filter, setFilter] = useState("all");
 
   const filtered = experienceData.filter((exp) => {
@@ -124,43 +121,59 @@ const Experience = () => {
     return true;
   });
 
+  const currentRoles = experienceData.filter(e => e.current);
+  const totalYears = "2+";
+
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-stone-900 dark:bg-gray-950 relative transition-colors duration-300">
-      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+    <div className="min-h-screen bg-stone-50 pt-20 pb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20, rotate: -1 }}
-            animate={{ opacity: 1, y: 0, rotate: -1 }}
-            className="text-4xl md:text-5xl font-bold text-stone-100 mb-3 font-handwriting"
-            style={{ transform: "rotate(-1deg)" }}
-          >
-            Professional Experience
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-stone-500 max-w-2xl mx-auto font-handwriting"
-          >
-            {experienceData.length} roles spanning full-time, freelance & internships
-          </motion.p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
+          <p className="text-sm font-medium text-stone-400 mb-3 font-handwriting tracking-widest uppercase">
+            Career
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-stone-900 font-heading mb-3">
+            Experience.
+          </h1>
+          <p className="text-stone-500 text-lg max-w-xl font-handwriting">
+            {experienceData.length} roles across {totalYears} years — freelance, full-time, and internships.
+          </p>
+        </motion.div>
+
+        {/* Current Roles Highlight */}
+        <div className="bg-white border border-stone-200 rounded-xl p-6 mb-8">
+          <p className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-4 font-handwriting">
+            Currently
+          </p>
+          <div className="space-y-4">
+            {currentRoles.map((exp, i) => (
+              <div key={exp.id} className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold text-stone-900 font-heading">{exp.role}</h3>
+                  <p className="text-stone-500 text-sm font-handwriting">{exp.company} · {exp.period}</p>
+                  <p className="text-stone-500 text-sm font-handwriting mt-1">{exp.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex justify-center gap-2 mb-10">
+        <div className="flex flex-wrap gap-2 mb-8">
           {[
-            { key: "all", label: "All" },
+            { key: "all", label: "All Roles" },
             { key: "current", label: "Current" },
             { key: "internship", label: "Internships" },
           ].map((tab) => (
             <button
               key={tab.key}
               onClick={() => setFilter(tab.key)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 font-handwriting ${
+              className={`px-4 py-2 rounded-lg text-sm font-medium font-handwriting ${
                 filter === tab.key
-                  ? "bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 shadow-lg"
-                  : "bg-stone-800/50 text-stone-400 hover:bg-stone-700 hover:text-stone-300"
+                  ? "bg-stone-900 text-stone-50"
+                  : "bg-white border border-stone-200 text-stone-500"
               }`}
             >
               {tab.label}
@@ -169,114 +182,48 @@ const Experience = () => {
         </div>
 
         {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-stone-700 opacity-40" />
-
-          <div className="space-y-5">
-            <AnimatePresence>
-              {filtered.map((exp, index) => {
-                const rot = cardRotations[index % cardRotations.length];
-                const pinColor = pinColors[index % pinColors.length];
-                const isExpanded = expandedId === exp.id;
-
-                return (
-                  <motion.div
-                    key={exp.id}
-                    initial={{ opacity: 0, x: -30, rotate: rot }}
-                    animate={{ opacity: 1, x: 0, rotate: rot }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ delay: index * 0.04, duration: 0.4 }}
-                    whileHover={{ scale: 1.01, rotate: 0 }}
-                    className="relative pl-16 md:pl-20"
-                    style={{ transform: `rotate(${rot}deg)` }}
-                  >
-                    {/* Timeline dot */}
-                    <div className={`absolute left-4 md:left-6 top-8 w-4 h-4 rounded-full ${exp.current ? "bg-rose-800 animate-pulse" : "bg-stone-500"} ring-4 ring-stone-900 z-10`} />
-
-                    {/* Card - flyer style */}
-                    <div className="relative bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-lg transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-black/20">
-                      {/* Tape */}
-                      <div className="absolute -top-2.5 left-[12%] w-14 h-5 bg-stone-400/40 rounded-sm shadow-sm z-10" style={{ transform: `rotate(${-rot * 2}deg)` }} />
-                      {/* Pin */}
-                      <div className={`absolute -top-1.5 right-[10%] w-2.5 h-2.5 ${pinColor} rounded-full shadow border border-black/20 z-10`} />
-
-                      <div className="p-5 md:p-6">
-                        {/* Header row */}
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 flex-wrap mb-1">
-                              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100 font-handwriting">
-                                {exp.role}
-                              </h3>
-                              {exp.current && (
-                                <span className="px-2 py-0.5 bg-rose-800/20 border border-rose-700/30 rounded-full text-rose-300 text-xs font-medium font-handwriting">
-                                  Current
-                                </span>
-                              )}
-                            </div>
-                            <div className="flex items-center gap-3 flex-wrap text-sm">
-                              <span className="font-semibold text-stone-600 dark:text-stone-300 font-handwriting">
-                                {exp.company}
-                              </span>
-                              <span className="flex items-center gap-1 text-stone-500 font-handwriting text-xs">
-                                <FaCalendarAlt className="w-3 h-3" />
-                                {exp.period}
-                              </span>
-                            </div>
-                          </div>
-
-                          {/* Expand button */}
-                          <button
-                            onClick={() => setExpandedId(isExpanded ? null : exp.id)}
-                            className="flex-shrink-0 p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all duration-300"
-                          >
-                            {isExpanded ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
-                          </button>
-                        </div>
-
-                        {/* Description */}
-                        <p className={`text-stone-600 dark:text-stone-400 text-sm leading-relaxed mt-3 font-handwriting ${isExpanded ? "" : "line-clamp-2"}`}>
-                          {exp.description}
-                        </p>
-
-                        {/* Expanded details */}
-                        <AnimatePresence>
-                          {isExpanded && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="mt-4 pt-4 border-t border-stone-200 dark:border-stone-700"
-                            >
-                              {exp.badge && (
-                                <div className="flex items-center gap-2 mb-3">
-                                  <FaBriefcase className="w-4 h-4 text-stone-500" />
-                                  <span className="text-xs text-stone-500 font-handwriting">Certificate available</span>
-                                </div>
-                              )}
-                              <div className="flex gap-2 flex-wrap">
-                                <span className="px-3 py-1 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-stone-600 dark:text-stone-300 text-xs font-handwriting">
-                                  {exp.period}
-                                </span>
-                                {exp.badge && (
-                                  <span className="px-3 py-1 bg-rose-800/20 border border-rose-700/30 rounded-full text-rose-300 text-xs font-handwriting">
-                                    Certified
-                                  </span>
-                                )}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </AnimatePresence>
-          </div>
+        <div className="space-y-4">
+          {filtered.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.03 }}
+              className="bg-white border border-stone-200 rounded-xl p-5 sm:p-6"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6">
+                <div className="sm:w-36 flex-shrink-0">
+                  <span className="text-xs text-stone-400 font-handwriting">{exp.period}</span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <h3 className="text-lg font-bold text-stone-900 font-heading">
+                      {exp.role}
+                    </h3>
+                    {exp.current && (
+                      <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-bold rounded-full font-handwriting">
+                        Current
+                      </span>
+                    )}
+                    {exp.badge && (
+                      <span className="px-2 py-0.5 bg-stone-100 text-stone-500 text-xs rounded-full font-handwriting">
+                        Certified
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-stone-600 font-semibold text-sm font-handwriting mb-1">
+                    {exp.company}
+                  </p>
+                  <p className="text-stone-500 text-sm font-handwriting leading-relaxed">
+                    {exp.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </div>
   );

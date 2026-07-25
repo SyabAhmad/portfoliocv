@@ -34,6 +34,7 @@ import {
 } from "react-icons/si";
 import certifications from "../data/certificationsData";
 import recommendations from "../data/recommendationsData";
+import researchIdeas from "../data/researchData";
 import CertificationBadges from "./CertificationBadges";
 import Recommendations from "./Recommendations";
 import AiFacts from "./AiFacts";
@@ -49,29 +50,6 @@ const volunteering = [
   },
 ];
 
-const cardRotations = [-1.5, 1, -0.5, 1.5, -1, 0.8];
-const pinStyles = [
-  "bg-rose-800", "bg-slate-500", "bg-stone-500",
-  "bg-rose-700", "bg-slate-600", "bg-stone-600",
-];
-
-const FlyerCard = ({ children, rotate = 0, pin = "bg-rose-800", className = "" }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30, rotate }}
-    whileInView={{ opacity: 1, y: 0, rotate }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-    whileHover={{ scale: 1.02, rotate: 0 }}
-    className={`relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-xl shadow-black/30 p-6 sm:p-8 border border-stone-200 dark:border-stone-700 ${className}`}
-    style={{ transform: `rotate(${rotate}deg)` }}
-  >
-    <div className="absolute -top-3 left-[20%] w-16 h-5 bg-stone-400/40 rotate-[-5deg] rounded-sm shadow-sm" />
-    <div className="absolute -top-2 right-[15%] w-3 h-3 rounded-full shadow border border-black/20 z-10" style={{ backgroundColor: "var(--pin)" }} />
-    <div className={`absolute -top-2 right-[15%] w-3 h-3 ${pin} rounded-full shadow border border-black/20 z-10`} />
-    {children}
-  </motion.div>
-);
-
 const About = () => {
   const [showAllCertifications, setShowAllCertifications] = useState(false);
   const [showAllSocialLinks, setShowAllSocialLinks] = useState(false);
@@ -81,7 +59,7 @@ const About = () => {
     { name: "GitHub", icon: FaGithub, url: "https://github.com/syabahmad" },
     { name: "Twitter", icon: FaTwitter, url: "https://twitter.com/SyabSays" },
     { name: "Instagram", icon: FaInstagram, url: "https://instagram.com/syedsyab" },
-    { name: "Dribbble", icon: FaDribbble, url: "https://dribbble.com/Syab_Ahmad" },
+    { name: "Dribbble", icon: FaDribbble, url: "https://dribbble.com/syedsyab" },
     { name: "Behance", icon: FaBehance, url: "https://www.behance.net/syabahmad" },
     { name: "Stack Overflow", icon: FaStackOverflow, url: "https://stackoverflow.com/users/20266067/syed-syab-ahmad-shah" },
     { name: "LeetCode", icon: SiLeetcode, url: "https://leetcode.com/u/syab_ahmad/" },
@@ -111,7 +89,7 @@ const About = () => {
     jobTitle: "AI Engineer & Full-Stack Developer",
     description: "Passionate AI Engineer and Full-Stack Developer with expertise in Machine Learning, Deep Learning, and modern web technologies.",
     url: "https://syab.tech/about",
-    image: "https://syab.tech/dp.jpeg",
+    image: "https://syab.tech/me.png",
     alumniOf: "University of Swat",
     hasCredential: certifications.map((cert) => ({
       "@type": "EducationalOccupationalCredential",
@@ -133,214 +111,307 @@ const About = () => {
         structuredData={aboutStructuredData}
       />
 
-      <div className="min-h-screen p-4 sm:p-8 pt-24 bg-stone-900 dark:bg-gray-950 transition-colors duration-300">
-        <div className="container mx-auto space-y-10 md:space-y-14 max-w-6xl">
+      <div className="min-h-screen bg-stone-50 pt-20">
 
-          {/* Hero Flyer - Profile */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, rotate: -1.5 }}
-            animate={{ opacity: 1, y: 0, rotate: -1.5 }}
-            transition={{ duration: 0.7 }}
-            className="relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-6 sm:p-8 md:p-10 border border-stone-200 dark:border-stone-700"
-            style={{ transform: "rotate(-1.5deg)" }}
-          >
-            {/* Tape */}
-            <div className="absolute -top-3 left-[15%] w-20 h-6 bg-stone-400/40 rotate-[-6deg] rounded-sm shadow-sm" />
-            <div className="absolute -top-3 right-[20%] w-16 h-5 bg-stone-400/40 rotate-[4deg] rounded-sm shadow-sm" />
-            {/* Pin */}
-            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-rose-800 rounded-full shadow-md border border-rose-950 z-10" />
-
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-              {/* Profile Image */}
+        {/* Profile Header */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col md:flex-row items-center md:items-start gap-8"
+            >
               <div className="relative flex-shrink-0">
-                <div className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-sm overflow-hidden border-2 border-stone-300 dark:border-stone-600 shadow-xl">
-                  <img
-                    src="dp.jpeg"
-                    alt="Syed Syab Ahmad"
-                    className="w-full h-full object-cover"
-                    onError={(e) => { e.target.style.display = "none"; }}
-                  />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-600 rounded-full border-2 border-stone-100 dark:border-stone-800 shadow-lg">
-                  <div className="w-full h-full bg-green-500 rounded-full animate-pulse" />
-                </div>
+                <img
+                  src="me.png"
+                  alt="Syed Syab Ahmad"
+                  className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover border border-stone-200 shadow-lg"
+                  onError={(e) => { e.target.style.display = "none"; }}
+                />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-stone-50" />
               </div>
 
-              {/* Name & Info */}
-              <div className="flex-1 text-center md:text-left">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
+              <div className="text-center md:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 font-heading mb-2">
                   Syed Syab Ahmad
                 </h1>
-                <h2 className="text-base md:text-lg text-stone-500 dark:text-stone-400 font-handwriting mb-3">
+                <p className="text-lg text-stone-500 font-handwriting mb-4">
                   AI Engineer & Full-Stack Developer
-                </h2>
+                </p>
 
-                {/* Location tags */}
-                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-handwriting">
-                    <span className="w-1.5 h-1.5 bg-stone-500 rounded-full" />
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-5">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-handwriting">
+                    <span className="w-1.5 h-1.5 bg-stone-400 rounded-full" />
                     Riyadh, SA
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-handwriting">
-                    <span className="w-1.5 h-1.5 bg-stone-500 rounded-full" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-handwriting">
+                    <span className="w-1.5 h-1.5 bg-stone-400 rounded-full" />
                     Open to Relocate
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-handwriting">
-                    <span className="w-1.5 h-1.5 bg-green-600 rounded-full" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-handwriting">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
                     Available
                   </span>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                  <motion.a href="/contact" whileHover={{ scale: 1.05 }} className="px-5 py-2 bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm font-handwriting">
+                <p className="text-stone-500 font-handwriting leading-relaxed max-w-2xl mb-6">
+                  Passionate <strong className="text-stone-700">AI Engineer</strong> & <strong className="text-stone-700">Full-Stack Developer</strong> with expertise in Machine Learning, Deep Learning, and modern web technologies. Currently freelancing & exploring new domains — from AI to Web & creative tech. Building innovative solutions that bridge AI with real-world applications.
+                </p>
+
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-6">
+                  {[
+                    { value: "50+", label: "Certifications" },
+                    { value: "20+", label: "Research" },
+                    { value: "37+", label: "Projects" },
+                    { value: "Open", label: "To Work" },
+                  ].map((s, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-lg font-bold text-stone-900 font-heading">{s.value}</div>
+                      <div className="text-xs text-stone-400 font-handwriting">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                  <a href="/contact" className="px-6 py-2.5 bg-stone-900 text-stone-50 font-bold rounded-lg text-sm font-heading shadow-md">
                     Get In Touch
-                  </motion.a>
-                  <motion.a href="/projects" whileHover={{ scale: 1.05 }} className="px-5 py-2 border-2 border-stone-500 text-stone-300 font-bold rounded-full hover:bg-stone-700 hover:text-white transition-all duration-300 text-sm font-handwriting">
+                  </a>
+                  <a href="/projects" className="px-6 py-2.5 border-2 border-stone-300 text-stone-600 font-bold rounded-lg text-sm font-heading">
                     View Projects
-                  </motion.a>
+                  </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
+          </div>
+        </section>
 
-            {/* Bio */}
-            <p className="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mt-6 max-w-3xl font-handwriting">
-              Passionate <strong>AI Engineer</strong> & <strong>Full-Stack Developer</strong> with expertise in Machine Learning, Deep Learning, and modern web technologies. Currently freelancing & exploring new domains — from AI to Web & creative tech. Building innovative solutions that bridge AI with real-world applications.
+        {/* Social Links Marquee */}
+        <section className="pb-12 overflow-hidden">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+            <p className="text-xs font-medium text-stone-400 font-handwriting tracking-widest uppercase">
+              Find Me Online
             </p>
+          </div>
+          <div className="relative">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none" />
 
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 pt-5 border-t border-stone-200 dark:border-stone-700">
-              {[
-                { value: "50+", label: "Certifications", color: "text-stone-300" },
-                { value: "20+", label: "Research", color: "text-slate-400" },
-                { value: "10+", label: "Projects", color: "text-rose-400" },
-                { value: "Open", label: "To Work", color: "text-green-400" },
-              ].map((s, i) => (
-                <div key={i} className="text-center">
-                  <div className={`text-lg md:text-xl font-bold ${s.color} font-handwriting`}>{s.value}</div>
-                  <div className="text-xs text-stone-500 font-handwriting">{s.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Social Links */}
-            <div className="flex flex-wrap justify-center gap-2 mt-5">
-              {socialLinksToShow.slice(0, 8).map((social, i) => {
+            {/* Row 1 - scrolls left */}
+            <div className="flex mb-4 animate-marquee-left">
+              {[...socialLinks, ...socialLinks, ...socialLinks].map((social, i) => {
                 const Icon = social.icon;
                 return (
-                  <a key={i} href={social.url} target="_blank" rel="noopener noreferrer" className="p-2 text-stone-500 hover:text-stone-300 transition-all duration-300 hover:bg-stone-200 dark:hover:bg-stone-700 rounded-lg" title={social.name}>
-                    <Icon className="text-lg" />
+                  <a
+                    key={`row1-${i}`}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 flex items-center gap-3 px-6 py-4 bg-white border border-stone-200 rounded-xl mr-4 group"
+                    title={social.name}
+                  >
+                    <Icon className="text-2xl text-stone-400 group-hover:text-stone-700 transition-colors" />
+                    <span className="text-sm font-medium text-stone-600 font-handwriting whitespace-nowrap">{social.name}</span>
                   </a>
                 );
               })}
-              {socialLinks.length > 8 && (
-                <button onClick={() => setShowAllSocialLinks(!showAllSocialLinks)} className="p-2 text-xs text-stone-400 hover:text-stone-200 font-handwriting">
-                  +{socialLinks.length - 8} more
-                </button>
-              )}
             </div>
-          </motion.div>
 
-          {/* AI Facts */}
-          <AiFacts />
-
-          {/* Certificate Badges Flyer */}
-          <FlyerCard rotate={1} pin="bg-slate-500">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
-                Certifications
-              </h2>
-              <p className="text-stone-500 text-xs md:text-sm font-handwriting">
-                Featured certification badges — click any badge to view details
-              </p>
-              <a href="/gallery" className="inline-flex items-center gap-2 px-4 py-2 mt-3 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-stone-600 dark:text-stone-300 text-xs font-medium hover:bg-stone-300 dark:hover:bg-stone-600 transition-all duration-300 font-handwriting">
-                View Full Gallery ({certifications.filter(c => c.badge).length})
-              </a>
+            {/* Row 2 - scrolls right */}
+            <div className="flex animate-marquee-right">
+              {[...socialLinks, ...socialLinks, ...socialLinks].map((social, i) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={`row2-${i}`}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 flex items-center gap-3 px-6 py-4 bg-white border border-stone-200 rounded-xl mr-4 group"
+                    title={social.name}
+                  >
+                    <Icon className="text-2xl text-stone-400 group-hover:text-stone-700 transition-colors" />
+                    <span className="text-sm font-medium text-stone-600 font-handwriting whitespace-nowrap">{social.name}</span>
+                  </a>
+                );
+              })}
             </div>
-            <CertificationBadges certifications={certifications} maxItems={6} showCategory={true} />
-          </FlyerCard>
+          </div>
+        </section>
 
-          {/* Certifications List - Scattered flyers */}
-          <section>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-bold text-center text-stone-100 mb-6 md:mb-8 font-handwriting"
-              style={{ transform: "rotate(-1deg)" }}
-            >
-              All Certifications
-            </motion.h2>
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-5">
-              {certificationsToShow.map((cert, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20, rotate: cardRotations[i % cardRotations.length] }}
-                  whileInView={{ opacity: 1, y: 0, rotate: cardRotations[i % cardRotations.length] }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.03, duration: 0.4 }}
-                  whileHover={{ scale: 1.03, rotate: 0 }}
-                  className="break-inside-avoid mb-4 md:mb-5 relative bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-sm shadow-lg p-4 md:p-5 transition-all duration-300"
-                  style={{ transform: `rotate(${cardRotations[i % cardRotations.length]}deg)` }}
-                >
-                  {/* Tape */}
-                  <div className="absolute -top-2 left-[25%] w-12 h-4 bg-stone-400/40 rounded-sm" style={{ transform: `rotate(${-cardRotations[i % cardRotations.length] * 2}deg)` }} />
-                  {/* Pin */}
-                  <div className={`absolute -top-1.5 right-[15%] w-2.5 h-2.5 ${pinStyles[i % pinStyles.length]} rounded-full shadow border border-black/20 z-10`} />
+        {/* AI Facts */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <AiFacts />
+          </div>
+        </section>
 
-                  <h3 className="text-sm md:text-base font-bold text-stone-900 dark:text-stone-100 border-b border-stone-200 dark:border-stone-700 pb-2 mb-2 font-handwriting">
-                    {cert.title}
-                  </h3>
-                  <p className="text-stone-600 dark:text-stone-400 text-xs font-handwriting">
-                    {cert.issuer}
+        {/* Certification Badges */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-stone-900 font-heading mb-1">
+                    Certifications
+                  </h2>
+                  <p className="text-stone-400 text-sm font-handwriting">
+                    {certifications.length} certifications across various platforms
                   </p>
-                </motion.div>
+                </div>
+              </div>
+              <CertificationBadges certifications={certifications} maxItems={6} showCategory={true} />
+            </div>
+          </div>
+        </section>
+
+        {/* All Certifications */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-stone-900 font-heading">
+                  All Certifications
+                </h2>
+                <button
+                  onClick={() => setShowAllCertifications(!showAllCertifications)}
+                  className="text-sm text-stone-500 font-handwriting flex items-center gap-1"
+                >
+                  {showAllCertifications ? (
+                    <>Show Less <FaChevronUp size={12} /></>
+                  ) : (
+                    <>View All ({certifications.length}) <FaChevronDown size={12} /></>
+                  )}
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {certificationsToShow.map((cert, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.02 }}
+                    className="bg-stone-50 border border-stone-100 rounded-lg p-4"
+                  >
+                    <h3 className="text-sm font-bold text-stone-800 font-heading mb-1 leading-snug">
+                      {cert.title}
+                    </h3>
+                    <p className="text-stone-500 text-xs font-handwriting">
+                      {cert.issuer}
+                    </p>
+                    {cert.category && (
+                      <span className="inline-block mt-2 px-2 py-0.5 bg-stone-100 text-stone-500 text-[10px] rounded-full font-handwriting">
+                        {cert.category}
+                      </span>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recommendations */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-stone-900 font-heading mb-2">
+                  Recommendations
+                </h2>
+                <p className="text-stone-400 text-sm font-handwriting">
+                  What colleagues and mentors say about working with me
+                </p>
+              </div>
+              <Recommendations recommendations={recommendations} maxItems={6} />
+            </div>
+          </div>
+        </section>
+
+        {/* Volunteering */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8">
+              <h2 className="text-2xl font-bold text-stone-900 font-heading mb-6 text-center">
+                Volunteering
+              </h2>
+              {volunteering.map((vol, i) => (
+                <div key={i} className="bg-stone-50 border border-stone-100 rounded-lg p-5">
+                  <h3 className="text-lg font-bold text-stone-800 font-heading mb-3">
+                    {vol.title}
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <span className="text-xs text-stone-400 font-handwriting uppercase tracking-wider">Organization</span>
+                      <p className="text-stone-700 text-sm font-handwriting">{vol.organization}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs text-stone-400 font-handwriting uppercase tracking-wider">Role</span>
+                      <p className="text-stone-700 text-sm font-handwriting">{vol.role}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs text-stone-400 font-handwriting uppercase tracking-wider">Duration</span>
+                      <p className="text-stone-700 text-sm font-handwriting">{vol.duration}</p>
+                    </div>
+                    {vol.category && (
+                      <div>
+                        <span className="text-xs text-stone-400 font-handwriting uppercase tracking-wider">Category</span>
+                        <p className="text-stone-700 text-sm font-handwriting">{vol.category}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Recommendations Flyer */}
-          <FlyerCard rotate={-1} pin="bg-stone-600">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">
-                Recommendations
-              </h2>
-              <p className="text-stone-500 text-xs md:text-sm font-handwriting">
-                What colleagues and mentors say about working with me
-              </p>
-            </div>
-            <Recommendations recommendations={recommendations} maxItems={6} />
-          </FlyerCard>
-
-          {/* Volunteering Flyer */}
-          <FlyerCard rotate={1.5} pin="bg-rose-700">
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-5 font-handwriting text-center">
-              Volunteering
-            </h2>
-            {volunteering.map((vol, i) => (
-              <div key={i} className="space-y-2">
-                <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100 border-b border-stone-200 dark:border-stone-700 pb-2 font-handwriting">
-                  {vol.title}
-                </h3>
-                <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
-                  <span className="font-bold text-stone-700 dark:text-stone-300">Organization:</span> {vol.organization}
-                </p>
-                <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
-                  <span className="font-bold text-stone-700 dark:text-stone-300">Role:</span> {vol.role}
-                </p>
-                <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
-                  <span className="font-bold text-stone-700 dark:text-stone-300">Duration:</span> {vol.duration}
-                </p>
-                {vol.category && (
-                  <p className="text-stone-600 dark:text-stone-400 text-sm font-handwriting">
-                    <span className="font-bold text-stone-700 dark:text-stone-300">Category:</span> {vol.category}
+        {/* Research Interests */}
+        {researchIdeas && researchIdeas.length > 0 && (
+          <section className="px-4 sm:px-6 lg:px-8 pb-16">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold text-stone-900 font-heading mb-2">
+                    Research Interests
+                  </h2>
+                  <p className="text-stone-400 text-sm font-handwriting">
+                    Areas I'm exploring and building in
                   </p>
-                )}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {researchIdeas.slice(0, 9).map((research, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.03 }}
+                      className="bg-stone-50 border border-stone-100 rounded-lg p-4"
+                    >
+                      <h3 className="text-sm font-bold text-stone-800 font-heading mb-1 leading-snug">
+                        {research.title}
+                      </h3>
+                      <p className="text-stone-500 text-xs font-handwriting leading-relaxed mb-2">
+                        {research.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1">
+                        {research.techniques && research.techniques.slice(0, 3).map((tech, j) => (
+                          <span key={j} className="px-2 py-0.5 bg-stone-100 text-stone-500 text-[10px] rounded-full font-handwriting">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </FlyerCard>
+            </div>
+          </section>
+        )}
 
-        </div>
       </div>
     </>
   );

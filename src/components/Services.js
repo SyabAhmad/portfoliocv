@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { FaChevronDown, FaChevronUp, FaRocket, FaShieldAlt, FaChartLine, FaCogs, FaBrain, FaGlobe, FaMobileAlt, FaDatabase, FaCloud, FaBolt, FaPuzzlePiece, FaUsers, FaBriefcase, FaCheckCircle } from "react-icons/fa";
 import SEO from "./SEO";
-
-const rotations = [-2, 1.5, -1, 2.5, -1.8, 1.2, -2.2];
-const pinColors = ["bg-rose-800", "bg-slate-500", "bg-stone-500", "bg-rose-700", "bg-slate-600", "bg-stone-600", "bg-rose-900"];
+import CTASection from "./CTASection";
 
 const packages = [
   {
     name: "Starter",
     price: "$2,500",
     period: "one-time",
-    description: "Perfect for establishing your digital presence with a professional website.",
+    description: "Professional website for your business — fast, clean, and live in 3 days.",
     features: [
       "Responsive Business Website",
       "Up to 5 Pages",
@@ -28,7 +25,7 @@ const packages = [
     name: "Growth",
     price: "$5,900",
     period: "one-time",
-    description: "Full-stack web application with AI capabilities and data integration.",
+    description: "Full-stack web app with AI capabilities — the package most clients choose.",
     features: [
       "Custom Full-Stack Web App",
       "AI/ML Integration",
@@ -48,7 +45,7 @@ const packages = [
     name: "Enterprise",
     price: "$12,000+",
     period: "one-time",
-    description: "Complex systems, multi-platform AI solutions, and ongoing engineering partnership.",
+    description: "Complex systems, multi-platform AI, and ongoing engineering partnership.",
     features: [
       "Custom AI/ML Pipeline",
       "Multi-Service Architecture",
@@ -69,116 +66,84 @@ const packages = [
 
 const services = [
   {
-    icon: <FaGlobe />,
-    title: "I BUILD THIS",
-    subtitle: "Full-Stack Web Applications",
-    description: "From React frontends to Python backends, I engineer complete web products that actually work — not just layouts, but systems that scale.",
+    title: "Full-Stack Web Applications",
+    description: "From React frontends to Python backends — complete web products that scale.",
     capabilities: ["React / Next.js", "FastAPI / Django / Flask", "PostgreSQL / MongoDB", "Cloud Deployment", "CI/CD Pipelines"],
   },
   {
-    icon: <FaBrain />,
-    title: "I BUILD THIS",
-    subtitle: "AI & Machine Learning Solutions",
-    description: "Real AI systems — not demos. RAG pipelines, computer vision, NLP, LLM integrations, and custom ML models trained on your data.",
+    title: "AI & Machine Learning Solutions",
+    description: "Real AI systems — RAG pipelines, computer vision, NLP, LLM integrations, custom ML models.",
     capabilities: ["LLM Integration (Groq, OpenAI)", "RAG Pipelines", "Computer Vision (YOLOv8)", "NLP & Text Analysis", "Custom Model Training"],
   },
   {
-    icon: <FaMobileAlt />,
-    title: "I BUILD THIS",
-    subtitle: "Mobile Applications",
-    description: "Native Android apps with enterprise-grade security, offline-first architecture, and modern UI — built with Kotlin and Jetpack Compose.",
+    title: "Mobile Applications",
+    description: "Native Android apps with enterprise-grade security, offline-first architecture, modern UI.",
     capabilities: ["Android (Kotlin/Java)", "Jetpack Compose", "Firebase Backend", "End-to-End Encryption", "Offline-First Design"],
   },
   {
-    icon: <FaDatabase />,
-    title: "I BUILD THIS",
-    subtitle: "Data Engineering & Pipelines",
-    description: "ETL pipelines, data preprocessing, vector databases, and analytics infrastructure that turns raw data into actionable business intelligence.",
-    capabilities: ["ETL Pipeline Design", "Data Preprocessing", "Vector Search (Pinecone/Qdrant)", "Python (Pandas/NumPy)", "Automated Data Ops"],
+    title: "Data Engineering & Pipelines",
+    description: "ETL pipelines, data preprocessing, vector databases, analytics infrastructure.",
+    capabilities: ["ETL Pipeline Design", "Data Preprocessing", "Vector Search", "Python (Pandas/NumPy)", "Automated Data Ops"],
   },
   {
-    icon: <FaBolt />,
-    title: "I BUILD THIS",
-    subtitle: "Generative AI & Automation",
-    description: "AI agents, voice assistants, document automation, and workflow tools that eliminate manual work and accelerate your team.",
-    capabilities: ["AI Voice Agents (Retell)", "Document AI (DOCX/PDF)", "Workflow Automation", "Chatbots & Assistants", "Prompt Engineering"],
+    title: "Generative AI & Automation",
+    description: "AI agents, voice assistants, document automation, workflow tools that eliminate manual work.",
+    capabilities: ["AI Voice Agents", "Document AI", "Workflow Automation", "Chatbots & Assistants", "Prompt Engineering"],
   },
   {
-    icon: <FaPuzzlePiece />,
-    title: "I BUILD THIS",
-    subtitle: "Design & Architecture Services",
-    description: "BIM modeling, CAD drafting, and 3D visualization for architecture, interior design, and product concepts — Revit, AutoCAD, SketchUp.",
-    capabilities: ["Revit BIM Modeling", "AutoCAD Drafting", "SketchUp 3D Viz", "Floor Plans & Sections", "Client Presentation Renders"],
+    title: "Design & Architecture",
+    description: "BIM modeling, CAD drafting, 3D visualization — Revit, AutoCAD, SketchUp.",
+    capabilities: ["Revit BIM Modeling", "AutoCAD Drafting", "SketchUp 3D Viz", "Floor Plans & Sections", "Presentation Renders"],
   },
 ];
 
 const problems = [
   {
-    problem: "Manual document translation is slow, expensive, and error-prone for your multilingual business.",
-    solution: " I BUILT an automated DOCX translation pipeline that translates Chinese research papers and technical documents into English using LLMs — preserving structure, images, and formatting. 668/668 blocks translated, zero data loss.",
-    result: "90%+ cost reduction vs. manual translation. Batch process entire documents in minutes.",
-    tech: "Python, Groq API, python-docx, LangChain",
+    problem: "Manual document translation is slow and expensive.",
+    solution: "Automated DOCX translation pipeline using LLMs — preserves structure, images, formatting. 668/668 blocks translated, zero data loss.",
+    result: "90%+ cost reduction. Entire documents in minutes.",
+    tech: "Python, Groq API, python-docx",
   },
   {
-    problem: "Your recruitment process is slow, manual, and misses top candidates.",
-    solution: " I BUILT RecruAI — an AI-powered recruitment toolkit that automates candidate screening, generates interview questions, scores resumes, and schedules interviews. Built for teams that hire at scale.",
-    result: "70% faster screening, 40% better candidate match rate.",
+    problem: "Recruitment process is slow and misses top candidates.",
+    solution: "RecruAI — AI-powered recruitment toolkit automating screening, interview questions, resume scoring.",
+    result: "70% faster screening, 40% better candidate match.",
     tech: "React, Supabase, Groq API, NLP",
   },
   {
-    problem: "Your team wastes hours on repetitive data entry, cleaning, and validation.",
-    solution: " I BUILT automated data preprocessing pipelines that import, clean, validate, and export data — handling what used to take days in minutes.",
-    result: "80% reduction in prep time. Reproducible, auditable, and versioned.",
-    tech: "Python, Pandas, Scikit-Learn, PyPI",
+    problem: "Team wastes hours on repetitive data entry and cleaning.",
+    solution: "Automated data preprocessing pipelines — import, clean, validate, export in minutes.",
+    result: "80% reduction in prep time. Reproducible and auditable.",
+    tech: "Python, Pandas, Scikit-Learn",
   },
   {
-    problem: "Your e-commerce platform has no AI — you're guessing what customers want.",
-    solution: " I BUILT intelligent e-commerce systems with AI-powered search, personalized recommendations, and automated inventory management — not just storefronts, but smart business engines.",
-    result: "35% higher conversion, 50% fewer manual inventory tasks.",
-    tech: "React, Node.js, MongoDB, Stripe, AI APIs",
+    problem: "E-commerce has no AI — guessing what customers want.",
+    solution: "Intelligent e-commerce with AI search, personalized recommendations, automated inventory.",
+    result: "35% higher conversion, 50% fewer manual tasks.",
+    tech: "React, Node.js, MongoDB, Stripe",
   },
   {
-    problem: "Your school or facility has no automated monitoring — security depends on human eyes.",
-    solution: " I BUILT CamWatch — an AI-powered surveillance system that detects weapons in real-time using YOLOv8 and generates natural language descriptions of camera feeds using vision-language models.",
-    result: "Instant threat detection, 24/7 automated monitoring, zero false alarm fatigue.",
-    tech: "YOLOv8, SmolVLM-500, LLaMA.cpp, Python",
+    problem: "No automated monitoring — security depends on human eyes.",
+    solution: "CamWatch — AI surveillance detecting threats in real-time with vision-language descriptions.",
+    result: "Instant detection, 24/7 monitoring, zero false alarm fatigue.",
+    tech: "YOLOv8, SmolVLM-500, Python",
   },
   {
-    problem: "Your documents are scattered, unsearchable, and hard to share securely.",
-    solution: " I BUILT DocxBox — a privacy-first document manager with end-to-end encryption, passwordless auth, and encrypted cloud backup. Enterprise-grade security without the complexity.",
-    result: "Zero-knowledge encryption. SOC 2–aligned design. GDPR-ready architecture.",
-    tech: "Kotlin, Jetpack Compose, Firebase, AES-256",
+    problem: "Documents scattered, unsearchable, hard to share securely.",
+    solution: "DocxBox — privacy-first document manager with E2E encryption, passwordless auth, cloud backup.",
+    result: "Zero-knowledge encryption. SOC 2-aligned. GDPR-ready.",
+    tech: "Kotlin, Jetpack Compose, Firebase",
   },
 ];
 
 const processSteps = [
-  {
-    number: "01",
-    title: "Discover",
-    description: "We sit down, understand your business, your customers, and your goals. No assumptions — just discovery.",
-  },
-  {
-    number: "02",
-    title: "Plan",
-    description: "I map out the architecture, tech stack, and timeline. You approve before a single line of code is written.",
-  },
-  {
-    number: "03",
-    title: "Build",
-    description: "I engineer the solution — clean code, proper architecture, and regular updates so you can see progress in real time.",
-  },
-  {
-    number: "04",
-    title: "Launch & Support",
-    description: "Deployment, testing, and ongoing support. I don't disappear after delivery — your success is my reputation.",
-  },
+  { number: "01", title: "Discover", description: "We sit down, understand your business, your customers, and your goals. No assumptions." },
+  { number: "02", title: "Plan", description: "I map out the architecture, tech stack, and timeline. You approve before code is written." },
+  { number: "03", title: "Build", description: "Clean code, proper architecture, regular updates. You see progress in real time." },
+  { number: "04", title: "Launch & Support", description: "Deployment, testing, ongoing support. I don't disappear after delivery." },
 ];
 
 const Services = () => {
-  const [expandedService, setExpandedService] = useState(null);
-  const [expandedProblem, setExpandedProblem] = useState(null);
-  const [selectedPackage, setSelectedPackage] = useState(null);
-
   return (
     <>
       <SEO
@@ -188,244 +153,174 @@ const Services = () => {
         url="https://syab.tech/services"
       />
 
-      <div className="min-h-screen bg-stone-900 dark:bg-gray-950 transition-colors duration-300">
-        {/* Hero Section */}
-        <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")" }} />
+      <div className="min-h-screen bg-stone-50 pt-20">
 
-          <div className="max-w-6xl mx-auto relative z-10 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 30, rotate: -1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-              viewport={{ once: true }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-100 mb-6 font-handwriting"
-              style={{ transform: "rotate(-1deg)" }}
-            >
-              I Build What Your Business Needs
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="text-lg sm:text-xl text-stone-400 max-w-3xl mx-auto font-handwriting"
-            >
-              AI Engineer, Full-Stack Developer, and Problem Solver — I turn complex business challenges into working software that delivers real results.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-wrap justify-center gap-4 mt-10"
-            >
-              <a href="#services" className="px-8 py-3 bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting text-lg cursor-pointer">
-                See What I Build
-              </a>
-              <a href="#problems" className="px-8 py-3 border-2 border-stone-500 text-stone-300 font-bold rounded-full hover:bg-stone-700 hover:text-white transition-all duration-300 font-handwriting text-lg cursor-pointer">
-                Problems I Solve
-              </a>
-              <a href="#pricing" className="px-8 py-3 bg-rose-800 text-stone-100 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting text-lg cursor-pointer">
-                Choose a Package
-              </a>
+        {/* Hero */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
+                Services & Pricing
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-stone-900 font-heading mb-6">
+                I build what your<br />business needs.
+              </h1>
+              <p className="text-lg text-stone-500 max-w-2xl mx-auto font-handwriting leading-relaxed">
+                AI Engineer, Full-Stack Developer, and Problem Solver — I turn complex business challenges into working software.
+              </p>
             </motion.div>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section id="services" className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20, rotate: -1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-center text-stone-100 mb-3 font-handwriting"
-              style={{ transform: "rotate(-0.5deg)" }}
-            >
-              I BUILD THIS
-            </motion.h2>
-            <p className="text-center text-stone-500 max-w-2xl mx-auto mb-12 font-handwriting">
-              Every service below is a real capability — I've built these systems, not just read about them.
-            </p>
+        <section className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+              <h2 className="text-3xl font-bold text-stone-900 font-heading mb-2">
+                What I Build
+              </h2>
+              <p className="text-stone-500 font-handwriting">
+                Every service is a real capability — I've built these systems, not just read about them.
+              </p>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((svc, i) => {
-                const rot = rotations[i % rotations.length];
-                const pin = pinColors[i % pinColors.length];
-                const isExpanded = expandedService === i;
-
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 30, rotate: rot }}
-                    whileInView={{ opacity: 1, y: 0, rotate: rot }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.5 }}
-                    whileHover={{ scale: 1.03, rotate: 0 }}
-                    className="relative bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-xl shadow-black/30 p-6 cursor-pointer"
-                    style={{ transform: `rotate(${rot}deg)` }}
-                    onClick={() => setExpandedService(isExpanded ? null : i)}
-                  >
-                    <div className="absolute -top-2.5 left-[15%] w-14 h-5 bg-stone-400/40 rounded-sm shadow-sm" style={{ transform: `rotate(${-rot * 1.5}deg)` }} />
-                    <div className={`absolute -top-1.5 right-[15%] w-3 h-3 ${pin} rounded-full shadow border border-black/20 z-10`} />
-
-                    <div className="text-3xl mb-3 text-stone-500">{svc.icon}</div>
-                    <h3 className="text-sm font-bold text-rose-700 dark:text-rose-400 font-handwriting mb-1">{svc.title}</h3>
-                    <h4 className="text-lg font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">{svc.subtitle}</h4>
-                    <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed font-handwriting mb-3">{svc.description}</p>
-
-                    <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
-                      <div className="pt-3 border-t border-stone-200 dark:border-stone-700">
-                        <p className="text-xs font-bold text-stone-500 uppercase tracking-wider mb-2 font-handwriting">Capabilities</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {svc.capabilities.map((cap, idx) => (
-                            <span key={idx} className="px-2 py-0.5 bg-stone-200 dark:bg-stone-700 border border-stone-300 dark:border-stone-600 rounded-full text-[10px] text-stone-600 dark:text-stone-300 font-handwriting">{cap}</span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-3 flex items-center gap-1 text-xs text-stone-500 font-handwriting">
-                      {isExpanded ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
-                      {isExpanded ? " Click to collapse" : " Click to expand"}
-                    </div>
-                  </motion.div>
-                );
-              })}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {services.map((svc, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-white border border-stone-200 rounded-xl p-6"
+                >
+                  <h3 className="text-lg font-bold text-stone-900 font-heading mb-2">
+                    {svc.title}
+                  </h3>
+                  <p className="text-stone-500 text-sm font-handwriting leading-relaxed mb-4">
+                    {svc.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {svc.capabilities.map((cap, j) => (
+                      <span key={j} className="px-2.5 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">
+                        {cap}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Problems I Solve */}
-        <section id="problems" className="py-16 px-4 sm:px-6 lg:px-8 bg-stone-800/30">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20, rotate: -1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-center text-stone-100 mb-3 font-handwriting"
-              style={{ transform: "rotate(0.5deg)" }}
-            >
-              I SOLVED THIS BUSINESS PROBLEM
-            </motion.h2>
-            <p className="text-center text-stone-500 max-w-2xl mx-auto mb-12 font-handwriting">
-              Every project below is a real business challenge I've addressed with working software.
-            </p>
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-stone-200">
+          <div className="max-w-5xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+              <h2 className="text-3xl font-bold text-stone-900 font-heading mb-2">
+                Problems I've Solved
+              </h2>
+              <p className="text-stone-500 font-handwriting">
+                Real business challenges, addressed with working software.
+              </p>
+            </motion.div>
 
-            <div className="space-y-6">
-              {problems.map((item, i) => {
-                const rot = rotations[i % rotations.length];
-                const pin = pinColors[i % pinColors.length];
-                const isExpanded = expandedProblem === i;
-
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20, rotate: rot }}
-                    whileInView={{ opacity: 1, y: 0, rotate: rot }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.5 }}
-                    className="relative bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-lg p-6 md:p-8"
-                    style={{ transform: `rotate(${rot}deg)` }}
-                  >
-                    <div className="absolute -top-2.5 left-[12%] w-14 h-5 bg-stone-400/40 rounded-sm shadow-sm" style={{ transform: `rotate(${-rot * 1.5}deg)` }} />
-                    <div className={`absolute -top-1.5 right-[12%] w-3 h-3 ${pin} rounded-full shadow border border-black/20 z-10`} />
-
-                    <div className="flex flex-col md:flex-row md:items-start gap-4 mb-4">
-                      <div className="flex-1">
-                        <h4 className="text-sm font-bold text-red-600 dark:text-red-400 mb-2 font-handwriting flex items-center gap-2">
-                          <FaChevronDown size={10} /> Business Problem
-                        </h4>
-                        <p className="text-stone-700 dark:text-stone-300 font-handwriting text-sm leading-relaxed">{item.problem}</p>
-                      </div>
+            <div className="space-y-5">
+              {problems.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-stone-50 border border-stone-200 rounded-xl p-6"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <p className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-1 font-handwriting">Problem</p>
+                      <p className="text-stone-700 text-sm font-handwriting leading-relaxed">{item.problem}</p>
                     </div>
-
-                    <div className="border-l-2 border-stone-300 dark:border-stone-600 pl-4 mb-4">
-                      <h4 className="text-sm font-bold text-green-600 dark:text-green-400 mb-2 font-handwriting flex items-center gap-2">
-                        <FaCheckCircle size={10} /> What I Built & Solved
-                      </h4>
-                      <p className="text-stone-700 dark:text-stone-300 font-handwriting text-sm leading-relaxed">{item.solution}</p>
+                    <div>
+                      <p className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-1 font-handwriting">What I Built</p>
+                      <p className="text-stone-700 text-sm font-handwriting leading-relaxed">{item.solution}</p>
                     </div>
-
-                    <div className="bg-stone-200 dark:bg-stone-700 rounded-sm p-3 border border-stone-300 dark:border-stone-600">
-                      <p className="text-xs font-bold text-stone-600 dark:text-stone-300 mb-1 font-handwriting">Result</p>
-                      <p className="text-stone-800 dark:text-stone-200 font-handwriting text-sm">{item.result}</p>
-                      <p className="text-[10px] text-stone-500 mt-2 font-mono font-handwriting">{item.tech}</p>
+                    <div>
+                      <p className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-1 font-handwriting">Result</p>
+                      <p className="text-stone-900 text-sm font-bold font-heading mb-2">{item.result}</p>
+                      <p className="text-stone-400 text-xs font-handwriting">{item.tech}</p>
                     </div>
-                  </motion.div>
-                );
-              })}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20, rotate: -1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-center text-stone-100 mb-3 font-handwriting"
-              style={{ transform: "rotate(-0.5deg)" }}
-            >
-              Choose Your Package
-            </motion.h2>
-            <p className="text-center text-stone-500 max-w-2xl mx-auto mb-12 font-handwriting">
-              Transparent pricing, no hidden fees. Pick the plan that matches your project scope.
-            </p>
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-stone-900 font-heading mb-2">
+                Choose Your Package
+              </h2>
+              <p className="text-stone-500 font-handwriting">
+                Transparent pricing, no hidden fees.
+              </p>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {packages.map((pkg, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 30, rotate: rotations[i % rotations.length] }}
-                  whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  whileHover={{ scale: 1.04, rotate: 0 }}
-                  className={`relative rounded-sm border shadow-xl p-6 md:p-8 ${
+                  transition={{ delay: i * 0.1 }}
+                  className={`rounded-xl border p-6 sm:p-8 ${
                     pkg.highlighted
-                      ? "bg-stone-800 border-rose-600 border-2"
-                      : "bg-stone-100 dark:bg-stone-800 border-stone-200 dark:border-stone-700"
+                      ? "bg-stone-900 border-stone-900 text-white"
+                      : "bg-white border-stone-200"
                   }`}
-                  style={pkg.highlighted ? {} : { transform: `rotate(${rotations[i % rotations.length]}deg)` }}
                 >
                   {pkg.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-rose-600 text-white text-xs font-bold rounded-full font-handwriting">
+                    <div className="inline-block px-3 py-1 bg-amber-400 text-stone-900 text-xs font-bold rounded-full font-heading mb-4">
                       MOST POPULAR
                     </div>
                   )}
-
-                  <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 mb-1 font-handwriting">{pkg.name}</h3>
+                  <h3 className={`text-xl font-bold font-heading mb-1 ${pkg.highlighted ? "text-white" : "text-stone-900"}`}>
+                    {pkg.name}
+                  </h3>
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span className={`text-3xl md:text-4xl font-bold font-handwriting ${pkg.highlighted ? "text-stone-100" : "text-stone-900 dark:text-stone-100"}`}>{pkg.price}</span>
-                    <span className={`text-sm font-handwriting ${pkg.highlighted ? "text-stone-400" : "text-stone-500"}`}>{pkg.period}</span>
+                    <span className={`text-3xl font-bold font-heading ${pkg.highlighted ? "text-white" : "text-stone-900"}`}>
+                      {pkg.price}
+                    </span>
+                    <span className={`text-sm font-handwriting ${pkg.highlighted ? "text-stone-400" : "text-stone-500"}`}>
+                      {pkg.period}
+                    </span>
                   </div>
-                  <p className={`text-sm font-handwriting mb-6 ${pkg.highlighted ? "text-stone-400" : "text-stone-600 dark:text-stone-400"}`}>{pkg.description}</p>
+                  <p className={`text-sm font-handwriting mb-6 ${pkg.highlighted ? "text-stone-300" : "text-stone-500"}`}>
+                    {pkg.description}
+                  </p>
 
                   <ul className="space-y-2.5 mb-8">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm font-handwriting">
-                        <FaCheckCircle className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? "text-rose-400" : "text-stone-500"}`} size={14} />
-                        <span className={pkg.highlighted ? "text-stone-300" : "text-stone-700 dark:text-stone-300"}>{feature}</span>
+                        <span className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? "text-amber-400" : "text-stone-400"}`}>✓</span>
+                        <span className={pkg.highlighted ? "text-stone-200" : "text-stone-600"}>{feature}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full py-3 px-6 rounded-full font-bold font-handwriting text-sm transition-all duration-300 cursor-pointer ${
+                  <a
+                    href="/contact"
+                    className={`block w-full py-3 px-6 rounded-lg font-bold font-heading text-sm text-center ${
                       pkg.highlighted
-                        ? "bg-rose-600 text-white shadow-lg hover:bg-rose-700"
-                        : "bg-stone-800 text-stone-100 hover:bg-stone-700 dark:bg-stone-200 dark:text-stone-900"
+                        ? "bg-white text-stone-900"
+                        : "bg-stone-900 text-white"
                     }`}
                   >
                     {pkg.cta}
-                  </motion.button>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -433,85 +328,42 @@ const Services = () => {
         </section>
 
         {/* How I Work */}
-        <section id="process" className="py-16 px-4 sm:px-6 lg:px-8 bg-stone-800/30">
-          <div className="max-w-5xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20, rotate: -1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-center text-stone-100 mb-12 font-handwriting"
-              style={{ transform: "rotate(0.5deg)" }}
-            >
-              How I Work
-            </motion.h2>
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-stone-200">
+          <div className="max-w-4xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-stone-900 font-heading mb-2">
+                How It Works
+              </h2>
+              <p className="text-stone-500 font-handwriting">
+                Simple, transparent, fast.
+              </p>
+            </motion.div>
 
-            <div className="relative">
-              <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-stone-700 opacity-40" />
-
-              <div className="space-y-8 md:space-y-12">
-                {processSteps.map((step, i) => {
-                  const rot = rotations[i % rotations.length];
-                  const pin = pinColors[i % pinColors.length];
-
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -30, rotate: rot }}
-                      whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.12, duration: 0.5 }}
-                      className="relative pl-16 md:pl-20"
-                      style={{ transform: `rotate(${rot}deg)` }}
-                    >
-                      <div className={`absolute left-4 md:left-6 top-8 w-5 h-5 rounded-full ${pin} ring-4 ring-stone-900 z-10`} />
-
-                      <div className="relative bg-stone-100 dark:bg-stone-800 rounded-sm border border-stone-200 dark:border-stone-700 shadow-lg p-5 md:p-6" style={{ transform: `rotate(${-rot}deg)` }}>
-                        <div className="absolute -top-2.5 left-[12%] w-14 h-5 bg-stone-400/40 rounded-sm shadow-sm" style={{ transform: `rotate(${rot * 2}deg)` }} />
-                        <div className={`absolute -top-1.5 right-[10%] w-2.5 h-2.5 ${pin} rounded-full shadow border border-black/20 z-10`} />
-
-                        <span className="text-xs font-bold text-stone-400 font-handwriting mb-2 block">STEP {step.number}</span>
-                        <h4 className="text-lg font-bold text-stone-900 dark:text-stone-100 mb-2 font-handwriting">{step.title}</h4>
-                        <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed font-handwriting">{step.description}</p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-4xl font-bold text-stone-200 font-heading mb-3">{step.number}</div>
+                  <h4 className="text-lg font-bold text-stone-900 font-heading mb-2">{step.title}</h4>
+                  <p className="text-stone-500 text-sm font-handwriting leading-relaxed">{step.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30, rotate: -1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-              viewport={{ once: true }}
-              className="relative bg-stone-100 dark:bg-stone-800 rounded-sm shadow-2xl shadow-black/40 p-8 md:p-12 border border-stone-200 dark:border-stone-700"
-              style={{ transform: "rotate(-1deg)" }}
-            >
-              <div className="absolute -top-3 left-[20%] w-20 h-6 bg-stone-400/40 rotate-[-5deg] rounded-sm shadow-sm" />
-              <div className="absolute -top-3 right-[20%] w-16 h-5 bg-stone-400/40 rotate-[3deg] rounded-sm shadow-sm" />
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-rose-800 rounded-full shadow-md border border-rose-950 z-10" />
+        {/* CTA */}
+        <CTASection
+          heading="Ready to get started?"
+          subheading="Pick a package or send a message — I'll respond within 24 hours."
+        />
 
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4 font-handwriting">
-                Ready to Get Started?
-              </h2>
-              <p className="text-stone-600 dark:text-stone-300 text-sm mb-8 font-handwriting max-w-lg mx-auto">
-                Pick a package below or send me a message — I'll respond within 24 hours with a tailored proposal.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <a href="/contact" className="px-8 py-3 bg-stone-800 dark:bg-stone-200 text-stone-100 dark:text-stone-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting cursor-pointer flex items-center gap-2">
-                  <FaShieldAlt size={16} /> Hire Me
-                </a>
-                <a href="https://calendly.com/syedsyab/new-meeting" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-rose-800 text-stone-100 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-handwriting cursor-pointer flex items-center gap-2">
-                  <FaBriefcase size={16} /> Book a Call
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </div>
     </>
   );
