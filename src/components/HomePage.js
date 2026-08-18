@@ -10,7 +10,7 @@ try {
   allProjects = [];
 }
 
-const FEATURED_TITLES = ["Req2Ops", "StitchPoint", "AI Voice Agent"];
+const FEATURED_TITLES = ["Req2Ops", "StitchPoint", "AI Voice Agent", "KSA Jobs 24"];
 const featuredProjects = FEATURED_TITLES.map(title => allProjects.find(p => p.title === title)).filter(Boolean);
 
 const HomePage = () => {

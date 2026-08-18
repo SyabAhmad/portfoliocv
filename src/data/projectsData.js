@@ -572,6 +572,20 @@ const projects = [
     liveUrl: "https://machali-kingdom-riyadh.vercel.app/",
     githubUrl: "https://github.com/SyabAhmad/Machali-Kingdom-Riyadh",
   },
+  {
+    title: "KSA Jobs 24",
+    duration: "2024",
+    description:
+      "A job portal for Saudi Arabia with two separate apps: a public website for job seekers to browse and search jobs, and an admin dashboard for staff to manage jobs, blog, categories, and view analytics. Both deploy independently on Vercel.",
+    keyFeatures:
+      "Job Search & Filtering · Pagination · Admin CRUD · Blog Management · Category Management · Analytics",
+    techStack: "React 18, TypeScript, Vite, React Router v6, Tailwind CSS, lucide-react",
+    skills: "React.js, Full-Stack Development, Vercel Deployment, API Integration",
+    category: "Web Development",
+    projectType: "client-demo",
+    liveUrl: "https://ksajobs24lostclient.vercel.app",
+    githubUrl: "https://github.com/SyabAhmad/ksajobs24",
+  },
 ];
 
 export default projects;
