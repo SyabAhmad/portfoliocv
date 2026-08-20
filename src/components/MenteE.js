@@ -154,6 +154,21 @@ const MenteE = () => {
         </div>
       </section>
 
+      {/* Info Banner */}
+      <section className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-center justify-between flex-wrap gap-3">
+            <p className="text-amber-800 font-medium font-handwriting">
+              Visit the official MenteE website{" "}
+              <a href="https://menteeai.org" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-amber-900">here</a>
+            </p>
+            <a href="https://menteeai.org" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-bold text-amber-700 hover:text-amber-900">
+              menteeai.org <ExternalLink size={12} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
