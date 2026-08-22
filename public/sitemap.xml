@@ -3,18 +3,18 @@
   <!-- Main Pages Sitemap -->
   <sitemap>
     <loc>https://syab.tech/sitemap-pages.xml</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </sitemap>
 
   <!-- Design Projects Sitemap -->
   <sitemap>
     <loc>https://syab.tech/sitemap-projects.xml</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </sitemap>
 
   <!-- Image Sitemap -->
   <sitemap>
     <loc>https://syab.tech/sitemap-images.xml</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </sitemap>
 </sitemapindex>

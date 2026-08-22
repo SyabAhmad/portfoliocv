@@ -1,6 +1,6 @@
 # ============================================================
 # Premium robots.txt for https://syab.tech
-# Last Updated: 2025-05-02
+# Last Updated: 2026-08-22
 # ============================================================
 
 # ============================================================
@@ -17,6 +17,7 @@ Allow: /skills
 Allow: /gallery
 Allow: /mentee
 Allow: /contact
+Allow: /services
 Allow: /*.png$
 Allow: /*.jpg$
 Allow: /*.jpeg$
@@ -30,8 +31,6 @@ Disallow: /static/css/
 Disallow: /static/media/
 Disallow: /asset-manifest.json
 Disallow: /manifest.json
-Disallow: /robots.txt
-Disallow: /favicon.ico
 Disallow: /*.map$
 
 # ============================================================
@@ -49,6 +48,7 @@ Allow: /skills
 Allow: /gallery
 Allow: /mentee
 Allow: /contact
+Allow: /services
 Allow: /*.png$
 Allow: /*.jpg$
 Allow: /*.jpeg$
@@ -90,6 +90,7 @@ Allow: /skills
 Allow: /gallery
 Allow: /mentee
 Allow: /contact
+Allow: /services
 Allow: /*.png$
 Allow: /*.jpg$
 Allow: /*.jpeg$
