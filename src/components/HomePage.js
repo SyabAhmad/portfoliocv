@@ -94,6 +94,81 @@ const HomePage = () => {
           </div>
         </section>
 
+        {/* How I Make You Money */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-stone-200">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
+                What I Do
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
+                I don't just write code.<br />
+                I make you money.
+              </h2>
+              <p className="text-stone-500 font-handwriting max-w-xl">
+                Every project starts with one question: how does this save you time or earn you revenue? Here's how I deliver on that.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Build a SaaS for you",
+                  description: "Full-stack product from idea to deployment. You bring the concept, I ship the product users pay for.",
+                  icon: "◻",
+                },
+                {
+                  title: "Automate your workflow",
+                  description: "AI agents and data pipelines that replace manual work. Stop paying your team to do what a script can.",
+                  icon: "↻",
+                },
+                {
+                  title: "Add AI to your product",
+                  description: "LLMs, embeddings, recommendation engines — make your existing product smarter without rebuilding it.",
+                  icon: "◈",
+                },
+                {
+                  title: "Conversational AI agents",
+                  description: "Customer support systems, internal copilots, voice interfaces — trained on your data, deployed where your team works.",
+                  icon: "◎",
+                },
+                {
+                  title: "Data pipelines & analytics",
+                  description: "Ingest, process, visualize. Turn raw data into decisions your team can act on.",
+                  icon: "▣",
+                },
+                {
+                  title: "Landing pages & web apps",
+                  description: "Fast, clean, deployed. Your idea deserves more than a Notion doc.",
+                  icon: "△",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="bg-stone-50 border border-stone-200 rounded-lg p-6 hover:border-stone-300 transition-colors"
+                >
+                  <span className="text-2xl text-stone-400 block mb-4">{item.icon}</span>
+                  <h3 className="text-lg font-bold text-stone-900 font-heading mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-stone-500 font-handwriting text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Proof Strip */}
         <section className="border-y border-stone-200 bg-white py-6">
           <div className="max-w-5xl mx-auto px-4">
