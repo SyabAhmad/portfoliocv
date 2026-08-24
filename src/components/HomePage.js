@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import SEO from "./SEO";
 import CTASection from "./CTASection";
+import MoneyAnimation from "./MoneyAnimation";
 
 let allProjects = [];
 try {
@@ -103,13 +104,18 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
-                What I Do
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
-                I don't just write code.<br />
-                I make you money.
-              </h2>
+              <div className="flex items-start justify-between gap-8 mb-4">
+                <div>
+                  <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
+                    What I Do
+                  </p>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
+                    I don't just write code.<br />
+                    I make you money.
+                  </h2>
+                </div>
+                <MoneyAnimation />
+              </div>
               <p className="text-stone-500 font-handwriting max-w-xl">
                 Every project starts with one question: how does this save you time or earn you revenue? Here's how I deliver on that.
               </p>
