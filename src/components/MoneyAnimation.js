@@ -2,7 +2,7 @@ import React from "react";
 
 const MoneyAnimation = () => {
   return (
-    <div className="relative w-32 h-32 flex-shrink-0 hidden sm:block">
+    <div className="relative w-20 h-20 sm:w-32 sm:h-32 flex-shrink-0">
       {/* Wallet */}
       <svg viewBox="0 0 80 80" className="w-full h-full">
         {/* Wallet body */}
