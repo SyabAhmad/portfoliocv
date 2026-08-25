@@ -67,7 +67,8 @@ const MenteE = () => {
       expertise: "AI Engineering, Mobile Security, Full-Stack Development",
       description: "Passionate about building secure, privacy-first applications that empower users while maintaining enterprise-grade security standards.",
       social: { github: "https://github.com/SyabAhmad", linkedin: "https://linkedin.com/in/syedsyab", email: "syedsyabahmadshah@gmail.com" },
-      icon: "SSA",
+      icon: "🐼",
+      photo: "/team/syab.png",
     },
     {
       name: "Sania Shakeel",
@@ -76,17 +77,8 @@ const MenteE = () => {
       description: "ML & Data Science Expert. Transforming data into meaningful insights. Specialized in scalable backend solutions.",
       skills: ["Python", "Data Science", "Backend", "PostgreSQL"],
       social: { github: "https://github.com/sania040", linkedin: "https://linkedin.com/in/saniashakeel", email: "sania@mentee.com" },
-      icon: "SS",
-    },
-    {
-      name: "MenteE",
-      role: "Sleeping Partner",
-      expertise: "Private Account",
-      description: "Strategic investor focused on long-term growth and capital allocation. Identity kept private for security.",
-      isPrivate: true,
-      skills: ["Investment", "Strategy", "Capital"],
-      social: { github: "#", linkedin: "#", email: "#" },
-      icon: "🔐",
+      icon: "🐰",
+      photo: "/team/sania.png",
     },
     {
       name: "Hamza Rustam",
@@ -95,7 +87,8 @@ const MenteE = () => {
       description: "Python, Pandas, NumPy, Matplotlib. Data Cleaning, Visualization & Machine Learning. Building intelligent solutions.",
       skills: ["Python", "ML", "Data Analysis", "Scikit-Learn"],
       social: { github: "https://github.com/hamza-rustam", linkedin: "https://linkedin.com/in/hamza-rustam", email: "hamza@mentee.com" },
-      icon: "HR",
+      icon: "🦊",
+      photo: "/team/hamza.png",
     },
   ];
 
@@ -238,6 +231,62 @@ const MenteE = () => {
         </div>
       </section>
 
+      {/* Research & Publication */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+            <h2 className="text-3xl font-bold text-stone-900 font-heading mb-2">Research</h2>
+            <p className="text-stone-500 font-handwriting">Open-source AI research — trained from scratch, nothing inherited.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* mentee-embed */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white border border-stone-200 rounded-xl p-6">
+              <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">Open Source Model</p>
+              <h3 className="text-xl font-bold text-stone-900 font-heading mb-3">mentee-embed</h3>
+              <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-4">
+                Compact multilingual text embedding model for Arabic, English, and Urdu retrieval. ~41M parameters, 384-dimensional outputs. Trained entirely from scratch — no pretrained backbone.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["Python", "PyTorch", "Apache 2.0"].map((tag, i) => (
+                  <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">{tag}</span>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <a href="https://github.com/MenteE-s/mentee-embeddings" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">GitHub →</a>
+                <a href="https://huggingface.co/MenteE" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Hugging Face →</a>
+              </div>
+            </motion.div>
+
+            {/* Publication */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white border border-stone-200 rounded-xl p-6">
+              <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">Publication</p>
+              <h3 className="text-lg font-bold text-stone-900 font-heading mb-3 leading-snug">
+                mentee-embed: Training Competitive Multilingual Text Embeddings from Scratch
+              </h3>
+              <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-2">
+                Syed Syab Ahmad Shah, Shakeel Sania, Rustam Hamza, Khan Mahboob
+              </p>
+              <p className="text-stone-400 font-handwriting text-xs mb-4">
+                Zenodo · August 2026 · CC-BY 4.0
+              </p>
+              <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-4">
+                41M-parameter trilingual embedding model. Achieves avg MRR@10 of 0.585, beating all-MiniLM-L6-v2 (0.396). Code, weights, and tokenizer fully open-sourced.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["Arabic", "English", "Urdu", "Knowledge Distillation", "From Scratch"].map((tag, i) => (
+                  <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">{tag}</span>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <a href="https://doi.org/10.5281/zenodo.22087139" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Zenodo (DOI) →</a>
+                <a href="https://github.com/MenteE-s/mentee-embeddings" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Code →</a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Team */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
@@ -246,58 +295,71 @@ const MenteE = () => {
               <Users className="w-5 h-5 text-stone-400" />
               <h2 className="text-3xl font-bold text-stone-900 font-heading">Our Team</h2>
             </div>
-            <p className="text-stone-500 font-handwriting">Passionate individuals building the future of secure digital solutions.</p>
+            <p className="text-stone-500 font-handwriting">The people building MenteE.</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 gap-5">
-            {team.map((member, index) => {
-              if (member.isPrivate) {
-                return (
-                  <motion.div key={index} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="bg-white border border-stone-200 rounded-xl p-6 text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-stone-100 flex items-center justify-center text-2xl opacity-60">🔐</div>
-                    <h3 className="text-lg font-bold text-stone-400 mb-1 font-heading">{member.name}</h3>
-                    <p className="text-stone-400 text-xs mb-3 font-handwriting">Sleeping Partner · Private · Identity Protected</p>
-                    <div className="w-full max-w-xs mx-auto px-4 py-3 bg-stone-50 rounded-lg border border-stone-100 mb-3">
-                      <p className="text-xs text-stone-400 font-mono tracking-wider">████████████████████████████</p>
-                    </div>
-                    <p className="text-xs text-stone-400 font-handwriting">Strategic investor focused on long-term growth.</p>
-                  </motion.div>
-                );
-              }
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+            {team.map((member, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="group relative bg-white border border-stone-200 rounded-2xl overflow-visible flex flex-col min-h-[400px]">
+                {/* Full card background image - goes on top on hover */}
+                <div className="absolute -inset-4 z-0 opacity-30 transition-all duration-500 group-hover:z-20 group-hover:opacity-100 group-hover:-inset-6">
+                  <img 
+                    src={member.photo} 
+                    alt={member.name}
+                    className="w-full h-full object-contain transition-all duration-500"
+                    onError={(e) => { e.target.style.display = "none"; }}
+                  />
+                </div>
 
-              return (
-                <motion.div key={index} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="bg-white border border-stone-200 rounded-xl p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 flex-shrink-0 rounded-lg bg-stone-900 flex items-center justify-center text-stone-200 font-bold font-heading text-sm">{member.icon}</div>
-                    <div>
-                      <h3 className="text-lg font-bold text-stone-900 font-heading">{member.name}</h3>
-                      <p className="text-stone-500 text-sm font-handwriting">{member.role}</p>
-                    </div>
-                  </div>
+                {/* Content - above image normally, below on hover */}
+                <div className="relative z-10 p-5 pt-6 flex flex-col flex-1 bg-white/90 backdrop-blur-sm rounded-2xl transition-all duration-500 group-hover:bg-white/50 group-hover:z-10">
+                  <h3 className="text-lg font-bold text-stone-900 font-heading mb-0.5">{member.name}</h3>
+                  <p className="text-stone-400 text-xs font-handwriting mb-3">{member.role}</p>
 
-                  <div className="px-3 py-2 bg-stone-50 rounded-lg mb-3">
-                    <p className="text-xs text-stone-600 font-medium font-handwriting">{member.expertise}</p>
-                  </div>
-
-                  <p className="text-stone-500 text-sm leading-relaxed mb-4 font-handwriting">{member.description}</p>
+                  <p className="text-stone-500 text-xs leading-relaxed mb-3 font-handwriting">{member.description}</p>
 
                   {member.skills && (
-                    <div className="flex flex-wrap gap-1.5 mb-4">
+                    <div className="flex flex-wrap gap-1.5 mb-3">
                       {member.skills.map((skill, idx) => (
-                        <span key={idx} className="px-2.5 py-1 bg-stone-100 rounded-full text-xs text-stone-600 font-handwriting">{skill}</span>
+                        <span key={idx} className="px-2 py-0.5 bg-stone-100 rounded-full text-[10px] text-stone-500 font-handwriting">{skill}</span>
                       ))}
                     </div>
                   )}
 
-                  <div className="flex items-center gap-2 pt-3 border-t border-stone-100">
-                    <a href={member.social.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-stone-50 text-stone-400"><Github size={14} /></a>
-                    <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-stone-50 text-stone-400"><Linkedin size={14} /></a>
-                    <a href={`mailto:${member.social.email}`} className="p-2 rounded-lg bg-stone-50 text-stone-400"><Mail size={14} /></a>
+                  <div className="flex items-center gap-1.5 pt-3 border-t border-stone-100 mt-auto">
+                    <a href={member.social.github} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-lg text-stone-300 hover:text-stone-600 hover:bg-stone-100 transition-colors"><Github size={14} /></a>
+                    <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-lg text-stone-300 hover:text-stone-600 hover:bg-stone-100 transition-colors"><Linkedin size={14} /></a>
+                    <a href={`mailto:${member.social.email}`} className="p-1.5 rounded-lg text-stone-300 hover:text-stone-600 hover:bg-stone-100 transition-colors"><Mail size={14} /></a>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* MenteE - Full Width Partner Card */}
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="relative bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 rounded-2xl p-8 overflow-hidden">
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-1/2 -translate-x-1/2" />
+            </div>
+            <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-3xl border border-white/10">🔐</div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="text-xl font-bold text-white font-heading">MenteE</h3>
+                  <span className="px-2.5 py-0.5 bg-white/10 rounded-full text-white/60 text-[10px] font-handwriting uppercase tracking-wider">Strategic Partner</span>
+                </div>
+                <p className="text-white/50 text-sm font-handwriting leading-relaxed max-w-xl">
+                  Strategic investor focused on long-term growth and capital allocation. Identity kept private for security. Powers the vision behind MenteE's product and research direction.
+                </p>
+              </div>
+              <div className="hidden sm:flex items-center gap-2">
+                {["Investment", "Strategy", "Capital"].map((tag, i) => (
+                  <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/40 text-xs font-handwriting">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

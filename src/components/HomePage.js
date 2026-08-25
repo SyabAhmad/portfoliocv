@@ -110,8 +110,8 @@ const HomePage = () => {
                     What I Do
                   </p>
                   <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
-                    I don't just write code.<br />
-                    I make you money.
+                    Here's how I turn<br />
+                    ideas into revenue.
                   </h2>
                 </div>
                 <MoneyAnimation />
@@ -194,115 +194,6 @@ const HomePage = () => {
                 </span>
               ))}
             </motion.div>
-          </div>
-        </section>
-
-        {/* MenteE Open Source Research */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
-                Open Source
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
-                My team builds AI from scratch.
-              </h2>
-              <p className="text-stone-500 font-handwriting max-w-xl">
-                MenteE is our open-source research lab. We train embedding models from zero — no pretrained weights, no shortcuts. Everything is public, reproducible, and honest.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* mentee-embed card */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-white border border-stone-200 rounded-lg p-8"
-              >
-                <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">
-                  Research Lab
-                </p>
-                <h3 className="text-xl font-bold text-stone-900 font-heading mb-3">
-                  mentee-embed
-                </h3>
-                <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-6">
-                  A compact multilingual embedding model trained from scratch for Arabic, English, and Urdu retrieval. ~41M parameters, 384-dimensional outputs. Built to study how far modern training recipes can be compressed when nothing is inherited from pretrained giants.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {["Python", "PyTorch", "Transformers", "Apache 2.0"].map((tag, i) => (
-                    <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  <a
-                    href="https://github.com/MenteE-s/mentee-embeddings"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
-                  >
-                    GitHub →
-                  </a>
-                  <a
-                    href="https://huggingface.co/MenteE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
-                  >
-                    Hugging Face →
-                  </a>
-                </div>
-              </motion.div>
-
-              {/* Why it matters */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-white border border-stone-200 rounded-lg p-8"
-              >
-                <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">
-                  Why It Matters
-                </p>
-                <h3 className="text-xl font-bold text-stone-900 font-heading mb-3">
-                  Real research, not marketing.
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    { label: "Two-stage training", text: "MLM first, then contrastive — a cheap bootstrap that prevents representation collapse." },
-                    { label: "Low-resource first", text: "Urdu and Arabic treated as first-class languages, not afterthoughts bolted onto English." },
-                    { label: "Fully reproducible", text: "Every step from data to evaluation is open-sourced. Failures documented alongside wins." },
-                    { label: "Consumer hardware", text: "Trained on a single consumer GPU. No cluster needed to reproduce our results." },
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-3">
-                      <span className="text-stone-300 mt-0.5">—</span>
-                      <div>
-                        <p className="text-sm font-bold text-stone-900 font-heading">{item.label}</p>
-                        <p className="text-xs text-stone-500 font-handwriting leading-relaxed">{item.text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6">
-                  <a
-                    href="https://menteeai.org/research"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
-                  >
-                    Read the research →
-                  </a>
-                </div>
-              </motion.div>
-            </div>
           </div>
         </section>
 
@@ -474,6 +365,159 @@ const HomePage = () => {
                   </span>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* MenteE Open Source Research */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
+                Open Source
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
+                My team builds AI from scratch.
+              </h2>
+              <p className="text-stone-500 font-handwriting max-w-xl">
+                MenteE is our open-source research lab. We train embedding models from zero — no pretrained weights, no shortcuts. Everything is public, reproducible, and honest.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* mentee-embed card */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white border border-stone-200 rounded-lg p-8"
+              >
+                <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">
+                  Research Lab
+                </p>
+                <h3 className="text-xl font-bold text-stone-900 font-heading mb-3">
+                  mentee-embed
+                </h3>
+                <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-6">
+                  A compact multilingual embedding model trained from scratch for Arabic, English, and Urdu retrieval. ~41M parameters, 384-dimensional outputs. Built to study how far modern training recipes can be compressed when nothing is inherited from pretrained giants.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Python", "PyTorch", "Transformers", "Apache 2.0"].map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/MenteE-s/mentee-embeddings"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    GitHub →
+                  </a>
+                  <a
+                    href="https://huggingface.co/MenteE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    Hugging Face →
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Why it matters */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-white border border-stone-200 rounded-lg p-8"
+              >
+                <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">
+                  Why It Matters
+                </p>
+                <h3 className="text-xl font-bold text-stone-900 font-heading mb-3">
+                  Real research, not marketing.
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    { label: "Two-stage training", text: "MLM first, then contrastive — a cheap bootstrap that prevents representation collapse." },
+                    { label: "Low-resource first", text: "Urdu and Arabic treated as first-class languages, not afterthoughts bolted onto English." },
+                    { label: "Fully reproducible", text: "Every step from data to evaluation is open-sourced. Failures documented alongside wins." },
+                    { label: "Consumer hardware", text: "Trained on a single consumer GPU. No cluster needed to reproduce our results." },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-3">
+                      <span className="text-stone-300 mt-0.5">—</span>
+                      <div>
+                        <p className="text-sm font-bold text-stone-900 font-heading">{item.label}</p>
+                        <p className="text-xs text-stone-500 font-handwriting leading-relaxed">{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <a
+                    href="https://menteeai.org/research"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    Read the research →
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Publication card */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-white border border-stone-200 rounded-lg p-8"
+              >
+                <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase mb-3">
+                  Publication
+                </p>
+                <h3 className="text-lg font-bold text-stone-900 font-heading mb-3 leading-snug">
+                  mentee-embed: Training Competitive Multilingual Text Embeddings from Scratch
+                </h3>
+                <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-4">
+                  41M-parameter trilingual embedding model for Arabic, English, and Urdu — trained entirely from scratch. Achieves avg MRR@10 of 0.585, beating all-MiniLM-L6-v2 (0.396). Published on Zenodo under CC-BY 4.0.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Arabic", "English", "Urdu", "Knowledge Distillation", "From Scratch"].map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="https://doi.org/10.5281/zenodo.22087139"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    Zenodo (DOI) →
+                  </a>
+                  <a
+                    href="https://github.com/MenteE-s/mentee-embeddings"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    Code →
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
