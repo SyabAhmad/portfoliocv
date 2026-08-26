@@ -254,7 +254,7 @@ const MenteE = () => {
               </div>
               <div className="flex gap-4">
                 <a href="https://github.com/MenteE-s/mentee-embeddings" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">GitHub →</a>
-                <a href="https://huggingface.co/MenteE" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Hugging Face →</a>
+                <a href="https://huggingface.co/menteeai" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Hugging Face →</a>
               </div>
             </motion.div>
 

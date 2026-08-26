@@ -13,7 +13,7 @@ const projects = [
     category: "AI & Machine Learning",
     projectType: "personal",
     image: "/default.webp",
-    liveUrl: "https://huggingface.co/MenteE",
+    liveUrl: "https://huggingface.co/menteeai",
     githubUrl: "https://github.com/MenteE-s/mentee-embeddings",
   },
   {
