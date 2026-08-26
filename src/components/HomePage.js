@@ -117,41 +117,47 @@ const HomePage = () => {
                 <MoneyAnimation />
               </div>
               <p className="text-stone-500 font-handwriting max-w-xl">
-                Every project starts with one question: how does this save you time or earn you revenue? Here's how I deliver on that.
+                I don't just build software — I build things that make you money. Every project starts with one question: how does this generate revenue or cut costs?
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Build a SaaS for you",
-                  description: "Full-stack product from idea to deployment. You bring the concept, I ship the product users pay for.",
+                  title: "Build a SaaS product",
+                  description: "You have an idea. I build the product users pay for. Full-stack, from database to dashboard to payment integration. You own it.",
                   icon: "◻",
+                  tag: "Revenue",
                 },
                 {
-                  title: "Automate your workflow",
-                  description: "AI agents and data pipelines that replace manual work. Stop paying your team to do what a script can.",
+                  title: "Automate your operations",
+                  description: "Your team spends hours on repetitive tasks. I build AI agents and pipelines that do it in seconds. Cut costs, scale faster.",
                   icon: "↻",
+                  tag: "Cost Savings",
                 },
                 {
                   title: "Add AI to your product",
-                  description: "LLMs, embeddings, recommendation engines — make your existing product smarter without rebuilding it.",
+                  description: "LLMs, embeddings, recommendation engines — make your existing product 10x smarter. No rebuild needed.",
                   icon: "◈",
+                  tag: "Competitive Edge",
                 },
                 {
-                  title: "Conversational AI agents",
-                  description: "Customer support systems, internal copilots, voice interfaces — trained on your data, deployed where your team works.",
+                  title: "Deploy conversational AI",
+                  description: "Customer support, internal copilots, voice interfaces — trained on your data, working 24/7, no hire needed.",
                   icon: "◎",
+                  tag: "Scale",
                 },
                 {
                   title: "Data pipelines & analytics",
-                  description: "Ingest, process, visualize. Turn raw data into decisions your team can act on.",
+                  description: "Your data is scattered everywhere. I build systems that ingest, process, and surface insights your team can act on.",
                   icon: "▣",
+                  tag: "Decisions",
                 },
                 {
-                  title: "Landing pages & web apps",
-                  description: "Fast, clean, deployed. Your idea deserves more than a Notion doc.",
+                  title: "Ship a web app or MVP",
+                  description: "Landing page, full-stack app, or MVP to validate your idea. Fast, clean, deployed. Stop planning, start shipping.",
                   icon: "△",
+                  tag: "Speed",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -162,7 +168,10 @@ const HomePage = () => {
                   transition={{ delay: i * 0.08 }}
                   className="bg-stone-50 border border-stone-200 rounded-lg p-6 hover:border-stone-300 transition-colors"
                 >
-                  <span className="text-2xl text-stone-400 block mb-4">{item.icon}</span>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl text-stone-400">{item.icon}</span>
+                    <span className="text-[10px] font-bold text-stone-400 font-handwriting uppercase tracking-wider">{item.tag}</span>
+                  </div>
                   <h3 className="text-lg font-bold text-stone-900 font-heading mb-2">
                     {item.title}
                   </h3>
@@ -185,15 +194,43 @@ const HomePage = () => {
               className="flex flex-wrap justify-center gap-x-12 gap-y-4"
             >
               {[
-                "37+ projects shipped",
-                "5 client demos live in production",
-                "Available now",
+                { value: "37+", label: "Projects Shipped" },
+                { value: "5", label: "Client Demos in Production" },
+                { value: "0", label: "Equity Required" },
               ].map((item, i) => (
-                <span key={i} className="text-sm text-stone-500 font-handwriting">
-                  {item}
-                </span>
+                <div key={i} className="text-center">
+                  <span className="text-lg font-bold text-stone-900 font-heading">{item.value}</span>
+                  <span className="text-xs text-stone-400 font-handwriting ml-1.5">{item.label}</span>
+                </div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Trusted By */}
+        <section className="py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-center mb-6"
+            >
+              <p className="text-xs font-medium text-stone-400 font-handwriting tracking-widest uppercase">
+                Trusted by founders & teams building
+              </p>
+            </motion.div>
+          </div>
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none" />
+            <div className="flex animate-marquee-left">
+              {[...["MenteE AI", "DocxBox", "RecruAI", "Req2Ops", "StitchPoint", "MenteE AI", "DocxBox", "RecruAI", "Req2Ops", "StitchPoint"]].map((name, i) => (
+                <span key={i} className="flex-shrink-0 text-lg sm:text-xl font-bold text-stone-900/20 font-heading mx-8 sm:mx-12">
+                  {name}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -206,31 +243,31 @@ const HomePage = () => {
               viewport={{ once: true }}
             >
               <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
-                Why me
+                Why Founders Hire Me
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 font-heading leading-tight mb-8">
-                You have a business problem.<br />
-                I have the technical skills to solve it.
+                You need a technical co-founder<br />
+                without giving up equity.
               </h2>
             </motion.div>
 
             <div className="space-y-6">
               {[
                 {
-                  question: "You need an AI feature but don't know where to start.",
-                  answer: "I'll figure out what's actually possible, build the prototype, and get it into production. No buzzwords — just working AI that saves you time or makes you money.",
+                  question: "You have a business idea but can't code.",
+                  answer: "I'll turn your idea into a working product. You describe what you want, I build it. No technical jargon, no excuses — just a product your customers can use.",
                 },
                 {
-                  question: "You have a web app idea but no developer.",
-                  answer: "From landing pages to full-stack SaaS platforms — I build the frontend, backend, database, and deploy it. You get a product, not a pile of code.",
+                  question: "Your competitors are moving faster than you.",
+                  answer: "I ship fast. MVPs in weeks, not months. You'll have a working product to test your market before your competitors even finish their sprint planning.",
                 },
                 {
-                  question: "Your manual processes are eating your team's time.",
-                  answer: "I build automation systems — AI agents, data pipelines, chatbots — that handle the repetitive work so your team can focus on what matters.",
+                  question: "You're burning money on manual work.",
+                  answer: "I build automation systems that replace repetitive tasks. AI agents, data pipelines, chatbots — your team focuses on growth, the software handles the rest.",
                 },
                 {
-                  question: "You've hired developers before and it didn't work out.",
-                  answer: "I communicate clearly, hit deadlines, and show my work. Every project gets a live demo you can see and test before you pay.",
+                  question: "You've been burned by developers before.",
+                  answer: "I show my work every step. Live demos, regular updates, working software you can see and test. No disappearing, no excuses, no 'it works on my machine'.",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -263,10 +300,10 @@ const HomePage = () => {
               className="mb-12"
             >
               <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
-                Selected Work
+                Proof of Work
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading">
-                Projects that shipped.
+                Real projects. Real results.
               </h2>
             </motion.div>
 
@@ -338,10 +375,10 @@ const HomePage = () => {
                 Tech Stack
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
-                The tools I use daily.
+                The tools that ship products.
               </h2>
               <p className="text-stone-500 font-handwriting max-w-xl">
-                Not a list of everything I've touched. These are the tools I reach for when building real products.
+                Not a resume list. These are the tools I reach for when building real products that make money.
               </p>
             </motion.div>
 
