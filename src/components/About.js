@@ -239,6 +239,17 @@ const About = () => {
           </div>
         </section>
 
+        {/* LinkedIn Badge */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 flex items-center justify-center">
+              <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="syedsyab" data-version="v1">
+                <a className="badge-base__link LI-simple-link" href="https://sa.linkedin.com/in/syedsyab?trk=profile-badge">Syed Syab Ahmad S.</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* AI Facts */}
         <section className="px-4 sm:px-6 lg:px-8 pb-12">
           <div className="max-w-4xl mx-auto">
