@@ -1,5 +1,22 @@
 const projects = [
   {
+    title: "MenteE Embed Models",
+    duration: "2026",
+    description:
+      "Open-source multilingual text embedding models trained from scratch for Arabic, English, and Urdu retrieval. mentee-embed-v1, v2, and v3 — compact, fully reproducible, and built to study how far modern training recipes can be compressed when nothing is inherited from pretrained giants. Published on Zenodo with a research paper (DOI: 10.5281/zenodo.22087139). ~41M parameters, 384-dimensional outputs, trained on a single consumer GPU.",
+    keyFeatures:
+      "Trained from Scratch (No Pretrained Backbone) · Arabic, English, Urdu Retrieval · ~41M Parameters · 384-Dimensional L2-Normalized Embeddings · Two-Stage Training (MLM + Contrastive) · Custom ByteLevel BPE Tokenizer · Avg MRR@10 of 0.585 (Beats all-MiniLM-L6-v2) · Fully Reproducible Pipeline · Apache 2.0 License",
+    techStack:
+      "Python, PyTorch, Transformers, Sentence-Transformers, Hugging Face, Zenodo, Git",
+    skills:
+      "NLP, Multilingual Embeddings, Knowledge Distillation, From-Scratch Training, Contrastive Learning, Masked Language Modeling, Python, PyTorch",
+    category: "AI & Machine Learning",
+    projectType: "personal",
+    image: "/default.webp",
+    liveUrl: "https://huggingface.co/MenteE",
+    githubUrl: "https://github.com/MenteE-s/mentee-embeddings",
+  },
+  {
     title: "DOCX AI Translator (Chinese to English)",
     duration: "2026",
     description:
