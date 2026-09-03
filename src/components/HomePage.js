@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SEO from "./SEO";
 import CTASection from "./CTASection";
 import MoneyAnimation from "./MoneyAnimation";
+import recommendations from "../data/recommendationsData";
 
 let allProjects = [];
 try {
@@ -11,10 +12,80 @@ try {
   allProjects = [];
 }
 
+const FAQ_DATA = [
+  {
+    question: "How fast can you start on a project?",
+    answer: "I can kick off within 48 hours of our call. For most projects, you'll see a working prototype within the first week. I believe in rapid delivery with regular demos so you're always in the loop.",
+  },
+  {
+    question: "What's your development process?",
+    answer: "I start with understanding your business goal, then build an MVP to validate the idea fast. From there, I iterate based on your feedback. You'll get regular updates, live demos, and access to the codebase from day one.",
+  },
+  {
+    question: "Do you work with startups only?",
+    answer: "I work with anyone who needs software built — startups, SMEs, agencies, or enterprises. Whether you're validating an idea or scaling an existing product, I adapt to your pace and requirements.",
+  },
+  {
+    question: "What if you're not satisfied with the work?",
+    answer: "I offer a probation period where if we're not a good fit, you can walk away. My goal is to build things that work and make you money — not just collect payment.",
+  },
+  {
+    question: "Do you provide post-launch support?",
+    answer: "Yes. I offer maintenance packages for ongoing support, bug fixes, and feature additions. Most clients stay with me for months or years because things just work.",
+  },
+];
+
 const FEATURED_TITLES = ["MenteE Embed Models", "Req2Ops", "StitchPoint", "AI Voice Agent", "KSA Jobs 24"];
 const featuredProjects = FEATURED_TITLES.map(title => allProjects.find(p => p.title === title)).filter(Boolean);
 
+const TestimonialCard = ({ rec }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="bg-white border border-stone-200 rounded-lg p-6 flex flex-col h-full"
+  >
+    <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-6 flex-1">
+      "{rec.text}"
+    </p>
+      <div className="flex items-center gap-3 pt-4 border-t border-stone-100">
+      <div className="w-10 h-10 bg-stone-800 flex items-center justify-center shadow-sm" />
+      <div>
+        <p className="font-bold text-stone-900 font-handwriting text-sm">{rec.recommender}</p>
+        <p className="text-stone-500 font-handwriting text-xs">{rec.designation}</p>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const FAQItem = ({ item, index, isOpen, toggleOpen }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.05 }}
+    className="border-b border-stone-200 last:border-0"
+  >
+    <button
+      onClick={toggleOpen}
+      className="w-full flex items-center justify-between py-5 text-left"
+    >
+      <span className="font-bold text-stone-900 font-handwriting pr-4">{item.question}</span>
+      <span className={`flex-shrink-0 w-6 h-6 rounded-full border border-stone-300 flex items-center justify-center transition-transform ${isOpen ? "rotate-180" : ""}`}>
+        <svg className="w-3 h-3 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </span>
+    </button>
+    <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 pb-5" : "max-h-0"}`}>
+      <p className="text-stone-500 font-handwriting leading-relaxed">{item.answer}</p>
+    </div>
+  </motion.div>
+);
+
 const HomePage = () => {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
   const homePageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -184,51 +255,105 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Proof Strip */}
-        <section className="border-y border-stone-200 bg-white py-6">
+        {/* Proof Strip - Redesigned */}
+        <section className="border-y border-stone-200 bg-white py-12">
           <div className="max-w-5xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-x-12 gap-y-4"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center"
             >
               {[
-                { value: "37+", label: "Projects Shipped" },
-                { value: "5", label: "Client Demos in Production" },
-                { value: "0", label: "Equity Required" },
+                { value: "37+", label: "Projects Shipped", sublabel: "to production" },
+                { value: "5", label: "Client Demos", sublabel: "live in production" },
+                { value: "0", label: "Equity Required", sublabel: "you keep your company" },
               ].map((item, i) => (
-                <div key={i} className="text-center">
-                  <span className="text-lg font-bold text-stone-900 font-heading">{item.value}</span>
-                  <span className="text-xs text-stone-400 font-handwriting ml-1.5">{item.label}</span>
-                </div>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <span className="text-5xl sm:text-6xl font-bold text-stone-900 font-heading">{item.value}</span>
+                  <p className="text-stone-900 font-handwriting font-semibold mt-1">{item.label}</p>
+                  <p className="text-stone-400 font-handwriting text-sm">{item.sublabel}</p>
+                </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Trusted By */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Testimonials */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-stone-50">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
+                Testimonials
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
+                What people say about working with me.
+              </h2>
+              <p className="text-stone-500 font-handwriting max-w-xl">
+                Real recommendations from LinkedIn. People I've worked with, learned from, or built products for.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recommendations.slice(0, 6).map((rec, i) => (
+                <TestimonialCard key={i} rec={rec} />
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="mt-10 text-center"
+            >
+              <a
+                href="https://www.linkedin.com/in/syedsyab/details/recommendations/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-stone-50 font-bold rounded-lg font-handwriting hover:bg-stone-800 transition-colors"
+              >
+                View All on LinkedIn →
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Trust Signals */}
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-y border-stone-200">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-center mb-6"
+              className="text-center mb-8"
             >
               <p className="text-xs font-medium text-stone-400 font-handwriting tracking-widest uppercase">
-                Trusted by founders & teams building
+                Built for / Trusted by
               </p>
             </motion.div>
-          </div>
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-marquee-left">
-              {[...["MenteE AI", "DocxBox", "RecruAI", "Req2Ops", "StitchPoint", "MenteE AI", "DocxBox", "RecruAI", "Req2Ops", "StitchPoint"]].map((name, i) => (
-                <span key={i} className="flex-shrink-0 text-lg sm:text-xl font-bold text-stone-900/20 font-heading mx-8 sm:mx-12">
+            <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+              {["MenteE AI", "DocxBox", "RecruAI", "Req2Ops", "StitchPoint", "KSA Jobs 24"].map((name, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="text-lg sm:text-xl font-bold text-stone-900/30 font-heading hover:text-stone-900/50 transition-colors cursor-default"
+                >
                   {name}
-                </span>
+                </motion.span>
               ))}
             </div>
           </div>
@@ -555,6 +680,40 @@ const HomePage = () => {
                   </a>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-sm font-medium text-stone-400 mb-4 font-handwriting tracking-widest uppercase">
+                FAQ
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 font-heading mb-4">
+                Questions founders ask me.
+              </h2>
+              <p className="text-stone-500 font-handwriting">
+                Honest answers. No sales fluff.
+              </p>
+            </motion.div>
+
+            <div className="bg-white border border-stone-200 rounded-lg px-6">
+              {FAQ_DATA.map((item, index) => (
+                <FAQItem
+                  key={index}
+                  item={item}
+                  index={index}
+                  isOpen={openFaqIndex === index}
+                  toggleOpen={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                />
+              ))}
             </div>
           </div>
         </section>
