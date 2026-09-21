@@ -136,16 +136,16 @@ const HomePage = () => {
                   className="w-12 h-12 rounded-lg object-cover border border-stone-200 shadow-sm"
                   onError={(e) => { e.target.style.display = "none"; }}
                 />
-                <p className="text-sm font-medium text-stone-400 font-handwriting tracking-widest uppercase">
-                  Syed Syab Ahmad
-                </p>
+<span className="px-3 py-1 bg-[#1c1c1c] rounded-none font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00]">
+                syed syab ahmad
+              </span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[0.95] font-heading mb-6">
                 I don&apos;t just write code.<br />
-                <span className="inline-block mt-3 px-4 sm:px-6 py-1 sm:py-2 bg-surface rounded-xl font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00]">
-                  i ship products.
-                </span>
+              <span className="inline-block mt-3 px-4 sm:px-6 py-1 sm:py-2 bg-[#1c1c1c] rounded-xl font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00]">
+                i ship products.
+              </span>
               </h1>
 
               <div className="mb-8">

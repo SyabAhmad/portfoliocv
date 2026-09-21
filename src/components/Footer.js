@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Left: Copyright + Book a Call */}
           <div className="flex flex-col gap-5">
-             <p className="font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00] bg-surface px-2 py-1 rounded-lg text-sm sm:text-base inline-block">
+             <p className="font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00] bg-[#1c1c1c] px-2 py-1 rounded-none text-sm sm:text-base inline-block">
                © {new Date().getFullYear()} syed syab ahmad
              </p>
             <a
@@ -91,8 +91,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           {/* Huge Name */}
           <div>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] font-heading tracking-tight">
-              Syed Syab
+            <h1 className="text-7xl sm:text-8xl md:text-9xl font-black italic font-heading leading-[0.85] text-white bg-[#1c1c1c] px-6 sm:px-10 py-3 sm:py-5 rounded-none inline-block -skew-x-6">
+              syed syab.
             </h1>
             <p className="text-xs sm:text-sm font-handwriting tracking-[0.3em] uppercase text-stone-500 mt-3">
               AI Engineer & Full-Stack Developer
