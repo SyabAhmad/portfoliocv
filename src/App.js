@@ -19,6 +19,8 @@ import AllDesignProjects from "./components/AllDesignProjects";
 import DesignProjectDetail from "./components/DesignProjectDetail";
 import MenteE from "./components/MenteE";
 import CallPage from "./components/CallPage";
+import Blogs from "./components/Blogs";
+import BlogDetail from "./components/BlogDetail";
 import { ThemeProvider } from "./context/ThemeContext";
 import CursorMoon from "./components/CursorMoon";
 import "./App.css";
@@ -44,6 +46,8 @@ function App() {
                       <Route path="/about" element={<About />} />
                       <Route path="/services" element={<Services />} />
                       <Route path="/projects" element={<Projects />} />
+                      <Route path="/blogs" element={<Blogs />} />
+                      <Route path="/blogs/:slug" element={<BlogDetail />} />
                       <Route path="/experience" element={<Experience />} />
                       <Route path="/mentee" element={<MenteE />} />
                       <Route path="/contact" element={<Contact />} />

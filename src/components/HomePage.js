@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SEO from "./SEO";
 import CTASection from "./CTASection";
 import MoneyAnimation from "./MoneyAnimation";
+import GitistaCard, { GitistaBadge } from "./GitistaRank";
 import recommendations from "../data/recommendationsData";
 
 let allProjects = [];
@@ -98,9 +99,12 @@ const HomePage = () => {
       name: "Syed Syab Ahmad",
       jobTitle: "AI Engineer & Full-Stack Developer",
       url: "https://syab.tech",
+      award: "#9 Top Open Source Contributor in Saudi Arabia (Gitista)",
       sameAs: [
         "https://www.linkedin.com/in/syedsyab/",
         "https://github.com/syabahmad",
+        "https://gitista.com/saudi-arabia/",
+        "https://gitista.com/search?country=SA&handle=SyabAhmad",
       ],
     },
   };
@@ -137,10 +141,14 @@ const HomePage = () => {
                 </p>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[0.95] font-heading mb-8">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[0.95] font-heading mb-6">
                 I don't just write code.<br />
                 <span className="text-stone-400">I ship products.</span>
               </h1>
+
+              <div className="mb-8">
+                <GitistaBadge />
+              </div>
 
               <p className="text-lg sm:text-xl text-stone-500 max-w-2xl leading-relaxed mb-10 font-handwriting">
                 I help businesses save time and make money with AI. Whether you need a web app, an automation system, or an AI feature — I build it, deploy it, and it works. Based in Riyadh, delivering worldwide.
@@ -262,10 +270,11 @@ const HomePage = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center"
+              className="grid grid-cols-1 sm:grid-cols-4 gap-8 text-center"
             >
               {[
                 { value: "37+", label: "Projects Shipped", sublabel: "to production" },
+                { value: "#9", label: "in Saudi Arabia", sublabel: "Gitista · Sep 2026 ↗", link: "https://gitista.com/saudi-arabia/" },
                 { value: "5", label: "Client Demos", sublabel: "live in production" },
                 { value: "0", label: "Equity Required", sublabel: "you keep your company" },
               ].map((item, i) => (
@@ -276,12 +285,29 @@ const HomePage = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <span className="text-5xl sm:text-6xl font-bold text-stone-900 font-heading">{item.value}</span>
-                  <p className="text-stone-900 font-handwriting font-semibold mt-1">{item.label}</p>
-                  <p className="text-stone-400 font-handwriting text-sm">{item.sublabel}</p>
+                  {item.link ? (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" title="View live leaderboard on Gitista (last checked 21 Sep 2026 — ranks update live)">
+                      <span className="text-5xl sm:text-6xl font-bold text-stone-900 font-heading hover:text-stone-600 transition-colors">{item.value}</span>
+                      <p className="text-stone-900 font-handwriting font-semibold mt-1">{item.label}</p>
+                      <p className="text-stone-400 font-handwriting text-sm underline">{item.sublabel}</p>
+                    </a>
+                  ) : (
+                    <>
+                      <span className="text-5xl sm:text-6xl font-bold text-stone-900 font-heading">{item.value}</span>
+                      <p className="text-stone-900 font-handwriting font-semibold mt-1">{item.label}</p>
+                      <p className="text-stone-400 font-handwriting text-sm">{item.sublabel}</p>
+                    </>
+                  )}
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Recognition - Gitista Ranking */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-stone-50">
+          <div className="max-w-5xl mx-auto">
+            <GitistaCard />
           </div>
         </section>
 

@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import { FaGithub, FaLinkedin, FaSun, FaMoon, FaPhone } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
  const location = useLocation();
  const [isOpen, setIsOpen] = useState(false);
  const { theme, toggleTheme } = useTheme();
 
- const navItems = [
- { path: "/", label: "Home" },
- { path: "/about", label: "About" },
- { path: "/services", label: "Services" },
- { path: "/projects", label: "Projects" },
- { path: "/experience", label: "Experience" },
- { path: "/mentee", label: "MenteE" },
- { path: "/contact", label: "Contact" },
- { path: "/call", label: "Call" },
- ];
+  const navItems = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/services", label: "Services" },
+  { path: "/projects", label: "Projects" },
+  { path: "/blogs", label: "Blogs" },
+  { path: "/mentee", label: "MenteE" },
+  ];
 
  return (
  <nav className="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-lg border-b border-stone-200 transition-colors duration-300">
@@ -56,25 +54,11 @@ const Navbar = () => {
  : "text-stone-500 hover:text-stone-900 hover:bg-stone-100"
  }`}
  >
- Design
- </Link>
+  Design
+  </Link>
 
- {/* Call Button */}
- <Link
- to="/call"
- className={`px-3 py-2 rounded-lg text-sm transition-all flex items-center gap-1.5 ${
- location.pathname === "/call"
- ? "bg-stone-100 text-green-600"
- : "text-green-600 hover:text-green-700 hover:bg-green-50"
- }`}
- >
- <FaPhone size={12} className="rotate-90" />
- <span>Call</span>
- </Link>
-
- {/* Theme Toggle - commented out, not working right now */}
- {/*
- <button
+  {/*
+  <button
  onClick={toggleTheme}
  className="ml-2 p-2 rounded-lg text-stone-400 hover:text-stone-900 hover:bg-stone-100 transition-all"
  aria-label="Toggle Theme"

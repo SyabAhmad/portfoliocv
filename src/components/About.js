@@ -38,6 +38,7 @@ import researchIdeas from "../data/researchData";
 import CertificationBadges from "./CertificationBadges";
 import Recommendations from "./Recommendations";
 import AiFacts from "./AiFacts";
+import GitistaCard from "./GitistaRank";
 import SEO from "./SEO";
 
 const volunteering = [
@@ -98,7 +99,8 @@ const About = () => {
       recognizedBy: { "@type": "Organization", name: cert.issuer },
     })),
     knowsAbout: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Full Stack Development", "Python Programming", "JavaScript", "React", "TensorFlow", "PyTorch", "Healthcare AI", "Computer Vision"],
-    sameAs: ["https://www.linkedin.com/in/syedsyab/", "https://github.com/syabahmad", "https://twitter.com/SyabSays", "https://medium.com/@syedsyab", "https://www.kaggle.com/syabahmad", "https://www.researchgate.net/profile/Syed-Syab-Ahmad", "https://huggingface.co/SyedSyab"],
+    award: "#9 Top Open Source Contributor in Saudi Arabia (Gitista)",
+    sameAs: ["https://www.linkedin.com/in/syedsyab/", "https://github.com/syabahmad", "https://twitter.com/SyabSays", "https://medium.com/@syedsyab", "https://www.kaggle.com/syabahmad", "https://www.researchgate.net/profile/Syed-Syab-Ahmad", "https://huggingface.co/SyedSyab", "https://gitista.com/saudi-arabia/", "https://gitista.com/search?country=SA&handle=SyabAhmad"],
   };
 
   return (
@@ -163,11 +165,20 @@ const About = () => {
                     { value: "50+", label: "Certifications" },
                     { value: "20+", label: "Research" },
                     { value: "37+", label: "Projects" },
-                    { value: "Open", label: "To Work" },
+                    { value: "#9", label: "in KSA (Gitista · Sep 2026)", link: "https://gitista.com/saudi-arabia/" },
                   ].map((s, i) => (
                     <div key={i} className="text-center">
-                      <div className="text-lg font-bold text-stone-900 font-heading">{s.value}</div>
-                      <div className="text-xs text-stone-400 font-handwriting">{s.label}</div>
+                      {s.link ? (
+                        <a href={s.link} target="_blank" rel="noopener noreferrer" title="View live leaderboard on Gitista (last checked 21 Sep 2026 — ranks update live)">
+                          <div className="text-lg font-bold text-stone-900 font-heading hover:text-stone-600 underline">{s.value}</div>
+                          <div className="text-xs text-stone-400 font-handwriting">{s.label} ↗</div>
+                        </a>
+                      ) : (
+                        <>
+                          <div className="text-lg font-bold text-stone-900 font-heading">{s.value}</div>
+                          <div className="text-xs text-stone-400 font-handwriting">{s.label}</div>
+                        </>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -247,6 +258,13 @@ const About = () => {
                 <a className="badge-base__link LI-simple-link" href="https://sa.linkedin.com/in/syedsyab?trk=profile-badge">Syed Syab Ahmad S.</a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Gitista Ranking */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <GitistaCard />
           </div>
         </section>
 
