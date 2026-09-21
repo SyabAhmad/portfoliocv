@@ -21,6 +21,7 @@ import MenteE from "./components/MenteE";
 import CallPage from "./components/CallPage";
 import Blogs from "./components/Blogs";
 import BlogDetail from "./components/BlogDetail";
+import NotFound from "./components/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
 import CursorMoon from "./components/CursorMoon";
 import "./App.css";
@@ -58,6 +59,7 @@ function App() {
                       <Route path="/design/sketchup" element={<SketchUpPortfolio />} />
                       <Route path="/design/projects" element={<AllDesignProjects />} />
                       <Route path="/design/project/:projectId" element={<DesignProjectDetail />} />
+                      <Route path="*" element={<NotFound />} />
                     </Routes>
                   </main>
                   <Footer />
