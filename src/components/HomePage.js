@@ -142,8 +142,10 @@ const HomePage = () => {
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-stone-900 leading-[0.95] font-heading mb-6">
-                I don't just write code.<br />
-                <span className="text-stone-400">I ship products.</span>
+                I don&apos;t just write code.<br />
+                <span className="inline-block mt-3 px-4 sm:px-6 py-1 sm:py-2 bg-surface rounded-xl font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00]">
+                  i ship products.
+                </span>
               </h1>
 
               <div className="mb-8">

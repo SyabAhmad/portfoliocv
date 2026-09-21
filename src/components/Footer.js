@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Left: Copyright + Book a Call */}
           <div className="flex flex-col gap-5">
-            <p className="font-handwriting text-sm tracking-wide text-stone-400">
-              © {new Date().getFullYear()} Syed Syab Ahmad
-            </p>
+             <p className="font-bebas font-normal lowercase tracking-tight leading-none text-[#FF4D00] bg-surface px-2 py-1 rounded-lg text-sm sm:text-base inline-block">
+               © {new Date().getFullYear()} syed syab ahmad
+             </p>
             <a
               href="https://calendly.com/syedsyab/new-meeting"
               target="_blank"
