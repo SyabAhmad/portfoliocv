@@ -188,6 +188,24 @@ const projects = [
     liveUrl: "https://hamzarustam.vercel.app",
   },
   {
+    title: "Eibad Hassan Shah — Architectural Portfolio",
+    duration: "2026",
+    description:
+      "A BIM Architectural Engineer portfolio for Eibad Hassan Shah, showcasing selected architecture, construction coordination, interior design, and 3D visualization work from Saudi Arabia and Pakistan.",
+    keyFeatures:
+      "Architectural Project Showcase · Professional Experience · BIM Coordination · Technical Documentation · 3D Visualization · Education & Registration",
+    techStack: "React, Architectural Design, BIM, 3D Visualization",
+    skills:
+      "Architectural Design, BIM Coordination, Construction Documentation, 3D Visualization, Interior Design",
+    category: "Web Development",
+    projectType: "portfolio",
+    image: "/default.webp",
+    links: [
+      { label: "eibad.com", url: "https://eibad.com" },
+      { label: "eibad.vercel.app", url: "https://eibad.vercel.app" },
+    ],
+  },
+  {
     title: "Nainzaka Aesthetics",
     duration: "2025",
     description:

@@ -325,6 +325,17 @@ const Projects = () => {
 
               {/* Footer Links */}
               <div className="p-6 border-t border-stone-100 flex flex-wrap gap-3">
+                {selectedProject.links?.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-stone-900 text-stone-50 font-bold rounded-lg font-handwriting text-sm"
+                  >
+                    <FaExternalLinkAlt size={12} /> {link.label}
+                  </a>
+                ))}
                 {selectedProject.liveUrl && (
                   <a
                     href={selectedProject.liveUrl}
