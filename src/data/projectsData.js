@@ -59,7 +59,7 @@ const projects = [
       "LangGraph, LangChain, Multi-Agent AI, LLMs, NLP, FastAPI, Python, Real-Time Streaming, Speech-to-Text, Document AI",
     category: "AI & Machine Learning",
     projectType: "personal",
-    image: "/projects/req2ops.webp",
+    image: "/projects/req2ops.png",
     liveUrl: "https://req2ops.vercel.app",
     githubUrl: "https://github.com/syabahmad/req2ops",
   },
@@ -89,7 +89,7 @@ const projects = [
       "React, Tailwind CSS, Gamification, Frontend Engineering, JSON Architecture, Zustand",
     category: "Web Development",
     projectType: "personal",
-    image: "/projects/pleaselive.webp",
+    image: "/projects/pleaselive.png",
     liveUrl: "https://pleaselive.vercel.app",
   },
   {
@@ -102,8 +102,22 @@ const projects = [
     techStack: "ReactJS, Supabase",
     skills: "ReactJS, Supabase, Web Development",
     category: "Web Development",
-    image: "/projects/menteemart.webp",
+    image: "/projects/menteemart.png",
     liveUrl: "https://menteemart.vercel.app",
+  },
+  {
+    title: "Eibad Hassan Shah — Architectural Portfolio",
+    duration: "2026",
+    description:
+      "Architectural portfolio website built for Eibad Hassan Shah — BIM Architectural Engineer with 7+ years of experience across Saudi Arabia and Pakistan. Hand-built with Next.js and deployed on Vercel behind a custom domain (eibad.com). Designed as a bold editorial magazine with numbered sections (01–07) and a scroll-driven hero slider: five featured project case studies (Riyadh Air Academy Training Centre, Red Sea Central Transportation Hub & QC Lab, NUPCO Al Jouf Distribution Centre, Red Sea Central Distribution Center, French Fries Processing Facility), a concept-render archive, a full career timeline from Architect in Rawalpindi to BIM Architectural Engineer in Riyadh, expertise and tools grids (Revit, Navisworks, AutoCAD, SketchUp, V-Ray, Lumion, Enscape), education with PCATP and Saudi Council of Engineers registration, a downloadable CV, and a contact section with email, phone, and WhatsApp.",
+    keyFeatures:
+      "Five Featured Project Case Studies · Concept Render Archive · Numbered Editorial Layout · Scroll-Driven Hero Slider · Career Timeline · Expertise & Tools Grids · CV Download · Email / Phone / WhatsApp Contact · Custom Domain · Responsive Design",
+    techStack: "Next.js, React, Vercel, Geist Font, Next Image Optimization, Custom Domain",
+    skills: "Next.js, React, Frontend Development, Responsive Design, Web Design, Vercel Deployment",
+    category: "Web Development",
+    projectType: "portfolio",
+    image: "/projects/eibad.png",
+    liveUrl: "https://eibad.com",
   },
   {
     title: "Sayyad Fayaz Ahmad Portfolio",
@@ -115,7 +129,7 @@ const projects = [
     skills: "ReactJS, Web Development",
     category: "Web Development",
     projectType: "portfolio",
-    image: "/projects/fayaz.webp",
+    image: "/projects/fayaz.png",
     liveUrl: "https://sayyadfayaz.vercel.app",
   },
   {
@@ -188,24 +202,6 @@ const projects = [
     liveUrl: "https://hamzarustam.vercel.app",
   },
   {
-    title: "Eibad Hassan Shah — Architectural Portfolio",
-    duration: "2026",
-    description:
-      "A BIM Architectural Engineer portfolio for Eibad Hassan Shah, showcasing selected architecture, construction coordination, interior design, and 3D visualization work from Saudi Arabia and Pakistan.",
-    keyFeatures:
-      "Architectural Project Showcase · Professional Experience · BIM Coordination · Technical Documentation · 3D Visualization · Education & Registration",
-    techStack: "React, Architectural Design, BIM, 3D Visualization",
-    skills:
-      "Architectural Design, BIM Coordination, Construction Documentation, 3D Visualization, Interior Design",
-    category: "Web Development",
-    projectType: "portfolio",
-    image: "/default.webp",
-    links: [
-      { label: "eibad.com", url: "https://eibad.com" },
-      { label: "eibad.vercel.app", url: "https://eibad.vercel.app" },
-    ],
-  },
-  {
     title: "Nainzaka Aesthetics",
     duration: "2025",
     description:
@@ -215,7 +211,7 @@ const projects = [
     techStack: "ReactJS, Supabase",
     skills: "ReactJS, Supabase, Web Development",
     category: "Web Development",
-    image: "/projects/nainzaka.webp",
+    image: "/projects/nainzaka.png",
     liveUrl: "https://nainzaka-aesthetics.vercel.app",
   },
   {
@@ -279,7 +275,7 @@ const projects = [
       "Kotlin, Jetpack Compose, Firebase Authentication, Room Database (Encrypted Blobs), Google Drive API, Android Security Library",
     skills: "Mobile Development, Security, Android",
     category: "Mobile App Development",
-    image: "/projects/docxbox.webp",
+    image: "/projects/docxbox.png",
   },
   {
     title: "Colors",
