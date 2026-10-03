@@ -16,7 +16,7 @@ const Footer = () => {
               href="https://calendly.com/syedsyab/new-meeting"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-2.5 bg-white text-stone-950 font-bold rounded-full text-sm font-handwriting w-fit hover:bg-stone-200 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-2.5 bg-white text-stone-950 font-bold rounded-md text-sm font-handwriting w-fit hover:bg-stone-200 transition-colors"
             >
               Book a Call
             </a>
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
 
           {/* Availability */}
-          <div className="md:text-right flex-shrink-0">
+          <div className="flex-shrink-0">
             <p className="text-xs font-handwriting text-stone-500 tracking-wider uppercase mb-1">
               Available
             </p>
