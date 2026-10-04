@@ -4,6 +4,7 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
+import Signature from "./components/Signature";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import About from "./components/About";
@@ -62,6 +63,7 @@ function App() {
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </main>
+                  <Signature />
                   <Footer />
                 </Layout>
                 <AnimatedPatterns />
