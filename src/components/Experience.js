@@ -4,6 +4,25 @@ import { motion } from "framer-motion";
 const experienceData = [
   {
     id: 0,
+    role: "Full Stack Developer",
+    company: "Sayvors",
+    period: "Jul 2026 - Present",
+    type: "Full-time",
+    location: "Riyadh, Saudi Arabia · Hybrid",
+    description: "Developing and maintaining production-grade full-stack applications and AI-powered systems. Focused on building reliable, scalable systems that solve real business problems.",
+    bullets: [
+      "Building backend services and REST APIs using Python and FastAPI.",
+      "Developing frontend applications using React and modern JavaScript.",
+      "Engineering multi-tenant SaaS architectures.",
+      "Integrating PostgreSQL, Redis, and Kafka for data management and asynchronous processing.",
+      "Implementing AI-powered customer support and automation workflows.",
+      "Working with Docker, cloud infrastructure, and production deployment pipelines.",
+    ],
+    skills: ["Python", "FastAPI", "React", "PostgreSQL", "Redis", "Kafka", "Docker"],
+    current: true,
+  },
+  {
+    id: 14,
     role: "Full Stack Web Developer & ML/AI Engineer",
     company: "Freelance",
     period: "Nov 2023 - Present",
@@ -153,6 +172,11 @@ const Experience = () => {
                 <div>
                   <h3 className="text-lg font-bold text-stone-900 font-heading">{exp.role}</h3>
                   <p className="text-stone-500 text-sm font-handwriting">{exp.company} · {exp.period}</p>
+                  {(exp.type || exp.location) && (
+                    <p className="text-stone-400 text-xs font-handwriting">
+                      {[exp.type, exp.location].filter(Boolean).join(" · ")}
+                    </p>
+                  )}
                   <p className="text-stone-500 text-sm font-handwriting mt-1">{exp.description}</p>
                 </div>
               </div>
@@ -215,9 +239,33 @@ const Experience = () => {
                   <p className="text-stone-600 font-semibold text-sm font-handwriting mb-1">
                     {exp.company}
                   </p>
+                  {(exp.type || exp.location) && (
+                    <p className="text-stone-400 text-xs font-handwriting mb-2">
+                      {[exp.type, exp.location].filter(Boolean).join(" · ")}
+                    </p>
+                  )}
                   <p className="text-stone-500 text-sm font-handwriting leading-relaxed">
                     {exp.description}
                   </p>
+                  {exp.bullets && (
+                    <ul className="mt-3 space-y-1.5">
+                      {exp.bullets.map((b, i) => (
+                        <li key={i} className="flex gap-2 text-stone-500 text-sm font-handwriting leading-relaxed">
+                          <span className="text-stone-300 mt-0.5">—</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {exp.skills && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {exp.skills.map((s, i) => (
+                        <span key={i} className="px-2.5 py-0.5 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

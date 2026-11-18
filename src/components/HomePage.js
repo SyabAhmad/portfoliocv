@@ -708,6 +708,55 @@ const HomePage = () => {
                   </a>
                 </div>
               </motion.div>
+
+              {/* ACP preprint card */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="bg-white border border-stone-200 rounded-lg p-8 md:col-span-3"
+              >
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase">
+                    New Preprint
+                  </p>
+                  <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 text-xs rounded-full font-handwriting">
+                    November 2026
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-stone-900 font-heading mb-3 leading-snug">
+                  Think While You Speak: Adaptive Computational Effort in Neural Dialogue Systems
+                </h3>
+                <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-4">
+                  A fast linear pathway answers by default, and a monitor checks the input against a small episodic memory, gating a deliberate MLP when the input is novel. Across 10 seeds it deliberates on 2.8% of easy inputs and 99.2% of hard ones, reaching 93.5% accuracy at two-thirds of the deliberation. Removing the memory feature drops accuracy to 73.7%, so the memory is doing real work. Pure NumPy, CPU only, gradients verified.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Adaptive Computation", "System 1 / System 2", "Episodic Memory", "Routing", "NumPy"].map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="https://doi.org/10.5281/zenodo.24353178"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    Zenodo (DOI) →
+                  </a>
+                  <a
+                    href="https://github.com/MenteE-s/adaptive-cognitive-processing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors"
+                  >
+                    Code →
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>

@@ -57,6 +57,28 @@
       "Product: RecruAI — AI-assisted candidate screening"
     ]
   },
+  "publications": {
+    "papers": [
+      {
+        "title": "Think While You Speak: Adaptive Computational Effort in Neural Dialogue Systems",
+        "authors": "Syed Syab Ahmad Shah and Team MenteE AI",
+        "venue": "Zenodo preprint",
+        "date": "November 2026",
+        "doi": "10.5281/zenodo.24353178",
+        "summary": "Adaptive Cognitive Processing (ACP): a fast linear pathway answers by default and a memory monitor gates a deliberate MLP on novel inputs. 93.5% accuracy at 67% deliberation across 10 seeds; removing the memory feature drops accuracy from 94.3% to 73.7%.",
+        "code": "https://github.com/MenteE-s/adaptive-cognitive-processing"
+      },
+      {
+        "title": "mentee-embed: Training Competitive Multilingual Text Embeddings from Scratch",
+        "authors": "Syed Syab Ahmad Shah, Shakeel Sania, Rustam Hamza, Khan Mahboob",
+        "venue": "Zenodo",
+        "date": "August 2026",
+        "doi": "10.5281/zenodo.22087139",
+        "summary": "41M-parameter trilingual embedding model for Arabic, English, and Urdu, trained entirely from scratch. Avg MRR@10 of 0.585 vs 0.396 for all-MiniLM-L6-v2.",
+        "code": "https://github.com/MenteE-s/mentee-embeddings"
+      }
+    ]
+  },
   "skills": {
     "main": [
       "Python",
@@ -226,17 +248,17 @@
     "total_count": 19
   },
   "experience": {
-    "current": "Student Ambassador at BLACKBOX.AI",
+    "current": "Full Stack Developer at Sayvors (Riyadh, Saudi Arabia · Hybrid)",
     "recent": [
-      "Python Developer at Suvastu Tech",
-      "Machine Learning Intern at SkillBuild",
-      "Research Assistant in AI/ML"
+      "Full Stack Web Developer & ML/AI Engineer (Freelance)",
+      "Student Ambassador at BLACKBOX.AI",
+      "Python Developer at Suvastu Tech"
     ],
-    "total_roles": 4,
+    "total_roles": 15,
     "highlights": [
-      "Led development of computer vision applications",
-      "Built full-stack web applications with AI integration",
-      "Conducted research in machine learning algorithms"
+      "Building production full-stack apps and AI systems at Sayvors: Python/FastAPI backends, React frontends, multi-tenant SaaS",
+      "Integrates PostgreSQL, Redis, and Kafka for data management and async processing",
+      "Published research on adaptive computation (ACP) and trilingual embeddings (mentee-embed)"
     ]
   },
   "achievements": {

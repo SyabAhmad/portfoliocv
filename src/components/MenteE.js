@@ -283,6 +283,35 @@ const MenteE = () => {
                 <a href="https://github.com/MenteE-s/mentee-embeddings" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Code →</a>
               </div>
             </motion.div>
+
+            {/* ACP Preprint */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white border border-stone-200 rounded-xl p-6 sm:col-span-2">
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <p className="text-xs font-medium text-stone-400 font-handwriting tracking-wider uppercase">New Preprint</p>
+                <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 text-xs rounded-full font-handwriting">November 2026</span>
+              </div>
+              <h3 className="text-xl font-bold text-stone-900 font-heading mb-3 leading-snug">
+                Think While You Speak: Adaptive Computational Effort in Neural Dialogue Systems
+              </h3>
+              <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-2">
+                Syed Syab Ahmad Shah and Team MenteE AI
+              </p>
+              <p className="text-stone-400 font-handwriting text-xs mb-4">
+                Zenodo · November 2026 · CC-BY 4.0
+              </p>
+              <p className="text-stone-500 font-handwriting text-sm leading-relaxed mb-4">
+                A fast linear pathway answers by default, and a monitor checks the input against a small episodic memory, gating a deliberate MLP when the input is novel. Across 10 seeds: 2.8% of easy inputs and 99.2% of hard inputs trigger deliberation, with 93.5% accuracy. Removing the memory feature drops accuracy from 94.3% to 73.7%.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["Adaptive Computation", "Episodic Memory", "Routing", "NumPy", "CPU Only"].map((tag, i) => (
+                  <span key={i} className="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-handwriting">{tag}</span>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <a href="https://doi.org/10.5281/zenodo.24353178" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Zenodo (DOI) →</a>
+                <a href="https://github.com/MenteE-s/adaptive-cognitive-processing" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 font-heading hover:text-stone-600 transition-colors">Code →</a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
